@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8E3A52F5-5E49-4B29-A8A6-89BC12A6F281}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AutotaskNET</RootNamespace>
+    <AssemblyName>AutotaskNET</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>psa.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Exceptions.cs" />
+    <Compile Include="AutotaskNET.cs" />
+    <Compile Include="Entities\Account.cs" />
+    <Compile Include="Entities\AccountAlert.cs" />
+    <Compile Include="Entities\AccountLocation.cs" />
+    <Compile Include="Entities\AccountNote.cs" />
+    <Compile Include="Entities\AccountPhysicalLocation.cs" />
+    <Compile Include="Entities\AccountTeam.cs" />
+    <Compile Include="Entities\AccountToDo.cs" />
+    <Compile Include="Entities\ActionType.cs" />
+    <Compile Include="Entities\AdditionalInvoiceFieldValue.cs" />
+    <Compile Include="Entities\AllocationCode.cs" />
+    <Compile Include="Entities\Appointment.cs" />
+    <Compile Include="Entities\Attachments\AttachmentInfo.cs" />
+    <Compile Include="Entities\BillingItem.cs" />
+    <Compile Include="Entities\BillingItemApprovalLevel.cs" />
+    <Compile Include="Entities\BusinessDivision.cs" />
+    <Compile Include="Entities\BusinessDivisionSubdivision.cs" />
+    <Compile Include="Entities\BusinessDivisionSubdivisionResource.cs" />
+    <Compile Include="Entities\BusinessLocation.cs" />
+    <Compile Include="Entities\BusinessSubdivision.cs" />
+    <Compile Include="Entities\ChangeRequestLink.cs" />
+    <Compile Include="Entities\ClassificationIcon.cs" />
+    <Compile Include="Entities\ClientPortalUser.cs" />
+    <Compile Include="Entities\Contact.cs" />
+    <Compile Include="Entities\Contract.cs" />
+    <Compile Include="Entities\ContractBlock.cs" />
+    <Compile Include="Entities\ContractCost.cs" />
+    <Compile Include="Entities\ContractExclusionAllocationCode.cs" />
+    <Compile Include="Entities\ContractExclusionRole.cs" />
+    <Compile Include="Entities\ContractFactor.cs" />
+    <Compile Include="Entities\ContractMilestone.cs" />
+    <Compile Include="Entities\ContractNote.cs" />
+    <Compile Include="Entities\ContractRate.cs" />
+    <Compile Include="Entities\ContractRetainer.cs" />
+    <Compile Include="Entities\ContractRoleCost.cs" />
+    <Compile Include="Entities\ContractService.cs" />
+    <Compile Include="Entities\ContractServiceAdjustment.cs" />
+    <Compile Include="Entities\ContractServiceBundle.cs" />
+    <Compile Include="Entities\ContractServiceBundleAdjustment.cs" />
+    <Compile Include="Entities\ContractServiceBundleUnit.cs" />
+    <Compile Include="Entities\ContractServiceUnit.cs" />
+    <Compile Include="Entities\ContractTicketPurchase.cs" />
+    <Compile Include="Entities\Country.cs" />
+    <Compile Include="Entities\Currency.cs" />
+    <Compile Include="Entities\Department.cs" />
+    <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\ExpenseItem.cs" />
+    <Compile Include="Entities\ExpenseReport.cs" />
+    <Compile Include="Entities\Holiday.cs" />
+    <Compile Include="Entities\HolidaySet.cs" />
+    <Compile Include="Entities\InstalledProduct.cs" />
+    <Compile Include="Entities\InstalledProductType.cs" />
+    <Compile Include="Entities\InstalledProductTypeUdfAssociation.cs" />
+    <Compile Include="Entities\InternalLocation.cs" />
+    <Compile Include="Entities\InventoryItem.cs" />
+    <Compile Include="Entities\InventoryItemSerialNumber.cs" />
+    <Compile Include="Entities\InventoryLocation.cs" />
+    <Compile Include="Entities\InventoryTransfer.cs" />
+    <Compile Include="Entities\Invoice.cs" />
+    <Compile Include="Entities\InvoiceTemplate.cs" />
+    <Compile Include="Entities\NotificationHistory.cs" />
+    <Compile Include="Entities\Opportunity.cs" />
+    <Compile Include="Entities\PaymentTerm.cs" />
+    <Compile Include="Entities\Phase.cs" />
+    <Compile Include="Entities\PriceListMaterialCode.cs" />
+    <Compile Include="Entities\PriceListProduct.cs" />
+    <Compile Include="Entities\PriceListRole.cs" />
+    <Compile Include="Entities\PriceListService.cs" />
+    <Compile Include="Entities\PriceListServiceBundle.cs" />
+    <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\ProductVendor.cs" />
+    <Compile Include="Entities\Project.cs" />
+    <Compile Include="Entities\ProjectCost.cs" />
+    <Compile Include="Entities\ProjectNote.cs" />
+    <Compile Include="Entities\PurchaseApproval.cs" />
+    <Compile Include="Entities\PurchaseOrder.cs" />
+    <Compile Include="Entities\PurchaseOrderItem.cs" />
+    <Compile Include="Entities\PurchaseOrderReceive.cs" />
+    <Compile Include="Entities\Quote.cs" />
+    <Compile Include="Entities\QuoteItem.cs" />
+    <Compile Include="Entities\QuoteLocation.cs" />
+    <Compile Include="Entities\QuoteTemplate.cs" />
+    <Compile Include="Entities\Resource.cs" />
+    <Compile Include="Entities\ResourceRole.cs" />
+    <Compile Include="Entities\ResourceRoleDepartment.cs" />
+    <Compile Include="Entities\ResourceRoleQueue.cs" />
+    <Compile Include="Entities\ResourceServiceDeskRole.cs" />
+    <Compile Include="Entities\ResourceSkill.cs" />
+    <Compile Include="Entities\Role.cs" />
+    <Compile Include="Entities\SalesOrder.cs" />
+    <Compile Include="Entities\Service.cs" />
+    <Compile Include="Entities\ServiceBundle.cs" />
+    <Compile Include="Entities\ServiceBundleService.cs" />
+    <Compile Include="Entities\ServiceCall.cs" />
+    <Compile Include="Entities\ServiceCallTask.cs" />
+    <Compile Include="Entities\ServiceCallTaskResource.cs" />
+    <Compile Include="Entities\ServiceCallTicket.cs" />
+    <Compile Include="Entities\ServiceCallTicketResource.cs" />
+    <Compile Include="Entities\ServiceLevelAgreementResults.cs" />
+    <Compile Include="Entities\ShippingType.cs" />
+    <Compile Include="Entities\Skill.cs" />
+    <Compile Include="Entities\Subscription.cs" />
+    <Compile Include="Entities\SubscriptionPeriod.cs" />
+    <Compile Include="Entities\Survey.cs" />
+    <Compile Include="Entities\SurveyResults.cs" />
+    <Compile Include="Entities\Task.cs" />
+    <Compile Include="Entities\TaskNote.cs" />
+    <Compile Include="Entities\TaskPredecessor.cs" />
+    <Compile Include="Entities\TaskSecondaryResource.cs" />
+    <Compile Include="Entities\Tax.cs" />
+    <Compile Include="Entities\TaxCategory.cs" />
+    <Compile Include="Entities\TaxRegion.cs" />
+    <Compile Include="Entities\Ticket.cs" />
+    <Compile Include="Entities\TicketAdditionalContact.cs" />
+    <Compile Include="Entities\TicketCategory.cs" />
+    <Compile Include="Entities\TicketCategoryFieldDefaults.cs" />
+    <Compile Include="Entities\TicketChangeRequestApproval.cs" />
+    <Compile Include="Entities\TicketChecklistItem.cs" />
+    <Compile Include="Entities\TicketCost.cs" />
+    <Compile Include="Entities\TicketNote.cs" />
+    <Compile Include="Entities\TicketSecondaryResource.cs" />
+    <Compile Include="Entities\TimeEntry.cs" />
+    <Compile Include="Entities\UserDefinedField.cs" />
+    <Compile Include="Entities\WorkTypeModifier.cs" />
+    <Compile Include="EntityFilter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\net.autotask.webservices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://webservices.autotask.net/atservices/1.5/atws.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\net.autotask.webservices\</RelPath>
+      <UpdateFromURL>https://webservices.autotask.net/atservices/1.5/atws.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Autotask_Net_Webservices_ATWS</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\net.autotask.webservices\Attachment.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.autotask.webservices\atws.wsdl" />
+    <None Include="Web References\net.autotask.webservices\ATWSResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.autotask.webservices\ATWSZoneInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.autotask.webservices\EntityInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.autotask.webservices\Field.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.autotask.webservices\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="psa.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

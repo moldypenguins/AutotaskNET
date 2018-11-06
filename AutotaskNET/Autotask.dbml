@@ -1,0 +1,945 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Autotask" Class="AutotaskDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=RSSQL01\TIMETRACKING;Initial Catalog=Autotask;Integrated Security=True" SettingsObjectName="AutotaskUpdater.Properties.Settings" SettingsPropertyName="AutotaskConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Ticket" Member="Tickets">
+    <Type Name="Ticket">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="DueDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Priority" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="AEMAlertID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AllocationCodeID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="AssignedResourceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="AssignedResourceRoleID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ChangeApprovalBoard" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChangeApprovalStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChangeApprovalType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChangeInfoField1" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="ChangeInfoField2" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="ChangeInfoField3" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="ChangeInfoField4" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="ChangeInfoField5" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="CompletedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ContactID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ContractID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ContractServiceBundleID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ContractServiceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatorResourceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="EstimatedHours" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ExternalID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FirstResponseAssignedResourceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FirstResponseDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FirstResponseDueDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FirstResponseInitiatingResourceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HoursToBeScheduled" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="InstalledProductID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IssueType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastActivityDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastCustomerNotificationDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastCustomerVisibleActivityDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MonitorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MonitorTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OpportunityId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ProblemTicketId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ProjectID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PurchaseOrderNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="QueueID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Resolution" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ResolutionPlanDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ResolutionPlanDueDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ResolvedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ResolvedDueDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ServiceLevelAgreementHasBeenMet" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ServiceLevelAgreementID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Source" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SubIssueType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TicketCategory" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TicketNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TicketType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Account" Member="Accounts">
+    <Type Name="Account">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AccountName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="AccountType" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="AccountNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="AdditionalAddressInformation" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="AlternatePhone1" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="AlternatePhone2" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="AssetValue" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BillToAdditionalAddressInformation" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BillToAddress1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="BillToAddress2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="BillToAddressToUse" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BillToAttention" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BillToCity" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BillToCountryID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="BillToState" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="BillToZipCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ClientPortalActive" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="CompetitorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CountryID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CurrencyID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="InvoiceEmailMessageID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InvoiceMethod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InvoiceNonContractItemsToParentAccount" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="InvoiceTemplateID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="KeyAccountIcon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastActivityDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MarketSegmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OwnerResourceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ParentAccountID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="PostalCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="QuoteEmailMessageID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QuoteTemplateID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="SICCode" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="StockMarket" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="StockSymbol" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TaskFireActive" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="TaxExempt" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="TaxID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TaxRegionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TerritoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WebAddress" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TimeEntry" Member="TimeEntries">
+    <Type Name="TimeEntry">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DateWorked" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ResourceID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="RoleID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AllocationCodeID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="BillingApprovalDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BillingApprovalLevelMostRecent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BillingApprovalResourceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ContractID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ContractServiceBundleID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ContractServiceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CreateDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatorUserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EndDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HoursToBill" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HoursWorked" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="InternalAllocationCodeID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="InternalNotes" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="LastModifiedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedUserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NonBillable" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="OffsetHours" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ShowOnInvoice" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="StartDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SummaryNotes" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="TaskID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="TicketID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AllocationCode" Member="AllocationCodes">
+    <Type Name="AllocationCode">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="UnitCost" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="UnitPrice" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="AllocationCodeType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Department" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ExternalNumber" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="GeneralLedgerCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsExcludedFromNewContracts" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="MarkupRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Taxable" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="TaxCategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UseType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Contact" Member="Contacts">
+    <Type Name="Contact">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="AdditionalAddressInformation" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AddressLine" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="AddressLine1" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="AlternatePhone" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="BulkEmailOptOut" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="BulkEmailOptOutTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CountryID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EMailAddress" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EMailAddress2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EMailAddress3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Extension" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ExternalID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FacebookURL" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="FaxNumber" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="LastActivityDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LinkedInURL" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="MiddleInitial" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="MobilePhone" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="NamePrefix" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NameSuffix" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Notification" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="PrimaryContact" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="RoomNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="SurveyOptOut" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TwitterURL" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ZipCode" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Contract" Member="Contracts">
+    <Type Name="Contract">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="BillingPreference" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ContractName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ContractType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TimeReportingRequiresStartAndStopTimes" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Compliance" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ContactID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ContactName" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ContractCategory" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ContractNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ContractPeriodType" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EstimatedCost" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EstimatedHours" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="EstimatedRevenue" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ExclusionContractID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="InternalCurrencyOverageBillingRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="InternalCurrencySetupFee" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IsDefaultContract" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="OpportunityID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="OverageBillingRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PurchaseOrderNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ServiceLevelAgreementID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SetupFee" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SetupFeeAllocationCodeID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ContractService" Member="ContractServices">
+    <Type Name="ContractService">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ContractID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="QuoteItemID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ServiceID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="AdjustedPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="InternalCurrencyAdjustedPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="InternalCurrencyUnitPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="InternalDescription" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="InvoiceDescription" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="UnitPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ContractServiceBundle" Member="ContractServiceBundles">
+    <Type Name="ContractServiceBundle">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ContractID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="QuoteItemID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ServiceBundleID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="AdjustedPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="InternalCurrencyAdjustedPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="InternalCurrencyUnitPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="InternalDescription" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="InvoiceDescription" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="UnitPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Country" Member="Countries">
+    <Type Name="Country">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AddressFormatID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="CountryCode" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="InvoiceTemplateID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsDefaultCountry" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="QuoteTemplateID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Currency" Member="Currencies">
+    <Type Name="Currency">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="CurrencyNegativeFormat" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="CurrencyPositiveFormat" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DisplaySymbol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ExchangeRate" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="IsInternalCurrency" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdateResourceId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InstalledProduct" Member="InstalledProducts">
+    <Type Name="InstalledProduct">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="InstallDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ContactID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ContractID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DailyCost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HourlyCost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="InstalledByContactID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="InstalledByID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="LastModifiedTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MonthlyCost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="NumberOfUsers" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ParentInstalledProductID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PerUseCost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ProductID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ReferenceNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ReferenceTitle" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="SerialNumber" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ServiceBundleID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ServiceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ServiceLevelAgreementID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SetupFee" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VendorID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="WarrantyExpirationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InvoiceTemplate" Member="InvoiceTemplates">
+    <Type Name="InvoiceTemplate">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DateFormat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayFixedPriceContractLabor" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayRecurringServiceContractLabor" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="DisplaySeparateLineItemForEachTax" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayTaxCategory" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayTaxCategorySuperscripts" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayZeroAmountRecurringServicesAndBundles" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="GroupBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ItemizeItemsInEachGroup" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ItemizeServicesAndBundles" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NonBillableLaborLabel" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NumberFormat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PageLayout" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PageNumberFormat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PaymentTerms" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="ShowGridHeader" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="ShowVerticalGridLines" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="SortBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TimeFormat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CoveredByBlockRetainerContractLabel" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CoveredByRecurringServiceFixedPricePerTicketContractLabel" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CurrencyNegativeFormat" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CurrencyPositiveFormat" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="RateCostExpression" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Opportunity" Member="Opportunities">
+    <Type Name="Opportunity">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Cost" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="OwnerResourceID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Probability" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProjectedCloseDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Stage" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="UseQuoteTotals" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="AdvancedField1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdvancedField2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdvancedField3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdvancedField4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdvancedField5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AssessmentScore" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Barriers" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ClosedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ContactID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateStamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HelpNeeded" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="LastActivity" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LeadReferral" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LossReason" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LossReasonDetail" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Market" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MonthlyCost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MonthlyRevenue" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NextStep" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="OnetimeCost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OnetimeRevenue" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PrimaryCompetitor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ProjectedLiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PromotionName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="QuarterlyCost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="QuarterlyRevenue" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Rating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RelationshipAssessmentScore" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="RevenueSpread" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RevenueSpreadUnit" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="SalesOrderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SalesProcessPercentComplete" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SemiannualCost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SemiannualRevenue" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TechnicalAssessmentScore" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ThroughDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TotalAmountMonths" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WinReason" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WinReasonDetail" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="YearlyCost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="YearlyRevenue" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PaymentTerm" Member="PaymentTerms">
+    <Type Name="PaymentTerm">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="PaymentDueInDays" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Phase" Member="Phases">
+    <Type Name="Phase">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProjectID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatorResourceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="DueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EstimatedHours" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ExternalID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LastActivityDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ParentPhaseID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PhaseNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Scheduled" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Product" Member="Products">
+    <Type Name="Product">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductAllocationCodeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Serialized" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="CostAllocationCodeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DefaultVendorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="DoesNotRequireProcurement" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ExternalProductID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="InternalProductID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Link" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ManufacturerName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ManufacturerProductName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MarkupRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MSRP" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PeriodType" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ProductCategory" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SKU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UnitCost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UnitPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VendorProductNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Project" Member="Projects">
+    <Type Name="Project">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="EndDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ProjectName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="StartDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ActualBilledHours" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ActualHours" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ChangeOrdersBudget" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ChangeOrdersRevenue" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CompanyOwnerResourceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CompletedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CompletedPercentage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ContractID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CreateDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatorResourceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Department" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="Duration" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EstimatedSalesCost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="EstimatedTime" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ExtPNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ExtProjectType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LaborEstimatedCosts" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LaborEstimatedMarginPercentage" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LaborEstimatedRevenue" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LineOfBusiness" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OriginalEstimatedRevenue" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ProjectCostEstimatedMarginPercentage" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ProjectCostsBudget" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ProjectCostsRevenue" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ProjectLeadResourceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ProjectNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PurchaseOrderNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SGDA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StatusDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="StatusDetail" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Quote" Member="Quotes">
+    <Type Name="Quote">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BillToLocationID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ExpirationDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="OpportunityID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="ShipToLocationID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="SoldToLocationID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CalculateTaxSeparately" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="ContactID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatorResourceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="eQuoteActive" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ExternalQuoteNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GroupByID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastActivityDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PaymentTerm" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PaymentType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrimaryQuote" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ProposalProjectID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PurchaseOrderNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="QuoteNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QuoteTemplateID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ShippingType" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ShowEachTaxInGroup" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ShowTaxCategory" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="TaxGroup" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QuoteItem" Member="QuoteItems">
+    <Type Name="QuoteItem">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IsOptional" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="LineDiscount" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="PercentageDiscount" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="QuoteID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UnitDiscount" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="AverageCost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CostID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="ExpenseID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="HighestCost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="InternalCurrencyLineDiscount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="InternalCurrencyUnitDiscount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="InternalCurrencyUnitPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IsTaxable" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="LaborID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="MarkupRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PeriodType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ProductID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ServiceBundleID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ServiceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ShippingID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="TaxCategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalEffectiveTax" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UnitCost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UnitPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QuoteLocation" Member="QuoteLocations">
+    <Type Name="QuoteLocation">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PostalCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QuoteTemplate" Member="QuoteTemplates">
+    <Type Name="QuoteTemplate">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="CalculateTaxSeparately" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CurrencyNegativeFormat" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CurrencyPositiveFormat" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DateFormat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DisplayTaxCategorySuperscripts" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="LastActivityBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="LastActivityDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NumberFormat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PageLayout" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PageNumberFormat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShowEachTaxInGroup" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ShowGridHeader" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ShowTaxCategory" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ShowVerticalGridLines" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Resource" Member="Resources">
+    <Type Name="Resource">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EmailTypeCode" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="HireDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="LocationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NumberFormat" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PayrollType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ResourceType" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="UserType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AccountingReferenceID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DateFormat" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DefaultServiceDeskRoleID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Email2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EmailTypeCode2" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="EmailTypeCode3" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Greeting" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HomePhone" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Initials" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="InternalCost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MiddleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MobilePhone" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="OfficeExtension" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="OfficePhone" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Suffix" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TimeFormat" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TravelAvailabilityPct" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Role" Member="Roles">
+    <Type Name="Role">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="HourlyFactor" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HourlyRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IsExcludedFromNewContracts" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="QuoteItemDefaultTaxCategoryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RoleType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SystemRole" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SalesOrder" Member="SalesOrders">
+    <Type Name="SalesOrder">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Contact" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="OpportunityID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="OwnerResourceID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="SalesOrderDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="AdditionalAddressInformation" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BillToAddress1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="BillToAddress2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="BillToCity" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BillToCountry" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BillToCountryID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="BillToPostalCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BillToState" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PromisedDueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ShipToAddress1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ShipToAddress2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ShipToCity" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ShipToCountry" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ShipToCountryID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ShipToPostalCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ShipToState" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Service" Member="Services">
+    <Type Name="Service">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AllocationCodeID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PeriodType" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="UnitPrice" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatorResourceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(400)" CanBeNull="true" />
+      <Column Name="InvoiceDescription" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MarkupRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ServiceLevelAgreementID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="UnitCost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UpdateResourceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="VendorAccountID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ServiceBundle" Member="ServiceBundles">
+    <Type Name="ServiceBundle">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AllocationCodeID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PeriodType" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatorResourceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="InvoiceDescription" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PercentageDiscount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ServiceLevelAgreementID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="UnitCost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UnitDiscount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UnitPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UpdateResourceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ShippingType" Member="ShippingTypes">
+    <Type Name="ShippingType">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AllocationCodeID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Task" Member="Tasks">
+    <Type Name="Task">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProjectID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TaskType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="AllocationCodeID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="AssignedResourceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="AssignedResourceRoleID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CanClientPortalUserCompleteTask" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="CompletedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreateDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatorResourceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DepartmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="EndDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EstimatedHours" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ExternalID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HoursToBeScheduled" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IsVisibleInClientPortal" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="LastActivityDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PhaseID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Priority" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PurchaseOrderNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RemainingHours" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="StartDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TaskIsBillable" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="TaskNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaxCategory" Member="TaxCategories">
+    <Type Name="TaxCategory">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaxRegion" Member="TaxRegions">
+    <Type Name="TaxRegion">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TicketCost" Member="TicketCosts">
+    <Type Name="TicketCost">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CostType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DatePurchased" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TicketID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="UnitQuantity" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="AllocationCodeID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="BillableAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BillableToAccount" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Billed" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ContractServiceBundleID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ContractServiceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatorResourceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="ExtendedCost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="InternalCurrencyBillableAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="InternalCurrencyUnitPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="InternalPurchaseOrderNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ProductID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PurchaseOrderNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="StatusLastModifiedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="StatusLastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UnitCost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UnitPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TicketNote" Member="TicketNotes">
+    <Type Name="TicketNote">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(3200) NOT NULL" CanBeNull="false" />
+      <Column Name="NoteType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Publish" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TicketID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatorResourceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="LastActivityDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TicketSecondaryResource" Member="TicketSecondaryResources">
+    <Type Name="TicketSecondaryResource">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ResourceID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="RoleID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TicketID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket_Status" Member="Ticket_Status">
+    <Type Name="Ticket_Status">
+      <Column Name="Value" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Label" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsDefaultValue" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ParentValue" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="IsSystem" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket_IssueType" Member="Ticket_IssueTypes">
+    <Type Name="Ticket_IssueType">
+      <Column Name="Value" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Label" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsDefaultValue" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ParentValue" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="IsSystem" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket_SubIssueType" Member="Ticket_SubIssueTypes">
+    <Type Name="Ticket_SubIssueType">
+      <Column Name="Value" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Label" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsDefaultValue" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ParentValue" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="IsSystem" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket_MonitorType" Member="Ticket_MonitorTypes">
+    <Type Name="Ticket_MonitorType">
+      <Column Name="Value" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Label" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsDefaultValue" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ParentValue" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="IsSystem" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket_Priority" Member="Ticket_Priorities">
+    <Type Name="Ticket_Priority">
+      <Column Name="Value" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Label" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsDefaultValue" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ParentValue" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="IsSystem" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket_Queue" Member="Ticket_Queues">
+    <Type Name="Ticket_Queue">
+      <Column Name="Value" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Label" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsDefaultValue" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ParentValue" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="IsSystem" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket_Source" Member="Ticket_Sources">
+    <Type Name="Ticket_Source">
+      <Column Name="Value" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Label" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsDefaultValue" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ParentValue" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="IsSystem" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket_TicketCategory" Member="Ticket_TicketCategories">
+    <Type Name="Ticket_TicketCategory">
+      <Column Name="Value" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Label" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsDefaultValue" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ParentValue" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="IsSystem" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket_TicketType" Member="Ticket_TicketTypes">
+    <Type Name="Ticket_TicketType">
+      <Column Name="Value" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Label" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsDefaultValue" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ParentValue" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="IsSystem" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,3 @@
+2017-09-29 1:33:01 PM
+	Connecting to AutoTask.
+	Connected.
