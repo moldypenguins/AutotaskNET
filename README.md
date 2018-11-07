@@ -17,9 +17,40 @@
 
 
 ### Examples
+##### Connect
+```csharp
+class Program
+{
+    private const string @USERNAME = "api.user@domain.com";
+    private const string @PASSWORD = "P@ssw0rd";
+    static void Main(string[] args)
+    {
+		try
+		{
+			AutotaskNET.WebService atAPI = new AutotaskNET.WebService(@USERNAME, @PASSWORD);
+		}
+        catch (Exception e)
+        {
+            Console.WriteLine($"Error: {e.Message}");
+        }
+	}
+}
+```
+
 ##### Get Client Accounts
 ```csharp
 List<Account> client_accounts = atAPI.Query(typeof(Account), new List<EntityFilter> {
     new EntityFilter() { FieldName = "AccountType", Operation = "Equals", Value = 1 }
 }).OfType<Account>().ToList();
 ```
+
+##### Get Recently Updated Tickets
+```csharp
+int days = 1 //1 - will search from the start of yesterday
+List<Ticket> recently_updated_tickets = atAPI.Query(typeof(Ticket), new List<EntityFilter> {
+    new EntityFilter() { FieldName = "LastActivityDate", Operation = "greaterthan", Value = DateTime.Today.AddDays(-1 * days) }
+}).OfType<Ticket>().ToList();
+```
+
+
+
