@@ -9,7 +9,7 @@
 ![Travis Build Status](https://img.shields.io/travis/com/risolv/AutotaskNET.svg?logo=Travis&logoColor=white&style=flat)
 
 ![.NET Framework](https://img.shields.io/badge/.NET%20Framework-4.6.1-blue.svg?logo=windows&logoColor=white)
-![Autotask Web Services](https://img.shields.io/badge/Autotask%20Web%20Services-1.5.14-red.svg)
+![Autotask Web Services](https://img.shields.io/badge/Autotask%20Web%20Services%20API-1.5.14-red.svg)
 
 
 ### Documentation
