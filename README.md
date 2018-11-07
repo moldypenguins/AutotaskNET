@@ -16,6 +16,17 @@
 ![Autotask Web Services](https://img.shields.io/badge/Autotask%20Web%20Services-1.5.14-red.svg)
 
 
+### Documentation
+[Autotask Web Services API Version 1.5 User Guide](https://www.autotask.net/help/Content/LinkedDOCUMENTS/WSAPI/T_WebServicesAPIv1_5.pdf)
+
+
+### Bugs/Features/Contributing
+Please open an issue or pull request in GitHub.
+
+IRC Freenode [#AutotaskNET](https://webchat.freenode.net/?channels=asternet)
+
+
+
 ### Examples
 ##### Connect
 ```csharp
