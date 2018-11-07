@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace AutotaskNET
 {
-    public class WebService
+    public class ATWSInterface
     {
         /// <summary>
         /// The Autotask Web Service Object
@@ -14,7 +14,7 @@ namespace AutotaskNET
         private readonly net.autotask.webservices.ATWS _atws;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WebService" /> class.
+        /// Initializes a new instance of the <see cref="ATWSInterface" /> class.
         /// </summary>
         /// <param name="username">The username.</param>
         /// <param name="password">The password.</param>
@@ -23,7 +23,7 @@ namespace AutotaskNET
         /// Error getting zone information.
         /// Login Error.
         /// </exception>
-        public WebService(string username, string password)
+        public ATWSInterface(string username, string password)
         {
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
@@ -67,10 +67,10 @@ namespace AutotaskNET
         /// <param name="entity_type">type of entity to query</param>
         /// <param name="filters">query filters</param>
         /// <returns></returns>
-        public List<Entities.Entity> Query(Type entity_type, List<EntityFilter> filters = null)
+        public List<Entities.Entity> Query(Type entity_type, List<QueryFilter> filters = null)
         {
             return this.Query((Entities.Entity)Activator.CreateInstance(entity_type), filters);
-        } //end Query(Type entity_type, List<EntityFilter> filters = null)
+        } //end Query(Type entity_type, List<QueryFilter> filters = null)
 
         /// <summary>
         /// Queries entities using instance
@@ -78,7 +78,7 @@ namespace AutotaskNET
         /// <param name="entity">instance of entity to query</param>
         /// <param name="filters">query filters</param>
         /// <returns></returns>
-        public List<Entities.Entity> Query(Entities.Entity entity, List<EntityFilter> filters = null)
+        public List<Entities.Entity> Query(Entities.Entity entity, List<QueryFilter> filters = null)
         {
             List<Entities.Entity> entities = null;
             
@@ -101,7 +101,7 @@ namespace AutotaskNET
                     query.Append("<query>");
                     if (filters != null && filters.Exists(f => f.FieldName == "id"))
                     {
-                        EntityFilter filter = filters.Find(f => f.FieldName == "id");
+                        QueryFilter filter = filters.Find(f => f.FieldName == "id");
                         query.Append($"<field>Id<expression op=\"{filter.Operation}\">{filter.Value.ToString()}</expression></field>");
                     }
                     else
@@ -110,7 +110,7 @@ namespace AutotaskNET
                     }
                     if (filters != null)
                     {
-                        foreach (EntityFilter filter in filters.Where(f => f.FieldName != "id"))
+                        foreach (QueryFilter filter in filters.Where(f => f.FieldName != "id"))
                         {
                             query.Append($"<field>{filter.FieldName}<expression op=\"{filter.Operation}\">{filter.Value.ToString()}</expression></field>");
                         }
@@ -142,7 +142,7 @@ namespace AutotaskNET
             }
             return entities;
 
-        } //end Query(Entities.Entity entity, List<EntityFilter> filters = null)
+        } //end Query(Entities.Entity entity, List<QueryFilter> filters = null)
 
         #endregion //Query
 

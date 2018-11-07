@@ -2,7 +2,7 @@
 
 namespace AutotaskNET
 {
-    public class EntityFilter
+    public class QueryFilter
     {
         /// <summary>
         /// Gets or sets the name of the field to filter.
@@ -45,19 +45,19 @@ namespace AutotaskNET
         public object Value { get; set; }
         
         /// <summary>
-        /// Initializes a new instance of the <see cref="EntityFilter"/> class.
+        /// Initializes a new instance of the <see cref="QueryFilter"/> class.
         /// </summary>
-        public EntityFilter() { } //end EntityFilter()
+        public QueryFilter() { } //end QueryFilter()
         
-        public EntityFilter(string fieldname, string operation, object value)
+        public QueryFilter(string fieldname, string operation, object value)
         {
             this.FieldName = fieldname;
             this.Operation = operation;
             this.Value = value;
-        } //end EntityFilter(string fieldname, string operation, object value)
+        } //end QueryFilter(string fieldname, string operation, object value)
 
 
 
-    } //end EntityFilter
+    } //end QueryFilter
 
 }
