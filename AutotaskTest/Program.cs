@@ -19,32 +19,32 @@ namespace AutotaskTest
             
             try
             {
-                AutotaskNET.WebService atAPI = new AutotaskNET.WebService(@USERNAME, @PASSWORD);
+                ATWSInterface atAPI = new ATWSInterface(@USERNAME, @PASSWORD);
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tConnected.");
                 Console.WriteLine();
 
 
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tGetting Client Accounts...");
-                List<Account> client_accounts = atAPI.Query(typeof(Account), new List<EntityFilter> {
-                    new EntityFilter() { FieldName = "AccountType", Operation = "Equals", Value = 1 }
+                List<Account> client_accounts = atAPI.Query(typeof(Account), new List<QueryFilter> {
+                    new QueryFilter() { FieldName = "AccountType", Operation = "Equals", Value = 1 }
                 }).OfType<Account>().ToList();
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tClient Accounts: {client_accounts.Count}");
                 Console.WriteLine();
 
 
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tGetting Account Types...");
-                List<PicklistValue> accountTypes = atAPI.GetPicklistValues(typeof(Account), "AccountType");
-                Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tAccount Types: {accountTypes.Count}");
-                foreach (PicklistValue accountType in accountTypes)
+                List<PicklistValue> account_types = atAPI.GetPicklistValues(typeof(Account), "AccountType");
+                Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tAccount Types: {account_types.Count}");
+                foreach (PicklistValue account_type in account_types)
                 {
-                    Console.WriteLine($"\t\t - {accountType.Label}");
+                    Console.WriteLine($"\t\t - {account_type.Label}");
                 }
                 Console.WriteLine();
 
 
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tGetting Recently Updated Tickets...");
-                List<Ticket> recently_updated_tickets = atAPI.Query(typeof(Ticket), new List<EntityFilter> {
-                    new EntityFilter() { FieldName = "LastActivityDate", Operation = "greaterthan", Value = DateTime.Today }
+                List<Ticket> recently_updated_tickets = atAPI.Query(typeof(Ticket), new List<QueryFilter> {
+                    new QueryFilter() { FieldName = "LastActivityDate", Operation = "greaterthan", Value = DateTime.Today }
                 }).OfType<Ticket>().ToList();
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tRecently Updated Tickets: {recently_updated_tickets.Count}");
                 Console.WriteLine();

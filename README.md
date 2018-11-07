@@ -30,6 +30,9 @@ IRC Freenode [#AutotaskNET](https://webchat.freenode.net/?channels=asternet)
 ### Examples
 ##### Connect
 ```csharp
+using AutotaskNET;
+using AutotaskNET.Entities;
+
 class Program
 {
     private const string @USERNAME = "api.user@domain.com";
@@ -38,7 +41,7 @@ class Program
     {
         try
         {
-            AutotaskNET.WebService atAPI = new AutotaskNET.WebService(@USERNAME, @PASSWORD);
+            ATWSInterface atAPI = new ATWSInterface(@USERNAME, @PASSWORD);
         }
         catch (Exception e)
         {
@@ -48,17 +51,22 @@ class Program
 }
 ```
 
+#### Get Account Types
+```csharp
+List<PicklistValue> account_types = atAPI.GetPicklistValues(typeof(Account), "AccountType");
+```
+
 ##### Get Client Accounts
 ```csharp
-List<Account> client_accounts = atAPI.Query(typeof(Account), new List<EntityFilter> {
-    new EntityFilter() { FieldName = "AccountType", Operation = "Equals", Value = 1 }
+List<Account> client_accounts = atAPI.Query(typeof(Account), new List<QueryFilter> {
+    new QueryFilter() { FieldName = "AccountType", Operation = "Equals", Value = 1 }
 }).OfType<Account>().ToList();
 ```
 
 ##### Get Recently Updated Tickets
 ```csharp
-List<Ticket> recently_updated_tickets = atAPI.Query(typeof(Ticket), new List<EntityFilter> {
-    new EntityFilter() { FieldName = "LastActivityDate", Operation = "greaterthan", Value = DateTime.Today } //search from the start of today
+List<Ticket> recently_updated_tickets = atAPI.Query(typeof(Ticket), new List<QueryFilter> {
+    new QueryFilter() { FieldName = "LastActivityDate", Operation = "greaterthan", Value = DateTime.Today } //search from the start of today
 }).OfType<Ticket>().ToList();
 ```
 
