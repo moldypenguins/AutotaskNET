@@ -57,9 +57,8 @@ List<Account> client_accounts = atAPI.Query(typeof(Account), new List<EntityFilt
 
 ##### Get Recently Updated Tickets
 ```csharp
-int days = 1 //1 - will search from the start of yesterday
 List<Ticket> recently_updated_tickets = atAPI.Query(typeof(Ticket), new List<EntityFilter> {
-    new EntityFilter() { FieldName = "LastActivityDate", Operation = "greaterthan", Value = DateTime.Today.AddDays(-1 * days) }
+    new EntityFilter() { FieldName = "LastActivityDate", Operation = "greaterthan", Value = DateTime.Today } //search from the start of today
 }).OfType<Ticket>().ToList();
 ```
 
