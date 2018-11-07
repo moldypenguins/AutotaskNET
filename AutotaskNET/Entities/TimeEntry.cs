@@ -10,63 +10,71 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class TimeEntry : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
 
+        #endregion //Properties
+
+        #region Constructors
+
+        public TimeEntry() : base() { } //end TimeEntry()
+        public TimeEntry(net.autotask.webservices.TimeEntry entity) : base(entity)
+        {
+
+        } //end TimeEntry(net.autotask.webservices.TimeEntry entity)
+
+        #endregion //Constructors
+
+        #region Fields
+
         #region ReadOnly Fields
 
-
+        public int? Type; //ReadOnly PickList
+        public double HoursToBill; //ReadOnly
+        public DateTime? CreateDateTime; //ReadOnly
+        public int? CreatorUserID; //ReadOnly
+        public int? LastModifiedUserID; //ReadOnly
+        public DateTime? LastModifiedDateTime; //ReadOnly
+        public int? BillingApprovalLevelMostRecent; //ReadOnly
 
         #endregion //ReadOnly Fields
-
-        #region ReadOnly Required Fields
-
-
-
-        #endregion //ReadOnly Required Fields
-
+        
         #region Required Fields
 
-
+        public DateTime DateWorked; //Required
+        public int ResourceID; //Required [Resource]
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-
+        public int? TaskID; //[Task]
+        public int? TicketID; //[Ticket]
+        public int? InternalAllocationCodeID; //[AllocationCode]
+        public DateTime? StartDateTime;
+        public DateTime? EndDateTime;
+        public double HoursWorked;
+        public double OffsetHours;
+        public string SummaryNotes; //Length:8000
+        public string InternalNotes; //Length:8000
+        public int? RoleID; //[Role]
+        public int? AllocationCodeID; //[AllocationCode]
+        public int? ContractID; //[Contract]
+        public bool? ShowOnInvoice;
+        public bool? NonBillable;
+        public int? BillingApprovalResourceID; //[Resource]
+        public DateTime? BillingApprovalDateTime;
+        public long ContractServiceID; //[ContractService]
+        public long ContractServiceBundleID; //[ContractServiceBundle]
 
         #endregion //Optional Fields
 
-        public int? TaskID { get; set; } //[Task]
-        public int? TicketID { get; set; } //[Ticket]
-        public int? InternalAllocationCodeID { get; set; } //[AllocationCode]
-        public int? Type { get; set; } //ReadOnly PickList
-        public DateTime DateWorked { get; set; } //Required
-        public DateTime? StartDateTime { get; set; }
-        public DateTime? EndDateTime { get; set; }
-        public double HoursWorked { get; set; }
-        public double HoursToBill { get; set; } //ReadOnly
-        public double OffsetHours { get; set; }
-        public string SummaryNotes { get; set; } //Length:8000
-        public string InternalNotes { get; set; } //Length:8000
-        public int? RoleID { get; set; } //[Role]
-        public DateTime? CreateDateTime { get; set; } //ReadOnly
-        public int ResourceID { get; set; } //Required [Resource]
-        public int? CreatorUserID { get; set; } //ReadOnly
-        public int? LastModifiedUserID { get; set; } //ReadOnly
-        public DateTime? LastModifiedDateTime { get; set; } //ReadOnly
-        public int? AllocationCodeID { get; set; } //[AllocationCode]
-        public int? ContractID { get; set; } //[Contract]
-        public bool? ShowOnInvoice { get; set; }
-        public bool? NonBillable { get; set; }
-        public int? BillingApprovalLevelMostRecent { get; set; } //ReadOnly
-        public int? BillingApprovalResourceID { get; set; } //[Resource]
-        public DateTime? BillingApprovalDateTime { get; set; }
-        public long ContractServiceID { get; set; } //[ContractService]
-        public long ContractServiceBundleID { get; set; } //[ContractServiceBundle]
+        #endregion //Fields
 
     } //end TimeEntry
 

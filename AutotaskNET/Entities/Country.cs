@@ -9,34 +9,52 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class Country : Entity
     {
+        #region Properties
+
         public override bool CanCreate => false;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
 
+        #endregion //Properties
+
+        #region Constructors
+
+        public Country() : base() { } //end Country()
+        public Country(net.autotask.webservices.Country entity) : base(entity)
+        {
+
+        } //end Country(net.autotask.webservices.Country entity)
+
+        #endregion //Constructors
+
+        #region Fields
+
         #region ReadOnly Fields
 
-        public string CountryCode { get; set; } //ReadOnly Length:2
-        public string Name { get; set; } //ReadOnly Length:50
+        public string CountryCode; //ReadOnly Length:2
+        public string Name; //ReadOnly Length:50
 
         #endregion //ReadOnly Fields
 
         #region Required Fields
 
-        public string DisplayName { get; set; } //Required Length:100
-        public long AddressFormatID { get; set; } //Required PickList
+        public string DisplayName; //Required Length:100
+        public long AddressFormatID; //Required PickList
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public bool? Active { get; set; }
-        public bool? IsDefaultCountry { get; set; }
-        public int? QuoteTemplateID { get; set; } //[QuoteTemplate]
-        public int? InvoiceTemplateID { get; set; } //[InvoiceTemplate]
+        public bool? Active;
+        public bool? IsDefaultCountry;
+        public int? QuoteTemplateID; //[QuoteTemplate]
+        public int? InvoiceTemplateID; //[InvoiceTemplate]
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
     } //end Country
 

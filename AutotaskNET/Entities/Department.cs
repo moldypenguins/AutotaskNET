@@ -10,26 +10,48 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class Department : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
 
+        #endregion //Properties
+
+        #region Constructors
+
+        public Department() : base() { } //end Department()
+        public Department(net.autotask.webservices.Department entity) : base(entity)
+        {
+            this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
+            this.Name = entity.Name == null ? default(string) : entity.Name.ToString();
+            this.Number = entity.Number == null ? default(string) : entity.Number.ToString();
+            this.PrimaryLocationID = int.Parse(entity.PrimaryLocationID.ToString());
+
+        } //end Department(net.autotask.webservices.Department entity)
+
+        #endregion //Constructors
+
+        #region Fields
+
         #region Required Fields
 
-        public string Name { get; set; } //Required Length:100
-        public int PrimaryLocationID { get; set; } //Required [BusinessLocation]
+        public string Name; //Required Length:100
+        public int PrimaryLocationID; //Required [BusinessLocation]
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public string Number { get; set; } //Length:50
-        public string Description { get; set; } //Length:1000
+        public string Number; //Length:50
+        public string Description; //Length:1000
 
         #endregion //Optional Fields
-        
+
+        #endregion //Fields
+
     } //end Department
 
 }

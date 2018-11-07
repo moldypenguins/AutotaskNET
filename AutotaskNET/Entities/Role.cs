@@ -12,36 +12,54 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class Role : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
 
+        #endregion //Properties
+
+        #region Constructors
+
+        public Role() : base() { } //end Role()
+        public Role(net.autotask.webservices.Role entity) : base(entity)
+        {
+
+        } //end Role(net.autotask.webservices.Role entity)
+
+        #endregion //Constructors
+
+        #region Fields
+
         #region ReadOnly Fields
 
-        public bool? SystemRole { get; set; } //ReadOnly
-        public int? RoleType { get; set; } //ReadOnly
+        public bool? SystemRole; //ReadOnly
+        public int? RoleType; //ReadOnly
 
         #endregion //ReadOnly Fields
 
         #region Required Fields
 
-        public string Name { get; set; } //Required Length:200
-        public decimal HourlyFactor { get; set; } //Required
-        public decimal HourlyRate { get; set; } //Required
-        public bool Active { get; set; } //Required
+        public string Name; //Required Length:200
+        public decimal HourlyFactor; //Required
+        public decimal HourlyRate; //Required
+        public bool Active; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public string Description { get; set; } //Length:200
-        public int? QuoteItemDefaultTaxCategoryId { get; set; } //[TaxCategory]
-        public bool? IsExcludedFromNewContracts { get; set; }
+        public string Description; //Length:200
+        public int? QuoteItemDefaultTaxCategoryId; //[TaxCategory]
+        public bool? IsExcludedFromNewContracts;
 
         #endregion //Optional Fields
-       
+
+        #endregion //Fields
+
     } //end Role
 
 }

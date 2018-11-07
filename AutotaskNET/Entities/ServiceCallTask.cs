@@ -8,38 +8,38 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class ServiceCallTask : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => true;
         public override bool CanHaveUDFs => false;
 
-        #region ReadOnly Fields
+        #endregion //Properties
 
+        #region Constructors
 
+        public ServiceCallTask() : base() { } //end ServiceCallTask()
+        public ServiceCallTask(net.autotask.webservices.ServiceCallTask entity) : base(entity)
+        {
+            this.ServiceCallID = int.Parse(entity.ServiceCallID.ToString());
+            this.TaskID = int.Parse(entity.TaskID.ToString());
 
-        #endregion //ReadOnly Fields
+        } //end ServiceCallTask(net.autotask.webservices.ServiceCallTask entity)
 
-        #region ReadOnly Required Fields
+        #endregion //Constructors
 
-
-
-        #endregion //ReadOnly Required Fields
+        #region Fields
 
         #region Required Fields
 
-
+        public int ServiceCallID; //Required [ServiceCall]
+        public int TaskID; //Required [Task]
 
         #endregion //Required Fields
 
-        #region Optional Fields
-
-
-
-        #endregion //Optional Fields
-
-        public int ServiceCallID { get; set; } //Required [ServiceCall]
-        public int TaskID { get; set; } //Required [Task]
+        #endregion //Fields
 
     } //end ServiceCallTask
 

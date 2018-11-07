@@ -18,23 +18,23 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Fields
 
-        public long ParentID { get; internal set; } //ReadOnly
-        public DateTime? AttachDate { get; internal set; } //ReadOnly
-        public long FileSize { get; internal set; } //ReadOnly
-        public long AttachedByContactID { get; internal set; } //ReadOnly [Contact]
-        public long AttachedByResourceID { get; internal set; } //ReadOnly [Resource]
-        public string ContentType { get; internal set; } //ReadOnly Length:100
-        public long OpportunityID { get; internal set; } //ReadOnly [Opportunity]
+        public long ParentID; //ReadOnly
+        public DateTime? AttachDate; //ReadOnly
+        public long FileSize; //ReadOnly
+        public long AttachedByContactID; //ReadOnly [Contact]
+        public long AttachedByResourceID; //ReadOnly [Resource]
+        public string ContentType; //ReadOnly Length:100
+        public long OpportunityID; //ReadOnly [Opportunity]
 
         #endregion //ReadOnly Fields
 
         #region ReadOnly Required Fields
 
-        public int ParentType { get; internal set; } //ReadOnly Required PickList
-        public string Type { get; internal set; } //ReadOnly Required PickList Length:30
-        public string Title { get; internal set; } //ReadOnly Required Length:255
-        public string FullPath { get; internal set; } //ReadOnly Required Length:255
-        public int Publish { get; internal set; } //ReadOnly Required PickList
+        public int ParentType; //ReadOnly Required PickList
+        public string Type; //ReadOnly Required PickList Length:30
+        public string Title; //ReadOnly Required Length:255
+        public string FullPath; //ReadOnly Required Length:255
+        public int Publish; //ReadOnly Required PickList
 
         #endregion //ReadOnly Required Fields
         

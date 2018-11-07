@@ -19,14 +19,14 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Required Fields
 
-        public int AccountID { get; internal set; } //ReadOnly Required [Account]
-        public int AlertTypeID { get; internal set; } //ReadOnly Required PickList
+        public int AccountID; //ReadOnly Required [Account]
+        public int AlertTypeID; //ReadOnly Required PickList
 
         #endregion //ReadOnly Required Fields
 
         #region Optional Fields
 
-        public string AlertText { get; set; } //Length:8000
+        public string AlertText; //Length:8000
 
         #endregion //Optional Fields
 
