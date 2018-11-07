@@ -16,10 +16,52 @@
 ![Autotask Web Services](https://img.shields.io/badge/Autotask%20Web%20Services-1.5.14-red.svg)
 
 
+### Documentation
+[Autotask Web Services API Version 1.5 User Guide](https://www.autotask.net/help/Content/LinkedDOCUMENTS/WSAPI/T_WebServicesAPIv1_5.pdf)
+
+
+### Bugs/Features/Contributing
+Please open an issue or pull request in GitHub.
+
+IRC Freenode [#AutotaskNET](https://webchat.freenode.net/?channels=asternet)
+
+
+
 ### Examples
+##### Connect
+```csharp
+class Program
+{
+    private const string @USERNAME = "api.user@domain.com";
+    private const string @PASSWORD = "P@ssw0rd";
+    static void Main(string[] args)
+    {
+		try
+		{
+			AutotaskNET.WebService atAPI = new AutotaskNET.WebService(@USERNAME, @PASSWORD);
+		}
+        catch (Exception e)
+        {
+            Console.WriteLine($"Error: {e.Message}");
+        }
+	}
+}
+```
+
 ##### Get Client Accounts
 ```csharp
 List<Account> client_accounts = atAPI.Query(typeof(Account), new List<EntityFilter> {
     new EntityFilter() { FieldName = "AccountType", Operation = "Equals", Value = 1 }
 }).OfType<Account>().ToList();
 ```
+
+##### Get Recently Updated Tickets
+```csharp
+int days = 1 //1 - will search from the start of yesterday
+List<Ticket> recently_updated_tickets = atAPI.Query(typeof(Ticket), new List<EntityFilter> {
+    new EntityFilter() { FieldName = "LastActivityDate", Operation = "greaterthan", Value = DateTime.Today.AddDays(-1 * days) }
+}).OfType<Ticket>().ToList();
+```
+
+
+
