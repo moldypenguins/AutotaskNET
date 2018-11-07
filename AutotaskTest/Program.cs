@@ -32,12 +32,31 @@ namespace AutotaskTest
                 Console.WriteLine();
 
 
+                Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tGetting Account Types...");
+                List<PicklistValue> accountTypes = atAPI.GetPicklistValues(typeof(Account), "AccountType");
+                Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tAccount Types: {accountTypes.Count}");
+                foreach (PicklistValue accountType in accountTypes)
+                {
+                    Console.WriteLine($"\t\t - {accountType.Label}");
+                }
+                Console.WriteLine();
+
+
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tGetting Recently Updated Tickets...");
                 List<Ticket> recently_updated_tickets = atAPI.Query(typeof(Ticket), new List<EntityFilter> {
-                    new EntityFilter() { FieldName = "LastActivityDate", Operation = "greaterthan", Value = DateTime.Today.AddDays(-1) }
+                    new EntityFilter() { FieldName = "LastActivityDate", Operation = "greaterthan", Value = DateTime.Today }
                 }).OfType<Ticket>().ToList();
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tRecently Updated Tickets: {recently_updated_tickets.Count}");
                 Console.WriteLine();
+
+
+
+
+                
+
+
+
+
 
 
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tDone.");

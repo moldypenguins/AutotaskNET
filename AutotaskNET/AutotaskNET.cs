@@ -3,7 +3,6 @@ using System.Linq;
 using System.Text;
 using System.Net;
 using System.Collections.Generic;
-using AutotaskNET.net.autotask.webservices;
 
 namespace AutotaskNET
 {
@@ -12,7 +11,7 @@ namespace AutotaskNET
         /// <summary>
         /// The Autotask Web Service Object
         /// </summary>
-        private readonly ATWS _atws;
+        private readonly net.autotask.webservices.ATWS _atws;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WebService" /> class.
@@ -31,13 +30,13 @@ namespace AutotaskNET
                 throw new ArgumentException("Connection parameters are not defined.");
             }
 
-            this._atws = new ATWS() { Url = Properties.Settings.Default.Autotask_Net_Webservices_ATWS };
+            this._atws = new net.autotask.webservices.ATWS() { Url = Properties.Settings.Default.Autotask_Net_Webservices_ATWS };
             try
             {
-                ATWSZoneInfo zoneInfo = this._atws.getZoneInfo(username);
+                net.autotask.webservices.ATWSZoneInfo zoneInfo = this._atws.getZoneInfo(username);
                 if (zoneInfo.ErrorCode >= 0)
                 {
-                    this._atws = new ATWS() { Url = zoneInfo.URL };
+                    this._atws = new net.autotask.webservices.ATWS() { Url = zoneInfo.URL };
                     this._atws.Url = zoneInfo.URL;
                     CredentialCache _cache = new CredentialCache();
                     _cache.Add(new Uri(this._atws.Url), "BASIC", new NetworkCredential(username, password));
@@ -120,13 +119,13 @@ namespace AutotaskNET
                     query.Append("</queryxml>");
 
                     //submit query
-                    ATWSResponse response = this._atws.query(query.ToString());
+                    net.autotask.webservices.ATWSResponse response = this._atws.query(query.ToString());
 
                     //parse response
                     if (response.ReturnCode > 0 && response.EntityResults.Length > 0)
                     {
                         List<Entities.Entity> temp_entities = new List<Entities.Entity>();
-                        foreach (Entity atws_entity in response.EntityResults)
+                        foreach (net.autotask.webservices.Entity atws_entity in response.EntityResults)
                         {
                             temp_entities.Add((Entities.Entity)Activator.CreateInstance(entity.GetType(), new object[] { atws_entity }));
                         }
@@ -225,16 +224,52 @@ namespace AutotaskNET
 
 
 
+
+
+
         /// <summary>
-        /// This method searches for fields.
+        /// Gets the picklist values of a field.
         /// </summary>
-        /// <param name="Entity">Contains the Entity name to return fields for</param>
-        /// <returns>a list of fields.</returns>
-        public List<Field> GetEntityFields(string Entity)
+        /// <param name="entity_type">The entity type.</param>
+        /// <param name="field">The field name.</param>
+        /// <returns></returns>
+        public List<PicklistValue> GetPicklistValues(Type entity_type, string field)
         {
-            return this._atws.GetFieldInfo(Entity).ToList();
-        }
-        //end GetEntityFields
+            return this.GetPicklistValues((Entities.Entity)Activator.CreateInstance(entity_type), field);
+        } //end GetPicklistValues(Type entity_type, string field)
+
+        /// <summary>
+        /// Gets the picklist values of a field.
+        /// </summary>
+        /// <param name="entity">The entity instance.</param>
+        /// <param name="field">The field name.</param>
+        /// <returns>a list of <see cref="AutotaskNET.PicklistValue"/>.</returns>
+        public List<PicklistValue> GetPicklistValues(Entities.Entity entity, string field)
+        {
+            List<PicklistValue> listValues = new List<PicklistValue>();
+            net.autotask.webservices.Field fieldInfo = this._atws.GetFieldInfo(entity.GetType().Name).ToList().SingleOrDefault(f => f.Name == field);
+            if (fieldInfo != null)
+            {
+                foreach (net.autotask.webservices.PickListValue plv in fieldInfo.PicklistValues)
+                {
+                    listValues.Add(new PicklistValue(plv));
+                }
+            }
+            return listValues;
+
+        } //end GetPicklistValues(Entities.Entity entity, string field)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -246,16 +281,6 @@ namespace AutotaskNET
             Console.WriteLine("{0}={1}", prop.Name, prop.GetValue(this.Entity, null));
         }
         */
-
-
-
-
-
-
-
-
-
-
 
 
 
