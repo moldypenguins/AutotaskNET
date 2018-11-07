@@ -55,19 +55,27 @@ List<PicklistValue> account_types = atAPI.GetPicklistValues(typeof(Account), "Ac
 ```csharp
 int account_types_customer = account_types.Find(type => type.Label == "Customer").Value;
 
-List<Account> client_accounts = atAPI.Query(typeof(Account), new List<QueryFilter> {
+List<Account> customer_accounts = atAPI.Query(typeof(Account), new List<QueryFilter> {
     new QueryFilter() { FieldName = "AccountType", Operation = "Equals", Value = account_types_customer }
 }).OfType<Account>().ToList();
 ```
 
-##### Get Recently Updated Tickets
+##### Get Tickets Updated Today
 ```csharp
 int activity_since = DateTime.Today; //search from the start of today
 
-List<Ticket> recently_updated_tickets = atAPI.Query(typeof(Ticket), new List<QueryFilter> {
+List<Ticket> tickets_updated_today = atAPI.Query(typeof(Ticket), new List<QueryFilter> {
     new QueryFilter() { FieldName = "LastActivityDate", Operation = "greaterthan", Value = activity_since }
 }).OfType<Ticket>().ToList();
 ```
 
+##### Get Tickets Updated Today For Specific Customer
+```csharp
+int activity_since = DateTime.Today; //search from the start of today
+
+List<Ticket> tickets_updated_today = atAPI.Query(typeof(Ticket), new List<QueryFilter> {
+    new QueryFilter() { FieldName = "LastActivityDate", Operation = "greaterthan", Value = activity_since }
+	new QueryFilter() { FieldName = "Account", Operation = "equals", Value = customer_accounts.Find(account => account.AccountName == "Customer Name").id }
+}).OfType<Ticket>().ToList();
 
 
