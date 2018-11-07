@@ -75,7 +75,7 @@ int activity_since = DateTime.Today; //search from the start of today
 
 List<Ticket> tickets_updated_today = atAPI.Query(typeof(Ticket), new List<QueryFilter> {
     new QueryFilter() { FieldName = "LastActivityDate", Operation = "greaterthan", Value = activity_since }
-	new QueryFilter() { FieldName = "Account", Operation = "equals", Value = customer_accounts.Find(account => account.AccountName == "Customer Name").id }
+    new QueryFilter() { FieldName = "Account", Operation = "equals", Value = customer_accounts.Find(account => account.AccountName == "Customer Name").id }
 }).OfType<Ticket>().ToList();
 
 
