@@ -19,9 +19,9 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Required Fields
 
-        public long AdditionalInvoiceFieldID { get; internal set; } //ReadOnly Required PickList
-        public long InvoiceBatchID { get; internal set; } //ReadOnly Required
-        public string FieldValue { get; internal set; } //ReadOnly Required Length:100
+        public long AdditionalInvoiceFieldID; //ReadOnly Required PickList
+        public long InvoiceBatchID; //ReadOnly Required
+        public string FieldValue; //ReadOnly Required Length:100
 
         #endregion //ReadOnly Required Fields
 

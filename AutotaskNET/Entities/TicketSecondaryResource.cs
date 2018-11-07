@@ -11,20 +11,38 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class TicketSecondaryResource : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => true;
         public override bool CanHaveUDFs => false;
 
+        #endregion //Properties
+
+        #region Constructors
+
+        public TicketSecondaryResource() : base() { } //end TicketSecondaryResource()
+        public TicketSecondaryResource(net.autotask.webservices.TicketSecondaryResource entity) : base(entity)
+        {
+
+        } //end TicketSecondaryResource(net.autotask.webservices.TicketSecondaryResource entity)
+
+        #endregion //Constructors
+
+        #region Fields
+
         #region Required Fields
 
-        public long TicketID { get; set; } //Required [Ticket]
-        public long ResourceID { get; set; } //Required [Resource]
-        public long RoleID { get; set; } //Required [Role]
+        public long TicketID; //Required [Ticket]
+        public long ResourceID; //Required [Resource]
+        public long RoleID; //Required [Role]
 
         #endregion //Required Fields
-        
+
+        #endregion //Fields
+
     } //end TicketSecondaryResource
 
 }

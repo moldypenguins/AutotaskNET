@@ -8,38 +8,38 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class ServiceCallTicketResource : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => true;
         public override bool CanHaveUDFs => false;
 
-        #region ReadOnly Fields
+        #endregion //Properties
 
+        #region Constructors
 
+        public ServiceCallTicketResource() : base() { } //end ServiceCallTicketResource()
+        public ServiceCallTicketResource(net.autotask.webservices.ServiceCallTicketResource entity) : base(entity)
+        {
+            this.ResourceID = int.Parse(entity.ResourceID.ToString());
+            this.ServiceCallTicketID = int.Parse(entity.ServiceCallTicketID.ToString());
 
-        #endregion //ReadOnly Fields
+        } //end ServiceCallTicketResource(net.autotask.webservices.ServiceCallTicketResource entity)
 
-        #region ReadOnly Required Fields
+        #endregion //Constructors
 
-
-
-        #endregion //ReadOnly Required Fields
+        #region Fields
 
         #region Required Fields
 
-
+        public int ServiceCallTicketID; //Required [ServiceCallTicket]
+        public int ResourceID; //Required [Resource]
 
         #endregion //Required Fields
 
-        #region Optional Fields
-
-
-
-        #endregion //Optional Fields
-
-        public int ServiceCallTicketID { get; set; } //Required [ServiceCallTicket]
-        public int ResourceID { get; set; } //Required [Resource]
+        #endregion //Fields
 
     } //end ServiceCallTicketResource
 

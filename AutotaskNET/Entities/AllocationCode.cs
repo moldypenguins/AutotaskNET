@@ -18,7 +18,7 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Fields
 
-        public double MarkupRate { get; internal set; } //ReadOnly
+        public double MarkupRate; //ReadOnly
 
         #endregion //ReadOnly Fields
 

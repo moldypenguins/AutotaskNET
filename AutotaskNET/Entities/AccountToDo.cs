@@ -11,40 +11,72 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class AccountToDo : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => true;
         public override bool CanHaveUDFs => false;
 
+        #endregion //Properties
+
+        #region Constructors
+
+        public AccountToDo() : base() { } //end AccountToDo()
+        public AccountToDo(net.autotask.webservices.AccountToDo entity) : base(entity)
+        {
+            this.AccountID = long.Parse(entity.AccountID.ToString());
+            this.ActionType = int.Parse(entity.ActionType.ToString());
+            this.ActivityDescription = entity.ActivityDescription == null ? default(string) : entity.ActivityDescription.ToString();
+            this.AssignedToResourceID = long.Parse(entity.AssignedToResourceID.ToString());
+            this.CompletedDate = entity.CompletedDate == null ? default(DateTime?) : DateTime.Parse(entity.CompletedDate.ToString());
+            this.ContactID = long.Parse(entity.ContactID.ToString());
+            this.ContractID = long.Parse(entity.ContractID.ToString());
+            this.CreateDateTime = entity.CreateDateTime == null ? default(DateTime?) : DateTime.Parse(entity.CreateDateTime.ToString());
+            this.CreatorResourceID = long.Parse(entity.CreatorResourceID.ToString());
+            this.EndDateTime = DateTime.Parse(entity.EndDateTime.ToString());
+            this.LastModifiedDate = entity.LastModifiedDate == null ? default(DateTime?) : DateTime.Parse(entity.LastModifiedDate.ToString());
+            this.OpportunityID = long.Parse(entity.OpportunityID.ToString());
+            this.StartDateTime = DateTime.Parse(entity.StartDateTime.ToString()); ;
+            this.TicketID = long.Parse(entity.TicketID.ToString());
+
+        } //end AccountToDo(net.autotask.webservices.AccountToDo entity)
+
+        #endregion //Constructors
+
+        #region Fields
+
         #region ReadOnly Fields
 
-        public DateTime? CreateDateTime { get; internal set; } //ReadOnly
-        public long CreatorResourceID { get; internal set; } //ReadOnly [Resource]
-        public DateTime? LastModifiedDate { get; internal set; } //ReadOnly
+        public DateTime? CreateDateTime; //ReadOnly
+        public long CreatorResourceID; //ReadOnly [Resource]
+        public DateTime? LastModifiedDate; //ReadOnly
 
         #endregion //ReadOnly Fields
 
         #region Required Fields
 
-        public long AccountID { get; set; } //Required [Account]
-        public long AssignedToResourceID { get; set; } //Required [Resource]
-        public DateTime StartDateTime { get; set; } //Required
-        public DateTime EndDateTime { get; set; } //Required
-        public int ActionType { get; set; } //Required PickList
+        public long AccountID; //Required [Account]
+        public long AssignedToResourceID; //Required [Resource]
+        public DateTime StartDateTime; //Required
+        public DateTime EndDateTime; //Required
+        public int ActionType; //Required PickList
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public long ContactID { get; set; } //[Contact]
-        public long OpportunityID { get; set; } //[Opportunity]
-        public long TicketID { get; set; } //[Ticket]
-        public long ContractID { get; set; } //[Contract]
-        public string ActivityDescription { get; set; } //Length:32000
-        public DateTime? CompletedDate { get; set; }
+        public long ContactID; //[Contact]
+        public long OpportunityID; //[Opportunity]
+        public long TicketID; //[Ticket]
+        public long ContractID; //[Contract]
+        public string ActivityDescription; //Length:32000
+        public DateTime? CompletedDate;
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
     } //end AccountToDo
 

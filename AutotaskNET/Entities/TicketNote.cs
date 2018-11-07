@@ -10,30 +10,48 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class TicketNote : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
 
+        #endregion //Properties
+
+        #region Constructors
+
+        public TicketNote() : base() { } //end TicketNote()
+        public TicketNote(net.autotask.webservices.TicketNote entity) : base(entity)
+        {
+
+        } //end TicketNote(net.autotask.webservices.TicketNote entity)
+
+        #endregion //Constructors
+
+        #region Fields
+
         #region ReadOnly Fields
 
 
-        public int? CreatorResourceID { get; set; } //ReadOnly [Resource]
-        public DateTime? LastActivityDate { get; set; } //ReadOnly
+        public int? CreatorResourceID; //ReadOnly [Resource]
+        public DateTime? LastActivityDate; //ReadOnly
 
         #endregion //ReadOnly Fields
 
         #region Required Fields
 
-        public string Description { get; set; } //Required Length:32000
-        public int NoteType { get; set; } //Required PickList
-        public int Publish { get; set; } //Required PickList
-        public int TicketID { get; set; } //Required [Ticket]
-        public string Title { get; set; } //Required Length:250
+        public string Description; //Required Length:32000
+        public int NoteType; //Required PickList
+        public int Publish; //Required PickList
+        public int TicketID; //Required [Ticket]
+        public string Title; //Required Length:250
 
         #endregion //Required Fields
-        
+
+        #endregion //Fields
+
     } //end TicketNote
 
 }

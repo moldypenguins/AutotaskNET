@@ -18,9 +18,9 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Fields
 
-        public int? CreatorResourceID { get; internal set; } //ReadOnly [Resource]
-        public DateTime? CreateDateTime { get; internal set; } //ReadOnly
-        public DateTime? UpdateDateTime { get; internal set; } //ReadOnly
+        public int? CreatorResourceID; //ReadOnly [Resource]
+        public DateTime? CreateDateTime; //ReadOnly
+        public DateTime? UpdateDateTime; //ReadOnly
 
         #endregion //ReadOnly Fields
 

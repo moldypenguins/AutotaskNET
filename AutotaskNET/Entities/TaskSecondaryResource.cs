@@ -10,20 +10,41 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class TaskSecondaryResource : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => true;
         public override bool CanHaveUDFs => false;
 
+        #endregion //Properties
+
+        #region Constructors
+
+        public TaskSecondaryResource() : base() { } //end TaskSecondaryResource()
+        public TaskSecondaryResource(net.autotask.webservices.TaskSecondaryResource entity) : base(entity)
+        {
+            this.ResourceID = int.Parse(entity.ResourceID.ToString());
+            this.RoleID = int.Parse(entity.RoleID.ToString());
+            this.TaskID = int.Parse(entity.TaskID.ToString());
+
+        } //end TaskSecondaryResource(net.autotask.webservices.TaskSecondaryResource entity)
+
+        #endregion //Constructors
+
+        #region Fields
+
         #region Required Fields
 
-        public int TaskID { get; set; } //Required [Task]
-        public int ResourceID { get; set; } //Required [Resource]
-        public int RoleID { get; set; } //Required [Role]
+        public int TaskID; //Required [Task]
+        public int ResourceID; //Required [Resource]
+        public int RoleID; //Required [Role]
 
         #endregion //Required Fields
-        
+
+        #endregion //Fields
+
     } //end TaskSecondaryResource
 
 }

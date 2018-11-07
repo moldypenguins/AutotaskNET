@@ -18,7 +18,7 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Required Fields
 
-        public int AccountID { get; internal set; } //ReadOnly Required [Account]
+        public int AccountID; //ReadOnly Required [Account]
 
         #endregion //ReadOnly Required Fields
 

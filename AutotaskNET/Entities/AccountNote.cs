@@ -17,27 +17,27 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Fields
 
-        public DateTime? CompletedDateTime { get; internal set; } //ReadOnly
-        public DateTime? LastModifiedDate { get; internal set; } //ReadOnly
+        public DateTime? CompletedDateTime; //ReadOnly
+        public DateTime? LastModifiedDate; //ReadOnly
 
         #endregion //ReadOnly Fields
 
         #region Required Fields
 
-        public int AccountID { get; set; } //Required [Account]
-        public int ActionType { get; set; } //Required PickList
-        public int AssignedResourceID { get; set; } //Required [Resource]
-        public DateTime EndDateTime { get; set; } //Required
-        public DateTime StartDateTime { get; set; } //Required
+        public int AccountID; //Required [Account]
+        public int ActionType; //Required PickList
+        public int AssignedResourceID; //Required [Resource]
+        public DateTime EndDateTime; //Required
+        public DateTime StartDateTime; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public int? ContactID { get; set; } //[Contact]
-        public string Name { get; set; } //Length:128
-        public string Note { get; set; } //Length:32000
-        public int? OpportunityID { get; set; } //[Opportunity]
+        public int? ContactID; //[Contact]
+        public string Name; //Length:128
+        public string Note; //Length:32000
+        public int? OpportunityID; //[Opportunity]
         
         #endregion //Optional Fields
 

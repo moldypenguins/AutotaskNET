@@ -38,23 +38,6 @@ namespace AutotaskNET.Entities
 
         #endregion //Fields
 
-        #region Methods
-
-        /*
-        public List<PropertyInfo> GetFields()
-        {
-            List<PropertyInfo> pInfo = new List<PropertyInfo>();
-            foreach (PropertyInfo prop in this.GetType().GetProperties())
-            {
-                pInfo.Add(prop);
-                //Console.WriteLine("{0}={1}", prop.Name, prop.GetValue(this, null));
-            }
-            return pInfo;
-        } //end GetFields()
-        */
-
-        #endregion //Methods
-
     } //end Entity
 
 }

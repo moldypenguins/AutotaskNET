@@ -11,77 +11,90 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class Project : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => true;
 
+        #endregion //Properties
+
+        #region Constructors
+
+        public Project() : base() { } //end Project()
+        public Project(net.autotask.webservices.Project entity) : base(entity)
+        {
+
+        } //end Project(net.autotask.webservices.Project entity)
+
+        #endregion //Constructors
+
+        #region Fields
+
         #region ReadOnly Fields
 
-
+        public string ProjectNumber; //ReadOnly Length:50
+        public DateTime? CreateDateTime; //ReadOnly
+        public int? CreatorResourceID; //ReadOnly [Resource]
+        public int? Duration; //ReadOnly
+        public float ActualHours; //ReadOnly
+        public float ActualBilledHours; //ReadOnly
+        public float EstimatedTime; //ReadOnly
+        public float LaborEstimatedMarginPercentage; //ReadOnly
+        public float ProjectCostEstimatedMarginPercentage; //ReadOnly
+        public float ChangeOrdersRevenue; //ReadOnly
+        public float ChangeOrdersBudget; //ReadOnly
+        public int? CompanyOwnerResourceID; //ReadOnly [Resource]
+        public int? CompletedPercentage; //ReadOnly
+        public int? LastActivityResourceID; //ReadOnly [Resource]
+        public DateTime? LastActivityDateTime; //ReadOnly
+        public int? LastActivityPersonType; //ReadOnly
 
         #endregion //ReadOnly Fields
 
         #region ReadOnly Required Fields
 
-
+        public int AccountID; //ReadOnly Required [Account]
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-
+        public string ProjectName; //Required Length:100
+        public int Type; //Required PickList
+        public DateTime StartDateTime; //Required
+        public DateTime EndDateTime; //Required
+        public int Status; //Required PickList
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-
+        public int? ExtProjectType;
+        public string ExtPNumber; //Length:50
+        public string Description; //Length:2000
+        public float LaborEstimatedRevenue;
+        public float LaborEstimatedCosts;
+        public float ProjectCostsRevenue;
+        public float ProjectCostsBudget;
+        public float SGDA;
+        public float OriginalEstimatedRevenue;
+        public float EstimatedSalesCost;
+        public int? ContractID; //[Contract]
+        public int? ProjectLeadResourceID; //[Resource]
+        public DateTime? CompletedDateTime;
+        public string StatusDetail; //Length:2000
+        public DateTime? StatusDateTime;
+        public int? Department; //PickList
+        public int? LineOfBusiness; //PickList
+        public string PurchaseOrderNumber; //Length:50
+        public int? BusinessDivisionSubdivisionID; //[BusinessDivisionSubdivision]
 
         #endregion //Optional Fields
-
-        public string ProjectName { get; set; } //Required Length:100
-        public int AccountID { get; set; } //ReadOnly Required [Account]
-        public int Type { get; set; } //Required PickList
-        public int? ExtProjectType { get; set; }
-        public string ExtPNumber { get; set; } //Length:50
-        public string ProjectNumber { get; set; } //ReadOnly Length:50
-        public string Description { get; set; } //Length:2000
-        public DateTime? CreateDateTime { get; set; } //ReadOnly
-        public int? CreatorResourceID { get; set; } //ReadOnly [Resource]
-        public DateTime StartDateTime { get; set; } //Required
-        public DateTime EndDateTime { get; set; } //Required
-        public int? Duration { get; set; } //ReadOnly
-        public float ActualHours { get; set; } //ReadOnly
-        public float ActualBilledHours { get; set; } //ReadOnly
-        public float EstimatedTime { get; set; } //ReadOnly
-        public float LaborEstimatedRevenue { get; set; }
-        public float LaborEstimatedCosts { get; set; }
-        public float LaborEstimatedMarginPercentage { get; set; } //ReadOnly
-        public float ProjectCostsRevenue { get; set; }
-        public float ProjectCostsBudget { get; set; }
-        public float ProjectCostEstimatedMarginPercentage { get; set; } //ReadOnly
-        public float ChangeOrdersRevenue { get; set; } //ReadOnly
-        public float ChangeOrdersBudget { get; set; } //ReadOnly
-        public float SGDA { get; set; }
-        public float OriginalEstimatedRevenue { get; set; }
-        public float EstimatedSalesCost { get; set; }
-        public int Status { get; set; } //Required PickList
-        public int? ContractID { get; set; } //[Contract]
-        public int? ProjectLeadResourceID { get; set; } //[Resource]
-        public int? CompanyOwnerResourceID { get; set; } //ReadOnly [Resource]
-        public int? CompletedPercentage { get; set; } //ReadOnly
-        public DateTime? CompletedDateTime { get; set; }
-        public string StatusDetail { get; set; } //Length:2000
-        public DateTime? StatusDateTime { get; set; }
-        public int? Department { get; set; } //PickList
-        public int? LineOfBusiness { get; set; } //PickList
-        public string PurchaseOrderNumber { get; set; } //Length:50
-        public int? BusinessDivisionSubdivisionID { get; set; } //[BusinessDivisionSubdivision]
-        public int? LastActivityResourceID { get; set; } //ReadOnly [Resource]
-        public DateTime? LastActivityDateTime { get; set; } //ReadOnly
-        public int? LastActivityPersonType { get; set; } //ReadOnly
+        
+        #endregion //Fields
 
     } //end Project
 

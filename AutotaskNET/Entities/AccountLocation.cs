@@ -16,13 +16,13 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Required Fields
 
-        public int AccountID { get; internal set; } //ReadOnly Required [Account]
+        public int AccountID; //ReadOnly Required [Account]
 
         #endregion //ReadOnly Required Fields
 
         #region ReadOnly Fields
 
-        public string LocationName { get; internal set; } //ReadOnly Length:100
+        public string LocationName; //ReadOnly Length:100
 
         #endregion //ReadOnly Fields
 
