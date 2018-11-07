@@ -1,6 +1,6 @@
 ![Autotask PSA](https://www.risolv.ca/images/AutotaskPSA.png)
 
-## AutotaskNET v0.1.0
+## AutotaskNET
 *Autotask Web Services API Interface*
 
 ![GitHub License](https://img.shields.io/github/license/risolv/AutotaskNET.svg?style=flat)
