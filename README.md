@@ -1,7 +1,7 @@
 ![Autotask PSA](https://www.risolv.ca/images/AutotaskPSA.png)
 
 ## AutotaskNET ![GitHub License](https://img.shields.io/github/license/risolv/AutotaskNET.svg?logo=GNU&logoColor=white&style=flat) ![GitHub Release](https://img.shields.io/github/release/risolv/AutotaskNET.svg?logo=GitHub&logoColor=white&style=flat) ![GitHub Downloads](https://img.shields.io/github/downloads/risolv/AutotaskNET/latest/total.svg?logo=GitHub&logoColor=white&style=flat)
-*Autotask Web Services API Interface*
+*Autotask Web Services API .NET Interface*
 
 ![GitHub Last Commit](https://img.shields.io/github/last-commit/risolv/AutotaskNET.svg?logo=GitHub&logoColor=white&style=flat)
 ![GitHub Issues](https://img.shields.io/github/issues-raw/risolv/AutotaskNET.svg?logo=GitHub&logoColor=white&style=flat)
@@ -20,7 +20,6 @@
 Please open an issue or pull request in GitHub.
 
 IRC Freenode [#AutotaskNET](https://webchat.freenode.net/?channels=asternet)
-
 
 
 ### Examples
@@ -52,17 +51,21 @@ class Program
 List<PicklistValue> account_types = atAPI.GetPicklistValues(typeof(Account), "AccountType");
 ```
 
-##### Get Client Accounts
+##### Get Customer Accounts
 ```csharp
+int account_types_customer = account_types.Find(type => type.Label == "Customer").Value;
+
 List<Account> client_accounts = atAPI.Query(typeof(Account), new List<QueryFilter> {
-    new QueryFilter() { FieldName = "AccountType", Operation = "Equals", Value = 1 }
+    new QueryFilter() { FieldName = "AccountType", Operation = "Equals", Value = account_types_customer }
 }).OfType<Account>().ToList();
 ```
 
 ##### Get Recently Updated Tickets
 ```csharp
+int activity_since = DateTime.Today; //search from the start of today
+
 List<Ticket> recently_updated_tickets = atAPI.Query(typeof(Ticket), new List<QueryFilter> {
-    new QueryFilter() { FieldName = "LastActivityDate", Operation = "greaterthan", Value = DateTime.Today } //search from the start of today
+    new QueryFilter() { FieldName = "LastActivityDate", Operation = "greaterthan", Value = activity_since }
 }).OfType<Ticket>().ToList();
 ```
 

@@ -7,8 +7,8 @@
     <ProjectGuid>{EDFFB02C-4100-42B4-98CF-49E317E5017D}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AutotaskTest</RootNamespace>
-    <AssemblyName>AutotaskTest</AssemblyName>
+    <RootNamespace>AutotaskTEST</RootNamespace>
+    <AssemblyName>AutotaskTEST</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -49,7 +49,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>AutotaskTest.Program</StartupObject>
+    <StartupObject>AutotaskTEST.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>psa.ico</ApplicationIcon>
