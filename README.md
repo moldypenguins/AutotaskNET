@@ -1,11 +1,9 @@
 ![Autotask PSA](https://www.risolv.ca/images/AutotaskPSA.png)
 
-## AutotaskNET ![GitHub Release](https://img.shields.io/github/release/risolv/AutotaskNET.svg?logo=GitHub&logoColor=white&style=flat) ![GitHub License](https://img.shields.io/github/license/risolv/AutotaskNET.svg?logo=GNU&logoColor=white&style=flat)
+## AutotaskNET ![GitHub Release](https://img.shields.io/github/release/risolv/AutotaskNET.svg?logo=GitHub&logoColor=white&style=flat) ![GitHub License](https://img.shields.io/github/license/risolv/AutotaskNET.svg?logo=GNU&logoColor=white&style=flat) ![GitHub Downloads](https://img.shields.io/github/downloads/risolv/AutotaskNET/latest/total.svg?logo=GitHub&logoColor=white&style=flat)
 *Autotask Web Services API Interface*
 
-
 ![GitHub Last Commit](https://img.shields.io/github/last-commit/risolv/AutotaskNET.svg?logo=GitHub&logoColor=white&style=flat)
-![GitHub Downloads](https://img.shields.io/github/downloads/risolv/AutotaskNET/latest/total.svg?logo=GitHub&logoColor=white&style=flat)
 ![GitHub Issues](https://img.shields.io/github/issues-raw/risolv/AutotaskNET.svg?logo=GitHub&logoColor=white&style=flat)
 ![GitHub Pull Requests](https://img.shields.io/github/issues-pr-raw/risolv/AutotaskNET.svg?logo=GitHub&logoColor=white&style=flat)
 ![Travis Build Status](https://img.shields.io/travis/com/risolv/AutotaskNET.svg?logo=Travis&logoColor=white&style=flat)
