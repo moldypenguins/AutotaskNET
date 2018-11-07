@@ -46,7 +46,7 @@ class Program
 }
 ```
 
-#### Get Account Types
+##### Get Account Types
 ```csharp
 List<PicklistValue> account_types = atAPI.GetPicklistValues(typeof(Account), "AccountType");
 ```
