@@ -25,6 +25,13 @@ namespace AutotaskNET.Entities
         public TicketNote() : base() { } //end TicketNote()
         public TicketNote(net.autotask.webservices.TicketNote entity) : base(entity)
         {
+            this.CreatorResourceID = entity.CreatorResourceID == null ? default(int?) : int.Parse(entity.CreatorResourceID.ToString());
+            this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
+            this.LastActivityDate = entity.LastActivityDate == null ? default(DateTime?) : DateTime.Parse(entity.LastActivityDate.ToString());
+            this.NoteType = int.Parse(entity.NoteType.ToString());
+            this.Publish = int.Parse(entity.Publish.ToString());
+            this.TicketID = int.Parse(entity.TicketID.ToString());
+            this.Title = entity.Title == null ? default(string) : entity.Title.ToString();
 
         } //end TicketNote(net.autotask.webservices.TicketNote entity)
 

@@ -27,6 +27,14 @@ namespace AutotaskNET.Entities
         public Role() : base() { } //end Role()
         public Role(net.autotask.webservices.Role entity) : base(entity)
         {
+            this.Active = bool.Parse(entity.Active.ToString());
+            this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
+            this.HourlyFactor = decimal.Parse(entity.Active.ToString());
+            this.HourlyRate = decimal.Parse(entity.Active.ToString());
+            this.Name = entity.Name == null ? default(string) : entity.Name.ToString();
+            this.QuoteItemDefaultTaxCategoryId = entity.QuoteItemDefaultTaxCategoryId == null ? default(int?) : int.Parse(entity.QuoteItemDefaultTaxCategoryId.ToString());
+            this.RoleType = entity.RoleType == null ? default(int?) : int.Parse(entity.RoleType.ToString());
+            this.SystemRole = entity.SystemRole == null ? default(bool?) : bool.Parse(entity.SystemRole.ToString());
 
         } //end Role(net.autotask.webservices.Role entity)
 

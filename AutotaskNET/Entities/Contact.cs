@@ -24,7 +24,47 @@ namespace AutotaskNET.Entities
         public Contact() : base() { } //end Contact()
         public Contact(net.autotask.webservices.Contact entity) : base(entity)
         {
-
+            this.AccountID = int.Parse(entity.AccountID.ToString());
+            this.AccountPhysicalLocationID = entity.AccountPhysicalLocationID == null ? default(int?) : int.Parse(entity.AccountPhysicalLocationID.ToString());
+            this.Active = int.Parse(entity.Active.ToString());
+            this.AdditionalAddressInformation = entity.ZipCode == null ? default(string) : entity.ZipCode.ToString();
+            this.AddressLine = entity.AddressLine == null ? default(string) : entity.AddressLine.ToString();
+            this.AddressLine1 = entity.AddressLine1 == null ? default(string) : entity.AddressLine1.ToString();
+            this.AlternatePhone = entity.AlternatePhone == null ? default(string) : entity.AlternatePhone.ToString();
+            this.BulkEmailOptOut = entity.BulkEmailOptOut == null ? default(bool?) : bool.Parse(entity.BulkEmailOptOut.ToString());
+            this.BulkEmailOptOutTime = entity.BulkEmailOptOutTime == null ? default(DateTime?) : DateTime.Parse(entity.BulkEmailOptOutTime.ToString());
+            this.City = entity.City == null ? default(string) : entity.City.ToString();
+            this.Country = entity.Country == null ? default(string) : entity.Country.ToString();
+            this.CountryID = entity.CountryID == null ? default(int?) : int.Parse(entity.CountryID.ToString());
+            this.CreateDate = entity.CreateDate == null ? default(DateTime?) : DateTime.Parse(entity.CreateDate.ToString());
+            this.EMailAddress = entity.EMailAddress == null ? default(string) : entity.EMailAddress.ToString();
+            this.EMailAddress2 = entity.EMailAddress2 == null ? default(string) : entity.EMailAddress2.ToString();
+            this.EMailAddress3 = entity.EMailAddress3 == null ? default(string) : entity.EMailAddress3.ToString();
+            this.Extension = entity.Extension == null ? default(string) : entity.Extension.ToString();
+            this.ExternalID = entity.ExternalID == null ? default(string) : entity.ExternalID.ToString();
+            this.FacebookUrl = entity.FacebookUrl == null ? default(string) : entity.FacebookUrl.ToString();
+            this.FaxNumber = entity.FaxNumber == null ? default(string) : entity.FaxNumber.ToString();
+            this.FirstName = entity.FirstName == null ? default(string) : entity.FirstName.ToString();
+            this.LastActivityDate = entity.LastActivityDate == null ? default(DateTime?) : DateTime.Parse(entity.LastActivityDate.ToString());
+            this.LastModifiedDate = entity.LastModifiedDate == null ? default(DateTime?) : DateTime.Parse(entity.LastModifiedDate.ToString());
+            this.LastName = entity.LastName == null ? default(string) : entity.LastName.ToString();
+            this.LinkedInUrl = entity.LinkedInUrl == null ? default(string) : entity.LinkedInUrl.ToString();
+            this.MiddleInitial = entity.MiddleInitial == null ? default(string) : entity.MiddleInitial.ToString();
+            this.MobilePhone = entity.MobilePhone == null ? default(string) : entity.MobilePhone.ToString();
+            this.NamePrefix = entity.NamePrefix == null ? default(int?) : int.Parse(entity.NamePrefix.ToString());
+            this.NameSuffix = entity.NameSuffix == null ? default(int?) : int.Parse(entity.NameSuffix.ToString());
+            this.Note = entity.Note == null ? default(string) : entity.Note.ToString();
+            this.Notification = entity.Notification == null ? default(bool?) : bool.Parse(entity.Notification.ToString());
+            this.Phone = entity.Phone == null ? default(string) : entity.Phone.ToString();
+            this.PrimaryContact = entity.PrimaryContact == null ? default(bool?) : bool.Parse(entity.PrimaryContact.ToString());
+            this.RoomNumber = entity.RoomNumber == null ? default(string) : entity.RoomNumber.ToString();
+            this.SolicitationOptOut = entity.SolicitationOptOut == null ? default(bool?) : bool.Parse(entity.SolicitationOptOut.ToString());
+            this.SolicitationOptOutTime = entity.SolicitationOptOutTime == null ? default(DateTime?) : DateTime.Parse(entity.SolicitationOptOutTime.ToString());
+            this.State = entity.State == null ? default(string) : entity.State.ToString();
+            this.SurveyOptOut = entity.SurveyOptOut == null ? default(bool?) : bool.Parse(entity.SurveyOptOut.ToString());
+            this.Title = entity.Title == null ? default(string) : entity.Title.ToString();
+            this.TwitterUrl = entity.TwitterUrl == null ? default(string) : entity.TwitterUrl.ToString();
+            this.ZipCode = entity.ZipCode == null ? default(string) : entity.ZipCode.ToString();
 
         } //end Contact(net.autotask.webservices.Contact entity)
 
