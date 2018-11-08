@@ -8,7 +8,7 @@
 ![GitHub Pull Requests](https://img.shields.io/github/issues-pr-raw/risolv/AutotaskNET.svg?logo=GitHub&logoColor=white&style=flat)
 
 ![.NET Framework](https://img.shields.io/badge/.NET%20Framework-4.6.1-blue.svg?logo=Windows&logoColor=white)
-![Autotask Web Services](https://img.shields.io/badge/Autotask%20Web%20Services%20API-1.5.14-red.svglogo=Autotask&logoColor=white)
+![Autotask Web Services](https://img.shields.io/badge/Autotask%20Web%20Services%20API-1.5.14-red.svg?logo=Autotask&logoColor=white)
 
 
 ### Documentation
