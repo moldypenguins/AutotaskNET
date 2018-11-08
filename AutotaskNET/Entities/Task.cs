@@ -23,6 +23,38 @@ namespace AutotaskNET.Entities
         public Task() : base() { } //end Task()
         public Task(net.autotask.webservices.Task entity) : base(entity)
         {
+            this.AllocationCodeID = entity.AllocationCodeID == null ? default(int?) : int.Parse(entity.AllocationCodeID.ToString());
+            this.AssignedResourceID = entity.AssignedResourceID == null ? default(int?) : int.Parse(entity.AssignedResourceID.ToString());
+            this.AssignedResourceRoleID = entity.AssignedResourceRoleID == null ? default(int?) : int.Parse(entity.AssignedResourceRoleID.ToString());
+            this.CanClientPortalUserCompleteTask = entity.CanClientPortalUserCompleteTask == null ? default(bool?) : bool.Parse(entity.CanClientPortalUserCompleteTask.ToString());
+            this.CompletedByResourceID = entity.CompletedByResourceID == null ? default(int?) : int.Parse(entity.CompletedByResourceID.ToString());
+            this.CompletedByType = entity.CompletedByType == null ? default(int?) : int.Parse(entity.CompletedByType.ToString());
+            this.CompletedDateTime = entity.CompletedDateTime == null ? default(DateTime?) : DateTime.Parse(entity.CompletedDateTime.ToString());
+            this.CreateDateTime = entity.CreateDateTime == null ? default(DateTime?) : DateTime.Parse(entity.CreateDateTime.ToString());
+            this.CreatorResourceID = entity.CreatorResourceID == null ? default(int?) : int.Parse(entity.CreatorResourceID.ToString());
+            this.CreatorType = entity.CreatorType == null ? default(int?) : int.Parse(entity.CreatorType.ToString());
+            this.DepartmentID = entity.DepartmentID == null ? default(int?) : int.Parse(entity.DepartmentID.ToString());
+            this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
+            this.EndDateTime = entity.EndDateTime == null ? default(DateTime?) : DateTime.Parse(entity.EndDateTime.ToString());
+            this.EstimatedHours = entity.EstimatedHours == null ? default(float) : float.Parse(entity.EstimatedHours.ToString());
+            this.ExternalID = entity.ExternalID == null ? default(string) : entity.ExternalID.ToString();
+            this.HoursToBeScheduled = entity.HoursToBeScheduled == null ? default(float) : float.Parse(entity.HoursToBeScheduled.ToString());
+            this.IsVisibleInClientPortal = entity.IsVisibleInClientPortal == null ? default(bool?) : bool.Parse(entity.IsVisibleInClientPortal.ToString());
+            this.LastActivityDateTime = entity.LastActivityDateTime == null ? default(DateTime?) : DateTime.Parse(entity.LastActivityDateTime.ToString());
+            this.LastActivityPersonType = entity.LastActivityPersonType == null ? default(int?) : int.Parse(entity.LastActivityPersonType.ToString());
+            this.LastActivityResourceID = entity.LastActivityResourceID == null ? default(int?) : int.Parse(entity.LastActivityResourceID.ToString());
+            this.PhaseID = entity.PhaseID == null ? default(int?) : int.Parse(entity.PhaseID.ToString());
+            this.Priority = entity.Priority == null ? default(int?) : int.Parse(entity.Priority.ToString());
+            this.PriorityLabel = entity.PriorityLabel == null ? default(int?) : int.Parse(entity.PriorityLabel.ToString());
+            this.ProjectID = int.Parse(entity.ProjectID.ToString());
+            this.PurchaseOrderNumber = entity.PurchaseOrderNumber == null ? default(string) : entity.PurchaseOrderNumber.ToString();
+            this.RemainingHours = entity.RemainingHours == null ? default(float) : float.Parse(entity.RemainingHours.ToString());
+            this.StartDateTime = entity.StartDateTime == null ? default(DateTime?) : DateTime.Parse(entity.StartDateTime.ToString());
+            this.Status = int.Parse(entity.Status.ToString());
+            this.TaskIsBillable = entity.TaskIsBillable == null ? default(bool?) : bool.Parse(entity.TaskIsBillable.ToString());
+            this.TaskNumber = entity.TaskNumber == null ? default(string) : entity.TaskNumber.ToString();
+            this.TaskType = int.Parse(entity.TaskType.ToString());
+            this.Title = entity.Title == null ? default(string) : entity.Title.ToString();
 
         } //end Task(net.autotask.webservices.Task entity)
 

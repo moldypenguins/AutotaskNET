@@ -25,6 +25,33 @@ namespace AutotaskNET.Entities
         public TimeEntry() : base() { } //end TimeEntry()
         public TimeEntry(net.autotask.webservices.TimeEntry entity) : base(entity)
         {
+            this.AllocationCodeID = entity.AllocationCodeID == null ? default(int?) : int.Parse(entity.AllocationCodeID.ToString());
+            this.BillingApprovalDateTime = entity.BillingApprovalDateTime == null ? default(DateTime?) : DateTime.Parse(entity.BillingApprovalDateTime.ToString());
+            this.BillingApprovalLevelMostRecent = entity.BillingApprovalLevelMostRecent == null ? default(int?) : int.Parse(entity.BillingApprovalLevelMostRecent.ToString());
+            this.BillingApprovalResourceID = entity.BillingApprovalResourceID == null ? default(int?) : int.Parse(entity.BillingApprovalResourceID.ToString());
+            this.ContractID = entity.ContractID == null ? default(int?) : int.Parse(entity.ContractID.ToString());
+            this.ContractServiceBundleID = long.Parse(entity.ContractServiceBundleID.ToString());
+            this.ContractServiceID = long.Parse(entity.ContractServiceID.ToString());
+            this.CreateDateTime = entity.CreateDateTime == null ? default(DateTime?) : DateTime.Parse(entity.CreateDateTime.ToString());
+            this.CreatorUserID = entity.CreatorUserID == null ? default(int?) : int.Parse(entity.CreatorUserID.ToString());
+            this.DateWorked = DateTime.Parse(entity.DateWorked.ToString());
+            this.EndDateTime = entity.EndDateTime == null ? default(DateTime?) : DateTime.Parse(entity.EndDateTime.ToString());
+            this.HoursToBill = double.Parse(entity.HoursToBill.ToString());
+            this.HoursWorked = double.Parse(entity.HoursWorked.ToString());
+            this.InternalAllocationCodeID = entity.InternalAllocationCodeID == null ? default(int?) : int.Parse(entity.InternalAllocationCodeID.ToString());
+            this.InternalNotes = entity.InternalNotes == null ? default(string) : entity.InternalNotes.ToString();
+            this.LastModifiedDateTime = entity.LastModifiedDateTime == null ? default(DateTime?) : DateTime.Parse(entity.LastModifiedDateTime.ToString());
+            this.LastModifiedUserID = entity.LastModifiedUserID == null ? default(int?) : int.Parse(entity.LastModifiedUserID.ToString());
+            this.NonBillable = entity.NonBillable == null ? default(bool?) : bool.Parse(entity.NonBillable.ToString());
+            this.OffsetHours = double.Parse(entity.OffsetHours.ToString());
+            this.ResourceID = int.Parse(entity.ResourceID.ToString());
+            this.RoleID = entity.RoleID == null ? default(int?) : int.Parse(entity.RoleID.ToString());
+            this.ShowOnInvoice = entity.ShowOnInvoice == null ? default(bool?) : bool.Parse(entity.ShowOnInvoice.ToString());
+            this.StartDateTime = entity.StartDateTime == null ? default(DateTime?) : DateTime.Parse(entity.StartDateTime.ToString());
+            this.SummaryNotes = entity.SummaryNotes == null ? default(string) : entity.SummaryNotes.ToString();
+            this.TaskID = entity.TaskID == null ? default(int?) : int.Parse(entity.TaskID.ToString());
+            this.TicketID = entity.TicketID == null ? default(int?) : int.Parse(entity.TicketID.ToString());
+            this.Type = entity.Type == null ? default(int?) : int.Parse(entity.Type.ToString());
 
         } //end TimeEntry(net.autotask.webservices.TimeEntry entity)
 

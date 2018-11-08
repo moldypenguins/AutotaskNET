@@ -25,6 +25,13 @@ namespace AutotaskNET.Entities
         public TaskNote() : base() { } //end TaskNote()
         public TaskNote(net.autotask.webservices.TaskNote entity) : base(entity)
         {
+            this.CreatorResourceID = entity.CreatorResourceID == null ? default(int?) : int.Parse(entity.CreatorResourceID.ToString());
+            this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
+            this.LastActivityDate = entity.LastActivityDate == null ? default(DateTime?) : DateTime.Parse(entity.LastActivityDate.ToString());
+            this.NoteType = int.Parse(entity.NoteType.ToString());
+            this.Publish = int.Parse(entity.Publish.ToString());
+            this.TaskID = int.Parse(entity.TaskID.ToString());
+            this.Title = entity.Title == null ? default(string) : entity.Title.ToString();
 
         } //end TaskNote(net.autotask.webservices.TaskNote entity)
 

@@ -26,6 +26,9 @@ namespace AutotaskNET.Entities
         public TicketSecondaryResource() : base() { } //end TicketSecondaryResource()
         public TicketSecondaryResource(net.autotask.webservices.TicketSecondaryResource entity) : base(entity)
         {
+            this.ResourceID = long.Parse(entity.ResourceID.ToString());
+            this.RoleID = long.Parse(entity.RoleID.ToString());
+            this.TicketID = long.Parse(entity.TicketID.ToString());
 
         } //end TicketSecondaryResource(net.autotask.webservices.TicketSecondaryResource entity)
 
