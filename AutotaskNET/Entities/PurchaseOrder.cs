@@ -11,11 +11,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class PurchaseOrder : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public Account() : base() { } //end Account()
+        public Account(net.autotask.webservices.Account entity) : base(entity)
+        {
+
+        } //end Account(net.autotask.webservices.Account entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -40,6 +56,8 @@ namespace AutotaskNET.Entities
 
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
         public int VendorID { get; set; } //ReadOnly Required [Account]
         public int Status { get; set; } //Required PickList

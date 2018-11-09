@@ -8,11 +8,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class ResourceServiceDeskRole : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public ResourceServiceDeskRole() : base() { } //end ResourceServiceDeskRole()
+        public ResourceServiceDeskRole(net.autotask.webservices.ResourceServiceDeskRole entity) : base(entity)
+        {
+
+        } //end ResourceServiceDeskRole(net.autotask.webservices.ResourceServiceDeskRole entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Required Fields
 
@@ -27,7 +43,9 @@ namespace AutotaskNET.Entities
         public int RoleID { get; set; } //Required [Role] (Obsolete)
 
         #endregion //Obsolete Fields
-        
+
+        #endregion //Fields
+
     } //end ResourceServiceDeskRole
 
 }

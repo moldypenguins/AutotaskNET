@@ -10,11 +10,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class ContractExclusionRole : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => true;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public ContractExclusionRole() : base() { } //end ContractExclusionRole()
+        public ContractExclusionRole(net.autotask.webservices.ContractExclusionRole entity) : base(entity)
+        {
+
+        } //end ContractExclusionRole(net.autotask.webservices.ContractExclusionRole entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Required Fields
 
@@ -22,6 +38,8 @@ namespace AutotaskNET.Entities
         public long RoleID { get; set; } //ReadOnly Required [Role]
 
         #endregion //ReadOnly Required Fields
+
+        #endregion //Fields
 
     } //end ContractExclusionRole
 

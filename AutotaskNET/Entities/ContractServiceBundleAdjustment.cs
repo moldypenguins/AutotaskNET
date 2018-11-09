@@ -12,11 +12,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class ContractServiceBundleAdjustment : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => false;
         public override bool CanQuery => false;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public ContractServiceBundleAdjustment() : base() { } //end ContractServiceBundleAdjustment()
+        public ContractServiceBundleAdjustment(net.autotask.webservices.ContractServiceBundleAdjustment entity) : base(entity)
+        {
+
+        } //end ContractServiceBundleAdjustment(net.autotask.webservices.ContractServiceBundleAdjustment entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region Required Fields
 
@@ -35,7 +51,9 @@ namespace AutotaskNET.Entities
         public bool? AllowRepeatServiceBundle { get; set; }
 
         #endregion //Optional Fields
-        
+
+        #endregion //Fields
+
     } //end ContractServiceBundleAdjustment
 
 }

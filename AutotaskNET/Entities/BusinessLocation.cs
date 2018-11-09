@@ -9,11 +9,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class BusinessLocation : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public BusinessLocation() : base() { } //end BusinessLocation()
+        public BusinessLocation(net.autotask.webservices.BusinessLocation entity) : base(entity)
+        {
+
+        } //end BusinessLocation(net.autotask.webservices.BusinessLocation entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region Required Fields
 
@@ -68,6 +84,8 @@ namespace AutotaskNET.Entities
         public DateTime? SaturdayExtendedHoursEndTime { get; set; }
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
     } //end BusinessLocation
 

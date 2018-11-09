@@ -10,11 +10,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class ChangeRequestLink : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => true;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public ChangeRequestLink() : base() { } //end ChangeRequestLink()
+        public ChangeRequestLink(net.autotask.webservices.ChangeRequestLink entity) : base(entity)
+        {
+
+        } //end ChangeRequestLink(net.autotask.webservices.ChangeRequestLink entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region Required Fields
 
@@ -22,6 +38,8 @@ namespace AutotaskNET.Entities
         public int ProblemOrIncidentTicketID { get; set; } //Required [Ticket]
 
         #endregion //Required Fields
+
+        #endregion //Fields
 
     } //end ChangeRequestLink
 

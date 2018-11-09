@@ -13,11 +13,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class ContractRetainer : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public ContractRetainer() : base() { } //end ContractRetainer()
+        public ContractRetainer(net.autotask.webservices.ContractRetainer entity) : base(entity)
+        {
+
+        } //end Account(net.autotask.webservices.Account entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -51,7 +67,9 @@ namespace AutotaskNET.Entities
         public int? paymentID { get; set; } //PickList
 
         #endregion //Optional Fields
-        
+
+        #endregion //Fields
+
     } //end ContractRetainer
 
 }

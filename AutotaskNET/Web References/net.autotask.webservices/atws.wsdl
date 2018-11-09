@@ -854,6 +854,7 @@
               <s:element minOccurs="0" maxOccurs="1" name="InternalCurrencyUnitPrice" />
               <s:element minOccurs="0" maxOccurs="1" name="InternalCurrencyAdjustedPrice" />
               <s:element minOccurs="0" maxOccurs="1" name="InternalDescription" />
+              <s:element minOccurs="0" maxOccurs="1" name="UnitCost" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -1260,6 +1261,7 @@
               <s:element minOccurs="0" maxOccurs="1" name="AccountPhysicalLocationID" />
               <s:element minOccurs="0" maxOccurs="1" name="LastActivityPersonType" />
               <s:element minOccurs="0" maxOccurs="1" name="LastActivityResourceID" />
+              <s:element minOccurs="0" maxOccurs="1" name="ServiceLevelAgreementPausedNextEventHours" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -1436,6 +1438,7 @@
               <s:element minOccurs="0" maxOccurs="1" name="InvoiceEmailMessageID" />
               <s:element minOccurs="0" maxOccurs="1" name="CurrencyID" />
               <s:element minOccurs="0" maxOccurs="1" name="BillToAccountPhysicalLocationID" />
+              <s:element minOccurs="0" maxOccurs="1" name="SurveyAccountRating" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -1690,6 +1693,7 @@
               <s:element minOccurs="0" maxOccurs="1" name="AccountingReferenceID" />
               <s:element minOccurs="0" maxOccurs="1" name="InternalCost" />
               <s:element minOccurs="0" maxOccurs="1" name="HireDate" />
+              <s:element minOccurs="0" maxOccurs="1" name="SurveyResourceRating" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -2537,6 +2541,78 @@
               <s:element minOccurs="0" maxOccurs="1" name="WorkTypeID" />
               <s:element minOccurs="0" maxOccurs="1" name="Status" />
               <s:element minOccurs="0" maxOccurs="1" name="Priority" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ServiceLevelAgreementResults">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Entity">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="TicketID" />
+              <s:element minOccurs="0" maxOccurs="1" name="ServiceLevelAgreementName" />
+              <s:element minOccurs="0" maxOccurs="1" name="FirstResponseElapsedHours" />
+              <s:element minOccurs="0" maxOccurs="1" name="FirstResponseInitiatingResourceID" />
+              <s:element minOccurs="0" maxOccurs="1" name="FirstResponseResourceID" />
+              <s:element minOccurs="0" maxOccurs="1" name="FirstResponseMet" />
+              <s:element minOccurs="0" maxOccurs="1" name="ResolutionPlanElapsedHours" />
+              <s:element minOccurs="0" maxOccurs="1" name="ResolutionPlanResourceID" />
+              <s:element minOccurs="0" maxOccurs="1" name="ResolutionPlanMet" />
+              <s:element minOccurs="0" maxOccurs="1" name="ResolutionElapsedHours" />
+              <s:element minOccurs="0" maxOccurs="1" name="ResolutionResourceID" />
+              <s:element minOccurs="0" maxOccurs="1" name="ResolutionMet" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="PurchaseApproval">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Entity">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CostType" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsApproved" />
+              <s:element minOccurs="0" maxOccurs="1" name="RejectNote" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Survey">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Entity">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Name" />
+              <s:element minOccurs="0" maxOccurs="1" name="DisplayName" />
+              <s:element minOccurs="0" maxOccurs="1" name="Description" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SurveyResults">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Entity">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="AccountID" />
+              <s:element minOccurs="0" maxOccurs="1" name="CompanyRating" />
+              <s:element minOccurs="0" maxOccurs="1" name="ContactID" />
+              <s:element minOccurs="0" maxOccurs="1" name="ContactRating" />
+              <s:element minOccurs="0" maxOccurs="1" name="CompleteDate" />
+              <s:element minOccurs="0" maxOccurs="1" name="ResourceRating" />
+              <s:element minOccurs="0" maxOccurs="1" name="SendDate" />
+              <s:element minOccurs="0" maxOccurs="1" name="SurveyID" />
+              <s:element minOccurs="0" maxOccurs="1" name="SurveyRating" />
+              <s:element minOccurs="0" maxOccurs="1" name="TicketID" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ResourceServiceDeskRole">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Entity">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ResourceID" />
+              <s:element minOccurs="0" maxOccurs="1" name="RoleID" />
+              <s:element minOccurs="0" maxOccurs="1" name="Active" />
+              <s:element minOccurs="0" maxOccurs="1" name="Default" />
             </s:sequence>
           </s:extension>
         </s:complexContent>

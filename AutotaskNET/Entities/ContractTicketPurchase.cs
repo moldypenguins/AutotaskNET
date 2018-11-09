@@ -10,11 +10,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class ContractTicketPurchase : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public ContractTicketPurchase() : base() { } //end ContractTicketPurchase()
+        public ContractTicketPurchase(net.autotask.webservices.ContractTicketPurchase entity) : base(entity)
+        {
+
+        } //end ContractTicketPurchase(net.autotask.webservices.ContractTicketPurchase entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region Required Fields
 
@@ -37,7 +53,9 @@ namespace AutotaskNET.Entities
         public int? Status { get; set; } //PickList
 
         #endregion //Optional Fields
-        
+
+        #endregion //Fields
+
     } //end ContractTicketPurchase
 
 }

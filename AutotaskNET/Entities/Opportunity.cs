@@ -14,11 +14,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class Opportunity : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => true;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public Opportunity() : base() { } //end Opportunity()
+        public Opportunity(net.autotask.webservices.Opportunity entity) : base(entity)
+        {
+
+        } //end Opportunity(net.autotask.webservices.Opportunity entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -43,6 +59,8 @@ namespace AutotaskNET.Entities
 
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
         public int AccountID { get; set; } //Required [Account]
         public decimal AdvancedField1 { get; set; }

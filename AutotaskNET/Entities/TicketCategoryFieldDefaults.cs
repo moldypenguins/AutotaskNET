@@ -8,11 +8,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class TicketCategoryFieldDefaults : Entity
     {
+        #region Properties
+
         public override bool CanCreate => false;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public TicketCategoryFieldDefaults() : base() { } //end TicketCategoryFieldDefaults()
+        public TicketCategoryFieldDefaults(net.autotask.webservices.TicketCategoryFieldDefaults entity) : base(entity)
+        {
+
+        } //end TicketCategoryFieldDefaults(net.autotask.webservices.TicketCategoryFieldDefaults entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -37,6 +53,8 @@ namespace AutotaskNET.Entities
 
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
         public int? BusinessDivisionSubdivisionID { get; set; } //ReadOnly [BusinessDivisionSubdivision]
         public string Description { get; set; } //ReadOnly Length:8000

@@ -8,11 +8,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class QuoteItem : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => true;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public QuoteItem() : base() { } //end QuoteItem()
+        public QuoteItem(net.autotask.webservices.QuoteItem entity) : base(entity)
+        {
+
+        } //end QuoteItem(net.autotask.webservices.QuoteItem entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -37,6 +53,8 @@ namespace AutotaskNET.Entities
 
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
         public int QuoteID { get; set; } //ReadOnly Required [Quote]
         public int Type { get; set; } //Required PickList

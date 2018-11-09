@@ -12,11 +12,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class ProductVendor : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public ProductVendor() : base() { } //end ProductVendor()
+        public ProductVendor(net.autotask.webservices.ProductVendor entity) : base(entity)
+        {
+
+        } //end ProductVendor(net.autotask.webservices.ProductVendor entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Required Fields
 
@@ -38,7 +54,9 @@ namespace AutotaskNET.Entities
         public string VendorPartNumber { get; set; } //Length:50
 
         #endregion //Optional Fields
-        
+
+        #endregion //Fields
+
     } //end ProductVendor
 
 }

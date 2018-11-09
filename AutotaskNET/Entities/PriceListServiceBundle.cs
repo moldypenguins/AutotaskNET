@@ -10,11 +10,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class PriceListServiceBundle : Entity
     {
+        #region Properties
+
         public override bool CanCreate => false;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public PriceListServiceBundle() : base() { } //end PriceListServiceBundle()
+        public PriceListServiceBundle(net.autotask.webservices.PriceListServiceBundle entity) : base(entity)
+        {
+
+        } //end PriceListServiceBundle(net.autotask.webservices.PriceListServiceBundle entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Required Fields
 
@@ -34,7 +50,9 @@ namespace AutotaskNET.Entities
         public decimal UnitPrice { get; set; }
 
         #endregion //Optional Fields
-        
+
+        #endregion //Fields
+
     } //end PriceListServiceBundle
 
 }

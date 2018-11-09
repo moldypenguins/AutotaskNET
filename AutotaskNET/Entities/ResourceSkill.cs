@@ -10,11 +10,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class ResourceSkill : Entity
     {
+        #region Properties
+
         public override bool CanCreate => false;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public ResourceSkill() : base() { } //end ResourceSkill()
+        public ResourceSkill(net.autotask.webservices.ResourceSkill entity) : base(entity)
+        {
+
+        } //end ResourceSkill(net.autotask.webservices.ResourceSkill entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Required Fields
 
@@ -34,7 +50,9 @@ namespace AutotaskNET.Entities
         public string SkillDescription { get; set; } //Length:2000
 
         #endregion //Optional Fields
-        
+
+        #endregion //Fields
+
     } //end ResourceSkill
 
 }

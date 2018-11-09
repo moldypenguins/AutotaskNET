@@ -10,11 +10,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class AllocationCode : Entity
     {
+        #region Properties
+
         public override bool CanCreate => false;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public AllocationCode() : base() { } //end AllocationCode()
+        public AllocationCode(net.autotask.webservices.AllocationCode entity) : base(entity)
+        {
+
+        } //end AllocationCode(net.autotask.webservices.AllocationCode entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -45,7 +61,9 @@ namespace AutotaskNET.Entities
         public bool? IsExcludedFromNewContracts { get; set; }
 
         #endregion //Optional Fields
-        
+
+        #endregion //Fields
+
     } //end AllocationCode
 
 }
