@@ -12,11 +12,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class ContractFactor : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public ContractFactor() : base() { } //end ContractFactor()
+        public ContractFactor(net.autotask.webservices.ContractFactor entity) : base(entity)
+        {
+
+        } //end ContractFactor(net.autotask.webservices.ContractFactor entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Required Fields
 
@@ -30,6 +46,8 @@ namespace AutotaskNET.Entities
         public double BlockHourFactor { get; set; } //Required
 
         #endregion //Required Fields
+
+        #endregion //Fields
 
     } //end ContractFactor
 }

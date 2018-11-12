@@ -8,11 +8,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class ContractServiceUnit : Entity
     {
+        #region Properties
+
         public override bool CanCreate => false;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public ContractServiceUnit() : base() { } //end ContractServiceUnit()
+        public ContractServiceUnit(net.autotask.webservices.ContractServiceUnit entity) : base(entity)
+        {
+
+        } //end ContractServiceUnit(net.autotask.webservices.ContractServiceUnit entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -40,6 +56,8 @@ namespace AutotaskNET.Entities
         public int? ContractServiceID { get; set; } //[ContractService]
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
     } //end ContractServiceUnit
 

@@ -8,11 +8,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class ServiceBundle : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => true;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public ServiceBundle() : base() { } //end ServiceBundle()
+        public ServiceBundle(net.autotask.webservices.ServiceBundle entity) : base(entity)
+        {
+
+        } //end ServiceBundle(net.autotask.webservices.ServiceBundle entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -37,6 +53,8 @@ namespace AutotaskNET.Entities
 
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
         public string Name { get; set; } //Required Length:100
         public string Description { get; set; } //Length:200

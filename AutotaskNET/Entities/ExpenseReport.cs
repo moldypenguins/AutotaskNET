@@ -11,11 +11,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class ExpenseReport : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public ExpenseReport() : base() { } //end ExpenseReport()
+        public ExpenseReport(net.autotask.webservices.ExpenseReport entity) : base(entity)
+        {
+
+        } //end ExpenseReport(net.autotask.webservices.ExpenseReport entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -49,7 +65,9 @@ namespace AutotaskNET.Entities
         public int? BusinessDivisionSubdivisionID { get; set; } //[BusinessDivisionSubdivision]
 
         #endregion //Optional Fields
-        
+
+        #endregion //Fields
+
     } //end ExpenseReport
 
 }

@@ -11,11 +11,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class Skill : Entity
     {
+        #region Properties
+
         public override bool CanCreate => false;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public Skill() : base() { } //end Skill()
+        public Skill(net.autotask.webservices.Skill entity) : base(entity)
+        {
+
+        } //end Skill(net.autotask.webservices.Skill entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -30,7 +46,9 @@ namespace AutotaskNET.Entities
         public bool Active { get; set; } //ReadOnly Required
 
         #endregion //ReadOnly Required Fields
-        
+
+        #endregion //Fields
+
     } //end Skill
 
 }

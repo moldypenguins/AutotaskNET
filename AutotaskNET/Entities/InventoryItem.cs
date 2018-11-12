@@ -12,11 +12,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class InventoryItem : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public InventoryItem() : base() { } //end InventoryItem()
+        public InventoryItem(net.autotask.webservices.InventoryItem entity) : base(entity)
+        {
+
+        } //end InventoryItem(net.autotask.webservices.InventoryItem entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -48,6 +64,8 @@ namespace AutotaskNET.Entities
         public string Bin { get; set; } //Length:50
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
     } //end InventoryItem
 

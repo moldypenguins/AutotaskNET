@@ -11,11 +11,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class TicketCost : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => this.Billed == false;
         public override bool CanQuery => true;
         public override bool CanDelete => this.Billed == false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public TicketCost() : base() { } //end TicketCost()
+        public TicketCost(net.autotask.webservices.TicketCost entity) : base(entity)
+        {
+
+        } //end TicketCost(net.autotask.webservices.TicketCost entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -40,6 +56,8 @@ namespace AutotaskNET.Entities
 
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
         public long TicketID { get; set; } //Required [Ticket]
         public long ProductID { get; set; } //[Product]

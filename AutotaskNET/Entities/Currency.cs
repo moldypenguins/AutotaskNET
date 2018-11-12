@@ -14,11 +14,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class Currency : Entity
     {
+        #region Properties
+
         public override bool CanCreate => false;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public Currency() : base() { } //end Currency()
+        public Currency(net.autotask.webservices.Currency entity) : base(entity)
+        {
+
+        } //end Currency(net.autotask.webservices.Currency entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -49,7 +65,9 @@ namespace AutotaskNET.Entities
         public DateTime? LastModifiedDateTime { get; set; }
 
         #endregion //Optional Fields
-        
+
+        #endregion //Fields
+
     } //end Currency
 
 }

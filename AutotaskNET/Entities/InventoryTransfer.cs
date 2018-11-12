@@ -10,11 +10,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class InventoryTransfer : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public InventoryTransfer() : base() { } //end InventoryTransfer()
+        public InventoryTransfer(net.autotask.webservices.InventoryTransfer entity) : base(entity)
+        {
+
+        } //end InventoryTransfer(net.autotask.webservices.InventoryTransfer entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -34,7 +50,9 @@ namespace AutotaskNET.Entities
         public int QuantityTransferred { get; set; } //ReadOnly Required
 
         #endregion //ReadOnly Required Fields
-        
+
+        #endregion //Fields
+
     } //end InventoryTransfer
 
 }

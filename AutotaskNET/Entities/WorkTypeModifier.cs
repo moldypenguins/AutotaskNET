@@ -13,11 +13,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class WorkTypeModifier : Entity
     {
+        #region Properties
+
         public override bool CanCreate => false;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public WorkTypeModifier() : base() { } //end WorkTypeModifier()
+        public WorkTypeModifier(net.autotask.webservices.WorkTypeModifier entity) : base(entity)
+        {
+
+        } //end WorkTypeModifier(net.autotask.webservices.WorkTypeModifier entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region Required Fields
 
@@ -30,7 +46,9 @@ namespace AutotaskNET.Entities
         public decimal ModifierValue { get; set; }
 
         #endregion //Optional Fields
-        
+
+        #endregion //Fields
+
     } //end WorkTypeModifier
 
 }

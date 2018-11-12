@@ -10,11 +10,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class Phase : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public Phase() : base() { } //end Phase()
+        public Phase(net.autotask.webservices.Phase entity) : base(entity)
+        {
+
+        } //end Phase(net.autotask.webservices.Phase entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -39,6 +55,8 @@ namespace AutotaskNET.Entities
 
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
         public DateTime? CreateDate { get; set; } //ReadOnly
         public int? CreatorResourceID { get; set; } //ReadOnly [Resource]

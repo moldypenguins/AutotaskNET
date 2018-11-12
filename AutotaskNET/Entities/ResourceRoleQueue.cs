@@ -8,11 +8,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class ResourceRoleQueue : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public ResourceRoleQueue() : base() { } //end ResourceRoleQueue()
+        public ResourceRoleQueue(net.autotask.webservices.ResourceRoleQueue entity) : base(entity)
+        {
+
+        } //end ResourceRoleQueue(net.autotask.webservices.ResourceRoleQueue entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Required Fields
 
@@ -33,7 +49,9 @@ namespace AutotaskNET.Entities
         public int? RoleID { get; set; } //ReadOnly [Role] (Obsolete)
 
         #endregion //Obsolete Fields
-        
+
+        #endregion //Fields
+
     } //end ResourceRoleQueue
 
 }

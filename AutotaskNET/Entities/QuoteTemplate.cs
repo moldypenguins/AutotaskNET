@@ -8,11 +8,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class QuoteTemplate : Entity
     {
+        #region Properties
+
         public override bool CanCreate => false;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public QuoteTemplate() : base() { } //end QuoteTemplate()
+        public QuoteTemplate(net.autotask.webservices.QuoteTemplate entity) : base(entity)
+        {
+
+        } //end QuoteTemplate(net.autotask.webservices.QuoteTemplate entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -37,6 +53,8 @@ namespace AutotaskNET.Entities
 
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
         public bool? Active { get; set; } //ReadOnly
         public bool? CalculateTaxSeparately { get; set; } //ReadOnly

@@ -11,11 +11,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class InvoiceTemplate : Entity
     {
+        #region Properties
+
         public override bool CanCreate => false;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public InvoiceTemplate() : base() { } //end InvoiceTemplate()
+        public InvoiceTemplate(net.autotask.webservices.InvoiceTemplate entity) : base(entity)
+        {
+
+        } //end InvoiceTemplate(net.autotask.webservices.InvoiceTemplate entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -40,6 +56,8 @@ namespace AutotaskNET.Entities
 
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
         public bool DisplayTaxCategory { get; set; } //ReadOnly Required
         public bool DisplayTaxCategorySuperscripts { get; set; } //ReadOnly Required

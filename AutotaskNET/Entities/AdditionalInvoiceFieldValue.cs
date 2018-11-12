@@ -11,11 +11,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class AdditionalInvoiceFieldValue : Entity
     {
+        #region Properties
+
         public override bool CanCreate => false;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public AdditionalInvoiceFieldValue() : base() { } //end AdditionalInvoiceFieldValue()
+        public AdditionalInvoiceFieldValue(net.autotask.webservices.AdditionalInvoiceFieldValue entity) : base(entity)
+        {
+
+        } //end AdditionalInvoiceFieldValue(net.autotask.webservices.AdditionalInvoiceFieldValue entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Required Fields
 
@@ -24,6 +40,8 @@ namespace AutotaskNET.Entities
         public string FieldValue; //ReadOnly Required Length:100
 
         #endregion //ReadOnly Required Fields
+
+        #endregion //Fields
 
     } //end AdditionalInvoiceFieldValue
 

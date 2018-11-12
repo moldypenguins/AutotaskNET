@@ -8,11 +8,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class SurveyResults : Entity
     {
+        #region Properties
+
         public override bool CanCreate => false;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public SurveyResults() : base() { } //end SurveyResults()
+        public SurveyResults(net.autotask.webservices.SurveyResults entity) : base(entity)
+        {
+
+        } //end SurveyResults(net.autotask.webservices.SurveyResults entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -33,7 +49,9 @@ namespace AutotaskNET.Entities
         public int SurveyID { get; set; } //ReadOnly Required [Survey]
 
         #endregion //ReadOnly Required Fields
-        
+
+        #endregion //Fields
+
     } //end SurveyResults
 
 }

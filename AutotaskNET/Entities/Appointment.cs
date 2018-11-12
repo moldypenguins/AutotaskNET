@@ -10,11 +10,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class Appointment : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => true;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public Appointment() : base() { } //end Appointment()
+        public Appointment(net.autotask.webservices.Appointment entity) : base(entity)
+        {
+
+        } //end Appointment(net.autotask.webservices.Appointment entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -38,7 +54,9 @@ namespace AutotaskNET.Entities
         public string Description { get; set; } //Length:8000
 
         #endregion //Optional Fields
-        
+
+        #endregion //Fields
+
     } //end Appointment
 
 }

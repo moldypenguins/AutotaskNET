@@ -10,11 +10,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class BillingItem : Entity
     {
+        #region Properties
+
         public override bool CanCreate => false;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public BillingItem() : base() { } //end BillingItem()
+        public BillingItem(net.autotask.webservices.BillingItem entity) : base(entity)
+        {
+
+        } //end BillingItem(net.autotask.webservices.BillingItem entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -73,6 +89,8 @@ namespace AutotaskNET.Entities
         public DateTime? WebServiceDate { get; set; }
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
     } //end BillingItem
 

@@ -23,11 +23,6 @@ namespace AutotaskNET.Entities
         public ResourceRole() : base() { } //end ResourceRole()
         public ResourceRole(net.autotask.webservices.ResourceRole entity) : base(entity)
         {
-            this.Active = entity.Active == null ? default(bool?) : bool.Parse(entity.Active.ToString());
-            this.DepartmentID = long.Parse(entity.DepartmentID.ToString());
-            this.QueueID = long.Parse(entity.QueueID.ToString());
-            this.ResourceID = long.Parse(entity.ResourceID.ToString());
-            this.RoleID = long.Parse(entity.RoleID.ToString());
 
         } //end ResourceRole(net.autotask.webservices.ResourceRole entity)
 

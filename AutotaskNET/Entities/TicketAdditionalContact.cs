@@ -10,11 +10,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class TicketAdditionalContact : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => true;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public TicketAdditionalContact() : base() { } //end TicketAdditionalContact()
+        public TicketAdditionalContact(net.autotask.webservices.TicketAdditionalContact entity) : base(entity)
+        {
+
+        } //end TicketAdditionalContact(net.autotask.webservices.TicketAdditionalContact entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region Required Fields
 
@@ -22,7 +38,9 @@ namespace AutotaskNET.Entities
         public int ContactID { get; set; } //Required [Contact]
 
         #endregion //Required Fields
-        
+
+        #endregion //Fields
+
     } //end TicketAdditionalContact
 
 }

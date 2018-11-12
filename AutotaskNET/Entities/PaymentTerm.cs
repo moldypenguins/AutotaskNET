@@ -11,11 +11,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class PaymentTerm : Entity
     {
+        #region Properties
+
         public override bool CanCreate => false;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public PaymentTerm() : base() { } //end PaymentTerm()
+        public PaymentTerm(net.autotask.webservices.PaymentTerm entity) : base(entity)
+        {
+
+        } //end PaymentTerm(net.autotask.webservices.PaymentTerm entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region Required Fields
 
@@ -30,7 +46,9 @@ namespace AutotaskNET.Entities
         public int? PaymentDueInDays { get; set; }
 
         #endregion //Optional Fields
-        
+
+        #endregion //Fields
+
     } //end PaymentTerm
 
 }

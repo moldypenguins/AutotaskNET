@@ -8,11 +8,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class SalesOrder : Entity
     {
+        #region Properties
+
         public override bool CanCreate => false;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => true;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public SalesOrder() : base() { } //end SalesOrder()
+        public SalesOrder(net.autotask.webservices.SalesOrder entity) : base(entity)
+        {
+
+        } //end SalesOrder(net.autotask.webservices.SalesOrder entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -37,6 +53,8 @@ namespace AutotaskNET.Entities
 
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
         public int AccountID { get; set; } //ReadOnly Required [Account]
         public string Title { get; set; } //ReadOnly Required Length:128

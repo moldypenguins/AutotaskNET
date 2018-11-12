@@ -11,11 +11,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class InternalLocation : Entity
     {
+        #region Properties
+
         public override bool CanCreate => false;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public InternalLocation() : base() { } //end InternalLocation()
+        public InternalLocation(net.autotask.webservices.InternalLocation entity) : base(entity)
+        {
+
+        } //end InternalLocation(net.autotask.webservices.InternalLocation entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -37,7 +53,9 @@ namespace AutotaskNET.Entities
         public string Name { get; set; } //ReadOnly Required Length:100
 
         #endregion //ReadOnly Required Fields
-        
+
+        #endregion //Fields
+
     } //end InternalLocation
 
 }
