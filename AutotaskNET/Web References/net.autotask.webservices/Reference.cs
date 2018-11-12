@@ -908,6 +908,11 @@ namespace AutotaskNET.net.autotask.webservices {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ResourceServiceDeskRole))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SurveyResults))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Survey))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PurchaseApproval))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ServiceLevelAgreementResults))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TicketCategoryFieldDefaults))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TicketCategory))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TicketChecklistItem))]
@@ -1033,6 +1038,7 @@ namespace AutotaskNET.net.autotask.webservices {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
     public abstract partial class Entity {
+        
         private Field[] fieldsField;
         
         private long idField;
@@ -1395,6 +1401,435 @@ namespace AutotaskNET.net.autotask.webservices {
             }
             set {
                 this.valueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    public partial class ResourceServiceDeskRole : Entity {
+        
+        private object resourceIDField;
+        
+        private object roleIDField;
+        
+        private object activeField;
+        
+        private object defaultField;
+        
+        /// <remarks/>
+        public object ResourceID {
+            get {
+                return this.resourceIDField;
+            }
+            set {
+                this.resourceIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object RoleID {
+            get {
+                return this.roleIDField;
+            }
+            set {
+                this.roleIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object Active {
+            get {
+                return this.activeField;
+            }
+            set {
+                this.activeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object Default {
+            get {
+                return this.defaultField;
+            }
+            set {
+                this.defaultField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    public partial class SurveyResults : Entity {
+        
+        private object accountIDField;
+        
+        private object companyRatingField;
+        
+        private object contactIDField;
+        
+        private object contactRatingField;
+        
+        private object completeDateField;
+        
+        private object resourceRatingField;
+        
+        private object sendDateField;
+        
+        private object surveyIDField;
+        
+        private object surveyRatingField;
+        
+        private object ticketIDField;
+        
+        /// <remarks/>
+        public object AccountID {
+            get {
+                return this.accountIDField;
+            }
+            set {
+                this.accountIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object CompanyRating {
+            get {
+                return this.companyRatingField;
+            }
+            set {
+                this.companyRatingField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object ContactID {
+            get {
+                return this.contactIDField;
+            }
+            set {
+                this.contactIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object ContactRating {
+            get {
+                return this.contactRatingField;
+            }
+            set {
+                this.contactRatingField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object CompleteDate {
+            get {
+                return this.completeDateField;
+            }
+            set {
+                this.completeDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object ResourceRating {
+            get {
+                return this.resourceRatingField;
+            }
+            set {
+                this.resourceRatingField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object SendDate {
+            get {
+                return this.sendDateField;
+            }
+            set {
+                this.sendDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object SurveyID {
+            get {
+                return this.surveyIDField;
+            }
+            set {
+                this.surveyIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object SurveyRating {
+            get {
+                return this.surveyRatingField;
+            }
+            set {
+                this.surveyRatingField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object TicketID {
+            get {
+                return this.ticketIDField;
+            }
+            set {
+                this.ticketIDField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    public partial class Survey : Entity {
+        
+        private object nameField;
+        
+        private object displayNameField;
+        
+        private object descriptionField;
+        
+        /// <remarks/>
+        public object Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object DisplayName {
+            get {
+                return this.displayNameField;
+            }
+            set {
+                this.displayNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object Description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    public partial class PurchaseApproval : Entity {
+        
+        private object costTypeField;
+        
+        private object isApprovedField;
+        
+        private object rejectNoteField;
+        
+        /// <remarks/>
+        public object CostType {
+            get {
+                return this.costTypeField;
+            }
+            set {
+                this.costTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object IsApproved {
+            get {
+                return this.isApprovedField;
+            }
+            set {
+                this.isApprovedField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object RejectNote {
+            get {
+                return this.rejectNoteField;
+            }
+            set {
+                this.rejectNoteField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    public partial class ServiceLevelAgreementResults : Entity {
+        
+        private object ticketIDField;
+        
+        private object serviceLevelAgreementNameField;
+        
+        private object firstResponseElapsedHoursField;
+        
+        private object firstResponseInitiatingResourceIDField;
+        
+        private object firstResponseResourceIDField;
+        
+        private object firstResponseMetField;
+        
+        private object resolutionPlanElapsedHoursField;
+        
+        private object resolutionPlanResourceIDField;
+        
+        private object resolutionPlanMetField;
+        
+        private object resolutionElapsedHoursField;
+        
+        private object resolutionResourceIDField;
+        
+        private object resolutionMetField;
+        
+        /// <remarks/>
+        public object TicketID {
+            get {
+                return this.ticketIDField;
+            }
+            set {
+                this.ticketIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object ServiceLevelAgreementName {
+            get {
+                return this.serviceLevelAgreementNameField;
+            }
+            set {
+                this.serviceLevelAgreementNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object FirstResponseElapsedHours {
+            get {
+                return this.firstResponseElapsedHoursField;
+            }
+            set {
+                this.firstResponseElapsedHoursField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object FirstResponseInitiatingResourceID {
+            get {
+                return this.firstResponseInitiatingResourceIDField;
+            }
+            set {
+                this.firstResponseInitiatingResourceIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object FirstResponseResourceID {
+            get {
+                return this.firstResponseResourceIDField;
+            }
+            set {
+                this.firstResponseResourceIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object FirstResponseMet {
+            get {
+                return this.firstResponseMetField;
+            }
+            set {
+                this.firstResponseMetField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object ResolutionPlanElapsedHours {
+            get {
+                return this.resolutionPlanElapsedHoursField;
+            }
+            set {
+                this.resolutionPlanElapsedHoursField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object ResolutionPlanResourceID {
+            get {
+                return this.resolutionPlanResourceIDField;
+            }
+            set {
+                this.resolutionPlanResourceIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object ResolutionPlanMet {
+            get {
+                return this.resolutionPlanMetField;
+            }
+            set {
+                this.resolutionPlanMetField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object ResolutionElapsedHours {
+            get {
+                return this.resolutionElapsedHoursField;
+            }
+            set {
+                this.resolutionElapsedHoursField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object ResolutionResourceID {
+            get {
+                return this.resolutionResourceIDField;
+            }
+            set {
+                this.resolutionResourceIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object ResolutionMet {
+            get {
+                return this.resolutionMetField;
+            }
+            set {
+                this.resolutionMetField = value;
             }
         }
     }
@@ -7461,6 +7896,8 @@ namespace AutotaskNET.net.autotask.webservices {
         
         private object hireDateField;
         
+        private object surveyResourceRatingField;
+        
         /// <remarks/>
         public object Active {
             get {
@@ -7788,6 +8225,16 @@ namespace AutotaskNET.net.autotask.webservices {
             }
             set {
                 this.hireDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object SurveyResourceRating {
+            get {
+                return this.surveyResourceRatingField;
+            }
+            set {
+                this.surveyResourceRatingField = value;
             }
         }
     }
@@ -9675,6 +10122,8 @@ namespace AutotaskNET.net.autotask.webservices {
         
         private object billToAccountPhysicalLocationIDField;
         
+        private object surveyAccountRatingField;
+        
         /// <remarks/>
         public object Address1 {
             get {
@@ -10182,6 +10631,16 @@ namespace AutotaskNET.net.autotask.webservices {
             }
             set {
                 this.billToAccountPhysicalLocationIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object SurveyAccountRating {
+            get {
+                return this.surveyAccountRatingField;
+            }
+            set {
+                this.surveyAccountRatingField = value;
             }
         }
     }
@@ -11287,6 +11746,8 @@ namespace AutotaskNET.net.autotask.webservices {
         
         private object lastActivityResourceIDField;
         
+        private object serviceLevelAgreementPausedNextEventHoursField;
+        
         /// <remarks/>
         public object AccountID {
             get {
@@ -11904,6 +12365,16 @@ namespace AutotaskNET.net.autotask.webservices {
             }
             set {
                 this.lastActivityResourceIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object ServiceLevelAgreementPausedNextEventHours {
+            get {
+                return this.serviceLevelAgreementPausedNextEventHoursField;
+            }
+            set {
+                this.serviceLevelAgreementPausedNextEventHoursField = value;
             }
         }
     }
@@ -14661,6 +15132,8 @@ namespace AutotaskNET.net.autotask.webservices {
         
         private object internalDescriptionField;
         
+        private object unitCostField;
+        
         /// <remarks/>
         public object ContractID {
             get {
@@ -14748,6 +15221,16 @@ namespace AutotaskNET.net.autotask.webservices {
             }
             set {
                 this.internalDescriptionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object UnitCost {
+            get {
+                return this.unitCostField;
+            }
+            set {
+                this.unitCostField = value;
             }
         }
     }

@@ -24,8 +24,8 @@ namespace AutotaskNET.Entities
         public Account() : base() { } //end Account()
         public Account(net.autotask.webservices.Account entity) : base(entity)
         {
-            this.AccountName = entity.AccountName.ToString();
-            this.AccountNumber = entity.AccountNumber.ToString();
+            this.AccountName = entity.AccountName == null ? default(string) : entity.AccountName.ToString();
+            this.AccountNumber = entity.AccountNumber == null ? default(string) : entity.AccountNumber.ToString();
             this.AccountType = short.Parse(entity.AccountType.ToString());
             this.Active = entity.Active == null ? default(bool?) : bool.Parse(entity.Active.ToString());
             this.AdditionalAddressInformation = entity.AdditionalAddressInformation == null ? default(string) : entity.AdditionalAddressInformation.ToString();

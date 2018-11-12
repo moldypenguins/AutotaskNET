@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("AutotaskNET")]
 [assembly: AssemblyDescription("Autotask Web Services API Interface")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Risolv IT Solutions Ltd.")]
+[assembly: AssemblyCompany("Risolv IT Solutions Ltd")]
 [assembly: AssemblyProduct("AutotaskNET")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
@@ -33,7 +33,7 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.1.5")]
-[assembly: AssemblyFileVersion("0.1.5")]
+[assembly: AssemblyVersion("0.2.0")]
+[assembly: AssemblyFileVersion("0.2.0")]
 [assembly: NeutralResourcesLanguage("en-CA")]
 

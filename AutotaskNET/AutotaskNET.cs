@@ -8,8 +8,6 @@ namespace AutotaskNET
 {
     public class ATWSInterface
     {
-        #region Constructors
-
         /// <summary>
         /// Initializes a new instance of the <see cref="ATWSInterface" /> class.
         /// </summary>
@@ -49,17 +47,12 @@ namespace AutotaskNET
                 throw new Exception("Login Error: " + ex.Message);
             }
         } //end WebService
-
-        #endregion //Constructors
-
-        #region Fields
-
+        
         /// <summary>
         /// The Autotask Web Service Object
         /// </summary>
         private readonly net.autotask.webservices.ATWS _atws;
 
-        #endregion //Fields
 
         #region Query
 
@@ -147,11 +140,37 @@ namespace AutotaskNET
         } //end Query(Entities.Entity entity, List<QueryFilter> filters = null)
 
         #endregion //Query
-        
+
+
+        #region Create
+
+        /// <summary>
+        /// Creates entities
+        /// </summary>
+        /// <param name="entity">entity to create</param>
+        /// <returns></returns>
+        public Entities.Entity Create(Entities.Entity entity)
+        {
+            Entities.Entity createdEntity = null;
+            if (!true)//entity.CanCreate)
+            {
+                throw new AutotaskNETException($"The {entity.GetType()} entity can not be created.");
+            }
+            else
+            {
+                //create entity
+
+            }
+            return createdEntity;
+        } //end Create
+
+        #endregion //Create
+
+
         #region Update
 
         /// <summary>
-        /// 
+        /// Updates entities
         /// </summary>
         /// <param name="entity">entity to update</param>
         /// <returns></returns>
@@ -172,34 +191,11 @@ namespace AutotaskNET
 
         #endregion //Update
 
-        #region Create
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="entity">entity to create</param>
-        /// <returns></returns>
-        public Entities.Entity Create(Entities.Entity entity)
-        {
-            Entities.Entity createdEntity = null;
-            if (!true)//entity.CanCreate)
-            {
-                throw new AutotaskNETException($"The {entity.GetType()} entity can not be updated.");
-            }
-            else
-            {
-                //create entity
-
-            }
-            return createdEntity;
-        } //end Create
-
-        #endregion //Create
 
         #region Delete
 
         /// <summary>
-        /// 
+        /// Deletes entities
         /// </summary>
         /// <param name="entity">entity to delete</param>
         /// <returns></returns>
