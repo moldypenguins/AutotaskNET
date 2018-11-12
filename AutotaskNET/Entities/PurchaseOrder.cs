@@ -29,20 +29,30 @@ namespace AutotaskNET.Entities
             this.CancelDateTime = entity.CancelDateTime == null ? default(DateTime?) : DateTime.Parse(entity.CancelDateTime.ToString());
             this.CreateDateTime = entity.CreateDateTime == null ? default(DateTime?) : DateTime.Parse(entity.CreateDateTime.ToString());
             this.CreatorResourceID = entity.CreatorResourceID == null ? default(int?) : int.Parse(entity.CreatorResourceID.ToString());
-            this.ExternalPONumber = entity.ExternalPONumber.ToString();
-            this.Fax = entity.Fax.ToString();
+            this.ExternalPONumber = entity.ExternalPONumber == null ? default(string) : entity.ExternalPONumber.ToString();
+            this.Fax = entity.Fax == null ? default(string) : entity.Fax.ToString();
             this.Freight = double.Parse(entity.Freight.ToString());
-            this.GeneralMemo = entity.GeneralMemo.ToString();
+            this.GeneralMemo = entity.GeneralMemo == null ? default(string) : entity.GeneralMemo.ToString();
             this.LatestEstimatedArrivalDate = entity.LatestEstimatedArrivalDate == null ? default(DateTime?) : DateTime.Parse(entity.LatestEstimatedArrivalDate.ToString());
             this.PaymentTerm = entity.PaymentTerm == null ? default(int?) : int.Parse(entity.PaymentTerm.ToString());
-            this.ShippingDate = entity.ShippingDate == null ? default(DateTime?) : DateTime.Parse(entity.CancelDateTime.ToString());
-            this.ShippingType = entity.
-            this.ShipToAddress1 = entity.ShipToAddress1.ToString();
-            this.ShipToAddress2
-            this.ShipToCity
-            this.ShipToName
-            this.ShipToPostalCode
-            this.ShipToState
+            this.Phone = entity.Phone == null ? default(string) : entity.Phone.ToString();
+            this.PurchaseForAccountID = entity.PurchaseForAccountID == null ? default(int?) : int.Parse(entity.PurchaseForAccountID.ToString());
+            this.ShippingDate = entity.ShippingDate == null ? default(DateTime?) : DateTime.Parse(entity.ShippingDate.ToString());
+            this.ShippingType = entity.ShippingType == null ? default(int?) : int.Parse(entity.ShippingType.ToString());
+            this.ShipToAddress1 = entity.ShipToAddress1 == null ? default(string) : entity.ShipToAddress1.ToString();
+            this.ShipToAddress2 = entity.ShipToAddress2 == null ? default(string) : entity.ShipToAddress2.ToString();
+            this.ShipToCity = entity.ShipToCity == null ? default(string) : entity.ShipToCity.ToString();
+            this.ShipToName = entity.ShipToName == null ? default(string) : entity.ShipToName.ToString();
+            this.ShipToPostalCode = entity.ShipToPostalCode == null ? default(string) : entity.ShipToPostalCode.ToString();
+            this.ShipToState = entity.ShipToState == null ? default(string) : entity.ShipToState.ToString();
+            this.ShowEachTaxInGroup = entity.ShowEachTaxInGroup == null ? default(bool?) : bool.Parse(entity.ShowEachTaxInGroup.ToString());
+            this.ShowTaxCategory = entity.ShowTaxCategory == null ? default(bool?) : bool.Parse(entity.ShowTaxCategory.ToString());
+            this.Status = int.Parse(entity.Status.ToString());
+            this.SubmitDateTime = entity.SubmitDateTime == null ? default(DateTime?) : DateTime.Parse(entity.SubmitDateTime.ToString());
+            this.TaxGroup = entity.TaxGroup == null ? default(int?) : int.Parse(entity.TaxGroup.ToString());
+            this.UseItemDescriptionsFrom = entity.UseItemDescriptionsFrom == null ? default(int?) : int.Parse(entity.UseItemDescriptionsFrom.ToString());
+            this.VendorID = int.Parse(entity.VendorID.ToString());
+            this.VendorInvoiceNumber = entity.VendorInvoiceNumber == null ? default(string) : entity.VendorInvoiceNumber.ToString();
         } //end PurchaseOrder(net.autotask.webservices.PurchaseOrder entity)
 
         #endregion //Constructors
