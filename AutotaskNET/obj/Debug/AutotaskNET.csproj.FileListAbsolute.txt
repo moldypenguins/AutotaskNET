@@ -19,8 +19,3 @@ D:\GitHub\AutotaskNET\AutotaskNET\obj\Debug\AutotaskNET.csprojAssemblyReference.
 D:\GitHub\AutotaskNET\AutotaskNET\obj\Debug\AutotaskNET.csproj.CoreCompileInputs.cache
 D:\GitHub\AutotaskNET\AutotaskNET\obj\Debug\AutotaskNET.dll
 D:\GitHub\AutotaskNET\AutotaskNET\obj\Debug\AutotaskNET.pdb
-C:\Users\bo.li\Source\Repos\AutotaskNET\AutotaskNET\bin\Debug\AutotaskNET.dll.config
-C:\Users\bo.li\Source\Repos\AutotaskNET\AutotaskNET\bin\Debug\AutotaskNET.dll
-C:\Users\bo.li\Source\Repos\AutotaskNET\AutotaskNET\bin\Debug\AutotaskNET.pdb
-C:\Users\bo.li\Source\Repos\AutotaskNET\AutotaskNET\obj\Debug\AutotaskNET.dll
-C:\Users\bo.li\Source\Repos\AutotaskNET\AutotaskNET\obj\Debug\AutotaskNET.pdb
