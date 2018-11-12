@@ -11,11 +11,43 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class PurchaseOrder : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public PurchaseOrder() : base() { } //end PurchaseOrder()
+        public PurchaseOrder(net.autotask.webservices.PurchaseOrder entity) : base(entity)
+        {
+            this.CancelDateTime = entity.CancelDateTime == null ? default(DateTime?) : DateTime.Parse(entity.CancelDateTime.ToString());
+            this.CreateDateTime = entity.CreateDateTime == null ? default(DateTime?) : DateTime.Parse(entity.CreateDateTime.ToString());
+            this.CreatorResourceID = entity.CreatorResourceID == null ? default(int?) : int.Parse(entity.CreatorResourceID.ToString());
+            this.ExternalPONumber = entity.ExternalPONumber.ToString();
+            this.Fax = entity.Fax.ToString();
+            this.Freight = double.Parse(entity.Freight.ToString());
+            this.GeneralMemo = entity.GeneralMemo.ToString();
+            this.LatestEstimatedArrivalDate = entity.LatestEstimatedArrivalDate == null ? default(DateTime?) : DateTime.Parse(entity.LatestEstimatedArrivalDate.ToString());
+            this.PaymentTerm = entity.PaymentTerm == null ? default(int?) : int.Parse(entity.PaymentTerm.ToString());
+            this.ShippingDate = entity.ShippingDate == null ? default(DateTime?) : DateTime.Parse(entity.CancelDateTime.ToString());
+            this.ShippingType = entity.
+            this.ShipToAddress1 = entity.ShipToAddress1.ToString();
+            this.ShipToAddress2
+            this.ShipToCity
+            this.ShipToName
+            this.ShipToPostalCode
+            this.ShipToState
+        } //end PurchaseOrder(net.autotask.webservices.PurchaseOrder entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -40,6 +72,8 @@ namespace AutotaskNET.Entities
 
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
         public int VendorID { get; set; } //ReadOnly Required [Account]
         public int Status { get; set; } //Required PickList

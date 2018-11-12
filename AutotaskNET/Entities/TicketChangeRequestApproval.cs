@@ -10,11 +10,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class TicketChangeRequestApproval : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => true;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public TicketChangeRequestApproval() : base() { } //end TicketChangeRequestApproval()
+        public TicketChangeRequestApproval(net.autotask.webservices.TicketChangeRequestApproval entity) : base(entity)
+        {
+
+        } //end TicketChangeRequestApproval(net.autotask.webservices.TicketChangeRequestApproval entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -36,7 +52,9 @@ namespace AutotaskNET.Entities
         public bool? IsApproved { get; set; }
 
         #endregion //Optional Fields
-        
+
+        #endregion //Fields
+
     } //end TicketChangeRequestApproval
 
 }

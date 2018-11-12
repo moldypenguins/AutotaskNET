@@ -11,11 +11,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class ExpenseItem : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public ExpenseItem() : base() { } //end ExpenseItem()
+        public ExpenseItem(net.autotask.webservices.ExpenseItem entity) : base(entity)
+        {
+
+        } //end ExpenseItem(net.autotask.webservices.ExpenseItem entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -58,6 +74,8 @@ namespace AutotaskNET.Entities
         public double ReimbursementCurrencyReimbursementAmount { get; set; }
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
     } //end ExpenseItem
 

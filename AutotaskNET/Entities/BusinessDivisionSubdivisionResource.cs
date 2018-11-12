@@ -8,11 +8,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class BusinessDivisionSubdivisionResource : Entity
     {
+        #region Properties
+
         public override bool CanCreate => false;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public BusinessDivisionSubdivisionResource() : base() { } //end BusinessDivisionSubdivisionResource()
+        public BusinessDivisionSubdivisionResource(net.autotask.webservices.BusinessDivisionSubdivisionResource entity) : base(entity)
+        {
+
+        } //end BusinessDivisionSubdivisionResource(net.autotask.webservices.BusinessDivisionSubdivisionResource entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Required Fields
 
@@ -20,6 +36,8 @@ namespace AutotaskNET.Entities
         public int ResourceID { get; set; } //ReadOnly Required [Resource]
 
         #endregion //ReadOnly Required Fields
+
+        #endregion //Fields
 
     } //end BusinessDivisionSubdivisionResource
 

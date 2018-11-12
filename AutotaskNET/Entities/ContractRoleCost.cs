@@ -11,11 +11,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class ContractRoleCost : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public ContractRoleCost() : base() { } //end ContractRoleCost()
+        public ContractRoleCost(net.autotask.webservices.ContractRoleCost entity) : base(entity)
+        {
+
+        } //end ContractRoleCost(net.autotask.webservices.ContractRoleCost entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Required Fields
 
@@ -30,7 +46,9 @@ namespace AutotaskNET.Entities
         public double Rate { get; set; } //Required
 
         #endregion //Required Fields
-        
+
+        #endregion //Fields
+
     } //end ContractRoleCost
 
 }

@@ -11,11 +11,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class AccountAlert : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public AccountAlert() : base() { } //end AccountAlert()
+        public AccountAlert(net.autotask.webservices.AccountAlert entity) : base(entity)
+        {
+
+        } //end AccountAlert(net.autotask.webservices.AccountAlert entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Required Fields
 
@@ -29,6 +45,8 @@ namespace AutotaskNET.Entities
         public string AlertText; //Length:8000
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
     } //end AccountAlert
 

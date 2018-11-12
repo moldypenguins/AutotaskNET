@@ -10,11 +10,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class InventoryItemSerialNumber : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public InventoryItemSerialNumber() : base() { } //end InventoryItemSerialNumber()
+        public InventoryItemSerialNumber(net.autotask.webservices.InventoryItemSerialNumber entity) : base(entity)
+        {
+
+        } //end InventoryItemSerialNumber(net.autotask.webservices.InventoryItemSerialNumber entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Required Fields
 
@@ -27,7 +43,9 @@ namespace AutotaskNET.Entities
         public string SerialNumber { get; set; } //Required Length:100
 
         #endregion //Required Fields
-        
+
+        #endregion //Fields
+
     } //end InventoryItemSerialNumber
 
 }

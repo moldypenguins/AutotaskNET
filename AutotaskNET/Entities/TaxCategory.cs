@@ -9,11 +9,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class TaxCategory : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public TaxCategory() : base() { } //end TaxCategory()
+        public TaxCategory(net.autotask.webservices.TaxCategory entity) : base(entity)
+        {
+
+        } //end TaxCategory(net.autotask.webservices.TaxCategory entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region Required Fields
 
@@ -27,7 +43,9 @@ namespace AutotaskNET.Entities
         public bool? Active { get; set; }
 
         #endregion //Optional Fields
-        
+
+        #endregion //Fields
+
     } //end TaxCategory
 
 }

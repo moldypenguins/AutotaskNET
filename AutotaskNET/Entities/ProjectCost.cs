@@ -15,11 +15,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class ProjectCost : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => this.Billed == false;
         public override bool CanQuery => true;
         public override bool CanDelete => this.Billed == false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public ProjectCost() : base() { } //end ProjectCost()
+        public ProjectCost(net.autotask.webservices.ProjectCost entity) : base(entity)
+        {
+
+        } //end ProjectCost(net.autotask.webservices.ProjectCost entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -61,6 +77,8 @@ namespace AutotaskNET.Entities
         public double UnitPrice { get; set; }
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
     } //end ProjectCost
 

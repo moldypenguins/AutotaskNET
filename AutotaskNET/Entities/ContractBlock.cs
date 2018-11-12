@@ -12,11 +12,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class ContractBlock : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public ContractBlock() : base() { } //end ContractBlock()
+        public ContractBlock(net.autotask.webservices.ContractBlock entity) : base(entity)
+        {
+
+        } //end ContractBlock(net.autotask.webservices.ContractBlock entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -44,6 +60,8 @@ namespace AutotaskNET.Entities
         public int? PaymentType { get; set; } //PickList
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
     } //end ContractBlock
 

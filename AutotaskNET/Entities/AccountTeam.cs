@@ -10,11 +10,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class AccountTeam : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => true;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public AccountTeam() : base() { } //end AccountTeam()
+        public AccountTeam(net.autotask.webservices.AccountTeam entity) : base(entity)
+        {
+
+        } //end AccountTeam(net.autotask.webservices.AccountTeam entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region Required Fields
 
@@ -22,6 +38,8 @@ namespace AutotaskNET.Entities
         public long ResourceID { get; set; } //Required [Resource]
 
         #endregion //Required Fields
+
+        #endregion //Fields
 
     } //end AccountTeam
 

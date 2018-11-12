@@ -8,11 +8,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class SubscriptionPeriod : Entity
     {
+        #region Properties
+
         public override bool CanCreate => false;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public SubscriptionPeriod() : base() { } //end SubscriptionPeriod()
+        public SubscriptionPeriod(net.autotask.webservices.SubscriptionPeriod entity) : base(entity)
+        {
+
+        } //end SubscriptionPeriod(net.autotask.webservices.SubscriptionPeriod entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -37,6 +53,8 @@ namespace AutotaskNET.Entities
 
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
         public DateTime PeriodDate { get; set; } //Required
         public DateTime? PostedDate { get; set; }
