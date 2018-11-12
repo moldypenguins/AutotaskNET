@@ -9,11 +9,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class ContractNote : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public ContractNote() : base() { } //end ContractNote()
+        public ContractNote(net.autotask.webservices.ContractNote entity) : base(entity)
+        {
+
+        } //end ContractNote(net.autotask.webservices.ContractNote entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -34,7 +50,9 @@ namespace AutotaskNET.Entities
         public string Description { get; set; } //Required Length:8000
 
         #endregion //Required Fields
-        
+
+        #endregion //Fields
+
     } //end ContractNote
 
 }

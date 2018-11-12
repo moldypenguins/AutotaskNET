@@ -9,11 +9,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class ClientPortalUser : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public ClientPortalUser() : base() { } //end ClientPortalUser()
+        public ClientPortalUser(net.autotask.webservices.ClientPortalUser entity) : base(entity)
+        {
+
+        } //end ClientPortalUser(net.autotask.webservices.ClientPortalUser entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Required Fields
 
@@ -37,6 +53,8 @@ namespace AutotaskNET.Entities
         public string Password { get; set; } //Length:50
 
         #endregion //Optional Fields
-        
+
+        #endregion //Fields
+
     } //end ClientPortalUser
 }

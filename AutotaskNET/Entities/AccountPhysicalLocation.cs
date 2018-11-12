@@ -10,11 +10,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class AccountPhysicalLocation : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => true;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public AccountPhysicalLocation() : base() { } //end AccountPhysicalLocation()
+        public AccountPhysicalLocation(net.autotask.webservices.AccountPhysicalLocation entity) : base(entity)
+        {
+
+        } //end AccountPhysicalLocation(net.autotask.webservices.AccountPhysicalLocation entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Required Fields
 
@@ -46,6 +62,8 @@ namespace AutotaskNET.Entities
         public bool? Primary { get; set; }
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
     } //end AccountPhysicalLocation
 }

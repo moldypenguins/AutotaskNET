@@ -13,11 +13,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity"/>
     class Product : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => true;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public Product() : base() { } //end Product()
+        public Product(net.autotask.webservices.Product entity) : base(entity)
+        {
+
+        } //end Product(net.autotask.webservices.Product entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -42,6 +58,8 @@ namespace AutotaskNET.Entities
 
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
         public string Name { get; set; } //Required Length:100
         public string Description { get; set; } //Length:2000

@@ -8,11 +8,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class Service : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public Service() : base() { } //end Service()
+        public Service(net.autotask.webservices.Service entity) : base(entity)
+        {
+
+        } //end Account(net.autotask.webservices.Account entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -37,6 +53,8 @@ namespace AutotaskNET.Entities
 
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
         public string Name { get; set; } //Required Length:100
         public string Description { get; set; } //Length:400

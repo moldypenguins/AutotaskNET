@@ -12,11 +12,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class Contract : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => true;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public Contract() : base() { } //end Contract()
+        public Contract(net.autotask.webservices.Contract entity) : base(entity)
+        {
+
+        } //end Contract(net.autotask.webservices.Contract entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -67,7 +83,9 @@ namespace AutotaskNET.Entities
         public int? BusinessDivisionSubdivisionID { get; set; } //[BusinessDivisionSubdivision]
 
         #endregion //Optional Fields
-        
+
+        #endregion //Fields
+
     } //end Contract
 
 }

@@ -8,11 +8,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class BusinessDivisionSubdivision : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public BusinessDivisionSubdivision() : base() { } //end BusinessDivisionSubdivision()
+        public BusinessDivisionSubdivision(net.autotask.webservices.BusinessDivisionSubdivision entity) : base(entity)
+        {
+
+        } //end BusinessDivisionSubdivision(net.autotask.webservices.BusinessDivisionSubdivision entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Required Fields
 
@@ -26,6 +42,8 @@ namespace AutotaskNET.Entities
         public bool? Active { get; set; }
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
     } //end BusinessDivisionSubdivision
 

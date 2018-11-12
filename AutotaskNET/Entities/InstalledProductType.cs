@@ -10,11 +10,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class InstalledProductType : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => true;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public InstalledProductType() : base() { } //end InstalledProductType()
+        public InstalledProductType(net.autotask.webservices.InstalledProductType entity) : base(entity)
+        {
+
+        } //end InstalledProductType(net.autotask.webservices.InstalledProductType entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region Required Fields
 
@@ -22,7 +38,9 @@ namespace AutotaskNET.Entities
         public bool Active { get; set; } //Required
 
         #endregion //Required Fields
-        
+
+        #endregion //Fields
+
     } //end InstalledProductType
 
 }

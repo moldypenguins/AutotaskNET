@@ -11,11 +11,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class InventoryLocation : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public InventoryLocation() : base() { } //end InventoryLocation()
+        public InventoryLocation(net.autotask.webservices.InventoryLocation entity) : base(entity)
+        {
+
+        } //end InventoryLocation(net.autotask.webservices.InventoryLocation entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -35,6 +51,8 @@ namespace AutotaskNET.Entities
         public bool? IsDefault { get; set; }
 
         #endregion //Optional Fields
-        
+
+        #endregion //Fields
+
     } //end InventoryLocation
 }

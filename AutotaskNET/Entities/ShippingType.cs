@@ -10,11 +10,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class ShippingType : Entity
     {
+        #region Properties
+
         public override bool CanCreate => false;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public ShippingType() : base() { } //end ShippingType()
+        public ShippingType(net.autotask.webservices.ShippingType entity) : base(entity)
+        {
+
+        } //end ShippingType(net.autotask.webservices.ShippingType entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -24,7 +40,9 @@ namespace AutotaskNET.Entities
         public int? AllocationCodeID { get; set; } //ReadOnly [AllocationCode]
 
         #endregion //ReadOnly Fields
-        
+
+        #endregion //Fields
+
     } //end ShippingType
 
 }

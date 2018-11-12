@@ -8,11 +8,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class PurchaseOrderReceive : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public PurchaseOrderReceive() : base() { } //end PurchaseOrderReceive()
+        public PurchaseOrderReceive(net.autotask.webservices.PurchaseOrderReceive entity) : base(entity)
+        {
+
+        } //end PurchaseOrderReceive(net.autotask.webservices.PurchaseOrderReceive entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -37,6 +53,8 @@ namespace AutotaskNET.Entities
 
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
         public long PurchaseOrderItemID { get; set; } //ReadOnly Required [PurchaseOrderItem]
         public int? QuantityPreviouslyReceived { get; set; } //ReadOnly

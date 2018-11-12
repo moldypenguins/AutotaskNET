@@ -10,11 +10,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class InstalledProductTypeUdfAssociation : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => true;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public InstalledProductTypeUdfAssociation() : base() { } //end InstalledProductTypeUdfAssociation()
+        public InstalledProductTypeUdfAssociation(net.autotask.webservices.InstalledProductTypeUdfAssociation entity) : base(entity)
+        {
+
+        } //end InstalledProductTypeUdfAssociation(net.autotask.webservices.InstalledProductTypeUdfAssociation entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Required Fields
 
@@ -29,7 +45,9 @@ namespace AutotaskNET.Entities
         public int SortOrder { get; set; } //Required
 
         #endregion //Required Fields
-        
+
+        #endregion //Fields
+
     } //end InstalledProductTypeUdfAssociation
 
 }

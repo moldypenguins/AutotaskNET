@@ -8,11 +8,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class TicketCategory : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public TicketCategory() : base() { } //end TicketCategory()
+        public TicketCategory(net.autotask.webservices.TicketCategory entity) : base(entity)
+        {
+
+        } //end TicketCategory(net.autotask.webservices.TicketCategory entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -33,7 +49,9 @@ namespace AutotaskNET.Entities
         public string Nickname { get; set; } //Length:3
 
         #endregion //Optional Fields
-        
+
+        #endregion //Fields
+
     } //end TicketCategory
 
 }

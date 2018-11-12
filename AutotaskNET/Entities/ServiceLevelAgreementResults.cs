@@ -8,11 +8,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class ServiceLevelAgreementResults : Entity
     {
+        #region Properties
+
         public override bool CanCreate => false;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public ServiceLevelAgreementResults() : base() { } //end ServiceLevelAgreementResults()
+        public ServiceLevelAgreementResults(net.autotask.webservices.ServiceLevelAgreementResults entity) : base(entity)
+        {
+
+        } //end ServiceLevelAgreementResults(net.autotask.webservices.ServiceLevelAgreementResults entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -37,6 +53,8 @@ namespace AutotaskNET.Entities
 
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
         public int? TicketID { get; set; } //ReadOnly [Ticket]
         public string ServiceLevelAgreementName { get; set; } //ReadOnly Length:100

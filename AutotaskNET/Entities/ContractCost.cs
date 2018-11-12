@@ -10,11 +10,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class ContractCost : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => this.Billed == false;
         public override bool CanQuery => true;
         public override bool CanDelete => this.Billed == false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public ContractCost() : base() { } //end ContractCost()
+        public ContractCost(net.autotask.webservices.ContractCost entity) : base(entity)
+        {
+
+        } //end ContractCost(net.autotask.webservices.ContractCost entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -56,7 +72,9 @@ namespace AutotaskNET.Entities
         public long ContractServiceBundleID { get; set; } //[ContractServiceBundle]
 
         #endregion //Optional Fields
-        
+
+        #endregion //Fields
+
     } //end ContractCost
 
 }

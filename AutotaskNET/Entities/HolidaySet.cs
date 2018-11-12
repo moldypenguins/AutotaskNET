@@ -8,11 +8,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class HolidaySet : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => true;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public HolidaySet() : base() { } //end HolidaySet()
+        public HolidaySet(net.autotask.webservices.HolidaySet entity) : base(entity)
+        {
+
+        } //end HolidaySet(net.autotask.webservices.HolidaySet entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region Required Fields
 
@@ -25,7 +41,9 @@ namespace AutotaskNET.Entities
         public string HolidaySetDescription { get; set; } //Length:512
 
         #endregion //Optional Fields
-        
+
+        #endregion //Fields
+
     } //end HolidaySet
 
 }

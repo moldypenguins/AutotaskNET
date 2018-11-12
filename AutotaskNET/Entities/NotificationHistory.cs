@@ -10,11 +10,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class NotificationHistory : Entity
     {
+        #region Properties
+
         public override bool CanCreate => false;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public NotificationHistory() : base() { } //end NotificationHistory()
+        public NotificationHistory(net.autotask.webservices.NotificationHistory entity) : base(entity)
+        {
+
+        } //end NotificationHistory(net.autotask.webservices.NotificationHistory entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -39,6 +55,8 @@ namespace AutotaskNET.Entities
 
 
         #endregion //Optional Fields
+
+        #endregion //Fields
 
         public DateTime? NotificationSentTime { get; set; } //ReadOnly
         public string TemplateName { get; set; } //ReadOnly Length:100

@@ -24,14 +24,6 @@ namespace AutotaskNET.Entities
         public Country() : base() { } //end Country()
         public Country(net.autotask.webservices.Country entity) : base(entity)
         {
-            this.Active = entity.Active == null ? default(bool?) : bool.Parse(entity.Active.ToString());
-            this.AddressFormatID = long.Parse(entity.Active.ToString());
-            this.CountryCode = entity.CountryCode == null ? default(string) : entity.CountryCode.ToString();
-            this.DisplayName = entity.DisplayName == null ? default(string) : entity.DisplayName.ToString();
-            this.InvoiceTemplateID = entity.InvoiceTemplateID == null ? default(int?) : int.Parse(entity.InvoiceTemplateID.ToString());
-            this.IsDefaultCountry = entity.IsDefaultCountry == null ? default(bool?) : bool.Parse(entity.IsDefaultCountry.ToString());
-            this.Name = entity.Name == null ? default(string) : entity.Name.ToString();
-            this.QuoteTemplateID = entity.QuoteTemplateID == null ? default(int?) : int.Parse(entity.QuoteTemplateID.ToString());
 
         } //end Country(net.autotask.webservices.Country entity)
 

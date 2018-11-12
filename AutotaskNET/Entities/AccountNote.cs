@@ -9,11 +9,27 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class AccountNote : Entity
     {
+        #region Properties
+
         public override bool CanCreate => true;
         public override bool CanUpdate => true;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public AccountNote() : base() { } //end AccountNote()
+        public AccountNote(net.autotask.webservices.AccountNote entity) : base(entity)
+        {
+
+        } //end AccountNote(net.autotask.webservices.AccountNote entity)
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -38,8 +54,10 @@ namespace AutotaskNET.Entities
         public string Name; //Length:128
         public string Note; //Length:32000
         public int? OpportunityID; //[Opportunity]
-        
+
         #endregion //Optional Fields
+
+        #endregion //Fields
 
     } //end AccountNote
 
