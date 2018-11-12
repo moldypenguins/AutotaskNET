@@ -23,11 +23,11 @@ namespace AutotaskNET.Entities
 
         #region Constructors
 
-        public Account() : base() { } //end Account()
-        public Account(net.autotask.webservices.Account entity) : base(entity)
+        public PurchaseOrder() : base() { } //end PurchaseOrder()
+        public PurchaseOrder(net.autotask.webservices.PurchaseOrder entity) : base(entity)
         {
 
-        } //end Account(net.autotask.webservices.Account entity)
+        } //end PurchaseOrder(net.autotask.webservices.PurchaseOrder entity)
 
         #endregion //Constructors
 
