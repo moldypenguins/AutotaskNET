@@ -42,6 +42,11 @@ class Program
         {
             Console.WriteLine($"Error: {e.Message}");
         }
+        if (atAPI.IsConnected)
+        {
+            //use atAPI here
+            
+        }
     }
 }
 ```
