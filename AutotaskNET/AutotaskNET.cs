@@ -9,6 +9,20 @@ namespace AutotaskNET
     public class ATWSInterface
     {
         /// <summary>
+        /// The Autotask Web Service Object
+        /// </summary>
+        private readonly net.autotask.webservices.ATWS _atws;
+
+        /// <summary>
+        /// Indicates whether the interface is connected.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if the interface is connected; otherwise, <c>false</c>.
+        /// </value>
+        public bool IsConnected { get; internal set; } = false;
+
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ATWSInterface" /> class.
         /// </summary>
         /// <param name="username">The username.</param>
@@ -36,6 +50,7 @@ namespace AutotaskNET
                     CredentialCache _cache = new CredentialCache();
                     _cache.Add(new Uri(this._atws.Url), "BASIC", new NetworkCredential(username, password));
                     this._atws.Credentials = _cache;
+                    this.IsConnected = true;
                 }
                 else
                 {
@@ -48,10 +63,7 @@ namespace AutotaskNET
             }
         } //end WebService
         
-        /// <summary>
-        /// The Autotask Web Service Object
-        /// </summary>
-        private readonly net.autotask.webservices.ATWS _atws;
+
 
 
         #region Query
@@ -251,7 +263,17 @@ namespace AutotaskNET
         } //end GetPicklistValues(Entities.Entity entity, string field)
 
         #endregion //GetPicklistValues
+
+
         
+        
+
+
+
+
+
+
+
     } //end ATWSInterface
 
 }
