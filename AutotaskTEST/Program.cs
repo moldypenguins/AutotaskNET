@@ -16,10 +16,13 @@ namespace AutotaskTEST
         {
             Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tVersion: {Assembly.GetExecutingAssembly().GetName().Version.ToString()}");
             Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tConnecting to AutoTask.");
-            
+
+            ATWSInterface atAPI = new ATWSInterface();
+
             try
             {
-                ATWSInterface atAPI = new ATWSInterface(@USERNAME, @PASSWORD);
+                atAPI.Connect(@USERNAME, @PASSWORD);
+                
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tConnected.");
                 Console.WriteLine();
 

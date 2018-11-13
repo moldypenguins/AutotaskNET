@@ -9,19 +9,18 @@ namespace AutotaskNET
     public class ATWSInterface
     {
         /// <summary>
-        /// The Autotask Web Service Object
+        /// The Autotask Web Service Object.
         /// </summary>
-        private readonly net.autotask.webservices.ATWS _atws;
-
+        private net.autotask.webservices.ATWS _atws;
+        
         /// <summary>
-        /// Indicates whether the interface is connected.
+        /// Indicates whether the interface has been connected.
         /// </summary>
         /// <value>
-        ///   <c>true</c> if the interface is connected; otherwise, <c>false</c>.
+        ///   <c>true</c> if the interface has been connected; otherwise, <c>false</c>.
         /// </value>
         public bool IsConnected { get; internal set; } = false;
-
-
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="ATWSInterface" /> class.
         /// </summary>
@@ -32,13 +31,17 @@ namespace AutotaskNET
         /// Error getting zone information.
         /// Login Error.
         /// </exception>
-        public ATWSInterface(string username, string password)
+        public ATWSInterface() { } //end ATWSInterface
+        
+        /// <summary>
+        /// Connects the interface.
+        /// </summary>
+        /// <exception cref="Exception">
+        /// Zone Information Error
+        /// Login Error
+        /// </exception>
+        public void Connect(string username, string password)
         {
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-            {
-                throw new ArgumentException("Connection parameters are not defined.");
-            }
-
             this._atws = new net.autotask.webservices.ATWS() { Url = Properties.Settings.Default.Autotask_Net_Webservices_ATWS };
             try
             {
@@ -61,7 +64,7 @@ namespace AutotaskNET
             {
                 throw new Exception("Login Error: " + ex.Message);
             }
-        } //end WebService
+        }
         
 
 
