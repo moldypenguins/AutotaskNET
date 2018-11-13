@@ -33,9 +33,10 @@ class Program
     private const string @PASSWORD = "P@ssw0rd";
     static void Main(string[] args)
     {
+        ATWSInterface atAPI = new ATWSInterface();
         try
         {
-            ATWSInterface atAPI = new ATWSInterface(@USERNAME, @PASSWORD);
+            atAPI.Connect(@USERNAME, @PASSWORD);
         }
         catch (Exception e)
         {
