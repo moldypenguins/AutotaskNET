@@ -20,49 +20,35 @@ namespace AutotaskNET
         ///   <c>true</c> if the interface has been connected; otherwise, <c>false</c>.
         /// </value>
         public bool IsConnected { get; internal set; } = false;
-        
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="ATWSInterface" /> class.
+        /// Initializes a new instance of the <see cref="ATWSInterface"/> class.
+        /// </summary>
+        public ATWSInterface() { } //end ATWSInterface
+
+        /// <summary>
+        /// Connects using the specified username and password.
         /// </summary>
         /// <param name="username">The username.</param>
         /// <param name="password">The password.</param>
-        /// <exception cref="ArgumentException">Connection parameters are not defined.</exception>
-        /// <exception cref="Exception">
-        /// Error getting zone information.
-        /// Login Error.
-        /// </exception>
-        public ATWSInterface() { } //end ATWSInterface
-        
-        /// <summary>
-        /// Connects the interface.
-        /// </summary>
-        /// <exception cref="Exception">
-        /// Zone Information Error
-        /// Login Error
-        /// </exception>
+        /// <exception cref="AutotaskNETException">Error getting zone information.</exception>
         public void Connect(string username, string password)
         {
             this._atws = new net.autotask.webservices.ATWS() { Url = Properties.Settings.Default.Autotask_Net_Webservices_ATWS };
-            try
+
+            net.autotask.webservices.ATWSZoneInfo zoneInfo = this._atws.getZoneInfo(username);
+            if (zoneInfo.ErrorCode >= 0)
             {
-                net.autotask.webservices.ATWSZoneInfo zoneInfo = this._atws.getZoneInfo(username);
-                if (zoneInfo.ErrorCode >= 0)
-                {
-                    this._atws = new net.autotask.webservices.ATWS() { Url = zoneInfo.URL };
-                    this._atws.Url = zoneInfo.URL;
-                    CredentialCache _cache = new CredentialCache();
-                    _cache.Add(new Uri(this._atws.Url), "BASIC", new NetworkCredential(username, password));
-                    this._atws.Credentials = _cache;
-                    this.IsConnected = true;
-                }
-                else
-                {
-                    throw new Exception("Error getting zone information.");
-                }
+                this._atws = new net.autotask.webservices.ATWS() { Url = zoneInfo.URL };
+                this._atws.Url = zoneInfo.URL;
+                CredentialCache _cache = new CredentialCache();
+                _cache.Add(new Uri(this._atws.Url), "BASIC", new NetworkCredential(username, password));
+                this._atws.Credentials = _cache;
+                this.IsConnected = true;
             }
-            catch (Exception ex)
+            else
             {
-                throw new Exception("Login Error: " + ex.Message);
+                throw new AutotaskNETException("Error getting zone information.");
             }
         }
         
@@ -185,10 +171,14 @@ namespace AutotaskNET
         #region Update
 
         /// <summary>
-        /// Updates entities
+        /// Updates the specified entity.
         /// </summary>
-        /// <param name="entity">entity to update</param>
+        /// <param name="entity">The entity.</param>
         /// <returns></returns>
+        /// <exception cref="AutotaskNETException">
+        /// The entity cannot be updated.
+        /// Response error.
+        /// </exception>
         public Entities.Entity Update(Entities.Entity entity)
         {
             Entities.Entity updatedEntity = null;
@@ -200,6 +190,15 @@ namespace AutotaskNET
             {
                 //update entity
                 net.autotask.webservices.ATWSResponse resp = this._atws.update(new net.autotask.webservices.Entity[] { entity.ToATWS() });
+
+                if (resp.Errors.Length > 0)
+                {
+                    throw new AutotaskNETException(string.Join("\r\n", resp.Errors.Select(r => r.Message)));
+                }
+                else
+                {
+                    updatedEntity = this.Query(entity.GetType(), new List<QueryFilter>() { new QueryFilter() { FieldName = "id", Operation = "equals", Value = entity.id } }).FirstOrDefault();
+                }
             }
             return updatedEntity;
         } //end Update
