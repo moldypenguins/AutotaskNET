@@ -30,25 +30,35 @@ namespace AutotaskNET.Entities
 
         } //end ContractServiceBundleAdjustment(net.autotask.webservices.ContractServiceBundleAdjustment entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ContractServiceBundleAdjustment()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region Required Fields
 
-        public DateTime EffectiveDate { get; set; } //Required
+        public DateTime EffectiveDate; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public int? ContractID { get; set; } //[Contract]
-        public int? ServiceBundleID { get; set; } //[ServiceBundle]
-        public int? UnitChange { get; set; }
-        public double AdjustedUnitPrice { get; set; }
-        public int? QuoteItemID { get; set; } //[QuoteItem]
-        public int? ContractServiceBundleID { get; set; } //[ContractServiceBundle]
-        public bool? AllowRepeatServiceBundle { get; set; }
+        public int? ContractID; //[Contract]
+        public int? ServiceBundleID; //[ServiceBundle]
+        public int? UnitChange;
+        public double AdjustedUnitPrice;
+        public int? QuoteItemID; //[QuoteItem]
+        public int? ContractServiceBundleID; //[ContractServiceBundle]
+        public bool? AllowRepeatServiceBundle;
 
         #endregion //Optional Fields
 

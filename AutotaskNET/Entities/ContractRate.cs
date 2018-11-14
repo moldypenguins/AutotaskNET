@@ -29,27 +29,37 @@ namespace AutotaskNET.Entities
 
         } //end ContractRate(net.autotask.webservices.ContractRate entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ContractRate()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Fields
 
-        public double InternalCurrencyContractHourlyRate { get; set; } //ReadOnly
+        public double InternalCurrencyContractHourlyRate; //ReadOnly
 
         #endregion //ReadOnly Fields
 
         #region ReadOnly Required Fields
 
-        public int ContractID { get; set; } //ReadOnly Required [Contract]
+        public int ContractID; //ReadOnly Required [Contract]
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public int RoleID { get; set; } //Required [Role]
+        public int RoleID; //Required [Role]
 
-        public double ContractHourlyRate { get; set; } //Required
+        public double ContractHourlyRate; //Required
 
         #endregion //Required Fields
 

@@ -26,6 +26,16 @@ namespace AutotaskNET.Entities
 
         } //end SubscriptionPeriod(net.autotask.webservices.SubscriptionPeriod entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.SubscriptionPeriod()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
@@ -56,12 +66,12 @@ namespace AutotaskNET.Entities
 
         #endregion //Fields
 
-        public DateTime PeriodDate { get; set; } //Required
-        public DateTime? PostedDate { get; set; }
-        public int SubscriptionID { get; set; } //ReadOnly Required [Subscription]
-        public decimal PeriodPrice { get; set; } //ReadOnly Required
-        public decimal PeriodCost { get; set; } //ReadOnly Required
-        public string PurchaseOrderNumber { get; set; } //ReadOnly Length:50
+        public DateTime PeriodDate; //Required
+        public DateTime? PostedDate;
+        public int SubscriptionID; //ReadOnly Required [Subscription]
+        public decimal PeriodPrice; //ReadOnly Required
+        public decimal PeriodCost; //ReadOnly Required
+        public string PurchaseOrderNumber; //ReadOnly Length:50
 
     } //end SubscriptionPeriod
 

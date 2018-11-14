@@ -29,49 +29,59 @@ namespace AutotaskNET.Entities
 
         } //end ExpenseItem(net.autotask.webservices.ExpenseItem entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ExpenseItem()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Fields
 
-        public string GLCode { get; set; } //ReadOnly Length:20
-        public bool? Reimbursable { get; set; } //ReadOnly
-        public bool? Rejected { get; set; } //ReadOnly
+        public string GLCode; //ReadOnly Length:20
+        public bool? Reimbursable; //ReadOnly
+        public bool? Rejected; //ReadOnly
 
         #endregion //ReadOnly Fields
 
         #region Required Fields
 
-        public int ExpenseReportID { get; set; } //Required [ExpenseReport]
-        public string Description { get; set; } //Required Length:128
-        public DateTime ExpenseDate { get; set; } //Required
-        public int ExpenseCategory { get; set; } //Required PickList
-        public int PaymentType { get; set; } //Required PickList
-        public bool HaveReceipt { get; set; } //Required
-        public bool BillableToAccount { get; set; } //Required
+        public int ExpenseReportID; //Required [ExpenseReport]
+        public string Description; //Required Length:128
+        public DateTime ExpenseDate; //Required
+        public int ExpenseCategory; //Required PickList
+        public int PaymentType; //Required PickList
+        public bool HaveReceipt; //Required
+        public bool BillableToAccount; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public int? WorkType { get; set; } //PickList
-        public double ExpenseAmount { get; set; }
-        public int? AccountID { get; set; } //[Account]
-        public int? ProjectID { get; set; } //[Project]
-        public int? TaskID { get; set; } //[Task]
-        public int? TicketID { get; set; } //[Ticket]
-        public string EntertainmentLocation { get; set; } //Length:128
-        public double Miles { get; set; }
-        public string Origin { get; set; } //Length:128
-        public string Destination { get; set; } //Length:128
-        public string PurchaseOrderNumber { get; set; } //Length:50
-        public double OdometerStart { get; set; }
-        public double OdometerEnd { get; set; }
-        public int? ExpenseCurrencyID { get; set; } //[Currency]
-        public double ReceiptAmount { get; set; }
-        public double ReimbursementAmount { get; set; }
-        public double ReimbursementCurrencyReimbursementAmount { get; set; }
+        public int? WorkType; //PickList
+        public double ExpenseAmount;
+        public int? AccountID; //[Account]
+        public int? ProjectID; //[Project]
+        public int? TaskID; //[Task]
+        public int? TicketID; //[Ticket]
+        public string EntertainmentLocation; //Length:128
+        public double Miles;
+        public string Origin; //Length:128
+        public string Destination; //Length:128
+        public string PurchaseOrderNumber; //Length:50
+        public double OdometerStart;
+        public double OdometerEnd;
+        public int? ExpenseCurrencyID; //[Currency]
+        public double ReceiptAmount;
+        public double ReimbursementAmount;
+        public double ReimbursementCurrencyReimbursementAmount;
 
         #endregion //Optional Fields
 

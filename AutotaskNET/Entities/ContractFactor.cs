@@ -30,20 +30,30 @@ namespace AutotaskNET.Entities
 
         } //end ContractFactor(net.autotask.webservices.ContractFactor entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ContractFactor()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Required Fields
 
-        public int ContractID { get; set; } //ReadOnly Required [Contract]
+        public int ContractID; //ReadOnly Required [Contract]
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public int RoleID { get; set; } //Required [Role]
-        public double BlockHourFactor { get; set; } //Required
+        public int RoleID; //Required [Role]
+        public double BlockHourFactor; //Required
 
         #endregion //Required Fields
 

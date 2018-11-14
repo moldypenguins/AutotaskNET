@@ -26,6 +26,16 @@ namespace AutotaskNET.Entities
 
         } //end Account(net.autotask.webservices.Account entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.Subscription()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
@@ -56,21 +66,21 @@ namespace AutotaskNET.Entities
 
         #endregion //Fields
 
-        public int MaterialCodeID { get; set; } //Required [AllocationCode]
-        public string Description { get; set; } //Length:2000
-        public string SubscriptionName { get; set; } //Required Length:100
-        public DateTime ExpirationDate { get; set; } //Required
-        public DateTime EffectiveDate { get; set; } //Required
-        public decimal TotalCost { get; set; } //ReadOnly
-        public decimal TotalPrice { get; set; } //ReadOnly
-        public int InstalledProductID { get; set; } //ReadOnly Required [InstalledProduct]
-        public string PurchaseOrderNumber { get; set; } //Length:50
-        public string PeriodType { get; set; } //Required PickList Length:0
-        public int Status { get; set; } //Required PickList
-        public decimal PeriodCost { get; set; }
-        public decimal PeriodPrice { get; set; } //Required
-        public int? VendorID { get; set; } //[Account]
-        public int? BusinessDivisionSubdivisionID { get; set; } //ReadOnly [BusinessDivisionSubdivision]
+        public int MaterialCodeID; //Required [AllocationCode]
+        public string Description; //Length:2000
+        public string SubscriptionName; //Required Length:100
+        public DateTime ExpirationDate; //Required
+        public DateTime EffectiveDate; //Required
+        public decimal TotalCost; //ReadOnly
+        public decimal TotalPrice; //ReadOnly
+        public int InstalledProductID; //ReadOnly Required [InstalledProduct]
+        public string PurchaseOrderNumber; //Length:50
+        public string PeriodType; //Required PickList Length:0
+        public int Status; //Required PickList
+        public decimal PeriodCost;
+        public decimal PeriodPrice; //Required
+        public int? VendorID; //[Account]
+        public int? BusinessDivisionSubdivisionID; //ReadOnly [BusinessDivisionSubdivision]
 
     } //end Subscription
 

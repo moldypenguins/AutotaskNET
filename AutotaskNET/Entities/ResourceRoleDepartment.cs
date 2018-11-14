@@ -26,6 +26,16 @@ namespace AutotaskNET.Entities
 
         } //end ResourceRoleDepartment(net.autotask.webservices.ResourceRoleDepartment entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ResourceRoleDepartment()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
@@ -56,12 +66,12 @@ namespace AutotaskNET.Entities
 
         #endregion //Fields
 
-        public int DepartmentID { get; set; } //Required [Department]
-        public int ResourceID { get; set; } //ReadOnly Required [Resource]
-        public int RoleID { get; set; } //Required [Role]
-        public bool Active { get; set; } //Required
-        public bool Default { get; set; } //Required
-        public bool DepartmentLead { get; set; } //Required
+        public int DepartmentID; //Required [Department]
+        public int ResourceID; //ReadOnly Required [Resource]
+        public int RoleID; //Required [Role]
+        public bool Active; //Required
+        public bool Default; //Required
+        public bool DepartmentLead; //Required
 
     } //end ResourceRoleDepartment
 

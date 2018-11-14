@@ -28,6 +28,16 @@ namespace AutotaskNET.Entities
 
         } //end AllocationCode(net.autotask.webservices.AllocationCode entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.AllocationCode()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
@@ -40,25 +50,25 @@ namespace AutotaskNET.Entities
 
         #region Required Fields
 
-        public bool Active { get; set; } //Required
-        public double UnitCost { get; set; } //Required
-        public double UnitPrice { get; set; } //Required
+        public bool Active; //Required
+        public double UnitCost; //Required
+        public double UnitPrice; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public int? GeneralLedgerCode { get; set; } //PickList
-        public int? Department { get; set; }
-        public string Name { get; set; } //Length:200
-        public string ExternalNumber { get; set; } //Length:100
-        public int? Type { get; set; } //PickList
-        public int? UseType { get; set; } //PickList
-        public string Description { get; set; } //Length:500
-        public int? AllocationCodeType { get; set; } //PickList
-        public bool? Taxable { get; set; }
-        public int? TaxCategoryID { get; set; } //[TaxCategory]
-        public bool? IsExcludedFromNewContracts { get; set; }
+        public int? GeneralLedgerCode; //PickList
+        public int? Department;
+        public string Name; //Length:200
+        public string ExternalNumber; //Length:100
+        public int? Type; //PickList
+        public int? UseType; //PickList
+        public string Description; //Length:500
+        public int? AllocationCodeType; //PickList
+        public bool? Taxable;
+        public int? TaxCategoryID; //[TaxCategory]
+        public bool? IsExcludedFromNewContracts;
 
         #endregion //Optional Fields
 

@@ -31,6 +31,16 @@ namespace AutotaskNET.Entities
 
         #endregion //Constructors
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.InvoiceTemplate()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #region Fields
 
         #region ReadOnly Fields

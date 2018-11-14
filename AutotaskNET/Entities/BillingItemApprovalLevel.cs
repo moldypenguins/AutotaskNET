@@ -28,16 +28,26 @@ namespace AutotaskNET.Entities
 
         } //end BillingItemApprovalLevel(net.autotask.webservices.BillingItemApprovalLevel entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.BillingItemApprovalLevel()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region Required Fields
 
-        public int TimeEntryID { get; set; } //Required [TimeEntry]
-        public int ApprovalResourceID { get; set; } //Required [Resource]
-        public DateTime ApprovalDateTime { get; set; } //Required
-        public int ApprovalLevel { get; set; } //Required
+        public int TimeEntryID; //Required [TimeEntry]
+        public int ApprovalResourceID; //Required [Resource]
+        public DateTime ApprovalDateTime; //Required
+        public int ApprovalLevel; //Required
 
         #endregion //Required Fields
 

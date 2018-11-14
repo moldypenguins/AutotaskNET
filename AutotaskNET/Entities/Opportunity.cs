@@ -32,6 +32,16 @@ namespace AutotaskNET.Entities
 
         } //end Opportunity(net.autotask.webservices.Opportunity entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.Opportunity()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields

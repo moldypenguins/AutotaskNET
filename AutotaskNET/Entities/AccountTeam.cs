@@ -28,14 +28,24 @@ namespace AutotaskNET.Entities
 
         } //end AccountTeam(net.autotask.webservices.AccountTeam entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.AccountTeam()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region Required Fields
 
-        public long AccountID { get; set; } //Required [Account]
-        public long ResourceID { get; set; } //Required [Resource]
+        public long AccountID; //Required [Account]
+        public long ResourceID; //Required [Resource]
 
         #endregion //Required Fields
 

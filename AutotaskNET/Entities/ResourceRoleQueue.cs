@@ -26,27 +26,37 @@ namespace AutotaskNET.Entities
 
         } //end ResourceRoleQueue(net.autotask.webservices.ResourceRoleQueue entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ResourceRoleQueue()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Required Fields
 
-        public int ResourceID { get; set; } //ReadOnly Required [Resource]
+        public int ResourceID; //ReadOnly Required [Resource]
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public int QueueID { get; set; } //Required PickList
+        public int QueueID; //Required PickList
 
         #endregion //Required Fields
 
         #region Obsolete Fields
 
-        public bool? Active { get; set; } //ReadOnly (Obsolete)
-        public bool? Default { get; set; } //ReadOnly (Obsolete)
-        public int? RoleID { get; set; } //ReadOnly [Role] (Obsolete)
+        public bool? Active; //ReadOnly (Obsolete)
+        public bool? Default; //ReadOnly (Obsolete)
+        public int? RoleID; //ReadOnly [Role] (Obsolete)
 
         #endregion //Obsolete Fields
 

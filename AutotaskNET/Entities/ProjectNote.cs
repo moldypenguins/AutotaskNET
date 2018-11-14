@@ -27,6 +27,16 @@ namespace AutotaskNET.Entities
 
         } //end ProjectNote(net.autotask.webservices.ProjectNote entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ProjectNote()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields

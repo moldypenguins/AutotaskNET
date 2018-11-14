@@ -29,27 +29,37 @@ namespace AutotaskNET.Entities
 
         } //end Tax(net.autotask.webservices.Tax entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.Tax()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Required Fields
 
-        public int TaxRegionID { get; set; } //ReadOnly Required [TaxRegion]
-        public int TaxCategoryID { get; set; } //ReadOnly Required [TaxCategory]
+        public int TaxRegionID; //ReadOnly Required [TaxRegion]
+        public int TaxCategoryID; //ReadOnly Required [TaxCategory]
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public string TaxName { get; set; } //Required Length:100
-        public double TaxRate { get; set; } //Required
+        public string TaxName; //Required Length:100
+        public double TaxRate; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public bool? IsCompounded { get; set; }
+        public bool? IsCompounded;
 
         #endregion //Optional Fields
 

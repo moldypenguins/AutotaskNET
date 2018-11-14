@@ -32,32 +32,42 @@ namespace AutotaskNET.Entities
 
         } //end ContractService(net.autotask.webservices.ContractService entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ContractService()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Fields
 
-        public double UnitPrice { get; set; } //ReadOnly
-        public long QuoteItemID { get; set; } //ReadOnly [QuoteItem]
-        public double InternalCurrencyUnitPrice { get; set; } //ReadOnly
-        public double InternalCurrencyAdjustedPrice { get; set; } //ReadOnly
+        public double UnitPrice; //ReadOnly
+        public long QuoteItemID; //ReadOnly [QuoteItem]
+        public double InternalCurrencyUnitPrice; //ReadOnly
+        public double InternalCurrencyAdjustedPrice; //ReadOnly
 
         #endregion //ReadOnly Fields
 
         #region ReadOnly Required Fields
 
-        public int ContractID { get; set; } //ReadOnly Required [Contract]
-        public int ServiceID { get; set; } //ReadOnly Required [Service]
+        public int ContractID; //ReadOnly Required [Contract]
+        public int ServiceID; //ReadOnly Required [Service]
 
         #endregion //ReadOnly Required Fields
 
         #region Optional Fields
 
-        public double AdjustedPrice { get; set; }
-        public string InvoiceDescription { get; set; } //Length:1000
-        public string InternalDescription { get; set; } //Length:100
-        public double UnitCost { get; set; }
+        public double AdjustedPrice;
+        public string InvoiceDescription; //Length:1000
+        public string InternalDescription; //Length:100
+        public double UnitCost;
 
         #endregion //Optional Fields
 

@@ -28,6 +28,16 @@ namespace AutotaskNET.Entities
 
         } //end InstalledProductType(net.autotask.webservices.InstalledProductType entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.InstalledProductType()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields

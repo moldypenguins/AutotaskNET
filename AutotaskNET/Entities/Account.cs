@@ -79,6 +79,67 @@ namespace AutotaskNET.Entities
 
         } //end Account(net.autotask.webservices.Account entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.Account()
+            {
+                id = this.id,
+                AccountName = this.AccountName,
+                AccountNumber = this.AccountNumber,
+                AccountType = this.AccountType,
+                Active = this.Active,
+                AdditionalAddressInformation = this.AdditionalAddressInformation,
+                Address1 = this.Address1,
+                Address2 = this.Address2,
+                AlternatePhone1 = this.AlternatePhone1,
+                AlternatePhone2 = this.AlternatePhone2,
+                AssetValue = this.AssetValue,
+                BillToAccountPhysicalLocationID = this.BillToAccountPhysicalLocationID,
+                BillToAdditionalAddressInformation = this.BillToAdditionalAddressInformation,
+                BillToAddress1 = this.BillToAddress1,
+                BillToAddress2 = this.BillToAddress2,
+                BillToAddressToUse = this.BillToAddressToUse,
+                BillToAttention = this.BillToAttention,
+                BillToCity = this.BillToCity,
+                BillToCountryID = this.BillToCountryID,
+                BillToState = this.BillToState,
+                BillToZipCode = this.BillToZipCode,
+                City = this.City,
+                ClientPortalActive = this.ClientPortalActive,
+                CompetitorID = this.CompetitorID,
+                Country = this.Country,
+                CountryID = this.CountryID,
+                CreateDate = this.CreateDate,
+                CurrencyID = this.CurrencyID,
+                Fax = this.Fax,
+                InvoiceEmailMessageID = this.InvoiceEmailMessageID,
+                InvoiceMethod = this.InvoiceMethod,
+                InvoiceNonContractItemsToParentAccount = this.InvoiceNonContractItemsToParentAccount,
+                InvoiceTemplateID = this.InvoiceTemplateID,
+                KeyAccountIcon = this.KeyAccountIcon,
+                LastActivityDate = this.LastActivityDate,
+                MarketSegmentID = this.MarketSegmentID,
+                OwnerResourceID = this.OwnerResourceID,
+                ParentAccountID = this.ParentAccountID,
+                Phone = this.Phone,
+                PostalCode = this.PostalCode,
+                QuoteEmailMessageID = this.QuoteEmailMessageID,
+                QuoteTemplateID = this.QuoteTemplateID,
+                SICCode = this.SICCode,
+                State = this.State,
+                StockMarket = this.StockMarket,
+                StockSymbol = this.StockSymbol,
+                SurveyAccountRating = this.SurveyAccountRating,
+                TaskFireActive = this.TaskFireActive,
+                TaxExempt = this.TaxExempt,
+                TaxID = this.TaxID,
+                TaxRegionID = this.TaxRegionID,
+                TerritoryID = this.TerritoryID,
+                WebAddress = this.WebAddress
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields

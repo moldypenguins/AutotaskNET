@@ -30,28 +30,38 @@ namespace AutotaskNET.Entities
 
         } //end ProductVendor(net.autotask.webservices.ProductVendor entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ProductVendor()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Required Fields
 
-        public int ProductID { get; set; } //ReadOnly Required [Product]
+        public int ProductID; //ReadOnly Required [Product]
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public int VendorID { get; set; } //Required [Account]
-        public bool Active { get; set; } //Required
-        public bool IsDefault { get; set; } //Required
+        public int VendorID; //Required [Account]
+        public bool Active; //Required
+        public bool IsDefault; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public double VendorCost { get; set; }
-        public string VendorPartNumber { get; set; } //Length:50
+        public double VendorCost;
+        public string VendorPartNumber; //Length:50
 
         #endregion //Optional Fields
 

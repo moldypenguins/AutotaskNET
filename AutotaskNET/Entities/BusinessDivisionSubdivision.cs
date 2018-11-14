@@ -26,20 +26,30 @@ namespace AutotaskNET.Entities
 
         } //end BusinessDivisionSubdivision(net.autotask.webservices.BusinessDivisionSubdivision entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.BusinessDivisionSubdivision()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Required Fields
 
-        public int BusinessDivisionID { get; set; } //ReadOnly Required [BusinessDivision]
-        public int BusinessSubdivisionID { get; set; } //ReadOnly Required [BusinessSubdivision]
+        public int BusinessDivisionID; //ReadOnly Required [BusinessDivision]
+        public int BusinessSubdivisionID; //ReadOnly Required [BusinessSubdivision]
 
         #endregion //ReadOnly Required Fields
 
         #region Optional Fields
 
-        public bool? Active { get; set; }
+        public bool? Active;
 
         #endregion //Optional Fields
 

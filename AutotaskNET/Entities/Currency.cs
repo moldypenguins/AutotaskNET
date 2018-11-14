@@ -32,37 +32,47 @@ namespace AutotaskNET.Entities
 
         } //end Currency(net.autotask.webservices.Currency entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.Currency()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Fields
 
-        public int? UpdateResourceId { get; set; } //ReadOnly [Resource]
+        public int? UpdateResourceId; //ReadOnly [Resource]
 
         #endregion //ReadOnly Fields
 
         #region ReadOnly Required Fields
 
-        public string Name { get; set; } //ReadOnly Required Length:3
-        public string Description { get; set; } //ReadOnly Required Length:100
-        public int DisplaySymbol { get; set; } //ReadOnly Required PickList
-        public bool IsInternalCurrency { get; set; } //ReadOnly Required
-        public bool Active { get; set; } //ReadOnly Required
-        public string CurrencyPositiveFormat { get; set; } //ReadOnly Required Length:10
-        public string CurrencyNegativeFormat { get; set; } //ReadOnly Required Length:10
+        public string Name; //ReadOnly Required Length:3
+        public string Description; //ReadOnly Required Length:100
+        public int DisplaySymbol; //ReadOnly Required PickList
+        public bool IsInternalCurrency; //ReadOnly Required
+        public bool Active; //ReadOnly Required
+        public string CurrencyPositiveFormat; //ReadOnly Required Length:10
+        public string CurrencyNegativeFormat; //ReadOnly Required Length:10
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public decimal ExchangeRate { get; set; } //Required
+        public decimal ExchangeRate; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public DateTime? LastModifiedDateTime { get; set; }
+        public DateTime? LastModifiedDateTime;
 
         #endregion //Optional Fields
 

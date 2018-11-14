@@ -26,6 +26,16 @@ namespace AutotaskNET.Entities
 
         } //end ServiceLevelAgreementResults(net.autotask.webservices.ServiceLevelAgreementResults entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ServiceLevelAgreementResults()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
@@ -56,18 +66,18 @@ namespace AutotaskNET.Entities
 
         #endregion //Fields
 
-        public int? TicketID { get; set; } //ReadOnly [Ticket]
-        public string ServiceLevelAgreementName { get; set; } //ReadOnly Length:100
-        public decimal FirstResponseElapsedHours { get; set; } //ReadOnly
-        public int? FirstResponseInitiatingResourceID { get; set; } //ReadOnly [Resource]
-        public int? FirstResponseResourceID { get; set; } //ReadOnly [Resource]
-        public bool? FirstResponseMet { get; set; } //ReadOnly
-        public decimal ResolutionPlanElapsedHours { get; set; } //ReadOnly
-        public int? ResolutionPlanResourceID { get; set; } //ReadOnly [Resource]
-        public bool? ResolutionPlanMet { get; set; } //ReadOnly
-        public decimal ResolutionElapsedHours { get; set; } //ReadOnly
-        public int? ResolutionResourceID { get; set; } //ReadOnly [Resource]
-        public bool? ResolutionMet { get; set; } //ReadOnly
+        public int? TicketID; //ReadOnly [Ticket]
+        public string ServiceLevelAgreementName; //ReadOnly Length:100
+        public decimal FirstResponseElapsedHours; //ReadOnly
+        public int? FirstResponseInitiatingResourceID; //ReadOnly [Resource]
+        public int? FirstResponseResourceID; //ReadOnly [Resource]
+        public bool? FirstResponseMet; //ReadOnly
+        public decimal ResolutionPlanElapsedHours; //ReadOnly
+        public int? ResolutionPlanResourceID; //ReadOnly [Resource]
+        public bool? ResolutionPlanMet; //ReadOnly
+        public decimal ResolutionElapsedHours; //ReadOnly
+        public int? ResolutionResourceID; //ReadOnly [Resource]
+        public bool? ResolutionMet; //ReadOnly
 
     } //end ServiceLevelAgreementResults
 

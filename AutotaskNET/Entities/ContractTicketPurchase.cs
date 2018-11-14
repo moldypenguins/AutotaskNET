@@ -28,29 +28,39 @@ namespace AutotaskNET.Entities
 
         } //end ContractTicketPurchase(net.autotask.webservices.ContractTicketPurchase entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ContractTicketPurchase()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region Required Fields
 
-        public long ContractID { get; set; } //Required [Contract]
-        public bool IsPaid { get; set; } //Required PickList
-        public DateTime DatePurchased { get; set; } //Required
-        public DateTime StartDate { get; set; } //Required
-        public DateTime EndDate { get; set; } //Required
-        public double TicketsPurchased { get; set; } //Required
-        public double PerTicketRate { get; set; } //Required
+        public long ContractID; //Required [Contract]
+        public bool IsPaid; //Required PickList
+        public DateTime DatePurchased; //Required
+        public DateTime StartDate; //Required
+        public DateTime EndDate; //Required
+        public double TicketsPurchased; //Required
+        public double PerTicketRate; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public string InvoiceNumber { get; set; } //Length:50
-        public string PaymentNumber { get; set; } //Length:50
-        public int? PaymentType { get; set; } //PickList
-        public double TicketsUsed { get; set; } //ReadOnly
-        public int? Status { get; set; } //PickList
+        public string InvoiceNumber; //Length:50
+        public string PaymentNumber; //Length:50
+        public int? PaymentType; //PickList
+        public double TicketsUsed; //ReadOnly
+        public int? Status; //PickList
 
         #endregion //Optional Fields
 

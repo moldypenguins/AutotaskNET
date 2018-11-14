@@ -26,27 +26,37 @@ namespace AutotaskNET.Entities
 
         } //end SurveyResults(net.autotask.webservices.SurveyResults entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.SurveyResults()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Fields
 
-        public int? AccountID { get; set; } //ReadOnly [Account]
-        public decimal CompanyRating { get; set; } //ReadOnly
-        public int? ContactID { get; set; } //ReadOnly [Contact]
-        public decimal ContactRating { get; set; } //ReadOnly
-        public DateTime? CompleteDate { get; set; } //ReadOnly
-        public decimal ResourceRating { get; set; } //ReadOnly
-        public DateTime? SendDate { get; set; } //ReadOnly
-        public decimal SurveyRating { get; set; } //ReadOnly
-        public int? TicketID { get; set; } //ReadOnly [Ticket]
+        public int? AccountID; //ReadOnly [Account]
+        public decimal CompanyRating; //ReadOnly
+        public int? ContactID; //ReadOnly [Contact]
+        public decimal ContactRating; //ReadOnly
+        public DateTime? CompleteDate; //ReadOnly
+        public decimal ResourceRating; //ReadOnly
+        public DateTime? SendDate; //ReadOnly
+        public decimal SurveyRating; //ReadOnly
+        public int? TicketID; //ReadOnly [Ticket]
 
         #endregion //ReadOnly Fields
 
         #region ReadOnly Required Fields
 
-        public int SurveyID { get; set; } //ReadOnly Required [Survey]
+        public int SurveyID; //ReadOnly Required [Survey]
 
         #endregion //ReadOnly Required Fields
 

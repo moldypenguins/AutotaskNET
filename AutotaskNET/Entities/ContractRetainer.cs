@@ -31,40 +31,50 @@ namespace AutotaskNET.Entities
 
         } //end Account(net.autotask.webservices.Account entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ContractRetainer()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Fields
 
-        public int? IsPaid { get; set; } //ReadOnly PickList
-        public double AmountApproved { get; set; } //ReadOnly
-        public double InternalCurrencyAmountApproved { get; set; } //ReadOnly
-        public double InternalCurrencyAmount { get; set; } //ReadOnly
+        public int? IsPaid; //ReadOnly PickList
+        public double AmountApproved; //ReadOnly
+        public double InternalCurrencyAmountApproved; //ReadOnly
+        public double InternalCurrencyAmount; //ReadOnly
 
         #endregion //ReadOnly Fields
 
         #region ReadOnly Required Fields
 
-        public int ContractID { get; set; } //ReadOnly Required [Contract]
+        public int ContractID; //ReadOnly Required [Contract]
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public int Status { get; set; } //Required PickList
-        public DateTime DatePurchased { get; set; } //Required
-        public DateTime StartDate { get; set; } //Required
-        public DateTime EndDate { get; set; } //Required
-        public double Amount { get; set; } //Required
+        public int Status; //Required PickList
+        public DateTime DatePurchased; //Required
+        public DateTime StartDate; //Required
+        public DateTime EndDate; //Required
+        public double Amount; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public string InvoiceNumber { get; set; } //Length:50
-        public string PaymentNumber { get; set; } //Length:50
-        public int? paymentID { get; set; } //PickList
+        public string InvoiceNumber; //Length:50
+        public string PaymentNumber; //Length:50
+        public int? paymentID; //PickList
 
         #endregion //Optional Fields
 

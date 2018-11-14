@@ -26,6 +26,16 @@ namespace AutotaskNET.Entities
 
         } //end BusinessDivision(net.autotask.webservices.BusinessDivision entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.BusinessDivision()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields

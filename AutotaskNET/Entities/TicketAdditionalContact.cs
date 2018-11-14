@@ -28,14 +28,24 @@ namespace AutotaskNET.Entities
 
         } //end TicketAdditionalContact(net.autotask.webservices.TicketAdditionalContact entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.TicketAdditionalContact()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region Required Fields
 
-        public int TicketID { get; set; } //Required [Ticket]
-        public int ContactID { get; set; } //Required [Contact]
+        public int TicketID; //Required [Ticket]
+        public int ContactID; //Required [Contact]
 
         #endregion //Required Fields
 

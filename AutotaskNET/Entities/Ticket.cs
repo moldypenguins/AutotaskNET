@@ -92,6 +92,77 @@ namespace AutotaskNET.Entities
 
         } //end Ticket(net.autotask.webservices.Ticket entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.Ticket()
+            {
+                id = this.id,
+                AccountID = this.AccountID,
+                AccountPhysicalLocationID = this.AccountPhysicalLocationID,
+                AEMAlertID = this.AEMAlertID,
+                AllocationCodeID = this.AllocationCodeID,
+                AssignedResourceID = this.AssignedResourceID,
+                AssignedResourceRoleID = this.AssignedResourceRoleID,
+                BusinessDivisionSubdivisionID = this.BusinessDivisionSubdivisionID,
+                ChangeApprovalBoard = this.ChangeApprovalBoard,
+                ChangeApprovalStatus = this.ChangeApprovalStatus,
+                ChangeApprovalType = this.ChangeApprovalType,
+                ChangeInfoField1 = this.ChangeInfoField1,
+                ChangeInfoField2 = this.ChangeInfoField2,
+                ChangeInfoField3 = this.ChangeInfoField3,
+                ChangeInfoField4 = this.ChangeInfoField4,
+                ChangeInfoField5 = this.ChangeInfoField5,
+                CompletedByResourceID = this.CompletedByResourceID,
+                CompletedDate = this.CompletedDate,
+                ContactID = this.ContactID,
+                ContractID = this.ContractID,
+                ContractServiceBundleID = this.ContractServiceBundleID,
+                ContractServiceID = this.ContractServiceID,
+                CreateDate = this.CreateDate,
+                CreatorResourceID = this.CreatorResourceID,
+                CreatorType = this.CreatorType,
+                Description = this.Description,
+                DueDateTime = this.DueDateTime,
+                EstimatedHours = this.EstimatedHours,
+                ExternalID = this.ExternalID,
+                FirstResponseAssignedResourceID = this.FirstResponseAssignedResourceID,
+                FirstResponseDateTime = this.FirstResponseDateTime,
+                FirstResponseDueDateTime = this.FirstResponseDueDateTime,
+                FirstResponseInitiatingResourceID = this.FirstResponseInitiatingResourceID,
+                HoursToBeScheduled = this.HoursToBeScheduled,
+                InstalledProductID = this.InstalledProductID,
+                IssueType = this.IssueType,
+                LastActivityDate = this.LastActivityDate,
+                LastActivityPersonType = this.LastActivityPersonType,
+                LastActivityResourceID = this.LastActivityResourceID,
+                LastCustomerNotificationDateTime = this.LastCustomerNotificationDateTime,
+                LastCustomerVisibleActivityDateTime = this.LastCustomerVisibleActivityDateTime,
+                MonitorID = this.MonitorID,
+                MonitorTypeID = this.MonitorTypeID,
+                OpportunityId = this.OpportunityId,
+                Priority = this.Priority,
+                ProblemTicketId = this.ProblemTicketId,
+                ProjectID = this.ProjectID,
+                PurchaseOrderNumber = this.PurchaseOrderNumber,
+                QueueID = this.QueueID,
+                Resolution = this.Resolution,
+                ResolutionPlanDateTime = this.ResolutionPlanDateTime,
+                ResolutionPlanDueDateTime = this.ResolutionPlanDueDateTime,
+                ResolvedDateTime = this.ResolvedDateTime,
+                ResolvedDueDateTime = this.ResolvedDueDateTime,
+                ServiceLevelAgreementHasBeenMet = this.ServiceLevelAgreementHasBeenMet,
+                ServiceLevelAgreementID = this.ServiceLevelAgreementID,
+                //ServiceLevelAgreementPausedNextEventHours = this.ServiceLevelAgreementPausedNextEventHours,
+                Source = this.Source,
+                Status = this.TicketCategory,
+                SubIssueType = this.SubIssueType,
+                TicketCategory = this.TicketCategory,
+                TicketNumber = this.TicketNumber,
+                TicketType = this.TicketType,
+                Title = this.Title
+            };
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
@@ -173,9 +244,9 @@ namespace AutotaskNET.Entities
         public int? AccountPhysicalLocationID; //[AccountPhysicalLocation]
 
         #endregion //Optional Fields
-        
-        #endregion //Fields
 
+        #endregion //Fields
+        
     } //end Ticket
 
 }

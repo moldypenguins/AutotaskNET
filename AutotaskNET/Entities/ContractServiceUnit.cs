@@ -26,34 +26,44 @@ namespace AutotaskNET.Entities
 
         } //end ContractServiceUnit(net.autotask.webservices.ContractServiceUnit entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ContractServiceUnit()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Fields
 
-        public float Price { get; set; } //ReadOnly
-        public DateTime? ApproveAndPostDate { get; set; } //ReadOnly
-        public float Cost { get; set; } //ReadOnly
-        public int? VendorAccountID { get; set; } //ReadOnly [Account]
-        public float InternalCurrencyPrice { get; set; } //ReadOnly
-        public int? BusinessDivisionSubdivisionID { get; set; } //ReadOnly [BusinessDivisionSubdivision]
+        public float Price; //ReadOnly
+        public DateTime? ApproveAndPostDate; //ReadOnly
+        public float Cost; //ReadOnly
+        public int? VendorAccountID; //ReadOnly [Account]
+        public float InternalCurrencyPrice; //ReadOnly
+        public int? BusinessDivisionSubdivisionID; //ReadOnly [BusinessDivisionSubdivision]
 
         #endregion //ReadOnly Fields
 
         #region ReadOnly Required Fields
 
-        public int ContractID { get; set; } //ReadOnly Required [Contract]
-        public int ServiceID { get; set; } //ReadOnly Required [Service]
-        public DateTime StartDate { get; set; } //ReadOnly Required
-        public DateTime EndDate { get; set; } //ReadOnly Required
-        public int Units { get; set; } //ReadOnly Required
+        public int ContractID; //ReadOnly Required [Contract]
+        public int ServiceID; //ReadOnly Required [Service]
+        public DateTime StartDate; //ReadOnly Required
+        public DateTime EndDate; //ReadOnly Required
+        public int Units; //ReadOnly Required
 
         #endregion //ReadOnly Required Fields
 
         #region Optional Fields
 
-        public int? ContractServiceID { get; set; } //[ContractService]
+        public int? ContractServiceID; //[ContractService]
 
         #endregion //Optional Fields
 

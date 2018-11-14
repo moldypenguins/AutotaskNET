@@ -28,14 +28,24 @@ namespace AutotaskNET.Entities
 
         } //end ChangeRequestLink(net.autotask.webservices.ChangeRequestLink entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ChangeRequestLink()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region Required Fields
 
-        public int ChangeRequestTicketID { get; set; } //Required [Ticket]
-        public int ProblemOrIncidentTicketID { get; set; } //Required [Ticket]
+        public int ChangeRequestTicketID; //Required [Ticket]
+        public int ProblemOrIncidentTicketID; //Required [Ticket]
 
         #endregion //Required Fields
 

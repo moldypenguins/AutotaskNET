@@ -35,6 +35,16 @@ namespace AutotaskNET.Entities
 
         } //end TicketNote(net.autotask.webservices.TicketNote entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.TicketNote()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields

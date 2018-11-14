@@ -28,6 +28,16 @@ namespace AutotaskNET.Entities
 
         } //end Appointment(net.autotask.webservices.Appointment entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.Appointment()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
@@ -42,16 +52,16 @@ namespace AutotaskNET.Entities
 
         #region Required Fields
 
-        public int ResourceID { get; set; } //Required [Resource]
-        public string Title { get; set; } //Required Length:256
-        public DateTime StartDateTime { get; set; } //Required
-        public DateTime EndDateTime { get; set; } //Required
+        public int ResourceID; //Required [Resource]
+        public string Title; //Required Length:256
+        public DateTime StartDateTime; //Required
+        public DateTime EndDateTime; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public string Description { get; set; } //Length:8000
+        public string Description; //Length:8000
 
         #endregion //Optional Fields
 

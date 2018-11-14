@@ -30,34 +30,44 @@ namespace AutotaskNET.Entities
 
         } //end ContractBlock(net.autotask.webservices.ContractBlock entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ContractBlock()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Fields
 
-        public string IsPaid { get; set; } //ReadOnly PickList Length:10
-        public double HoursApproved { get; set; } //ReadOnly
+        public string IsPaid; //ReadOnly PickList Length:10
+        public double HoursApproved; //ReadOnly
 
         #endregion //ReadOnly Fields
 
         #region Required Fields
 
-        public int ContractID { get; set; } //Required [Contract]
-        public DateTime DatePurchased { get; set; } //Required
-        public DateTime StartDate { get; set; } //Required
-        public DateTime EndDate { get; set; } //Required
-        public double Hours { get; set; } //Required
-        public double HourlyRate { get; set; } //Required
+        public int ContractID; //Required [Contract]
+        public DateTime DatePurchased; //Required
+        public DateTime StartDate; //Required
+        public DateTime EndDate; //Required
+        public double Hours; //Required
+        public double HourlyRate; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public int? Status { get; set; } //PickList
-        public string InvoiceNumber { get; set; } //Length:50
-        public string PaymentNumber { get; set; } //Length:50
-        public int? PaymentType { get; set; } //PickList
+        public int? Status; //PickList
+        public string InvoiceNumber; //Length:50
+        public string PaymentNumber; //Length:50
+        public int? PaymentType; //PickList
 
         #endregion //Optional Fields
 

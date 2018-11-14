@@ -31,6 +31,16 @@ namespace AutotaskNET.Entities
 
         } //end WorkTypeModifier(net.autotask.webservices.WorkTypeModifier entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.WorkTypeModifier()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields

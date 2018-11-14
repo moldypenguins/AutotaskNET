@@ -28,14 +28,24 @@ namespace AutotaskNET.Entities
 
         } //end ContractExclusionRole(net.autotask.webservices.ContractExclusionRole entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ContractExclusionRole()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Required Fields
 
-        public long ContractID { get; set; } //ReadOnly Required [Contract]
-        public long RoleID { get; set; } //ReadOnly Required [Role]
+        public long ContractID; //ReadOnly Required [Contract]
+        public long RoleID; //ReadOnly Required [Role]
 
         #endregion //ReadOnly Required Fields
 

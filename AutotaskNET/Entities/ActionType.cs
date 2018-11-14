@@ -32,6 +32,16 @@ namespace AutotaskNET.Entities
 
         } //end ActionType(net.autotask.webservices.ActionType entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ActionType()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields

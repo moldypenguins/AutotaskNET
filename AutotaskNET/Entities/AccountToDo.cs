@@ -43,6 +43,16 @@ namespace AutotaskNET.Entities
 
         } //end AccountToDo(net.autotask.webservices.AccountToDo entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.AccountToDo()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields

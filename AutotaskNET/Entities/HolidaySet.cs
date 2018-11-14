@@ -26,19 +26,29 @@ namespace AutotaskNET.Entities
 
         } //end HolidaySet(net.autotask.webservices.HolidaySet entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.HolidaySet()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region Required Fields
 
-        public string HolidaySetName { get; set; } //Required Length:64
+        public string HolidaySetName; //Required Length:64
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public string HolidaySetDescription { get; set; } //Length:512
+        public string HolidaySetDescription; //Length:512
 
         #endregion //Optional Fields
 

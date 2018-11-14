@@ -28,6 +28,16 @@ namespace AutotaskNET.Entities
 
         } //end NotificationHistory(net.autotask.webservices.NotificationHistory entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.NotificationHistory()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields

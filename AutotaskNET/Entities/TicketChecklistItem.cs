@@ -26,6 +26,16 @@ namespace AutotaskNET.Entities
 
         } //end Account(net.autotask.webservices.Account entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.TicketChecklistItem()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields

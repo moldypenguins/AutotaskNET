@@ -28,6 +28,16 @@ namespace AutotaskNET.Entities
 
         } //end InstalledProductTypeUdfAssociation(net.autotask.webservices.InstalledProductTypeUdfAssociation entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.InstalledProductTypeUdfAssociation()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields

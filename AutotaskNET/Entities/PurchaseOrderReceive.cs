@@ -26,6 +26,16 @@ namespace AutotaskNET.Entities
 
         } //end PurchaseOrderReceive(net.autotask.webservices.PurchaseOrderReceive entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.PurchaseOrderReceive()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
@@ -56,13 +66,13 @@ namespace AutotaskNET.Entities
 
         #endregion //Fields
 
-        public long PurchaseOrderItemID { get; set; } //ReadOnly Required [PurchaseOrderItem]
-        public int? QuantityPreviouslyReceived { get; set; } //ReadOnly
-        public int QuantityNowReceiving { get; set; } //ReadOnly Required
-        public DateTime? ReceiveDate { get; set; } //ReadOnly
-        public int? QuantityBackOrdered { get; set; } //ReadOnly
-        public int? ReceivedByResourceID { get; set; } //ReadOnly [Resource]
-        public string SerialNumber { get; set; } //ReadOnly Length:50
+        public long PurchaseOrderItemID; //ReadOnly Required [PurchaseOrderItem]
+        public int? QuantityPreviouslyReceived; //ReadOnly
+        public int QuantityNowReceiving; //ReadOnly Required
+        public DateTime? ReceiveDate; //ReadOnly
+        public int? QuantityBackOrdered; //ReadOnly
+        public int? ReceivedByResourceID; //ReadOnly [Resource]
+        public string SerialNumber; //ReadOnly Length:50
 
     } //end PurchaseOrderReceive
 

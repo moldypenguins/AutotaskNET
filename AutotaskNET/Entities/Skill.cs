@@ -29,21 +29,31 @@ namespace AutotaskNET.Entities
 
         } //end Skill(net.autotask.webservices.Skill entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.Skill()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Fields
 
-        public string Description { get; set; } //ReadOnly Length:2000
+        public string Description; //ReadOnly Length:2000
 
         #endregion //ReadOnly Fields
 
         #region ReadOnly Required Fields
 
-        public string Name { get; set; } //ReadOnly Required Length:100
-        public long CategoryID { get; set; } //ReadOnly Required PickList
-        public bool Active { get; set; } //ReadOnly Required
+        public string Name; //ReadOnly Required Length:100
+        public long CategoryID; //ReadOnly Required PickList
+        public bool Active; //ReadOnly Required
 
         #endregion //ReadOnly Required Fields
 

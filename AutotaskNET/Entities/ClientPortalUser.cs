@@ -27,30 +27,40 @@ namespace AutotaskNET.Entities
 
         } //end ClientPortalUser(net.autotask.webservices.ClientPortalUser entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ClientPortalUser()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Required Fields
 
-        public int ContactID { get; set; } //ReadOnly Required [Contact]
+        public int ContactID; //ReadOnly Required [Contact]
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public int SecurityLevel { get; set; } //Required PickList
-        public int DateFormat { get; set; } //Required PickList
-        public int TimeFormat { get; set; } //Required PickList
-        public int NumberFormat { get; set; } //Required PickList
-        public string UserName { get; set; } //Required Length:200
-        public bool ClientPortalActive { get; set; } //Required
+        public int SecurityLevel; //Required PickList
+        public int DateFormat; //Required PickList
+        public int TimeFormat; //Required PickList
+        public int NumberFormat; //Required PickList
+        public string UserName; //Required Length:200
+        public bool ClientPortalActive; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public string Password { get; set; } //Length:50
+        public string Password; //Length:50
 
         #endregion //Optional Fields
 
