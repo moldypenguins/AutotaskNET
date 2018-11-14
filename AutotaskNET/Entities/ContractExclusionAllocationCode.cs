@@ -28,14 +28,24 @@ namespace AutotaskNET.Entities
 
         } //end ContractExclusionAllocationCode(net.autotask.webservices.ContractExclusionAllocationCode entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ContractExclusionAllocationCode()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Required Fields
 
-        public long ContractID { get; set; } //ReadOnly Required [Contract]
-        public long AllocationCodeID { get; set; } //ReadOnly Required [AllocationCode]
+        public long ContractID; //ReadOnly Required [Contract]
+        public long AllocationCodeID; //ReadOnly Required [AllocationCode]
 
         #endregion //ReadOnly Required Fields
 

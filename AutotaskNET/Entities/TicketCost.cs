@@ -29,6 +29,16 @@ namespace AutotaskNET.Entities
 
         } //end TicketCost(net.autotask.webservices.TicketCost entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.TicketCost()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields

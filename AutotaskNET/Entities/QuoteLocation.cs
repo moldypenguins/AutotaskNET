@@ -26,6 +26,16 @@ namespace AutotaskNET.Entities
 
         } //end QuoteLocation(net.autotask.webservices.QuoteLocation entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.QuoteLocation()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
@@ -56,11 +66,11 @@ namespace AutotaskNET.Entities
 
         #endregion //Fields
 
-        public string Address1 { get; set; } //Length:50
-        public string Address2 { get; set; } //Length:50
-        public string City { get; set; } //Length:50
-        public string State { get; set; } //Length:50
-        public string PostalCode { get; set; } //Length:20
+        public string Address1; //Length:50
+        public string Address2; //Length:50
+        public string City; //Length:50
+        public string State; //Length:50
+        public string PostalCode; //Length:20
 
     } //end QuoteLocation
 

@@ -27,61 +27,71 @@ namespace AutotaskNET.Entities
 
         } //end BusinessLocation(net.autotask.webservices.BusinessLocation entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.BusinessLocation()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region Required Fields
 
-        public string Name { get; set; } //Required Length:100
-        public string DateFormat { get; set; } //Required PickList Length:0
-        public string TimeFormat { get; set; } //Required PickList Length:0
-        public string NumberFormat { get; set; } //Required PickList Length:0
-        public int TimeZoneID { get; set; } //Required PickList
+        public string Name; //Required Length:100
+        public string DateFormat; //Required PickList Length:0
+        public string TimeFormat; //Required PickList Length:0
+        public string NumberFormat; //Required PickList Length:0
+        public int TimeZoneID; //Required PickList
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public string Address1 { get; set; } //Length:100
-        public string Address2 { get; set; } //Length:100
-        public string City { get; set; } //Length:50
-        public string State { get; set; } //Length:25
-        public string PostalCode { get; set; } //Length:20
-        public string AdditionalAddressInfo { get; set; } //Length:100
-        public int? CountryID { get; set; } //[Country]
-        public int? HolidaySetID { get; set; } //[HolidaySet]
-        public bool? NoHoursOnHolidays { get; set; }
-        public bool? Default { get; set; }
-        public int? FirstDayOfWeek { get; set; } //PickList
-        public DateTime? SundayBusinessHoursStartTime { get; set; }
-        public DateTime? SundayBusinessHoursEndTime { get; set; }
-        public DateTime? SundayExtendedHoursStartTime { get; set; }
-        public DateTime? SundayExtendedHoursEndTime { get; set; }
-        public DateTime? MondayBusinessHoursStartTime { get; set; }
-        public DateTime? MondayBusinessHoursEndTime { get; set; }
-        public DateTime? MondayExtendedHoursStartTime { get; set; }
-        public DateTime? MondayExtendedHoursEndTime { get; set; }
-        public DateTime? TuesdayBusinessHoursStartTime { get; set; }
-        public DateTime? TuesdayBusinessHoursEndTime { get; set; }
-        public DateTime? TuesdayExtendedHoursStartTime { get; set; }
-        public DateTime? TuesdayExtendedHoursEndTime { get; set; }
-        public DateTime? WednesdayBusinessHoursStartTime { get; set; }
-        public DateTime? WednesdayBusinessHoursEndTime { get; set; }
-        public DateTime? WednesdayExtendedHoursStartTime { get; set; }
-        public DateTime? WednesdayExtendedHoursEndTime { get; set; }
-        public DateTime? ThursdayBusinessHoursStartTime { get; set; }
-        public DateTime? ThursdayBusinessHoursEndTime { get; set; }
-        public DateTime? ThursdayExtendedHoursStartTime { get; set; }
-        public DateTime? ThursdayExtendedHoursEndTime { get; set; }
-        public DateTime? FridayBusinessHoursStartTime { get; set; }
-        public DateTime? FridayBusinessHoursEndTime { get; set; }
-        public DateTime? FridayExtendedHoursStartTime { get; set; }
-        public DateTime? FridayExtendedHoursEndTime { get; set; }
-        public DateTime? SaturdayBusinessHoursStartTime { get; set; }
-        public DateTime? SaturdayBusinessHoursEndTime { get; set; }
-        public DateTime? SaturdayExtendedHoursStartTime { get; set; }
-        public DateTime? SaturdayExtendedHoursEndTime { get; set; }
+        public string Address1; //Length:100
+        public string Address2; //Length:100
+        public string City; //Length:50
+        public string State; //Length:25
+        public string PostalCode; //Length:20
+        public string AdditionalAddressInfo; //Length:100
+        public int? CountryID; //[Country]
+        public int? HolidaySetID; //[HolidaySet]
+        public bool? NoHoursOnHolidays;
+        public bool? Default;
+        public int? FirstDayOfWeek; //PickList
+        public DateTime? SundayBusinessHoursStartTime;
+        public DateTime? SundayBusinessHoursEndTime;
+        public DateTime? SundayExtendedHoursStartTime;
+        public DateTime? SundayExtendedHoursEndTime;
+        public DateTime? MondayBusinessHoursStartTime;
+        public DateTime? MondayBusinessHoursEndTime;
+        public DateTime? MondayExtendedHoursStartTime;
+        public DateTime? MondayExtendedHoursEndTime;
+        public DateTime? TuesdayBusinessHoursStartTime;
+        public DateTime? TuesdayBusinessHoursEndTime;
+        public DateTime? TuesdayExtendedHoursStartTime;
+        public DateTime? TuesdayExtendedHoursEndTime;
+        public DateTime? WednesdayBusinessHoursStartTime;
+        public DateTime? WednesdayBusinessHoursEndTime;
+        public DateTime? WednesdayExtendedHoursStartTime;
+        public DateTime? WednesdayExtendedHoursEndTime;
+        public DateTime? ThursdayBusinessHoursStartTime;
+        public DateTime? ThursdayBusinessHoursEndTime;
+        public DateTime? ThursdayExtendedHoursStartTime;
+        public DateTime? ThursdayExtendedHoursEndTime;
+        public DateTime? FridayBusinessHoursStartTime;
+        public DateTime? FridayBusinessHoursEndTime;
+        public DateTime? FridayExtendedHoursStartTime;
+        public DateTime? FridayExtendedHoursEndTime;
+        public DateTime? SaturdayBusinessHoursStartTime;
+        public DateTime? SaturdayBusinessHoursEndTime;
+        public DateTime? SaturdayExtendedHoursStartTime;
+        public DateTime? SaturdayExtendedHoursEndTime;
 
         #endregion //Optional Fields
 

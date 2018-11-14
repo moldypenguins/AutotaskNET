@@ -26,6 +26,16 @@ namespace AutotaskNET.Entities
 
         } //end PurchaseOrderItem(net.autotask.webservices.PurchaseOrderItem entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.PurchaseOrderItem()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
@@ -56,18 +66,18 @@ namespace AutotaskNET.Entities
 
         #endregion //Fields
 
-        public int OrderID { get; set; } //ReadOnly Required [PurchaseOrder]
-        public int ProductID { get; set; } //Required [Product]
-        public int InventoryLocationID { get; set; } //Required [InventoryLocation]
-        public int Quantity { get; set; } //Required
-        public string Memo { get; set; } //Length:4000
-        public double UnitCost { get; set; } //Required
-        public long SalesOrderID { get; set; } //ReadOnly [SalesOrder]
-        public DateTime? EstimatedArrivalDate { get; set; } //ReadOnly
-        public int? CostID { get; set; } //ReadOnly
-        public long ContractID { get; set; } //ReadOnly [Contract]
-        public long ProjectID { get; set; } //ReadOnly [Project]
-        public long TicketID { get; set; } //ReadOnly [Ticket]
+        public int OrderID; //ReadOnly Required [PurchaseOrder]
+        public int ProductID; //Required [Product]
+        public int InventoryLocationID; //Required [InventoryLocation]
+        public int Quantity; //Required
+        public string Memo; //Length:4000
+        public double UnitCost; //Required
+        public long SalesOrderID; //ReadOnly [SalesOrder]
+        public DateTime? EstimatedArrivalDate; //ReadOnly
+        public int? CostID; //ReadOnly
+        public long ContractID; //ReadOnly [Contract]
+        public long ProjectID; //ReadOnly [Project]
+        public long TicketID; //ReadOnly [Ticket]
 
     } //end PurchaseOrderItem
 

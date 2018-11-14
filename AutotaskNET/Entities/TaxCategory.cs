@@ -27,20 +27,30 @@ namespace AutotaskNET.Entities
 
         } //end TaxCategory(net.autotask.webservices.TaxCategory entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.TaxCategory()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region Required Fields
 
-        public string Name { get; set; } //Required Length:200
+        public string Name; //Required Length:200
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public string Description { get; set; } //Length:200
-        public bool? Active { get; set; }
+        public string Description; //Length:200
+        public bool? Active;
 
         #endregion //Optional Fields
 

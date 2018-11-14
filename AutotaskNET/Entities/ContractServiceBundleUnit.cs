@@ -26,28 +26,38 @@ namespace AutotaskNET.Entities
 
         } //end ContractServiceBundleUnit(net.autotask.webservices.ContractServiceBundleUnit entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ContractServiceBundleUnit()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Fields
 
-        public double Price { get; set; } //ReadOnly
-        public DateTime? ApproveAndPostDate { get; set; } //ReadOnly
-        public double Cost { get; set; } //ReadOnly
-        public int? ContractServiceBundleID { get; set; } //ReadOnly [ContractServiceBundle]
-        public double InternalCurrencyPrice { get; set; } //ReadOnly
-        public int? BusinessDivisionSubdivisionID { get; set; } //ReadOnly [BusinessDivisionSubdivision]
+        public double Price; //ReadOnly
+        public DateTime? ApproveAndPostDate; //ReadOnly
+        public double Cost; //ReadOnly
+        public int? ContractServiceBundleID; //ReadOnly [ContractServiceBundle]
+        public double InternalCurrencyPrice; //ReadOnly
+        public int? BusinessDivisionSubdivisionID; //ReadOnly [BusinessDivisionSubdivision]
 
         #endregion //ReadOnly Fields
 
         #region ReadOnly Required Fields
 
-        public int ContractID { get; set; } //ReadOnly Required [Contract]
-        public int ServiceBundleID { get; set; } //ReadOnly Required [ServiceBundle]
-        public DateTime StartDate { get; set; } //ReadOnly Required
-        public DateTime EndDate { get; set; } //ReadOnly Required
-        public int Units { get; set; } //ReadOnly Required
+        public int ContractID; //ReadOnly Required [Contract]
+        public int ServiceBundleID; //ReadOnly Required [ServiceBundle]
+        public DateTime StartDate; //ReadOnly Required
+        public DateTime EndDate; //ReadOnly Required
+        public int Units; //ReadOnly Required
 
         #endregion //ReadOnly Required Fields
 

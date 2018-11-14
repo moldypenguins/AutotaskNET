@@ -28,26 +28,36 @@ namespace AutotaskNET.Entities
 
         } //end ResourceSkill(net.autotask.webservices.ResourceSkill entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ResourceSkill()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Required Fields
 
-        public long ResourceID { get; set; } //ReadOnly Required [Resource]
-        public long SkillID { get; set; } //ReadOnly Required [Skill]
+        public long ResourceID; //ReadOnly Required [Resource]
+        public long SkillID; //ReadOnly Required [Skill]
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public long SkillLevel { get; set; } //Required PickList
+        public long SkillLevel; //Required PickList
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public string SkillDescription { get; set; } //Length:2000
+        public string SkillDescription; //Length:2000
 
         #endregion //Optional Fields
 

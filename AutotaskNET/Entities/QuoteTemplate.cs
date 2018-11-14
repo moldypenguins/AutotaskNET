@@ -26,6 +26,16 @@ namespace AutotaskNET.Entities
 
         } //end QuoteTemplate(net.autotask.webservices.QuoteTemplate entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.QuoteTemplate()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
@@ -56,26 +66,26 @@ namespace AutotaskNET.Entities
 
         #endregion //Fields
 
-        public bool? Active { get; set; } //ReadOnly
-        public bool? CalculateTaxSeparately { get; set; } //ReadOnly
-        public DateTime? CreateDate { get; set; } //ReadOnly
-        public int? CreatedBy { get; set; } //ReadOnly [Resource]
-        public int? DateFormat { get; set; } //ReadOnly PickList
-        public string Description { get; set; } //ReadOnly Length:200
-        public int? DisplayCurrencySymbol { get; set; } //ReadOnly PickList
-        public bool? DisplayTaxCategorySuperscripts { get; set; } //ReadOnly
-        public int? LastActivityBy { get; set; } //ReadOnly [Resource]
-        public DateTime? LastActivityDate { get; set; } //ReadOnly
-        public string Name { get; set; } //ReadOnly Required Length:50
-        public int? NumberFormat { get; set; } //ReadOnly PickList
-        public int? PageLayout { get; set; } //ReadOnly PickList
-        public int? PageNumberFormat { get; set; } //ReadOnly PickList
-        public bool? ShowEachTaxInGroup { get; set; } //ReadOnly
-        public bool? ShowGridHeader { get; set; } //ReadOnly
-        public bool? ShowTaxCategory { get; set; } //ReadOnly
-        public bool? ShowVerticalGridLines { get; set; } //ReadOnly
-        public string CurrencyPositiveFormat { get; set; } //ReadOnly Required Length:10
-        public string CurrencyNegativeFormat { get; set; } //ReadOnly Required Length:10
+        public bool? Active; //ReadOnly
+        public bool? CalculateTaxSeparately; //ReadOnly
+        public DateTime? CreateDate; //ReadOnly
+        public int? CreatedBy; //ReadOnly [Resource]
+        public int? DateFormat; //ReadOnly PickList
+        public string Description; //ReadOnly Length:200
+        public int? DisplayCurrencySymbol; //ReadOnly PickList
+        public bool? DisplayTaxCategorySuperscripts; //ReadOnly
+        public int? LastActivityBy; //ReadOnly [Resource]
+        public DateTime? LastActivityDate; //ReadOnly
+        public string Name; //ReadOnly Required Length:50
+        public int? NumberFormat; //ReadOnly PickList
+        public int? PageLayout; //ReadOnly PickList
+        public int? PageNumberFormat; //ReadOnly PickList
+        public bool? ShowEachTaxInGroup; //ReadOnly
+        public bool? ShowGridHeader; //ReadOnly
+        public bool? ShowTaxCategory; //ReadOnly
+        public bool? ShowVerticalGridLines; //ReadOnly
+        public string CurrencyPositiveFormat; //ReadOnly Required Length:10
+        public string CurrencyNegativeFormat; //ReadOnly Required Length:10
 
     } //end QuoteTemplate
 

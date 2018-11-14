@@ -28,6 +28,16 @@ namespace AutotaskNET.Entities
 
         } //end InventoryTransfer(net.autotask.webservices.InventoryTransfer entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.InventoryTransfer()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields

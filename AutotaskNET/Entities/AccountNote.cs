@@ -27,6 +27,16 @@ namespace AutotaskNET.Entities
 
         } //end AccountNote(net.autotask.webservices.AccountNote entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.AccountNote()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields

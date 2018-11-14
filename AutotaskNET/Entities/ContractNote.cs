@@ -27,27 +27,37 @@ namespace AutotaskNET.Entities
 
         } //end ContractNote(net.autotask.webservices.ContractNote entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ContractNote()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Fields
 
-        public DateTime? LastActivityDate { get; set; } //ReadOnly
-        public int? CreatorResourceID { get; set; } //ReadOnly [Resource]
+        public DateTime? LastActivityDate; //ReadOnly
+        public int? CreatorResourceID; //ReadOnly [Resource]
 
         #endregion //ReadOnly Fields
 
         #region ReadOnly Required Fields
 
-        public string ContractID { get; set; } //ReadOnly Required [Contract] Length:25
+        public string ContractID; //ReadOnly Required [Contract] Length:25
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public string Title { get; set; } //Required Length:250
-        public string Description { get; set; } //Required Length:8000
+        public string Title; //Required Length:250
+        public string Description; //Required Length:8000
 
         #endregion //Required Fields
 

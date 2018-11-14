@@ -28,6 +28,16 @@ namespace AutotaskNET.Entities
 
         } //end Phase(net.autotask.webservices.Phase entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.Phase()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
@@ -58,19 +68,19 @@ namespace AutotaskNET.Entities
 
         #endregion //Fields
 
-        public DateTime? CreateDate { get; set; } //ReadOnly
-        public int? CreatorResourceID { get; set; } //ReadOnly [Resource]
-        public string Description { get; set; } //Length:8000
-        public DateTime? DueDate { get; set; }
-        public float EstimatedHours { get; set; } //ReadOnly
-        public string ExternalID { get; set; } //Length:50
-        public DateTime? LastActivityDateTime { get; set; } //ReadOnly
-        public int? ParentPhaseID { get; set; } //[Phase]
-        public string PhaseNumber { get; set; } //ReadOnly Length:50
-        public int ProjectID { get; set; } //ReadOnly Required [Project]
-        public bool? Scheduled { get; set; } //ReadOnly
-        public DateTime? StartDate { get; set; }
-        public string Title { get; set; } //Required Length:255
+        public DateTime? CreateDate; //ReadOnly
+        public int? CreatorResourceID; //ReadOnly [Resource]
+        public string Description; //Length:8000
+        public DateTime? DueDate;
+        public float EstimatedHours; //ReadOnly
+        public string ExternalID; //Length:50
+        public DateTime? LastActivityDateTime; //ReadOnly
+        public int? ParentPhaseID; //[Phase]
+        public string PhaseNumber; //ReadOnly Length:50
+        public int ProjectID; //ReadOnly Required [Project]
+        public bool? Scheduled; //ReadOnly
+        public DateTime? StartDate;
+        public string Title; //Required Length:255
 
     } //end Phase
 

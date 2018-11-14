@@ -29,21 +29,31 @@ namespace AutotaskNET.Entities
 
         } //end PaymentTerm(net.autotask.webservices.PaymentTerm entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.PaymentTerm()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region Required Fields
 
-        public string Name { get; set; } //Required Length:100
+        public string Name; //Required Length:100
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public string Description { get; set; } //Length:2000
-        public bool? Active { get; set; }
-        public int? PaymentDueInDays { get; set; }
+        public string Description; //Length:2000
+        public bool? Active;
+        public int? PaymentDueInDays;
 
         #endregion //Optional Fields
 

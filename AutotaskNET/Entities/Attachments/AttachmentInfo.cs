@@ -10,11 +10,36 @@ namespace AutotaskNET.Entities
     /// <seealso cref="AutotaskNET.Entities.Entity" />
     public class AttachmentInfo : Entity
     {
+        #region Properties
+
         public override bool CanCreate => false;
         public override bool CanUpdate => false;
         public override bool CanQuery => true;
         public override bool CanDelete => false;
         public override bool CanHaveUDFs => false;
+
+        #endregion //Properties
+
+        #region Constructors
+
+        public AttachmentInfo() : base() { } //end AttachmentInfo()
+        public AttachmentInfo(net.autotask.webservices.AttachmentInfo entity)
+        {
+
+        } //end AttachmentInfo(net.autotask.webservices.AttachmentInfo entity)
+
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.AttachmentInfo()
+            {
+                id = this.id,
+
+            };
+        } //end ToATWS()
+
+        #endregion //Constructors
+
+        #region Fields
 
         #region ReadOnly Fields
 
@@ -37,7 +62,9 @@ namespace AutotaskNET.Entities
         public int Publish; //ReadOnly Required PickList
 
         #endregion //ReadOnly Required Fields
-        
+
+        #endregion //Fields
+
     } //end AttachmentInfo
 
 }

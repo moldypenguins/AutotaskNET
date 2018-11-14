@@ -26,6 +26,16 @@ namespace AutotaskNET.Entities
 
         } //end ServiceBundle(net.autotask.webservices.ServiceBundle entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ServiceBundle()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
@@ -56,21 +66,21 @@ namespace AutotaskNET.Entities
 
         #endregion //Fields
 
-        public string Name { get; set; } //Required Length:100
-        public string Description { get; set; } //Length:200
-        public double UnitPrice { get; set; }
-        public double UnitDiscount { get; set; }
-        public double PercentageDiscount { get; set; }
-        public string PeriodType { get; set; } //ReadOnly Required PickList Length:1
-        public int AllocationCodeID { get; set; } //Required [AllocationCode]
-        public bool? IsActive { get; set; }
-        public int? CreatorResourceID { get; set; } //ReadOnly [Resource]
-        public int? UpdateResourceID { get; set; } //ReadOnly [Resource]
-        public DateTime? CreateDate { get; set; } //ReadOnly
-        public string InvoiceDescription { get; set; } //Length:1000
-        public DateTime? LastModifiedDate { get; set; } //ReadOnly
-        public long ServiceLevelAgreementID { get; set; } //PickList
-        public double UnitCost { get; set; } //ReadOnly
+        public string Name; //Required Length:100
+        public string Description; //Length:200
+        public double UnitPrice;
+        public double UnitDiscount;
+        public double PercentageDiscount;
+        public string PeriodType; //ReadOnly Required PickList Length:1
+        public int AllocationCodeID; //Required [AllocationCode]
+        public bool? IsActive;
+        public int? CreatorResourceID; //ReadOnly [Resource]
+        public int? UpdateResourceID; //ReadOnly [Resource]
+        public DateTime? CreateDate; //ReadOnly
+        public string InvoiceDescription; //Length:1000
+        public DateTime? LastModifiedDate; //ReadOnly
+        public long ServiceLevelAgreementID; //PickList
+        public double UnitCost; //ReadOnly
 
     } //end ServiceBundle
 

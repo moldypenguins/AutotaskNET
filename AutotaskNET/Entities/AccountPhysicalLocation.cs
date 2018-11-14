@@ -28,6 +28,16 @@ namespace AutotaskNET.Entities
 
         } //end AccountPhysicalLocation(net.autotask.webservices.AccountPhysicalLocation entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.AccountPhysicalLocation()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields

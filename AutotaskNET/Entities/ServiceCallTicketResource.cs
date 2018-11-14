@@ -28,6 +28,16 @@ namespace AutotaskNET.Entities
 
         } //end ServiceCallTicketResource(net.autotask.webservices.ServiceCallTicketResource entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ServiceCallTicketResource()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields

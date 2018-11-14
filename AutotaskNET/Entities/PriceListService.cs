@@ -28,26 +28,36 @@ namespace AutotaskNET.Entities
 
         } //end PriceListService(net.autotask.webservices.PriceListService entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.PriceListService()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Required Fields
 
-        public int ServiceID { get; set; } //ReadOnly Required [Service]
-        public int CurrencyID { get; set; } //ReadOnly Required [Currency]
+        public int ServiceID; //ReadOnly Required [Service]
+        public int CurrencyID; //ReadOnly Required [Currency]
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public bool UsesInternalCurrencyPrice { get; set; } //Required
+        public bool UsesInternalCurrencyPrice; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public decimal UnitPrice { get; set; }
+        public decimal UnitPrice;
 
         #endregion //Optional Fields
 

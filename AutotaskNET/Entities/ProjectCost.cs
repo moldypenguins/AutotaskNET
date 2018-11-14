@@ -33,48 +33,58 @@ namespace AutotaskNET.Entities
 
         } //end ProjectCost(net.autotask.webservices.ProjectCost entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ProjectCost()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Fields
 
-        public double BillableAmount { get; set; } //ReadOnly
-        public bool? Billed { get; set; } //ReadOnly
-        public DateTime? CreateDate { get; set; } //ReadOnly
-        public long CreatorResourceID { get; set; } //ReadOnly [Resource]
-        public double ExtendedCost { get; set; } //ReadOnly
-        public double InternalCurrencyBillableAmount { get; set; } //ReadOnly (Multi-currency module only)
-        public double InternalCurrencyUnitPrice { get; set; } //ReadOnly (Multi-currency module only)
-        public long Status { get; set; } //ReadOnly PickList
-        public long StatusLastModifiedBy { get; set; } //ReadOnly
-        public DateTime? StatusLastModifiedDate { get; set; } //ReadOnly
+        public double BillableAmount; //ReadOnly
+        public bool? Billed; //ReadOnly
+        public DateTime? CreateDate; //ReadOnly
+        public long CreatorResourceID; //ReadOnly [Resource]
+        public double ExtendedCost; //ReadOnly
+        public double InternalCurrencyBillableAmount; //ReadOnly (Multi-currency module only)
+        public double InternalCurrencyUnitPrice; //ReadOnly (Multi-currency module only)
+        public long Status; //ReadOnly PickList
+        public long StatusLastModifiedBy; //ReadOnly
+        public DateTime? StatusLastModifiedDate; //ReadOnly
 
         #endregion //ReadOnly Fields
 
         #region Required Fields
 
-        public int CostType { get; set; } //Required PickList
-        public DateTime DatePurchased { get; set; } //Required
-        public string Name { get; set; } //Required Length:100
-        public int ProjectID { get; set; } //Required [Project]
-        public double UnitQuantity { get; set; } //Required
+        public int CostType; //Required PickList
+        public DateTime DatePurchased; //Required
+        public string Name; //Required Length:100
+        public int ProjectID; //Required [Project]
+        public double UnitQuantity; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public long? AllocationCodeID { get; set; } //[AllocationCode]
-        public bool? BillableToAccount { get; set; }
-        public long ContractServiceBundleID { get; set; } //[ContractServiceBundle]
-        public long ContractServiceID { get; set; } //[ContractService]
-        public string Description { get; set; } //Length:2000
-        public double EstimatedCost { get; set; }
-        public string InternalPurchaseOrderNumber { get; set; } //Length:50
-        public long ProductID { get; set; } //[Product]
-        public string PurchaseOrderNumber { get; set; } //Length:50
-        public double UnitCost { get; set; }
-        public double UnitPrice { get; set; }
+        public long? AllocationCodeID; //[AllocationCode]
+        public bool? BillableToAccount;
+        public long ContractServiceBundleID; //[ContractServiceBundle]
+        public long ContractServiceID; //[ContractService]
+        public string Description; //Length:2000
+        public double EstimatedCost;
+        public string InternalPurchaseOrderNumber; //Length:50
+        public long ProductID; //[Product]
+        public string PurchaseOrderNumber; //Length:50
+        public double UnitCost;
+        public double UnitPrice;
 
         #endregion //Optional Fields
 

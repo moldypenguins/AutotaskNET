@@ -30,57 +30,67 @@ namespace AutotaskNET.Entities
 
         } //end Contract(net.autotask.webservices.Contract entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.Contract()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Fields
 
-        public string ContractPeriodType { get; set; } //ReadOnly PickList Length:1
-        public long ExclusionContractID { get; set; } //ReadOnly [Contract]
-        public double InternalCurrencyOverageBillingRate { get; set; } //ReadOnly
-        public double InternalCurrencySetupFee { get; set; } //ReadOnly
+        public string ContractPeriodType; //ReadOnly PickList Length:1
+        public long ExclusionContractID; //ReadOnly [Contract]
+        public double InternalCurrencyOverageBillingRate; //ReadOnly
+        public double InternalCurrencySetupFee; //ReadOnly
 
         #endregion //ReadOnly Fields
 
         #region ReadOnly Required Fields
 
-        public int AccountID { get; set; } //ReadOnly Required [Account]
-        public int ContractType { get; set; } //ReadOnly Required PickList
+        public int AccountID; //ReadOnly Required [Account]
+        public int ContractType; //ReadOnly Required PickList
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public string ContractName { get; set; } //Required Length:100
-        public DateTime EndDate { get; set; } //Required
-        public DateTime StartDate { get; set; } //Required
-        public int Status { get; set; } //Required PickList
-        public int TimeReportingRequiresStartAndStopTimes { get; set; } //Required PickList
+        public string ContractName; //Required Length:100
+        public DateTime EndDate; //Required
+        public DateTime StartDate; //Required
+        public int Status; //Required PickList
+        public int TimeReportingRequiresStartAndStopTimes; //Required PickList
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public int? BillingPreference { get; set; } //PickList
-        public bool? Compliance { get; set; }
-        public string ContactName { get; set; } //Length:250
-        public int? ContractCategory { get; set; } //PickList
-        public string ContractNumber { get; set; } //Length:50
-        public bool? IsDefaultContract { get; set; }
-        public string Description { get; set; } //Length:2000
-        public double EstimatedCost { get; set; }
-        public double EstimatedHours { get; set; }
-        public double EstimatedRevenue { get; set; }
-        public double OverageBillingRate { get; set; }
-        public int? ServiceLevelAgreementID { get; set; } //PickList
-        public double SetupFee { get; set; }
-        public string PurchaseOrderNumber { get; set; } //Length:50
-        public int? OpportunityID { get; set; } //[Opportunity]
-        public long RenewedContractID { get; set; }
-        public long SetupFeeAllocationCodeID { get; set; }
-        public int? ContactID { get; set; } //[Contact]
-        public int? BusinessDivisionSubdivisionID { get; set; } //[BusinessDivisionSubdivision]
+        public int? BillingPreference; //PickList
+        public bool? Compliance;
+        public string ContactName; //Length:250
+        public int? ContractCategory; //PickList
+        public string ContractNumber; //Length:50
+        public bool? IsDefaultContract;
+        public string Description; //Length:2000
+        public double EstimatedCost;
+        public double EstimatedHours;
+        public double EstimatedRevenue;
+        public double OverageBillingRate;
+        public int? ServiceLevelAgreementID; //PickList
+        public double SetupFee;
+        public string PurchaseOrderNumber; //Length:50
+        public int? OpportunityID; //[Opportunity]
+        public long RenewedContractID;
+        public long SetupFeeAllocationCodeID;
+        public int? ContactID; //[Contact]
+        public int? BusinessDivisionSubdivisionID; //[BusinessDivisionSubdivision]
 
         #endregion //Optional Fields
 

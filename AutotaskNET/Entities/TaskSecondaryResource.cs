@@ -31,6 +31,16 @@ namespace AutotaskNET.Entities
 
         } //end TaskSecondaryResource(net.autotask.webservices.TaskSecondaryResource entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.TaskSecondaryResource()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields

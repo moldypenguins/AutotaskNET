@@ -29,6 +29,17 @@ namespace AutotaskNET.Entities
 
         } //end AccountAlert(net.autotask.webservices.AccountAlert entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.AccountAlert()
+            {
+                id = this.id,
+                AccountID = this.AccountID,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields

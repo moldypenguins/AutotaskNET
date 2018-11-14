@@ -28,6 +28,16 @@ namespace AutotaskNET.Entities
 
         } //end ShippingType(net.autotask.webservices.ShippingType entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ShippingType()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields

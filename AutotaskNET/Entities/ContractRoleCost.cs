@@ -29,21 +29,31 @@ namespace AutotaskNET.Entities
 
         } //end ContractRoleCost(net.autotask.webservices.ContractRoleCost entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.Account()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Required Fields
 
-        public int ContractID { get; set; } //ReadOnly Required [Contract]
-        public int ResourceID { get; set; } //ReadOnly Required [Resource]
-        public int RoleID { get; set; } //ReadOnly Required [Role]
+        public int ContractID; //ReadOnly Required [Contract]
+        public int ResourceID; //ReadOnly Required [Resource]
+        public int RoleID; //ReadOnly Required [Role]
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public double Rate { get; set; } //Required
+        public double Rate; //Required
 
         #endregion //Required Fields
 

@@ -58,6 +58,16 @@ namespace AutotaskNET.Entities
 
         } //end Task(net.autotask.webservices.Task entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.Task()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields

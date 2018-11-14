@@ -16,7 +16,7 @@ namespace AutotaskNET.Entities
         public abstract bool CanHaveUDFs { get; }
 
         #endregion //Properties
-
+        
         #region Constructors
 
         public Entity() { } //end Entity()
@@ -25,6 +25,8 @@ namespace AutotaskNET.Entities
             this.id = long.Parse(entity.id.ToString());
 
         } //end Entity(net.autotask.webservices.Entity entity)
+
+        public abstract net.autotask.webservices.Entity ToATWS(); //end ToATWS()
 
         #endregion //Constructors
 
@@ -37,7 +39,7 @@ namespace AutotaskNET.Entities
         #endregion //Required ReadOnly Fields
 
         #endregion //Fields
-
+        
     } //end Entity
 
 }

@@ -26,6 +26,16 @@ namespace AutotaskNET.Entities
 
         } //end ServiceBundleService(net.autotask.webservices.ServiceBundleService entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ServiceBundleService()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
@@ -56,8 +66,8 @@ namespace AutotaskNET.Entities
 
         #endregion //Fields
 
-        public long ServiceBundleID { get; set; } //ReadOnly Required [ServiceBundle]
-        public long ServiceID { get; set; } //ReadOnly Required [Service]
+        public long ServiceBundleID; //ReadOnly Required [ServiceBundle]
+        public long ServiceID; //ReadOnly Required [Service]
 
     } //end ServiceBundleService
 

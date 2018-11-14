@@ -199,7 +199,7 @@ namespace AutotaskNET
             else
             {
                 //update entity
-
+                net.autotask.webservices.ATWSResponse resp = this._atws.update(new net.autotask.webservices.Entity[] { entity.ToATWS() });
             }
             return updatedEntity;
         } //end Update

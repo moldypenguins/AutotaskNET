@@ -55,6 +55,16 @@ namespace AutotaskNET.Entities
             this.VendorInvoiceNumber = entity.VendorInvoiceNumber == null ? default(string) : entity.VendorInvoiceNumber.ToString();
         } //end PurchaseOrder(net.autotask.webservices.PurchaseOrder entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.PurchaseOrder()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
@@ -85,33 +95,33 @@ namespace AutotaskNET.Entities
 
         #endregion //Fields
 
-        public int VendorID { get; set; } //ReadOnly Required [Account]
-        public int Status { get; set; } //Required PickList
-        public int? CreatorResourceID { get; set; } //ReadOnly [Resource]
-        public DateTime? CreateDateTime { get; set; } //ReadOnly
-        public DateTime? SubmitDateTime { get; set; } //ReadOnly
-        public DateTime? CancelDateTime { get; set; } //ReadOnly
-        public string ShipToName { get; set; } //Required Length:100
-        public string ShipToAddress1 { get; set; } //Required Length:128
-        public string ShipToAddress2 { get; set; } //Length:128
-        public string ShipToCity { get; set; } //Required Length:30
-        public string ShipToState { get; set; } //Required Length:25
-        public string ShipToPostalCode { get; set; } //Required Length:10
-        public string GeneralMemo { get; set; } //Length:4000
-        public string Phone { get; set; } //Length:25
-        public string Fax { get; set; } //Length:25
-        public string VendorInvoiceNumber { get; set; } //Length:50
-        public string ExternalPONumber { get; set; } //Length:50
-        public int? PurchaseForAccountID { get; set; } //[Account]
-        public int? ShippingType { get; set; } //[ShippingType]
-        public DateTime? ShippingDate { get; set; }
-        public double Freight { get; set; }
-        public int? TaxGroup { get; set; } //PickList
-        public int? PaymentTerm { get; set; } //PickList
-        public bool? ShowTaxCategory { get; set; }
-        public bool? ShowEachTaxInGroup { get; set; }
-        public DateTime? LatestEstimatedArrivalDate { get; set; } //ReadOnly
-        public int? UseItemDescriptionsFrom { get; set; } //PickList
+        public int VendorID; //ReadOnly Required [Account]
+        public int Status; //Required PickList
+        public int? CreatorResourceID; //ReadOnly [Resource]
+        public DateTime? CreateDateTime; //ReadOnly
+        public DateTime? SubmitDateTime; //ReadOnly
+        public DateTime? CancelDateTime; //ReadOnly
+        public string ShipToName; //Required Length:100
+        public string ShipToAddress1; //Required Length:128
+        public string ShipToAddress2; //Length:128
+        public string ShipToCity; //Required Length:30
+        public string ShipToState; //Required Length:25
+        public string ShipToPostalCode; //Required Length:10
+        public string GeneralMemo; //Length:4000
+        public string Phone; //Length:25
+        public string Fax; //Length:25
+        public string VendorInvoiceNumber; //Length:50
+        public string ExternalPONumber; //Length:50
+        public int? PurchaseForAccountID; //[Account]
+        public int? ShippingType; //[ShippingType]
+        public DateTime? ShippingDate;
+        public double Freight;
+        public int? TaxGroup; //PickList
+        public int? PaymentTerm; //PickList
+        public bool? ShowTaxCategory;
+        public bool? ShowEachTaxInGroup;
+        public DateTime? LatestEstimatedArrivalDate; //ReadOnly
+        public int? UseItemDescriptionsFrom; //PickList
 
     } //end PurchaseOrder
 

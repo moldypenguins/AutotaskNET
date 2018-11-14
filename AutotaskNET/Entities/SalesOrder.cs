@@ -26,6 +26,16 @@ namespace AutotaskNET.Entities
 
         } //end SalesOrder(net.autotask.webservices.SalesOrder entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.SalesOrder()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
@@ -56,31 +66,31 @@ namespace AutotaskNET.Entities
 
         #endregion //Fields
 
-        public int AccountID { get; set; } //ReadOnly Required [Account]
-        public string Title { get; set; } //ReadOnly Required Length:128
-        public int Status { get; set; } //Required PickList
-        public int Contact { get; set; } //Required [Contact]
-        public int OwnerResourceID { get; set; } //Required [Resource]
-        public DateTime SalesOrderDate { get; set; } //Required
-        public DateTime? PromisedDueDate { get; set; }
-        public string BillToAddress1 { get; set; } //Length:150
-        public string BillToAddress2 { get; set; } //Length:150
-        public string BillToCity { get; set; } //Length:50
-        public string BillToState { get; set; } //Length:50
-        public string BillToPostalCode { get; set; } //Length:50
-        public string BillToCountry { get; set; } //Length:100
-        public string ShipToAddress1 { get; set; } //Length:150
-        public string ShipToAddress2 { get; set; } //Length:150
-        public string ShipToCity { get; set; } //Length:50
-        public string ShipToState { get; set; } //Length:50
-        public string ShipToPostalCode { get; set; } //Length:50
-        public string ShipToCountry { get; set; } //Length:100
-        public int OpportunityID { get; set; } //ReadOnly Required [Opportunity]
-        public string AdditionalBillToAddressInformation { get; set; } //Length:100
-        public string AdditionalShipToAddressInformation { get; set; } //Length:100
-        public int? BillToCountryID { get; set; } //[Country]
-        public int? ShipToCountryID { get; set; } //[Country]
-        public int? BusinessDivisionSubdivisionID { get; set; } //[BusinessDivisionSubdivision]
+        public int AccountID; //ReadOnly Required [Account]
+        public string Title; //ReadOnly Required Length:128
+        public int Status; //Required PickList
+        public int Contact; //Required [Contact]
+        public int OwnerResourceID; //Required [Resource]
+        public DateTime SalesOrderDate; //Required
+        public DateTime? PromisedDueDate;
+        public string BillToAddress1; //Length:150
+        public string BillToAddress2; //Length:150
+        public string BillToCity; //Length:50
+        public string BillToState; //Length:50
+        public string BillToPostalCode; //Length:50
+        public string BillToCountry; //Length:100
+        public string ShipToAddress1; //Length:150
+        public string ShipToAddress2; //Length:150
+        public string ShipToCity; //Length:50
+        public string ShipToState; //Length:50
+        public string ShipToPostalCode; //Length:50
+        public string ShipToCountry; //Length:100
+        public int OpportunityID; //ReadOnly Required [Opportunity]
+        public string AdditionalBillToAddressInformation; //Length:100
+        public string AdditionalShipToAddressInformation; //Length:100
+        public int? BillToCountryID; //[Country]
+        public int? ShipToCountryID; //[Country]
+        public int? BusinessDivisionSubdivisionID; //[BusinessDivisionSubdivision]
 
     } //end SalesOrder
 

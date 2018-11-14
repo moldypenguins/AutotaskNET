@@ -26,27 +26,37 @@ namespace AutotaskNET.Entities
 
         } //end TicketCategory(net.autotask.webservices.TicketCategory entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.TicketCategory()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Fields
 
-        public bool? GlobalDefault { get; set; } //ReadOnly
+        public bool? GlobalDefault; //ReadOnly
 
         #endregion //ReadOnly Fields
 
         #region Required Fields
 
-        public string Name { get; set; } //Required Length:30
-        public bool Active { get; set; } //Required
-        public int DisplayColorRGB { get; set; } //Required PickList
+        public string Name; //Required Length:30
+        public bool Active; //Required
+        public int DisplayColorRGB; //Required PickList
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public string Nickname { get; set; } //Length:3
+        public string Nickname; //Length:3
 
         #endregion //Optional Fields
 

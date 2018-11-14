@@ -31,6 +31,16 @@ namespace AutotaskNET.Entities
 
         } //end Product(net.autotask.webservices.Product entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.Product()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
@@ -61,27 +71,27 @@ namespace AutotaskNET.Entities
 
         #endregion //Fields
 
-        public string Name { get; set; } //Required Length:100
-        public string Description { get; set; } //Length:2000
-        public string SKU { get; set; } //Length:50
-        public string Link { get; set; } //Length:500
-        public int? ProductCategory { get; set; } //PickList
-        public string ExternalProductID { get; set; } //Length:50
-        public double UnitCost { get; set; }
-        public double UnitPrice { get; set; }
-        public double MSRP { get; set; }
-        public int? DefaultVendorID { get; set; } //[Account]
-        public string VendorProductNumber { get; set; } //Length:50
-        public string ManufacturerName { get; set; } //Length:100
-        public string ManufacturerProductName { get; set; } //Length:50
-        public bool Active { get; set; } //Required
-        public string PeriodType { get; set; } //PickList Length:10
-        public int ProductAllocationCodeID { get; set; } //Required [AllocationCode]
-        public bool Serialized { get; set; } //Required
-        public int? CostAllocationCodeID { get; set; } //[AllocationCode]
-        public bool? DoesNotRequireProcurement { get; set; }
-        public double MarkupRate { get; set; } //ReadOnly
-        public string InternalProductID { get; set; } //Length:50
+        public string Name; //Required Length:100
+        public string Description; //Length:2000
+        public string SKU; //Length:50
+        public string Link; //Length:500
+        public int? ProductCategory; //PickList
+        public string ExternalProductID; //Length:50
+        public double UnitCost;
+        public double UnitPrice;
+        public double MSRP;
+        public int? DefaultVendorID; //[Account]
+        public string VendorProductNumber; //Length:50
+        public string ManufacturerName; //Length:100
+        public string ManufacturerProductName; //Length:50
+        public bool Active; //Required
+        public string PeriodType; //PickList Length:10
+        public int ProductAllocationCodeID; //Required [AllocationCode]
+        public bool Serialized; //Required
+        public int? CostAllocationCodeID; //[AllocationCode]
+        public bool? DoesNotRequireProcurement;
+        public double MarkupRate; //ReadOnly
+        public string InternalProductID; //Length:50
 
     } //end Product
 

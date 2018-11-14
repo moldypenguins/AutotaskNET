@@ -27,22 +27,32 @@ namespace AutotaskNET.Entities
 
         } //end ClassificationIcon(net.autotask.webservices.ClassificationIcon entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ClassificationIcon()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Fields
 
-        public string Description { get; set; } //ReadOnly Length:100
+        public string Description; //ReadOnly Length:100
 
         #endregion //ReadOnly Fields
 
         #region ReadOnly Required Fields
 
-        public string Name { get; set; } //ReadOnly Required Length:35
-        public bool Active { get; set; } //ReadOnly Required
-        public bool System { get; set; } //ReadOnly Required
-        public string RelativeUrl { get; set; } //ReadOnly Required Length:100
+        public string Name; //ReadOnly Required Length:35
+        public bool Active; //ReadOnly Required
+        public bool System; //ReadOnly Required
+        public string RelativeUrl; //ReadOnly Required Length:100
 
         #endregion //ReadOnly Required Fields
 

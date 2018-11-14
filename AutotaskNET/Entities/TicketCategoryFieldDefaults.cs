@@ -26,6 +26,16 @@ namespace AutotaskNET.Entities
 
         } //end TicketCategoryFieldDefaults(net.autotask.webservices.TicketCategoryFieldDefaults entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.TicketCategoryFieldDefaults()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
@@ -56,22 +66,22 @@ namespace AutotaskNET.Entities
 
         #endregion //Fields
 
-        public int? BusinessDivisionSubdivisionID { get; set; } //ReadOnly [BusinessDivisionSubdivision]
-        public string Description { get; set; } //ReadOnly Length:8000
-        public decimal EstimatedHours { get; set; } //ReadOnly
-        public int? IssueTypeID { get; set; } //ReadOnly PickList
-        public string PurchaseOrderNumber { get; set; } //ReadOnly Length:50
-        public int? QueueID { get; set; } //ReadOnly PickList
-        public string Resolution { get; set; } //ReadOnly Length:8000
-        public int? ServiceLevelAgreementID { get; set; } //ReadOnly PickList
-        public int? SourceID { get; set; } //ReadOnly PickList
-        public int? SubIssueTypeID { get; set; } //ReadOnly PickList
-        public int TicketCategoryID { get; set; } //ReadOnly Required [TicketCategory]
-        public int? TicketTypeID { get; set; } //ReadOnly PickList
-        public string Title { get; set; } //ReadOnly Length:255
-        public int? WorkTypeID { get; set; } //ReadOnly [AllocationCode]
-        public int? Status { get; set; } //ReadOnly PickList
-        public int? Priority { get; set; } //ReadOnly PickList
+        public int? BusinessDivisionSubdivisionID; //ReadOnly [BusinessDivisionSubdivision]
+        public string Description; //ReadOnly Length:8000
+        public decimal EstimatedHours; //ReadOnly
+        public int? IssueTypeID; //ReadOnly PickList
+        public string PurchaseOrderNumber; //ReadOnly Length:50
+        public int? QueueID; //ReadOnly PickList
+        public string Resolution; //ReadOnly Length:8000
+        public int? ServiceLevelAgreementID; //ReadOnly PickList
+        public int? SourceID; //ReadOnly PickList
+        public int? SubIssueTypeID; //ReadOnly PickList
+        public int TicketCategoryID; //ReadOnly Required [TicketCategory]
+        public int? TicketTypeID; //ReadOnly PickList
+        public string Title; //ReadOnly Length:255
+        public int? WorkTypeID; //ReadOnly [AllocationCode]
+        public int? Status; //ReadOnly PickList
+        public int? Priority; //ReadOnly PickList
 
     } //end TicketCategoryFieldDefaults
 

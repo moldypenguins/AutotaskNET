@@ -26,6 +26,16 @@ namespace AutotaskNET.Entities
 
         } //end Account(net.autotask.webservices.Account entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.Service()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
@@ -56,21 +66,21 @@ namespace AutotaskNET.Entities
 
         #endregion //Fields
 
-        public string Name { get; set; } //Required Length:100
-        public string Description { get; set; } //Length:400
-        public double UnitPrice { get; set; } //Required
-        public string PeriodType { get; set; } //Required PickList Length:1
-        public int AllocationCodeID { get; set; } //Required [AllocationCode]
-        public bool? IsActive { get; set; }
-        public int? CreatorResourceID { get; set; } //ReadOnly [Resource]
-        public int? UpdateResourceID { get; set; } //ReadOnly [Resource]
-        public DateTime? CreateDate { get; set; } //ReadOnly
-        public DateTime? LastModifiedDate { get; set; } //ReadOnly
-        public int? VendorAccountID { get; set; } //[Account]
-        public double UnitCost { get; set; }
-        public string InvoiceDescription { get; set; } //Length:1000
-        public long ServiceLevelAgreementID { get; set; } //PickList
-        public double MarkupRate { get; set; } //ReadOnly
+        public string Name; //Required Length:100
+        public string Description; //Length:400
+        public double UnitPrice; //Required
+        public string PeriodType; //Required PickList Length:1
+        public int AllocationCodeID; //Required [AllocationCode]
+        public bool? IsActive;
+        public int? CreatorResourceID; //ReadOnly [Resource]
+        public int? UpdateResourceID; //ReadOnly [Resource]
+        public DateTime? CreateDate; //ReadOnly
+        public DateTime? LastModifiedDate; //ReadOnly
+        public int? VendorAccountID; //[Account]
+        public double UnitCost;
+        public string InvoiceDescription; //Length:1000
+        public long ServiceLevelAgreementID; //PickList
+        public double MarkupRate; //ReadOnly
 
     } //end Service
 

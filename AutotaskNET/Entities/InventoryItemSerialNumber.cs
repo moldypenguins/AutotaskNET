@@ -28,6 +28,16 @@ namespace AutotaskNET.Entities
 
         } //end InventoryItemSerialNumber(net.autotask.webservices.InventoryItemSerialNumber entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.InventoryItemSerialNumber()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields

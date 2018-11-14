@@ -29,40 +29,50 @@ namespace AutotaskNET.Entities
 
         } //end ExpenseReport(net.autotask.webservices.ExpenseReport entity)
 
+        public override net.autotask.webservices.Entity ToATWS()
+        {
+            return new net.autotask.webservices.ExpenseReport()
+            {
+                id = this.id,
+
+            };
+
+        } //end ToATWS()
+
         #endregion //Constructors
 
         #region Fields
 
         #region ReadOnly Fields
 
-        public int? Status { get; set; } //ReadOnly PickList
-        public DateTime? SubmitDate { get; set; } //ReadOnly
-        public int? ApproverID { get; set; } //ReadOnly [Resource]
-        public double ExpenseTotal { get; set; } //ReadOnly
-        public string RejectionReason { get; set; } //ReadOnly Length:2048
-        public double AmountDue { get; set; } //ReadOnly
-        public string DepartmentNumber { get; set; } //ReadOnly Length:50
-        public DateTime? ApprovedDate { get; set; } //ReadOnly
-        public int? ReimbursementCurrencyID { get; set; } //ReadOnly [Currency]
-        public double ReimbursementCurrencyCashAdvanceAmount { get; set; } //ReadOnly
-        public double ReimbursementCurrencyAmountDue { get; set; } //ReadOnly
+        public int? Status; //ReadOnly PickList
+        public DateTime? SubmitDate; //ReadOnly
+        public int? ApproverID; //ReadOnly [Resource]
+        public double ExpenseTotal; //ReadOnly
+        public string RejectionReason; //ReadOnly Length:2048
+        public double AmountDue; //ReadOnly
+        public string DepartmentNumber; //ReadOnly Length:50
+        public DateTime? ApprovedDate; //ReadOnly
+        public int? ReimbursementCurrencyID; //ReadOnly [Currency]
+        public double ReimbursementCurrencyCashAdvanceAmount; //ReadOnly
+        public double ReimbursementCurrencyAmountDue; //ReadOnly
 
         #endregion //ReadOnly Fields
 
         #region Required Fields
 
-        public string Name { get; set; } //Required Length:100
-        public int SubmitterID { get; set; } //Required [Resource]
-        public DateTime WeekEnding { get; set; } //Required
+        public string Name; //Required Length:100
+        public int SubmitterID; //Required [Resource]
+        public DateTime WeekEnding; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public bool? Submit { get; set; }
-        public double CashAdvanceAmount { get; set; }
-        public string QuickBooksReferenceNumber { get; set; } //Length:100
-        public int? BusinessDivisionSubdivisionID { get; set; } //[BusinessDivisionSubdivision]
+        public bool? Submit;
+        public double CashAdvanceAmount;
+        public string QuickBooksReferenceNumber; //Length:100
+        public int? BusinessDivisionSubdivisionID; //[BusinessDivisionSubdivision]
 
         #endregion //Optional Fields
 
