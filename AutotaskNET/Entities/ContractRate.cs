@@ -26,7 +26,10 @@ namespace AutotaskNET.Entities
         public ContractRate() : base() { } //end ContractRate()
         public ContractRate(net.autotask.webservices.ContractRate entity) : base(entity)
         {
-
+            this.ContractHourlyRate = double.Parse(entity.ContractHourlyRate.ToString());
+            this.ContractID = int.Parse(entity.ContractID.ToString());
+            this.InternalCurrencyContractHourlyRate = double.Parse(entity.InternalCurrencyContractHourlyRate.ToString());
+            this.RoleID = int.Parse(entity.RoleID.ToString());
         } //end ContractRate(net.autotask.webservices.ContractRate entity)
 
         #endregion //Constructors
@@ -35,21 +38,21 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Fields
 
-        public double InternalCurrencyContractHourlyRate { get; set; } //ReadOnly
+        public double InternalCurrencyContractHourlyRate; //ReadOnly
 
         #endregion //ReadOnly Fields
 
         #region ReadOnly Required Fields
 
-        public int ContractID { get; set; } //ReadOnly Required [Contract]
+        public int ContractID; //ReadOnly Required [Contract]
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public int RoleID { get; set; } //Required [Role]
+        public int RoleID; //Required [Role]
 
-        public double ContractHourlyRate { get; set; } //Required
+        public double ContractHourlyRate; //Required
 
         #endregion //Required Fields
 

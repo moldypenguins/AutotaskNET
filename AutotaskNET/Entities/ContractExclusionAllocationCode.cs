@@ -25,7 +25,8 @@ namespace AutotaskNET.Entities
         public ContractExclusionAllocationCode() : base() { } //end ContractExclusionAllocationCode()
         public ContractExclusionAllocationCode(net.autotask.webservices.ContractExclusionAllocationCode entity) : base(entity)
         {
-
+            this.AllocationCodeID = long.Parse(entity.AllocationCodeID.ToString());
+            this.ContractID = long.Parse(entity.ContractID.ToString());
         } //end ContractExclusionAllocationCode(net.autotask.webservices.ContractExclusionAllocationCode entity)
 
         #endregion //Constructors
@@ -34,8 +35,8 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Required Fields
 
-        public long ContractID { get; set; } //ReadOnly Required [Contract]
-        public long AllocationCodeID { get; set; } //ReadOnly Required [AllocationCode]
+        public long ContractID; //ReadOnly Required [Contract]
+        public long AllocationCodeID; //ReadOnly Required [AllocationCode]
 
         #endregion //ReadOnly Required Fields
 

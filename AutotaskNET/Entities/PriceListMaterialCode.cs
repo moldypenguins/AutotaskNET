@@ -25,7 +25,10 @@ namespace AutotaskNET.Entities
         public PriceListMaterialCode() : base() { } //end PriceListMaterialCode()
         public PriceListMaterialCode(net.autotask.webservices.PriceListMaterialCode entity) : base(entity)
         {
-
+            this.AllocationCodeID = int.Parse(entity.AllocationCodeID.ToString());
+            this.CurrencyID = int.Parse(entity.CurrencyID.ToString());
+            this.UnitPrice = decimal.Parse(entity.UnitPrice.ToString());
+            this.UsesInternalCurrencyPrice = bool.Parse(entity.UsesInternalCurrencyPrice.ToString());
         } //end PriceListMaterialCode(net.autotask.webservices.PriceListMaterialCode entity)
 
         #endregion //Constructors
@@ -34,20 +37,20 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Required Fields
 
-        public int AllocationCodeID { get; set; } //ReadOnly Required [AllocationCode]
-        public int CurrencyID { get; set; } //ReadOnly Required [Currency]
+        public int AllocationCodeID; //ReadOnly Required [AllocationCode]
+        public int CurrencyID; //ReadOnly Required [Currency]
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public bool UsesInternalCurrencyPrice { get; set; } //Required
+        public bool UsesInternalCurrencyPrice; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public decimal UnitPrice { get; set; }
+        public decimal UnitPrice;
 
         #endregion //Optional Fields
 

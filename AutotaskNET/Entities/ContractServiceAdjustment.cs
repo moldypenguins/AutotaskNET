@@ -27,7 +27,15 @@ namespace AutotaskNET.Entities
         public ContractServiceAdjustment() : base() { } //end ContractServiceAdjustment()
         public ContractServiceAdjustment(net.autotask.webservices.ContractServiceAdjustment entity) : base(entity)
         {
-
+            this.EffectiveDate = DateTime.Parse(entity.EffectiveDate.ToString());
+            this.UnitChange = entity.UnitChange == null ? default(int?) : int.Parse(entity.UnitChange.ToString());
+            this.AdjustedUnitCost = double.Parse(entity.AdjustedUnitCost.ToString());
+            this.AdjustedUnitPrice = double.Parse(entity.AdjustedUnitPrice.ToString());
+            this.AllowRepeatService = entity.AllowRepeatService == null ? default(bool?) : bool.Parse(entity.AllowRepeatService.ToString());
+            this.ContractID = entity.ContractID == null ? default(int?) : int.Parse(entity.ContractID.ToString());
+            this.ContractServiceID = entity.ContractServiceID == null ? default(int?) : int.Parse(entity.ContractServiceID.ToString());
+            this.QuoteItemID = entity.QuoteItemID == null ? default(int?) : int.Parse(entity.QuoteItemID.ToString());
+            this.ServiceID = entity.ServiceID == null ? default(int?) : int.Parse(entity.ServiceID.ToString());
         } //end ContractServiceAdjustment(net.autotask.webservices.ContractServiceAdjustment entity)
 
         #endregion //Constructors
@@ -36,20 +44,20 @@ namespace AutotaskNET.Entities
 
         #region Required Fields
 
-        public DateTime EffectiveDate { get; set; } //Required
+        public DateTime EffectiveDate; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public int? ContractID { get; set; } //[Contract]
-        public int? ServiceID { get; set; } //[Service]
-        public int? UnitChange { get; set; }
-        public double AdjustedUnitPrice { get; set; }
-        public double AdjustedUnitCost { get; set; }
-        public int? QuoteItemID { get; set; } //[QuoteItem]
-        public int? ContractServiceID { get; set; } //[ContractService]
-        public bool? AllowRepeatService { get; set; }
+        public int? ContractID; //[Contract]
+        public int? ServiceID; //[Service]
+        public int? UnitChange;
+        public double AdjustedUnitPrice;
+        public double AdjustedUnitCost;
+        public int? QuoteItemID; //[QuoteItem]
+        public int? ContractServiceID; //[ContractService]
+        public bool? AllowRepeatService;
 
         #endregion //Optional Fields
 

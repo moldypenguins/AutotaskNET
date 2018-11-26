@@ -24,7 +24,14 @@ namespace AutotaskNET.Entities
         public ClientPortalUser() : base() { } //end ClientPortalUser()
         public ClientPortalUser(net.autotask.webservices.ClientPortalUser entity) : base(entity)
         {
-
+            this.ClientPortalActive = bool.Parse(entity.ClientPortalActive.ToString());
+            this.ContactID = int.Parse(entity.ContactID.ToString());
+            this.DateFormat = int.Parse(entity.DateFormat.ToString());
+            this.NumberFormat = int.Parse(entity.NumberFormat.ToString());
+            this.Password = entity.Password == null ? default(string) : entity.Password.ToString();
+            this.SecurityLevel = int.Parse(entity.SecurityLevel.ToString());
+            this.TimeFormat = int.Parse(entity.TimeFormat.ToString());
+            this.UserName = entity.UserName == null ? default(string) : entity.UserName.ToString();
         } //end ClientPortalUser(net.autotask.webservices.ClientPortalUser entity)
 
         #endregion //Constructors
@@ -33,24 +40,24 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Required Fields
 
-        public int ContactID { get; set; } //ReadOnly Required [Contact]
+        public int ContactID; //ReadOnly Required [Contact]
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public int SecurityLevel { get; set; } //Required PickList
-        public int DateFormat { get; set; } //Required PickList
-        public int TimeFormat { get; set; } //Required PickList
-        public int NumberFormat { get; set; } //Required PickList
-        public string UserName { get; set; } //Required Length:200
-        public bool ClientPortalActive { get; set; } //Required
+        public int SecurityLevel; //Required PickList
+        public int DateFormat; //Required PickList
+        public int TimeFormat; //Required PickList
+        public int NumberFormat; //Required PickList
+        public string UserName; //Required Length:200
+        public bool ClientPortalActive; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public string Password { get; set; } //Length:50
+        public string Password; //Length:50
 
         #endregion //Optional Fields
 

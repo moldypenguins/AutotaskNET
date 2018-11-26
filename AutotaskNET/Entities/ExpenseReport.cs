@@ -26,7 +26,24 @@ namespace AutotaskNET.Entities
         public ExpenseReport() : base() { } //end ExpenseReport()
         public ExpenseReport(net.autotask.webservices.ExpenseReport entity) : base(entity)
         {
-
+            this.Name = entity.Name == null ? default(string) : entity.Name.ToString();
+            this.SubmitterID = int.Parse(entity.SubmitterID.ToString());
+            this.WeekEnding = DateTime.Parse(entity.WeekEnding.ToString());
+            this.AmountDue = double.Parse(entity.ApprovedDate.ToString());
+            this.ApprovedDate = entity.ApprovedDate == null ? default(DateTime?) : DateTime.Parse(entity.ApprovedDate.ToString());
+            this.ApproverID = entity.ApproverID == null ? default(int?) : int.Parse(entity.ApproverID.ToString());
+            this.BusinessDivisionSubdivisionID = entity.BusinessDivisionSubdivisionID == null ? default(int?) : int.Parse(entity.BusinessDivisionSubdivisionID.ToString());
+            this.CashAdvanceAmount = double.Parse(entity.CashAdvanceAmount.ToString());
+            this.DepartmentNumber = entity.DepartmentNumber == null ? default(string) : entity.DepartmentNumber.ToString();
+            this.ExpenseTotal = double.Parse(entity.ExpenseTotal.ToString());
+            this.QuickBooksReferenceNumber = entity.QuickBooksReferenceNumber == null ? default(string) : entity.QuickBooksReferenceNumber.ToString();
+            this.ReimbursementCurrencyAmountDue = double.Parse(entity.ReimbursementCurrencyAmountDue.ToString());
+            this.ReimbursementCurrencyCashAdvanceAmount = double.Parse(entity.ReimbursementCurrencyCashAdvanceAmount.ToString());
+            this.ReimbursementCurrencyID = entity.ReimbursementCurrencyID == null ? default(int?) : int.Parse(entity.ReimbursementCurrencyID.ToString());
+            this.RejectionReason = entity.RejectionReason == null ? default(string) : entity.RejectionReason.ToString());
+            this.Status = entity.Status == null ? default(int?) : int.Parse(entity.Status.ToString());
+            this.Submit = entity.Submit == null ? default(bool?) : bool.Parse(entity.Submit.ToString());
+            this.SubmitDate = entity.SubmitDate == null ? default(DateTime?) : DateTime.Parse(entity .SubmitDate.ToString();
         } //end ExpenseReport(net.autotask.webservices.ExpenseReport entity)
 
         #endregion //Constructors
@@ -35,34 +52,34 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Fields
 
-        public int? Status { get; set; } //ReadOnly PickList
-        public DateTime? SubmitDate { get; set; } //ReadOnly
-        public int? ApproverID { get; set; } //ReadOnly [Resource]
-        public double ExpenseTotal { get; set; } //ReadOnly
-        public string RejectionReason { get; set; } //ReadOnly Length:2048
-        public double AmountDue { get; set; } //ReadOnly
-        public string DepartmentNumber { get; set; } //ReadOnly Length:50
-        public DateTime? ApprovedDate { get; set; } //ReadOnly
-        public int? ReimbursementCurrencyID { get; set; } //ReadOnly [Currency]
-        public double ReimbursementCurrencyCashAdvanceAmount { get; set; } //ReadOnly
-        public double ReimbursementCurrencyAmountDue { get; set; } //ReadOnly
+        public int? Status; //ReadOnly PickList
+        public DateTime? SubmitDate; //ReadOnly
+        public int? ApproverID; //ReadOnly [Resource]
+        public double ExpenseTotal; //ReadOnly
+        public string RejectionReason; //ReadOnly Length:2048
+        public double AmountDue; //ReadOnly
+        public string DepartmentNumber; //ReadOnly Length:50
+        public DateTime? ApprovedDate; //ReadOnly
+        public int? ReimbursementCurrencyID; //ReadOnly [Currency]
+        public double ReimbursementCurrencyCashAdvanceAmount; //ReadOnly
+        public double ReimbursementCurrencyAmountDue; //ReadOnly
 
         #endregion //ReadOnly Fields
 
         #region Required Fields
 
-        public string Name { get; set; } //Required Length:100
-        public int SubmitterID { get; set; } //Required [Resource]
-        public DateTime WeekEnding { get; set; } //Required
+        public string Name; //Required Length:100
+        public int SubmitterID; //Required [Resource]
+        public DateTime WeekEnding; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public bool? Submit { get; set; }
-        public double CashAdvanceAmount { get; set; }
-        public string QuickBooksReferenceNumber { get; set; } //Length:100
-        public int? BusinessDivisionSubdivisionID { get; set; } //[BusinessDivisionSubdivision]
+        public bool? Submit;
+        public double CashAdvanceAmount;
+        public string QuickBooksReferenceNumber; //Length:100
+        public int? BusinessDivisionSubdivisionID; //[BusinessDivisionSubdivision]
 
         #endregion //Optional Fields
 

@@ -25,7 +25,17 @@ namespace AutotaskNET.Entities
         public ContractMilestone() : base() { } //end ContractMilestone()
         public ContractMilestone(net.autotask.webservices.ContractMilestone entity) : base(entity)
         {
-
+            this.Amount = double.Parse(entity.Amount.ToString());
+            this.ContractID = int.Parse(entity.ContractID.ToString());
+            this.DateDue = DateTime.Parse(entity.DateDue.ToString());
+            this.IsInitialPayment = bool.Parse(entity.IsInitialPayment.ToString());
+            this.Status = int.Parse(entity.Status.ToString());
+            this.Title = entity.Title == null ? default(string) : entity.Title.ToString();
+            this.AllocationCodeID = entity.AllocationCodeID == null ? default(int?) : int.Parse(entity.AllocationCodeID.ToString());
+            this.CreateDate = entity.CreateDate == null ? default(DateTime?) : DateTime.Parse(entity.CreateDate.ToString());
+            this.CreatorResourceID = entity.CreatorResourceID == null ? default(int?) : int.Parse(entity.CreatorResourceID.ToString());
+            this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
+            this.InternalCurrencyAmount = double.Parse(entity.InternalCurrencyAmount.ToString());
         } //end Account(net.autotask.webservices.Account entity)
 
         #endregion //Constructors
@@ -34,33 +44,33 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Fields
 
-        public DateTime? CreateDate { get; set; } //ReadOnly
-        public int? CreatorResourceID { get; set; } //ReadOnly [Resource]
-        public double InternalCurrencyAmount { get; set; } //ReadOnly
-        public int? BusinessDivisionSubdivisionID { get; set; } //ReadOnly [BusinessDivisionSubdivision]
+        public DateTime? CreateDate; //ReadOnly
+        public int? CreatorResourceID; //ReadOnly [Resource]
+        public double InternalCurrencyAmount; //ReadOnly
+        public int? BusinessDivisionSubdivisionID; //ReadOnly [BusinessDivisionSubdivision]
 
         #endregion //ReadOnly Fields
 
         #region ReadOnly Required Fields
 
-        public int ContractID { get; set; } //ReadOnly Required [Contract]
+        public int ContractID; //ReadOnly Required [Contract]
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public int Status { get; set; } //Required PickList
-        public DateTime DateDue { get; set; } //Required
-        public double Amount { get; set; } //Required
-        public string Title { get; set; } //Required Length:50
-        public bool IsInitialPayment { get; set; } //Required
+        public int Status; //Required PickList
+        public DateTime DateDue; //Required
+        public double Amount; //Required
+        public string Title; //Required Length:50
+        public bool IsInitialPayment; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public string Description { get; set; } //Length:250
-        public int? AllocationCodeID { get; set; } //[AllocationCode]
+        public string Description; //Length:250
+        public int? AllocationCodeID; //[AllocationCode]
 
         #endregion //Optional Fields
 

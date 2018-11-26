@@ -27,7 +27,12 @@ namespace AutotaskNET.Entities
         public ProductVendor() : base() { } //end ProductVendor()
         public ProductVendor(net.autotask.webservices.ProductVendor entity) : base(entity)
         {
-
+            this.Active = bool.Parse(entity.Active.ToString());
+            this.IsDefault = bool.Parse(entity.IsDefault.ToString());
+            this.ProductID = int.Parse(entity.ProductID.ToString());
+            this.VendorCost = int.Parse(entity.VendorCost.ToString());
+            this.VendorID = int.Parse(entity.VendorID.ToString());
+            this.VendorPartNumber = entity.VendorPartNumber == null ? default(string) : entity.VendorPartNumber.ToString();
         } //end ProductVendor(net.autotask.webservices.ProductVendor entity)
 
         #endregion //Constructors
@@ -36,22 +41,22 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Required Fields
 
-        public int ProductID { get; set; } //ReadOnly Required [Product]
+        public int ProductID; //ReadOnly Required [Product]
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public int VendorID { get; set; } //Required [Account]
-        public bool Active { get; set; } //Required
-        public bool IsDefault { get; set; } //Required
+        public int VendorID; //Required [Account]
+        public bool Active; //Required
+        public bool IsDefault; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public double VendorCost { get; set; }
-        public string VendorPartNumber { get; set; } //Length:50
+        public double VendorCost;
+        public string VendorPartNumber; //Length:50
 
         #endregion //Optional Fields
 

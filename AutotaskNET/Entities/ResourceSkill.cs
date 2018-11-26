@@ -25,7 +25,10 @@ namespace AutotaskNET.Entities
         public ResourceSkill() : base() { } //end ResourceSkill()
         public ResourceSkill(net.autotask.webservices.ResourceSkill entity) : base(entity)
         {
-
+            this.ResourceID = long.Parse(entity.ResourceID.ToString());
+            this.SkillDescription = entity.SkillDescription == null ? default(string) : entity.SkillDescription.ToString();
+            this.SkillID = long.Parse(entity.SkillID.ToString());
+            this.SkillLevel = long.Parse(entity.SkillLevel.ToString());
         } //end ResourceSkill(net.autotask.webservices.ResourceSkill entity)
 
         #endregion //Constructors
@@ -34,20 +37,20 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Required Fields
 
-        public long ResourceID { get; set; } //ReadOnly Required [Resource]
-        public long SkillID { get; set; } //ReadOnly Required [Skill]
+        public long ResourceID; //ReadOnly Required [Resource]
+        public long SkillID; //ReadOnly Required [Skill]
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public long SkillLevel { get; set; } //Required PickList
+        public long SkillLevel; //Required PickList
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public string SkillDescription { get; set; } //Length:2000
+        public string SkillDescription; //Length:2000
 
         #endregion //Optional Fields
 

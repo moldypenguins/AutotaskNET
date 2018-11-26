@@ -26,7 +26,17 @@ namespace AutotaskNET.Entities
         public InternalLocation() : base() { } //end InternalLocation()
         public InternalLocation(net.autotask.webservices.InternalLocation entity) : base(entity)
         {
-
+            this.Name = entity.Name == null ? default(string) : entity.Name.ToString();
+            this.AdditionalAddressInfo = entity.AdditionalAddressInfo == null ? default(string) : entity.AdditionalAddressInfo.ToString();
+            this.Address1 = entity.Address1 == null ? default(string) : entity.Address1.ToString();
+            this.Address2 = entity.Address2 == null ? default(string) : entity.Address2.ToString();
+            this.City = entity.City == null ? default(string) : entity.City.ToString();
+            this.Country = entity.Country == null ? default(string) : entity.Country.ToString();
+            this.HolidaySetId = long.Parse(entity.HolidaySetId.ToString());
+            this.IsDefault = entity.IsDefault == null ? default(bool?) : bool.Parse(entity.IsDefault.ToString());
+            this.PostalCode = entity.PostalCode == null ? default(string) : entity.PostalCode.ToString();
+            this.State = entity.State == null ? default(string) : entity.State.ToString();
+            this.TimeZone = entity.TimeZone == null ? default(string) : entity.TimeZone.ToString();
         } //end InternalLocation(net.autotask.webservices.InternalLocation entity)
 
         #endregion //Constructors
@@ -35,22 +45,22 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Fields
 
-        public string Address1 { get; set; } //ReadOnly Length:100
-        public string Address2 { get; set; } //ReadOnly Length:100
-        public string City { get; set; } //ReadOnly Length:50
-        public string State { get; set; } //ReadOnly Length:25
-        public string PostalCode { get; set; } //ReadOnly Length:20
-        public string Country { get; set; } //ReadOnly Length:100
-        public string AdditionalAddressInfo { get; set; } //ReadOnly Length:100
-        public string TimeZone { get; set; } //ReadOnly Length:100
-        public long HolidaySetId { get; set; } //ReadOnly PickList
-        public bool? IsDefault { get; set; } //ReadOnly
+        public string Address1; //ReadOnly Length:100
+        public string Address2; //ReadOnly Length:100
+        public string City; //ReadOnly Length:50
+        public string State; //ReadOnly Length:25
+        public string PostalCode; //ReadOnly Length:20
+        public string Country; //ReadOnly Length:100
+        public string AdditionalAddressInfo; //ReadOnly Length:100
+        public string TimeZone; //ReadOnly Length:100
+        public long HolidaySetId; //ReadOnly PickList
+        public bool? IsDefault; //ReadOnly
 
         #endregion //ReadOnly Fields
 
         #region ReadOnly Required Fields
 
-        public string Name { get; set; } //ReadOnly Required Length:100
+        public string Name; //ReadOnly Required Length:100
 
         #endregion //ReadOnly Required Fields
 

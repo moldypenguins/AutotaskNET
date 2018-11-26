@@ -25,7 +25,21 @@ namespace AutotaskNET.Entities
         public AllocationCode() : base() { } //end AllocationCode()
         public AllocationCode(net.autotask.webservices.AllocationCode entity) : base(entity)
         {
-
+            this.Active = bool.Parse(entity.Active.ToString());
+            this.AllocationCodeType = entity.AllocationCodeType == null ? default(int?) : int.Parse(entity.AllocationCodeType.ToString());
+            this.Department = entity.Department == null ? default(int?) : int.Parse(entity.Department.ToString());
+            this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
+            this.ExternalNumber = entity.ExternalNumber == null ? default(string) : entity.ExternalNumber.ToString();
+            this.GeneralLedgerCode = entity.GeneralLedgerCode == null ? default(int?) : int.Parse(entity.GeneralLedgerCode.ToString());
+            this.IsExcludedFromNewContracts = entity.IsExcludedFromNewContracts == null ? default(bool?) : bool.Parse(entity.IsExcludedFromNewContracts.ToString());
+            this.MarkupRate = double.Parse(entity.MarkupRate.ToString());
+            this.Name = entity.Name == null ? default(string) : entity.Name.ToString();
+            this.Taxable = entity.Taxable == null ? default(bool?) : bool.Parse(entity.Taxable.ToString());
+            this.TaxCategoryID = entity.TaxCategoryID == null ? default(int?) : int.Parse(entity.TaxCategoryID.ToString());
+            this.Type = entity.Type == null ? default(int?) : int.Parse(entity.Type.ToString());
+            this.UnitCost = double.Parse(entity.UnitCost.ToString());
+            this.UnitPrice = double.Parse(entity.UnitPrice.ToString());
+            this.UseType = entity.UseType == null ? default(int?) : int.Parse(entity.UseType.ToString());
         } //end AllocationCode(net.autotask.webservices.AllocationCode entity)
 
         #endregion //Constructors
@@ -40,25 +54,25 @@ namespace AutotaskNET.Entities
 
         #region Required Fields
 
-        public bool Active { get; set; } //Required
-        public double UnitCost { get; set; } //Required
-        public double UnitPrice { get; set; } //Required
+        public bool Active; //Required
+        public double UnitCost; //Required
+        public double UnitPrice; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public int? GeneralLedgerCode { get; set; } //PickList
-        public int? Department { get; set; }
-        public string Name { get; set; } //Length:200
-        public string ExternalNumber { get; set; } //Length:100
-        public int? Type { get; set; } //PickList
-        public int? UseType { get; set; } //PickList
-        public string Description { get; set; } //Length:500
-        public int? AllocationCodeType { get; set; } //PickList
-        public bool? Taxable { get; set; }
-        public int? TaxCategoryID { get; set; } //[TaxCategory]
-        public bool? IsExcludedFromNewContracts { get; set; }
+        public int? GeneralLedgerCode; //PickList
+        public int? Department;
+        public string Name; //Length:200
+        public string ExternalNumber; //Length:100
+        public int? Type; //PickList
+        public int? UseType; //PickList
+        public string Description; //Length:500
+        public int? AllocationCodeType; //PickList
+        public bool? Taxable;
+        public int? TaxCategoryID; //[TaxCategory]
+        public bool? IsExcludedFromNewContracts;
 
         #endregion //Optional Fields
 

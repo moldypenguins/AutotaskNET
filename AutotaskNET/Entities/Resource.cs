@@ -23,7 +23,40 @@ namespace AutotaskNET.Entities
         public Resource() : base() { } //end Resource()
         public Resource(net.autotask.webservices.Resource entity) : base(entity)
         {
-
+            this.Active = bool.Parse(entity.Active.ToString());
+            this.Email = entity.Email == null ? default(string) : entity.Email.ToString();
+            this.EmailTypeCode = entity.EmailTypeCode == null ? default(string) : entity.EmailTypeCode.ToString();
+            this.FirstName = entity.FirstName == null ? default(string) : entity.FirstName.ToString();
+            this.HireDate = DateTime.Parse(entity.HireDate.ToString());
+            this.LastName = entity.LastName == null ? default(string) : entity.LastName.ToString();
+            this.LocationID = int.Parse(entity.LocationID.ToString());
+            this.NumberFormat = entity.NumberFormat == null ? default(string) : entity.NumberFormat.ToString();
+            this.PayrollType = int.Parse(entity.PayrollType.ToString());
+            this.ResourceType = entity.ResourceType == null ? default(string) : entity.ResourceType.ToString();
+            this.UserName = entity.UserName == null ? default(string) : entity.UserName.ToString();
+            this.UserType = int.Parse(entity.UserType.ToString());
+            this.AccountingReferenceID = entity.AccountingReferenceID == null ? default(string) : entity.AccountingReferenceID.ToString();
+            this.DateFormat = entity.DateFormat == null ? default(string) : entity.DateFormat.ToString();
+            this.DefaultServiceDeskRoleID = long.Parse(entity.DefaultServiceDeskRoleID.ToString());
+            this.Email2 = entity.Email2 == null ? default(string) : entity.Email2.ToString();
+            this.Email3 = entity.Email3 == null ? default(string) : entity.Email3.ToString();
+            this.EmailTypeCode2 = entity.EmailTypeCode2 == null ? default(string) : entity.EmailTypeCode.ToString();
+            this.EmailTypeCode3 = entity.EmailTypeCode3 == null ? default(string) : entity.EmailTypeCode3.ToString();
+            this.Gender = entity.Gender == null ? default(string) : entity.Gender.ToString();
+            this.Greeting = entity.Greeting == null ? default(int?) : int.Parse(entity.Greeting.ToString());
+            this.HomePhone = entity.HomePhone == null ? default(string) : entity.HomePhone.ToString();
+            this.Initials = entity.Initials == null ? default(string) : entity.Initials.ToString();
+            this.InternalCost = double.Parse(entity.InternalCost.ToString());
+            this.MiddleName = entity.MiddleName == null ? default(string) : entity.MiddleName.ToString();
+            this.MobilePhone = entity.MobilePhone == null ? default(string) : entity.MobilePhone.ToString();
+            this.OfficeExtension = entity.OfficeExtension == null ? default(string) : entity.OfficeExtension.ToString();
+            this.OfficePhone = entity.OfficePhone == null ? default(string) : entity.OfficePhone.ToString();
+            this.Password = entity.Password == null ? default(string) : entity.Password.ToString();
+            this.Suffix = entity.Suffix == null ? default(string) : entity.Suffix.ToString();
+            //this.SurveyResourceRating = double.Parse(entity.SurveyResourceRating.ToString());
+            this.TimeFormat = entity.TimeFormat == null ? default(string) : entity.TimeFormat.ToString();
+            this.Title = entity.Title == null ? default(string) : entity.Title.ToString();
+            this.TravelAvailabilityPct = entity.TravelAvailabilityPct == null ? default(string) : entity.TravelAvailabilityPct.ToString();
         } //end Resource(net.autotask.webservices.Resource entity)
 
         #endregion //Constructors

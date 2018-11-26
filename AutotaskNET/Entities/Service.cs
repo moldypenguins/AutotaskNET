@@ -23,7 +23,21 @@ namespace AutotaskNET.Entities
         public Service() : base() { } //end Service()
         public Service(net.autotask.webservices.Service entity) : base(entity)
         {
-
+            this.AllocationCodeID = int.Parse(entity.AllocationCodeID.ToString());
+            this.CreateDate = entity.CreateDate == null ? default(DateTime?) : DateTime.Parse(entity.CreateDate.ToString());
+            this.CreatorResourceID = entity.CreatorResourceID == null ? default(int?) : int.Parse(entity.CreatorResourceID.ToString());
+            this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
+            this.InvoiceDescription = entity.InvoiceDescription == null ? default(string) : entity.InvoiceDescription.ToString();
+            this.IsActive = entity.IsActive == null ? default(bool?) : bool.Parse(entity.IsActive.ToString());
+            this.LastModifiedDate = entity.LastModifiedDate == null ? default(DateTime?) : DateTime.Parse(entity.LastModifiedDate.ToString());
+            this.MarkupRate = double.Parse(entity.MarkupRate.ToString());
+            this.Name = entity.Name == null ? default(string) : entity.Name.ToString();
+            this.PeriodType = entity.PeriodType == null ? default(string) : entity.PeriodType.ToString();
+            this.ServiceLevelAgreementID = long.Parse(entity.ServiceLevelAgreementID.ToString());
+            this.UnitCost = double.Parse(entity.UnitCost.ToString());
+            this.UnitPrice = double.Parse(entity.UnitPrice.ToString());
+            this.UpdateResourceID = entity.UpdateResourceID == null ? default(int?) : int.Parse(entity.UpdateResourceID.ToString());
+            this.VendorAccountID = entity.VendorAccountID == null ? default(int?) : int.Parse(entity.VendorAccountID.ToString());
         } //end Account(net.autotask.webservices.Account entity)
 
         #endregion //Constructors
@@ -56,21 +70,21 @@ namespace AutotaskNET.Entities
 
         #endregion //Fields
 
-        public string Name { get; set; } //Required Length:100
-        public string Description { get; set; } //Length:400
-        public double UnitPrice { get; set; } //Required
-        public string PeriodType { get; set; } //Required PickList Length:1
-        public int AllocationCodeID { get; set; } //Required [AllocationCode]
-        public bool? IsActive { get; set; }
-        public int? CreatorResourceID { get; set; } //ReadOnly [Resource]
-        public int? UpdateResourceID { get; set; } //ReadOnly [Resource]
-        public DateTime? CreateDate { get; set; } //ReadOnly
-        public DateTime? LastModifiedDate { get; set; } //ReadOnly
-        public int? VendorAccountID { get; set; } //[Account]
-        public double UnitCost { get; set; }
-        public string InvoiceDescription { get; set; } //Length:1000
-        public long ServiceLevelAgreementID { get; set; } //PickList
-        public double MarkupRate { get; set; } //ReadOnly
+        public string Name; //Required Length:100
+        public string Description; //Length:400
+        public double UnitPrice; //Required
+        public string PeriodType; //Required PickList Length:1
+        public int AllocationCodeID; //Required [AllocationCode]
+        public bool? IsActive;
+        public int? CreatorResourceID; //ReadOnly [Resource]
+        public int? UpdateResourceID; //ReadOnly [Resource]
+        public DateTime? CreateDate; //ReadOnly
+        public DateTime? LastModifiedDate; //ReadOnly
+        public int? VendorAccountID; //[Account]
+        public double UnitCost;
+        public string InvoiceDescription; //Length:1000
+        public long ServiceLevelAgreementID; //PickList
+        public double MarkupRate; //ReadOnly
 
     } //end Service
 

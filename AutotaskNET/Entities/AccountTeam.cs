@@ -25,7 +25,8 @@ namespace AutotaskNET.Entities
         public AccountTeam() : base() { } //end AccountTeam()
         public AccountTeam(net.autotask.webservices.AccountTeam entity) : base(entity)
         {
-
+            this.AccountID = long.Parse(entity.AccountID.ToString());
+            this.ResourceID = long.Parse(entity.ResourceID.ToString());
         } //end AccountTeam(net.autotask.webservices.AccountTeam entity)
 
         #endregion //Constructors

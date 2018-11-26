@@ -23,7 +23,8 @@ namespace AutotaskNET.Entities
         public HolidaySet() : base() { } //end HolidaySet()
         public HolidaySet(net.autotask.webservices.HolidaySet entity) : base(entity)
         {
-
+            this.HolidaySetDescription = entity.HolidaySetDescription == null ? default(string) : entity.HolidaySetDescription.ToString();
+            this.HolidaySetName = entity.HolidaySetName == null ? default(string) : entity.HolidaySetName.ToString();
         } //end HolidaySet(net.autotask.webservices.HolidaySet entity)
 
         #endregion //Constructors
@@ -32,13 +33,13 @@ namespace AutotaskNET.Entities
 
         #region Required Fields
 
-        public string HolidaySetName { get; set; } //Required Length:64
+        public string HolidaySetName; //Required Length:64
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public string HolidaySetDescription { get; set; } //Length:512
+        public string HolidaySetDescription; //Length:512
 
         #endregion //Optional Fields
 

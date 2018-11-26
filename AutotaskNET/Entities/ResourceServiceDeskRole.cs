@@ -23,7 +23,7 @@ namespace AutotaskNET.Entities
         public ResourceServiceDeskRole() : base() { } //end ResourceServiceDeskRole()
         public ResourceServiceDeskRole(net.autotask.webservices.ResourceServiceDeskRole entity) : base(entity)
         {
-
+            
         } //end ResourceServiceDeskRole(net.autotask.webservices.ResourceServiceDeskRole entity)
 
         #endregion //Constructors
@@ -32,15 +32,15 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Required Fields
 
-        public int ResourceID { get; set; } //ReadOnly Required [Resource]
+        public int ResourceID; //ReadOnly Required [Resource]
 
         #endregion //ReadOnly Required Fields
 
         #region Obsolete Fields
 
-        public bool? Active { get; set; } //(Obsolete)
-        public bool? Default { get; set; } //(Obsolete)
-        public int RoleID { get; set; } //Required [Role] (Obsolete)
+        public bool? Active; //(Obsolete)
+        public bool? Default; //(Obsolete)
+        public int RoleID; //Required [Role] (Obsolete)
 
         #endregion //Obsolete Fields
 

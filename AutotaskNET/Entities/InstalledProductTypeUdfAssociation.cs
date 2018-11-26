@@ -25,7 +25,10 @@ namespace AutotaskNET.Entities
         public InstalledProductTypeUdfAssociation() : base() { } //end InstalledProductTypeUdfAssociation()
         public InstalledProductTypeUdfAssociation(net.autotask.webservices.InstalledProductTypeUdfAssociation entity) : base(entity)
         {
-
+            this.InstalledProductTypeId = long.Parse(entity.InstalledProductTypeId.ToString());
+            this.Required = bool.Parse(entity.Required.ToString());
+            this.SortOrder = int.Parse(entity.SortOrder.ToString());
+            this.UserDefinedFieldDefinitionId = long.Parse(entity.UserDefinedFieldDefinitionId.ToString());
         } //end InstalledProductTypeUdfAssociation(net.autotask.webservices.InstalledProductTypeUdfAssociation entity)
 
         #endregion //Constructors
@@ -34,15 +37,15 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Required Fields
 
-        public long InstalledProductTypeId { get; set; } //ReadOnly Required [InstalledProductType]
-        public long UserDefinedFieldDefinitionId { get; set; } //ReadOnly Required
+        public long InstalledProductTypeId; //ReadOnly Required [InstalledProductType]
+        public long UserDefinedFieldDefinitionId; //ReadOnly Required
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public bool Required { get; set; } //Required
-        public int SortOrder { get; set; } //Required
+        public bool Required; //Required
+        public int SortOrder; //Required
 
         #endregion //Required Fields
 

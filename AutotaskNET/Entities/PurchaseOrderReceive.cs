@@ -23,7 +23,13 @@ namespace AutotaskNET.Entities
         public PurchaseOrderReceive() : base() { } //end PurchaseOrderReceive()
         public PurchaseOrderReceive(net.autotask.webservices.PurchaseOrderReceive entity) : base(entity)
         {
-
+            this.PurchaseOrderItemID = long.Parse(entity.PurchaseOrderItemID.ToString());
+            this.QuantityBackOrdered = entity.QuantityBackOrdered == null ? default(int?) : int.Parse(entity.QuantityBackOrdered.ToString());
+            this.QuantityNowReceiving = int.Parse(entity.QuantityNowReceiving.ToString());
+            this.QuantityPreviouslyReceived = entity.QuantityPreviouslyReceived == null ? default(int?) : int.Parse(entity.QuantityPreviouslyReceived.ToString());
+            this.ReceiveDate = entity.ReceiveDate == null ? default(DateTime?) : DateTime.Parse(entity.ReceiveDate.ToString());
+            this.ReceivedByResourceID = entity.ReceivedByResourceID == null ? default(int?) : int.Parse(entity.ReceivedByResourceID.ToString());
+            this.SerialNumber = entity.SerialNumber == null ? default(string) : entity.SerialNumber.ToString();
         } //end PurchaseOrderReceive(net.autotask.webservices.PurchaseOrderReceive entity)
 
         #endregion //Constructors
@@ -54,15 +60,15 @@ namespace AutotaskNET.Entities
 
         #endregion //Optional Fields
 
-        #endregion //Fields
+        public long PurchaseOrderItemID; //ReadOnly Required [PurchaseOrderItem]
+        public int? QuantityPreviouslyReceived; //ReadOnly
+        public int QuantityNowReceiving; //ReadOnly Required
+        public DateTime? ReceiveDate; //ReadOnly
+        public int? QuantityBackOrdered; //ReadOnly
+        public int? ReceivedByResourceID; //ReadOnly [Resource]
+        public string SerialNumber; //ReadOnly Length:50
 
-        public long PurchaseOrderItemID { get; set; } //ReadOnly Required [PurchaseOrderItem]
-        public int? QuantityPreviouslyReceived { get; set; } //ReadOnly
-        public int QuantityNowReceiving { get; set; } //ReadOnly Required
-        public DateTime? ReceiveDate { get; set; } //ReadOnly
-        public int? QuantityBackOrdered { get; set; } //ReadOnly
-        public int? ReceivedByResourceID { get; set; } //ReadOnly [Resource]
-        public string SerialNumber { get; set; } //ReadOnly Length:50
+        #endregion //Fields
 
     } //end PurchaseOrderReceive
 

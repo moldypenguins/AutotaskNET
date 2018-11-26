@@ -25,7 +25,31 @@ namespace AutotaskNET.Entities
         public ContractCost() : base() { } //end ContractCost()
         public ContractCost(net.autotask.webservices.ContractCost entity) : base(entity)
         {
-
+            this.ContractID = long.Parse(entity.ContractID.ToString());
+            this.CostType = int.Parse(entity.CostType.ToString());
+            this.DatePurchased = DateTime.Parse(entity.DatePurchased.ToString());
+            this.Name = entity.Name == null ? default(string) : entity.Name.ToString();
+            this.UnitQuantity = double.Parse(entity.UnitQuantity.ToString());
+            this.AllocationCodeID = long.Parse(entity.AllocationCodeID.ToString());
+            this.BillableAmount = double.Parse(entity.BillableAmount.ToString());
+            this.BillableToAccount = entity.BillableToAccount == null ? default(bool?) : bool.Parse(entity.BillableToAccount.ToString());
+            this.Billed = entity.Billed == null ? default(bool?) : bool.Parse(entity.Billed.ToString());
+            this.ContractServiceBundleID = long.Parse(entity.ContractServiceBundleID.ToString());
+            this.ContractServiceID = long.Parse(entity.ContractServiceID.ToString());
+            this.CreateDate = entity.CreateDate == null ? default(DateTime?) : DateTime.Parse(entity.CreateDate.ToString()));
+            this.CreatorResourceID = long.Parse(entity.CreatorResourceID.ToString());
+            this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
+            this.ExtendedCost = double.Parse(entity.ExtendedCost.ToString());
+            this.InternalCurrencyBillableAmount = double.Parse(entity.InternalCurrencyBillableAmount.ToString());
+            this.InternalCurrencyUnitPrice = double.Parse(entity.InternalCurrencyUnitPrice.ToString());
+            this.InternalPurchaseOrderNumber = entity.InternalPurchaseOrderNumber == null ? default(string) : entity.InternalPurchaseOrderNumber.ToString();
+            this.ProductID = long.Parse(entity.ProductID.ToString());
+            this.PurchaseOrderNumber = entity.PurchaseOrderNumber == null ? default(string) : entity.PurchaseOrderNumber.ToString();
+            this.Status = long.Parse(entity.Status.ToString());
+            this.StatusLastModifiedBy = long.Parse(entity.StatusLastModifiedBy.ToString());
+            this.StatusLastModifiedDate = entity.StatusLastModifiedDate == null ? default(DateTime?) : DateTime.Parse(entity.StatusLastModifiedDate.ToString());
+            this.UnitCost = double.Parse(entity.UnitCost.ToString());
+            this.UnitPrice = double.Parse(entity.UnitPrice.ToString());
         } //end ContractCost(net.autotask.webservices.ContractCost entity)
 
         #endregion //Constructors
@@ -34,42 +58,42 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Fields
 
-        public double ExtendedCost { get; set; } //ReadOnly
-        public double BillableAmount { get; set; } //ReadOnly
-        public bool? Billed { get; set; } //ReadOnly
-        public long Status { get; set; } //ReadOnly PickList
-        public long StatusLastModifiedBy { get; set; } //ReadOnly
-        public DateTime? StatusLastModifiedDate { get; set; } //ReadOnly
-        public DateTime? CreateDate { get; set; } //ReadOnly
-        public long CreatorResourceID { get; set; } //ReadOnly [Resource]
-        public double InternalCurrencyBillableAmount { get; set; } //ReadOnly
-        public double InternalCurrencyUnitPrice { get; set; } //ReadOnly
-        public int? BusinessDivisionSubdivisionID { get; set; } //ReadOnly [BusinessDivisionSubdivision]
+        public double ExtendedCost; //ReadOnly
+        public double BillableAmount; //ReadOnly
+        public bool? Billed; //ReadOnly
+        public long Status; //ReadOnly PickList
+        public long StatusLastModifiedBy; //ReadOnly
+        public DateTime? StatusLastModifiedDate; //ReadOnly
+        public DateTime? CreateDate; //ReadOnly
+        public long CreatorResourceID; //ReadOnly [Resource]
+        public double InternalCurrencyBillableAmount; //ReadOnly
+        public double InternalCurrencyUnitPrice; //ReadOnly
+        public int? BusinessDivisionSubdivisionID; //ReadOnly [BusinessDivisionSubdivision]
 
         #endregion //ReadOnly Fields
 
         #region Required Fields
 
-        public long ContractID { get; set; } //Required [Contract]
-        public string Name { get; set; } //Required Length:100
-        public DateTime DatePurchased { get; set; } //Required
-        public int CostType { get; set; } //Required PickList
-        public double UnitQuantity { get; set; } //Required
+        public long ContractID; //Required [Contract]
+        public string Name; //Required Length:100
+        public DateTime DatePurchased; //Required
+        public int CostType; //Required PickList
+        public double UnitQuantity; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public long ProductID { get; set; } //[Product]
-        public long AllocationCodeID { get; set; } //[AllocationCode]
-        public string Description { get; set; } //Length:2000
-        public string PurchaseOrderNumber { get; set; } //Length:50
-        public string InternalPurchaseOrderNumber { get; set; } //Length:50
-        public double UnitCost { get; set; }
-        public double UnitPrice { get; set; }
-        public bool? BillableToAccount { get; set; }
-        public long ContractServiceID { get; set; } //[ContractService]
-        public long ContractServiceBundleID { get; set; } //[ContractServiceBundle]
+        public long ProductID; //[Product]
+        public long AllocationCodeID; //[AllocationCode]
+        public string Description; //Length:2000
+        public string PurchaseOrderNumber; //Length:50
+        public string InternalPurchaseOrderNumber; //Length:50
+        public double UnitCost;
+        public double UnitPrice;
+        public bool? BillableToAccount;
+        public long ContractServiceID; //[ContractService]
+        public long ContractServiceBundleID; //[ContractServiceBundle]
 
         #endregion //Optional Fields
 

@@ -25,7 +25,10 @@ namespace AutotaskNET.Entities
         public PriceListProduct() : base() { } //end PriceListProduct()
         public PriceListProduct(net.autotask.webservices.PriceListProduct entity) : base(entity)
         {
-
+            this.CurrencyID = int.Parse(entity.CurrencyID.ToString());
+            this.ProductID = int.Parse(entity.ProductID.ToString());
+            this.UnitPrice = decimal.Parse(entity.UnitPrice.ToString());
+            this.UnitPrice = decimal.Parse(entity.UnitPrice.ToString());
         } //end PriceListProduct(net.autotask.webservices.PriceListProduct entity)
 
         #endregion //Constructors
@@ -34,20 +37,20 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Required Fields
 
-        public int ProductID { get; set; } //ReadOnly Required [Product]
-        public int CurrencyID { get; set; } //ReadOnly Required [Currency]
+        public int ProductID; //ReadOnly Required [Product]
+        public int CurrencyID; //ReadOnly Required [Currency]
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public bool UsesInternalCurrencyPrice { get; set; } //Required
+        public bool UsesInternalCurrencyPrice; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public decimal UnitPrice { get; set; }
+        public decimal UnitPrice;
 
         #endregion //Optional Fields
 

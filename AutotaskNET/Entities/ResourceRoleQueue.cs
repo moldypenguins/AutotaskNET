@@ -23,8 +23,12 @@ namespace AutotaskNET.Entities
         public ResourceRoleQueue() : base() { } //end ResourceRoleQueue()
         public ResourceRoleQueue(net.autotask.webservices.ResourceRoleQueue entity) : base(entity)
         {
-
-        } //end ResourceRoleQueue(net.autotask.webservices.ResourceRoleQueue entity)
+            this.Active = entity.Active == null ? default(bool?) : bool.Parse(entity.Active.ToString());
+            this.Default = entity.Default == null ? default(bool?) : bool.Parse(entity.Default.ToString());
+            this.QueueID = int.Parse(entity.QueueID.ToString());
+            this.ResourceID = int.Parse(entity.ResourceID.ToString());
+            this.RoleID = entity.RoleID == null ? default(int?) : int.Parse(entity.RoleID.ToString());
+        } //end ResourceRoleQueue(net.autotask.webservices.ResourceRoleQueue entity.)
 
         #endregion //Constructors
 
@@ -32,21 +36,21 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Required Fields
 
-        public int ResourceID { get; set; } //ReadOnly Required [Resource]
+        public int ResourceID; //ReadOnly Required [Resource]
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public int QueueID { get; set; } //Required PickList
+        public int QueueID; //Required PickList
 
         #endregion //Required Fields
 
         #region Obsolete Fields
 
-        public bool? Active { get; set; } //ReadOnly (Obsolete)
-        public bool? Default { get; set; } //ReadOnly (Obsolete)
-        public int? RoleID { get; set; } //ReadOnly [Role] (Obsolete)
+        public bool? Active; //ReadOnly (Obsolete)
+        public bool? Default; //ReadOnly (Obsolete)
+        public int? RoleID; //ReadOnly [Role] (Obsolete)
 
         #endregion //Obsolete Fields
 

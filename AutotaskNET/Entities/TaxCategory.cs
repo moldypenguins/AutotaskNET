@@ -24,7 +24,9 @@ namespace AutotaskNET.Entities
         public TaxCategory() : base() { } //end TaxCategory()
         public TaxCategory(net.autotask.webservices.TaxCategory entity) : base(entity)
         {
-
+            this.Active = entity.Active == null ? default(bool?) : bool.Parse(entity.Active.ToString());
+            this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
+            this.Name = entity.Name == null ? default(string) : entity.Name.ToString();
         } //end TaxCategory(net.autotask.webservices.TaxCategory entity)
 
         #endregion //Constructors
@@ -33,14 +35,14 @@ namespace AutotaskNET.Entities
 
         #region Required Fields
 
-        public string Name { get; set; } //Required Length:200
+        public string Name; //Required Length:200
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public string Description { get; set; } //Length:200
-        public bool? Active { get; set; }
+        public string Description; //Length:200
+        public bool? Active;
 
         #endregion //Optional Fields
 

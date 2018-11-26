@@ -25,7 +25,10 @@ namespace AutotaskNET.Entities
         public PriceListServiceBundle() : base() { } //end PriceListServiceBundle()
         public PriceListServiceBundle(net.autotask.webservices.PriceListServiceBundle entity) : base(entity)
         {
-
+            this.CurrencyID = int.Parse(entity.CurrencyID.ToString());
+            this.ServiceBundleID = int.Parse(entity.ServiceBundleID.ToString());
+            this.UnitPrice = decimal.Parse(entity.UnitPrice.ToString());
+            this.UsesInternalCurrencyPrice = bool.Parse(entity.UsesInternalCurrencyPrice.ToString());
         } //end PriceListServiceBundle(net.autotask.webservices.PriceListServiceBundle entity)
 
         #endregion //Constructors

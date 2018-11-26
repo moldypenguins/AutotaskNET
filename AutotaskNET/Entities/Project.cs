@@ -26,7 +26,44 @@ namespace AutotaskNET.Entities
         public Project() : base() { } //end Project()
         public Project(net.autotask.webservices.Project entity) : base(entity)
         {
-
+            this.AccountID = int.Parse(entity.AccountID.ToString());
+            this.EndDateTime = DateTime.Parse(entity.EndDateTime.ToString());
+            this.ProjectName = entity.ProjectName == null ? default(string) : entity.ProjectName.ToString();
+            this.StartDateTime = DateTime.Parse(entity.StartDateTime.ToString());
+            this.Type = int.Parse(entity.Type.ToString());
+            this.ActualBilledHours = float.Parse(entity.ActualBilledHours.ToString());
+            this.ActualHours = float.Parse(entity.ActualHours.ToString());
+            this.BusinessDivisionSubdivisionID = entity.BusinessDivisionSubdivisionID == null ? default(int?) : int.Parse(entity.BusinessDivisionSubdivisionID.ToString());
+            this.ChangeOrdersBudget = float.Parse(entity.ChangeOrdersBudget.ToString());
+            this.ChangeOrdersRevenue = float.Parse(entity.ChangeOrdersRevenue.ToString());
+            this.CompanyOwnerResourceID = entity.CompanyOwnerResourceID == null ? default(int?) : int.Parse(entity.CompanyOwnerResourceID.ToString());
+            this.CompletedDateTime = entity.CreateDateTime == null ? default(DateTime?) : DateTime.Parse(entity.CreateDateTime.ToString());
+            this.CompletedPercentage = entity.CompletedPercentage == null ? default(int?) : int.Parse(entity.CompletedPercentage.ToString());
+            this.ContractID = entity.ContractID == null ? default(int?) : int.Parse(entity.ContractID.ToString());
+            this.CreateDateTime = entity.CreateDateTime == null ? default(DateTime?) : DateTime.Parse(entity.CreateDateTime.ToString());
+            this.CreatorResourceID = entity.CreatorResourceID == null ? default(int?) : int.Parse(entity.CreatorResourceID.ToString());
+            this.Department = entity.Department == null ? default(int?) : int.Parse(entity.Department.ToString());
+            this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
+            this.Duration = entity.Duration == null ? default(int?) : int.Parse(entity.Duration.ToString());
+            this.EstimatedSalesCost = float.Parse(EstimatedSalesCost.ToString());
+            this.EstimatedTime = float.Parse(entity.EstimatedTime.ToString());
+            this.ExtPNumber = entity.ExtPNumber == null ? default(string) : entity.ExtPNumber.ToString();
+            this.ExtProjectType = entity.ExtProjectType == null ? default(int?) : int.Parse(entity.ExtProjectType.ToString());
+            this.LaborEstimatedCosts = float.Parse(entity.LaborEstimatedCosts.ToString());
+            this.LaborEstimatedMarginPercentage = float.Parse(entity.LaborEstimatedMarginPercentage.ToString());
+            this.LaborEstimatedRevenue = float.Parse(entity.LaborEstimatedRevenue.ToString());
+            this.LineOfBusiness = entity.LineOfBusiness == null ? default(int?) : int.Parse(entity.LineOfBusiness.ToString());
+            this.OriginalEstimatedRevenue = float.Parse(entity.OriginalEstimatedRevenue.ToString());
+            this.ProjectCostEstimatedMarginPercentage = float.Parse(entity.ProjectCostEstimatedMarginPercentage.ToString());
+            this.ProjectCostsBudget = float.Parse(entity.ProjectCostsBudget.ToString());
+            this.ProjectCostsRevenue = float.Parse(entity.ProjectCostsRevenue.ToString());
+            this.ProjectLeadResourceID = entity.ProjectLeadResourceID == null ? default(int?) : int.Parse(entity.ProjectLeadResourceID.ToString());
+            this.ProjectNumber = entity.ProjectNumber == null ? default(string) : entity.ProjectNumber.ToString();
+            this.PurchaseOrderNumber = entity.PurchaseOrderNumber == null ? default(string) : entity.PurchaseOrderNumber.ToString();
+            this.SGDA = float.Parse(entity.SGDA.ToString());
+            this.Status = int.Parse(entity.Status.ToString());
+            this.StatusDateTime = entity.StatusDateTime == null ? default(DateTime?) : DateTime.Parse(entity.StatusDateTime.ToString());
+            this.StatusDetail = entity.StatusDetail == null ? default(string) : entity.StatusDetail.ToString();
         } //end Project(net.autotask.webservices.Project entity)
 
         #endregion //Constructors

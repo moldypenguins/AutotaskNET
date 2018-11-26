@@ -23,7 +23,12 @@ namespace AutotaskNET.Entities
         public ResourceRoleDepartment() : base() { } //end ResourceRoleDepartment()
         public ResourceRoleDepartment(net.autotask.webservices.ResourceRoleDepartment entity) : base(entity)
         {
-
+            this.Active = bool.Parse(entity.Active.ToString());
+            this.Default = bool.Parse(entity.Default.ToString());
+            this.DepartmentID = int.Parse(entity.DepartmentID.ToString());
+            this.DepartmentLead = bool.Parse(entity.DepartmentLead.ToString());
+            this.ResourceID = int.Parse(entity.ResourceID.ToString());
+            this.RoleID = int.Parse(entity.RoleID.ToString());
         } //end ResourceRoleDepartment(net.autotask.webservices.ResourceRoleDepartment entity)
 
         #endregion //Constructors
@@ -56,12 +61,12 @@ namespace AutotaskNET.Entities
 
         #endregion //Fields
 
-        public int DepartmentID { get; set; } //Required [Department]
-        public int ResourceID { get; set; } //ReadOnly Required [Resource]
-        public int RoleID { get; set; } //Required [Role]
-        public bool Active { get; set; } //Required
-        public bool Default { get; set; } //Required
-        public bool DepartmentLead { get; set; } //Required
+        public int DepartmentID; //Required [Department]
+        public int ResourceID; //ReadOnly Required [Resource]
+        public int RoleID; //Required [Role]
+        public bool Active; //Required
+        public bool Default; //Required
+        public bool DepartmentLead; //Required
 
     } //end ResourceRoleDepartment
 

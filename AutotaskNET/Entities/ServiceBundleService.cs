@@ -23,7 +23,8 @@ namespace AutotaskNET.Entities
         public ServiceBundleService() : base() { } //end ServiceBundleService()
         public ServiceBundleService(net.autotask.webservices.ServiceBundleService entity) : base(entity)
         {
-
+            this.ServiceBundleID = long.Parse(entity.ServiceBundleID.ToString());
+            this.ServiceID = long.Parse(entity.ServiceID.ToString());
         } //end ServiceBundleService(net.autotask.webservices.ServiceBundleService entity)
 
         #endregion //Constructors
@@ -54,10 +55,10 @@ namespace AutotaskNET.Entities
 
         #endregion //Optional Fields
 
-        #endregion //Fields
+        public long ServiceBundleID; //ReadOnly Required [ServiceBundle]
+        public long ServiceID; //ReadOnly Required [Service]
 
-        public long ServiceBundleID { get; set; } //ReadOnly Required [ServiceBundle]
-        public long ServiceID { get; set; } //ReadOnly Required [Service]
+        #endregion //Fields
 
     } //end ServiceBundleService
 

@@ -25,7 +25,19 @@ namespace AutotaskNET.Entities
         public Phase() : base() { } //end Phase()
         public Phase(net.autotask.webservices.Phase entity) : base(entity)
         {
-
+            this.ProjectID = int.Parse(entity.ProjectID.ToString());
+            this.Title = entity.Title == null ? default(string) : entity.Title.ToString();
+            this.CreateDate = entity.CreateDate == null ? default(DateTime?) : DateTime.Parse(entity.CreateDate.ToString());
+            this.CreatorResourceID = entity.CreatorResourceID == null ? default(int?) : int.Parse(entity.CreatorResourceID.ToString());
+            this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
+            this.DueDate = entity.DueDate == null ? default(DateTime?) : DateTime.Parse(entity.DueDate.ToString());
+            this.EstimatedHours = float.Parse(entity.EstimatedHours.ToString());
+            this.ExternalID = entity.ExternalID == null ? default(string) : entity.ExternalID.ToString();
+            this.LastActivityDateTime = entity.LastActivityDateTime == null ? default(DateTime?) : DateTime.Parse(entity.LastActivityDateTime.ToString());
+            this.ParentPhaseID = entity.ParentPhaseID == null ? default(int?) : int.Parse(entity.ParentPhaseID.ToString());
+            this.PhaseNumber = entity.PhaseNumber == null ? default(string) : entity.PhaseNumber.ToString();
+            this.Scheduled = entity.Scheduled == null ? default(bool?) : bool.Parse(entity.Scheduled.ToString());
+            this.StartDate = entity.StartDate == null ? default(DateTime?) : DateTime.Parse(entity.StartDate.ToString());
         } //end Phase(net.autotask.webservices.Phase entity)
 
         #endregion //Constructors
@@ -58,19 +70,19 @@ namespace AutotaskNET.Entities
 
         #endregion //Fields
 
-        public DateTime? CreateDate { get; set; } //ReadOnly
-        public int? CreatorResourceID { get; set; } //ReadOnly [Resource]
-        public string Description { get; set; } //Length:8000
-        public DateTime? DueDate { get; set; }
-        public float EstimatedHours { get; set; } //ReadOnly
-        public string ExternalID { get; set; } //Length:50
-        public DateTime? LastActivityDateTime { get; set; } //ReadOnly
-        public int? ParentPhaseID { get; set; } //[Phase]
-        public string PhaseNumber { get; set; } //ReadOnly Length:50
-        public int ProjectID { get; set; } //ReadOnly Required [Project]
-        public bool? Scheduled { get; set; } //ReadOnly
-        public DateTime? StartDate { get; set; }
-        public string Title { get; set; } //Required Length:255
+        public DateTime? CreateDate; //ReadOnly
+        public int? CreatorResourceID; //ReadOnly [Resource]
+        public string Description; //Length:8000
+        public DateTime? DueDate;
+        public float EstimatedHours; //ReadOnly
+        public string ExternalID; //Length:50
+        public DateTime? LastActivityDateTime; //ReadOnly
+        public int? ParentPhaseID; //[Phase]
+        public string PhaseNumber; //ReadOnly Length:50
+        public int ProjectID; //ReadOnly Required [Project]
+        public bool? Scheduled; //ReadOnly
+        public DateTime? StartDate;
+        public string Title; //Required Length:255
 
     } //end Phase
 

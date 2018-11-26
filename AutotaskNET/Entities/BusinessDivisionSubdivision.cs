@@ -23,7 +23,9 @@ namespace AutotaskNET.Entities
         public BusinessDivisionSubdivision() : base() { } //end BusinessDivisionSubdivision()
         public BusinessDivisionSubdivision(net.autotask.webservices.BusinessDivisionSubdivision entity) : base(entity)
         {
-
+            this.Active = entity.Active == null ? default(bool?) : bool.Parse(entity.Active.ToString());
+            this.BusinessDivisionID = int.Parse(entity.BusinessDivisionID.ToString());
+            this.BusinessSubdivisionID = int.Parse(entity.BusinessSubdivisionID.ToString());
         } //end BusinessDivisionSubdivision(net.autotask.webservices.BusinessDivisionSubdivision entity)
 
         #endregion //Constructors
@@ -32,14 +34,14 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Required Fields
 
-        public int BusinessDivisionID { get; set; } //ReadOnly Required [BusinessDivision]
-        public int BusinessSubdivisionID { get; set; } //ReadOnly Required [BusinessSubdivision]
+        public int BusinessDivisionID; //ReadOnly Required [BusinessDivision]
+        public int BusinessSubdivisionID; //ReadOnly Required [BusinessSubdivision]
 
         #endregion //ReadOnly Required Fields
 
         #region Optional Fields
 
-        public bool? Active { get; set; }
+        public bool? Active;
 
         #endregion //Optional Fields
 

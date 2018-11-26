@@ -25,7 +25,10 @@ namespace AutotaskNET.Entities
         public ShippingType() : base() { } //end ShippingType()
         public ShippingType(net.autotask.webservices.ShippingType entity) : base(entity)
         {
-
+            this.AllocationCodeID = entity.AllocationCodeID == null ? default(int?) : int.Parse(entity.AllocationCodeID.ToString());
+            this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
+            this.IsActive = entity.IsActive == null ? default(bool?) : bool.Parse(entity.IsActive.ToString());
+            this.Name = entity.Name == null ? default(string) : entity.Name.ToString();
         } //end ShippingType(net.autotask.webservices.ShippingType entity)
 
         #endregion //Constructors
@@ -34,10 +37,10 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Fields
 
-        public string Name { get; set; } //ReadOnly Length:100
-        public bool? IsActive { get; set; } //ReadOnly
-        public string Description { get; set; } //ReadOnly Length:2000
-        public int? AllocationCodeID { get; set; } //ReadOnly [AllocationCode]
+        public string Name; //ReadOnly Length:100
+        public bool? IsActive; //ReadOnly
+        public string Description; //ReadOnly Length:2000
+        public int? AllocationCodeID; //ReadOnly [AllocationCode]
 
         #endregion //ReadOnly Fields
 

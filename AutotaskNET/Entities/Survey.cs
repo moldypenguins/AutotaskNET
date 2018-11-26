@@ -32,14 +32,14 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Fields
 
-        public string DisplayName { get; set; } //ReadOnly Length:100
-        public string Description { get; set; } //ReadOnly Length:1000
+        public string DisplayName;//ReadOnly Length:100
+        public string Description;//ReadOnly Length:1000
 
         #endregion //ReadOnly Fields
 
         #region ReadOnly Required Fields
 
-        public string Name { get; set; } //ReadOnly Required Length:100
+        public string Name;//ReadOnly Required Length:100
 
         #endregion //ReadOnly Required Fields
 

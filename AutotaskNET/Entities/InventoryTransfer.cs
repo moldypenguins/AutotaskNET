@@ -25,7 +25,15 @@ namespace AutotaskNET.Entities
         public InventoryTransfer() : base() { } //end InventoryTransfer()
         public InventoryTransfer(net.autotask.webservices.InventoryTransfer entity) : base(entity)
         {
-
+            this.FromLocationID = long.Parse(entity.FromLocationID.ToString());
+            this.ProductID = long.Parse(entity.ProductID.ToString());
+            this.QuantityTransferred = int.Parse(entity.QuantityTransferred.ToString());
+            this.ToLocationID = long.Parse(entity.ToLocationID.ToString());
+            this.Notes = entity.Notes == null ? default(string) : entity.Notes.ToString();
+            this.SerialNumber = entity.SerialNumber == null ? default(string) : entity.SerialNumber.ToString();
+            this.TransferByResourceID = entity.TransferByResourceID == null ? default(int?) : int.Parse(entity.TransferByResourceID.ToString());
+            this.TransferDate = entity.TransferDate == null ? default(DateTime?) : DateTime.Parse(entity.TransferDate.ToString());
+            this.UpdateNote = entity.UpdateNote == null ? default(string) : entity.UpdateNote.ToString();
         } //end InventoryTransfer(net.autotask.webservices.InventoryTransfer entity)
 
         #endregion //Constructors
@@ -34,20 +42,20 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Fields
 
-        public int? TransferByResourceID { get; set; } //ReadOnly [Resource]
-        public DateTime? TransferDate { get; set; } //ReadOnly
-        public string Notes { get; set; } //ReadOnly Length:4000
-        public string SerialNumber { get; set; } //ReadOnly Length:100
-        public string UpdateNote { get; set; } //ReadOnly Length:500
+        public int? TransferByResourceID; //ReadOnly [Resource]
+        public DateTime? TransferDate; //ReadOnly
+        public string Notes; //ReadOnly Length:4000
+        public string SerialNumber; //ReadOnly Length:100
+        public string UpdateNote; //ReadOnly Length:500
 
         #endregion //ReadOnly Fields
 
         #region ReadOnly Required Fields
 
-        public long ProductID { get; set; } //ReadOnly Required [Product]
-        public long FromLocationID { get; set; } //ReadOnly Required [InventoryLocation]
-        public long ToLocationID { get; set; } //ReadOnly Required [InventoryLocation]
-        public int QuantityTransferred { get; set; } //ReadOnly Required
+        public long ProductID; //ReadOnly Required [Product]
+        public long FromLocationID; //ReadOnly Required [InventoryLocation]
+        public long ToLocationID; //ReadOnly Required [InventoryLocation]
+        public int QuantityTransferred; //ReadOnly Required
 
         #endregion //ReadOnly Required Fields
 

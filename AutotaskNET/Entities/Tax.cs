@@ -26,7 +26,11 @@ namespace AutotaskNET.Entities
         public Tax() : base() { } //end Tax()
         public Tax(net.autotask.webservices.Tax entity) : base(entity)
         {
-
+            this.IsCompounded = entity.IsCompounded == null ? default(bool?) : bool.Parse(entity.IsCompounded.ToString());
+            this.TaxCategoryID = int.Parse(entity.TaxCategoryID.ToString());
+            this.TaxName = entity.TaxName == null ? default(string) : entity.TaxName.ToString();
+            this.TaxRate = double.Parse(entity.TaxRate.ToString());
+            this.TaxRegionID = int.Parse(entity.TaxRegionID.ToString());
         } //end Tax(net.autotask.webservices.Tax entity)
 
         #endregion //Constructors
@@ -35,21 +39,21 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Required Fields
 
-        public int TaxRegionID { get; set; } //ReadOnly Required [TaxRegion]
-        public int TaxCategoryID { get; set; } //ReadOnly Required [TaxCategory]
+        public int TaxRegionID; //ReadOnly Required [TaxRegion]
+        public int TaxCategoryID; //ReadOnly Required [TaxCategory]
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public string TaxName { get; set; } //Required Length:100
-        public double TaxRate { get; set; } //Required
+        public string TaxName; //Required Length:100
+        public double TaxRate; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public bool? IsCompounded { get; set; }
+        public bool? IsCompounded;
 
         #endregion //Optional Fields
 

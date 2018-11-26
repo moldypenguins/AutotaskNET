@@ -26,7 +26,10 @@ namespace AutotaskNET.Entities
         public PriceListRole() : base() { } //end PriceListRole()
         public PriceListRole(net.autotask.webservices.PriceListRole entity) : base(entity)
         {
-
+            this.CurrencyID = int.Parse(entity.CurrencyID.ToString());
+            this.HourlyRate = decimal.Parse(entity.HourlyRate.ToString());
+            this.RoleID = int.Parse(entity.RoleID.ToString());
+            this.UsesInternalCurrencyPrice = bool.Parse(entity.UsesInternalCurrencyPrice.ToString());
         } //end PriceListRole(net.autotask.webservices.PriceListRole entity)
 
         #endregion //Constructors
@@ -35,20 +38,20 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Required Fields
 
-        public int RoleID { get; set; } //ReadOnly Required [Role]
-        public int CurrencyID { get; set; } //ReadOnly Required [Currency]
+        public int RoleID; //ReadOnly Required [Role]
+        public int CurrencyID; //ReadOnly Required [Currency]
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public bool UsesInternalCurrencyPrice { get; set; } //Required
+        public bool UsesInternalCurrencyPrice; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public decimal HourlyRate { get; set; }
+        public decimal HourlyRate;
 
         #endregion //Optional Fields
 

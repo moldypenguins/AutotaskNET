@@ -27,7 +27,14 @@ namespace AutotaskNET.Entities
         public ContractServiceBundleAdjustment() : base() { } //end ContractServiceBundleAdjustment()
         public ContractServiceBundleAdjustment(net.autotask.webservices.ContractServiceBundleAdjustment entity) : base(entity)
         {
-
+            this.ContractID = entity.ContractID == null ? default(int?) : int.Parse(entity.ContractID.ToString());
+            this.EffectiveDate = DateTime.Parse(entity.EffectiveDate.ToString());
+            this.ServiceBundleID = entity.ServiceBundleID == null ? default(int?) : int.Parse(entity.ServiceBundleID.ToString());
+            this.UnitChange = entity.UnitChange == null ? default(int?) : int.Parse(entity.UnitChange.ToString());
+            this.AdjustedUnitPrice = double.Parse(entity.AdjustedUnitPrice.ToString());
+            this.AllowRepeatServiceBundle = entity.AllowRepeatServiceBundle == null ? default(bool?) : bool.Parse(entity.AllowRepeatServiceBundle.ToString());
+            this.ContractServiceBundleID = entity.ContractServiceBundleID == null ? default(int?) : int.Parse(entity.ContractServiceBundleID.ToString());
+            this.QuoteItemID = entity.QuoteItemID == null ? default(int?) : int.Parse(entity.QuoteItemID.ToString());
         } //end ContractServiceBundleAdjustment(net.autotask.webservices.ContractServiceBundleAdjustment entity)
 
         #endregion //Constructors
@@ -36,19 +43,19 @@ namespace AutotaskNET.Entities
 
         #region Required Fields
 
-        public DateTime EffectiveDate { get; set; } //Required
+        public DateTime EffectiveDate; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public int? ContractID { get; set; } //[Contract]
-        public int? ServiceBundleID { get; set; } //[ServiceBundle]
-        public int? UnitChange { get; set; }
-        public double AdjustedUnitPrice { get; set; }
-        public int? QuoteItemID { get; set; } //[QuoteItem]
-        public int? ContractServiceBundleID { get; set; } //[ContractServiceBundle]
-        public bool? AllowRepeatServiceBundle { get; set; }
+        public int? ContractID; //[Contract]
+        public int? ServiceBundleID; //[ServiceBundle]
+        public int? UnitChange;
+        public double AdjustedUnitPrice;
+        public int? QuoteItemID; //[QuoteItem]
+        public int? ContractServiceBundleID; //[ContractServiceBundle]
+        public bool? AllowRepeatServiceBundle;
 
         #endregion //Optional Fields
 

@@ -23,7 +23,9 @@ namespace AutotaskNET.Entities
         public TaskPredecessor() : base() { } //end TaskPredecessor()
         public TaskPredecessor(net.autotask.webservices.TaskPredecessor entity) : base(entity)
         {
-
+            this.LagDays = entity.LagDays == null ? default(int?) : int.Parse(entity.LagDays.ToString());
+            this.PredecessorTaskID = int.Parse(entity.PredecessorTaskID.ToString());
+            this.SuccessorTaskID = int.Parse(entity.SuccessorTaskID.ToString());
         } //end TaskPredecessor(net.autotask.webservices.TaskPredecessor entity)
 
         #endregion //Constructors
@@ -32,14 +34,14 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Required Fields
 
-        public int PredecessorTaskID { get; set; } //ReadOnly Required [Task]
-        public int SuccessorTaskID { get; set; } //ReadOnly Required [Task]
+        public int PredecessorTaskID; //ReadOnly Required [Task]
+        public int SuccessorTaskID; //ReadOnly Required [Task]
 
         #endregion //ReadOnly Required Fields
 
         #region Optional Fields
 
-        public int? LagDays { get; set; }
+        public int? LagDays;
 
         #endregion //Optional Fields
 

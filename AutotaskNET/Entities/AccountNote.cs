@@ -24,7 +24,17 @@ namespace AutotaskNET.Entities
         public AccountNote() : base() { } //end AccountNote()
         public AccountNote(net.autotask.webservices.AccountNote entity) : base(entity)
         {
-
+            this.AccountID = int.Parse(entity.AccountID.ToString());
+            this.ActionType = int.Parse(entity.ActionType.ToString());
+            this.AssignedResourceID = int.Parse(entity.AssignedResourceID.ToString());
+            this.ContactID = entity.ContactID == null ? default(int?) : int.Parse(entity.ContactID.ToString());
+            this.CompletedDateTime = entity.CompletedDateTime == null ? default(DateTime?) : DateTime.Parse(entity.CompletedDateTime.ToString());
+            this.EndDateTime = DateTime.Parse(entity.EndDateTime.ToString());
+            this.LastModifiedDate = entity.LastModifiedDate == null ? default(DateTime?) : DateTime.Parse(entity.LastModifiedDate.ToString());
+            this.Name = entity.Name == null ? default(string) : entity.Name.ToString();
+            this.Note = entity.Note == null ? default(string) : entity.Note.ToString();
+            this.StartDateTime = DateTime.Parse(entity.StartDateTime.ToString());
+            this.OpportunityID = entity.OpportunityID == null ? default(int?) : int.Parse(entity.OpportunityID.ToString());
         } //end AccountNote(net.autotask.webservices.AccountNote entity)
 
         #endregion //Constructors

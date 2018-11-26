@@ -25,7 +25,8 @@ namespace AutotaskNET.Entities
         public TicketAdditionalContact() : base() { } //end TicketAdditionalContact()
         public TicketAdditionalContact(net.autotask.webservices.TicketAdditionalContact entity) : base(entity)
         {
-
+            this.ContactID = int.Parse(entity.ContactID.ToString());
+            this.TicketID = int.Parse(entity.TicketID.ToString());
         } //end TicketAdditionalContact(net.autotask.webservices.TicketAdditionalContact entity)
 
         #endregion //Constructors
@@ -34,8 +35,8 @@ namespace AutotaskNET.Entities
 
         #region Required Fields
 
-        public int TicketID { get; set; } //Required [Ticket]
-        public int ContactID { get; set; } //Required [Contact]
+        public int TicketID; //Required [Ticket]
+        public int ContactID; //Required [Contact]
 
         #endregion //Required Fields
 

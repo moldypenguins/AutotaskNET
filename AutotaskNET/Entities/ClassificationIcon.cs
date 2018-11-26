@@ -24,7 +24,10 @@ namespace AutotaskNET.Entities
         public ClassificationIcon() : base() { } //end ClassificationIcon()
         public ClassificationIcon(net.autotask.webservices.ClassificationIcon entity) : base(entity)
         {
-
+            this.Active = bool.Parse(entity.Active.ToString());
+            this.Name = entity.Name == null ? default(string) : entity.Name.ToString();
+            this.RelativeUrl = entity.RelativeUrl == null ? default(string) : entity.RelativeUrl.ToString();
+            this.System = bool.Parse(entity.System.ToString());
         } //end ClassificationIcon(net.autotask.webservices.ClassificationIcon entity)
 
         #endregion //Constructors
@@ -33,16 +36,16 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Fields
 
-        public string Description { get; set; } //ReadOnly Length:100
+        public string Description; //ReadOnly Length:100
 
         #endregion //ReadOnly Fields
 
         #region ReadOnly Required Fields
 
-        public string Name { get; set; } //ReadOnly Required Length:35
-        public bool Active { get; set; } //ReadOnly Required
-        public bool System { get; set; } //ReadOnly Required
-        public string RelativeUrl { get; set; } //ReadOnly Required Length:100
+        public string Name; //ReadOnly Required Length:35
+        public bool Active; //ReadOnly Required
+        public bool System; //ReadOnly Required
+        public string RelativeUrl; //ReadOnly Required Length:100
 
         #endregion //ReadOnly Required Fields
 

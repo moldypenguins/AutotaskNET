@@ -30,7 +30,15 @@ namespace AutotaskNET.Entities
         public ContractServiceBundle() : base() { } //end ContractServiceBundle()
         public ContractServiceBundle(net.autotask.webservices.ContractServiceBundle entity) : base(entity)
         {
-
+            this.ContractID = int.Parse(entity.ContractID.ToString());
+            this.QuoteItemID = long.Parse(entity.ServiceBundleID.ToString());
+            this.ServiceBundleID = int.Parse(entity.ServiceBundleID.ToString());
+            this.AdjustedPrice = double.Parse(entity.AdjustedPrice.ToString());
+            this.InternalCurrencyAdjustedPrice = double.Parse(entity.InternalCurrencyAdjustedPrice.ToString());
+            this.InternalCurrencyUnitPrice = double.Parse(entity.InternalCurrencyUnitPrice.ToString());
+            this.InternalDescription = entity.InternalDescription == null ? default(string) : entity.InternalDescription.ToString();
+            this.InvoiceDescription = entity.InvoiceDescription == null ? default(string) : entity.InvoiceDescription.ToString();
+            this.UnitPrice = double.Parse(entity.UnitPrice.ToString());
         } //end ContractServiceBundle(net.autotask.webservices.ContractServiceBundle entity)
 
         #endregion //Constructors
@@ -39,25 +47,25 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Fields
 
-        public long QuoteItemID { get; set; } //ReadOnly [QuoteItem]
-        public double InternalCurrencyUnitPrice { get; set; } //ReadOnly
-        public double InternalCurrencyAdjustedPrice { get; set; } //ReadOnly
+        public long QuoteItemID; //ReadOnly [QuoteItem]
+        public double InternalCurrencyUnitPrice; //ReadOnly
+        public double InternalCurrencyAdjustedPrice; //ReadOnly
 
         #endregion //ReadOnly Fields
 
         #region ReadOnly Required Fields
 
-        public int ContractID { get; set; } //ReadOnly Required [Contract]
-        public int ServiceBundleID { get; set; } //ReadOnly Required [ServiceBundle]
+        public int ContractID; //ReadOnly Required [Contract]
+        public int ServiceBundleID; //ReadOnly Required [ServiceBundle]
 
         #endregion //ReadOnly Required Fields
 
         #region Optional Fields
 
-        public double UnitPrice { get; set; }
-        public double AdjustedPrice { get; set; }
-        public string InvoiceDescription { get; set; } //Length:1000
-        public string InternalDescription { get; set; } //Length:100
+        public double UnitPrice;
+        public double AdjustedPrice;
+        public string InvoiceDescription; //Length:1000
+        public string InternalDescription; //Length:100
 
         #endregion //Optional Fields
 

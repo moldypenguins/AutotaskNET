@@ -25,7 +25,8 @@ namespace AutotaskNET.Entities
         public ContractExclusionRole() : base() { } //end ContractExclusionRole()
         public ContractExclusionRole(net.autotask.webservices.ContractExclusionRole entity) : base(entity)
         {
-
+            this.ContractID = long.Parse(entity.ContractID.ToString());
+            this.RoleID = long.Parse(entity.RoleID.ToString());
         } //end ContractExclusionRole(net.autotask.webservices.ContractExclusionRole entity)
 
         #endregion //Constructors
@@ -34,8 +35,8 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Required Fields
 
-        public long ContractID { get; set; } //ReadOnly Required [Contract]
-        public long RoleID { get; set; } //ReadOnly Required [Role]
+        public long ContractID; //ReadOnly Required [Contract]
+        public long RoleID; //ReadOnly Required [Role]
 
         #endregion //ReadOnly Required Fields
 

@@ -23,7 +23,11 @@ namespace AutotaskNET.Entities
         public TicketCategory() : base() { } //end TicketCategory()
         public TicketCategory(net.autotask.webservices.TicketCategory entity) : base(entity)
         {
-
+            this.Active = bool.Parse(entity.Active.ToString());
+            this.DisplayColorRGB = int.Parse(entity.DisplayColorRGB.ToString());
+            this.GlobalDefault = entity.GlobalDefault == null ? default(bool?) : bool.Parse(entity.GlobalDefault.ToString());
+            this.Name = entity.Name == null ? default(string) : entity.Name.ToString();
+            this.Nickname = entity.Nickname == null ? default(string) : entity.Nickname.ToString();
         } //end TicketCategory(net.autotask.webservices.TicketCategory entity)
 
         #endregion //Constructors
@@ -32,21 +36,21 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Fields
 
-        public bool? GlobalDefault { get; set; } //ReadOnly
+        public bool? GlobalDefault; //ReadOnly
 
         #endregion //ReadOnly Fields
 
         #region Required Fields
 
-        public string Name { get; set; } //Required Length:30
-        public bool Active { get; set; } //Required
-        public int DisplayColorRGB { get; set; } //Required PickList
+        public string Name; //Required Length:30
+        public bool Active; //Required
+        public int DisplayColorRGB; //Required PickList
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public string Nickname { get; set; } //Length:3
+        public string Nickname; //Length:3
 
         #endregion //Optional Fields
 

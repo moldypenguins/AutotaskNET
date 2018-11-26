@@ -23,7 +23,16 @@ namespace AutotaskNET.Entities
         public ContractServiceBundleUnit() : base() { } //end ContractServiceBundleUnit()
         public ContractServiceBundleUnit(net.autotask.webservices.ContractServiceBundleUnit entity) : base(entity)
         {
-
+            this.ContractID = int.Parse(entity.ContractID.ToString());
+            this.EndDate = DateTime.Parse(entity.EndDate.ToString());
+            this.ServiceBundleID = int.Parse(entity.ServiceBundleID.ToString());
+            this.StartDate = DateTime.Parse(entity.StartDate.ToString());
+            this.Units = int.Parse(entity.Units.ToString());
+            this.ApproveAndPostDate = entity.ApproveAndPostDate == null ? default(DateTime?) : DateTime.Parse(entity.ApproveAndPostDate.ToString());
+            this.ContractServiceBundleID = entity.ContractServiceBundleID == null ? default(int?) : int.Parse(entity.ContractServiceBundleID.ToString());
+            this.Cost= double.Parse(entity.Cost.ToString());
+            this.InternalCurrencyPrice = double.Parse(entity.InternalCurrencyPrice.ToString());
+            this.Price = double.Parse(entity.Price.ToString());
         } //end ContractServiceBundleUnit(net.autotask.webservices.ContractServiceBundleUnit entity)
 
         #endregion //Constructors
@@ -32,22 +41,22 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Fields
 
-        public double Price { get; set; } //ReadOnly
-        public DateTime? ApproveAndPostDate { get; set; } //ReadOnly
-        public double Cost { get; set; } //ReadOnly
-        public int? ContractServiceBundleID { get; set; } //ReadOnly [ContractServiceBundle]
-        public double InternalCurrencyPrice { get; set; } //ReadOnly
-        public int? BusinessDivisionSubdivisionID { get; set; } //ReadOnly [BusinessDivisionSubdivision]
+        public double Price; //ReadOnly
+        public DateTime? ApproveAndPostDate; //ReadOnly
+        public double Cost; //ReadOnly
+        public int? ContractServiceBundleID; //ReadOnly [ContractServiceBundle]
+        public double InternalCurrencyPrice; //ReadOnly
+        public int? BusinessDivisionSubdivisionID; //ReadOnly [BusinessDivisionSubdivision]
 
         #endregion //ReadOnly Fields
 
         #region ReadOnly Required Fields
 
-        public int ContractID { get; set; } //ReadOnly Required [Contract]
-        public int ServiceBundleID { get; set; } //ReadOnly Required [ServiceBundle]
-        public DateTime StartDate { get; set; } //ReadOnly Required
-        public DateTime EndDate { get; set; } //ReadOnly Required
-        public int Units { get; set; } //ReadOnly Required
+        public int ContractID; //ReadOnly Required [Contract]
+        public int ServiceBundleID; //ReadOnly Required [ServiceBundle]
+        public DateTime StartDate; //ReadOnly Required
+        public DateTime EndDate; //ReadOnly Required
+        public int Units; //ReadOnly Required
 
         #endregion //ReadOnly Required Fields
 

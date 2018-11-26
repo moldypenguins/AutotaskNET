@@ -23,7 +23,18 @@ namespace AutotaskNET.Entities
         public PurchaseOrderItem() : base() { } //end PurchaseOrderItem()
         public PurchaseOrderItem(net.autotask.webservices.PurchaseOrderItem entity) : base(entity)
         {
-
+            this.ContractID = long.Parse(entity.ContractID.ToString());
+            this.CostID = entity.CostID == null ? default(int?) : int.Parse(entity.CostID.ToString());
+            this.EstimatedArrivalDate = entity.EstimatedArrivalDate == null ? default(DateTime?) : DateTime.Parse(entity.EstimatedArrivalDate.ToString());
+            this.InventoryLocationID = int.Parse(entity.InventoryLocationID.ToString());
+            this.Memo = entity.Memo == null ? default(string) : entity.Memo.ToString();
+            this.OrderID = int.Parse(entity.OrderID.ToString());
+            this.ProductID = int.Parse(entity.ProductID.ToString());
+            this.ProjectID = long.Parse(entity.ProjectID.ToString());
+            this.Quantity = int.Parse(entity.Quantity.ToString());
+            this.SalesOrderID = long.Parse(entity.SalesOrderID.ToString());
+            this.TicketID = long.Parse(entity.TicketID.ToString());
+            this.UnitCost = double.Parse(entity.UnitCost.ToString());
         } //end PurchaseOrderItem(net.autotask.webservices.PurchaseOrderItem entity)
 
         #endregion //Constructors
@@ -54,20 +65,20 @@ namespace AutotaskNET.Entities
 
         #endregion //Optional Fields
 
-        #endregion //Fields
+        public int OrderID; //ReadOnly Required [PurchaseOrder]
+        public int ProductID; //Required [Product]
+        public int InventoryLocationID; //Required [InventoryLocation]
+        public int Quantity; //Required
+        public string Memo; //Length:4000
+        public double UnitCost; //Required
+        public long SalesOrderID; //ReadOnly [SalesOrder]
+        public DateTime? EstimatedArrivalDate; //ReadOnly
+        public int? CostID; //ReadOnly
+        public long ContractID; //ReadOnly [Contract]
+        public long ProjectID; //ReadOnly [Project]
+        public long TicketID; //ReadOnly [Ticket]
 
-        public int OrderID { get; set; } //ReadOnly Required [PurchaseOrder]
-        public int ProductID { get; set; } //Required [Product]
-        public int InventoryLocationID { get; set; } //Required [InventoryLocation]
-        public int Quantity { get; set; } //Required
-        public string Memo { get; set; } //Length:4000
-        public double UnitCost { get; set; } //Required
-        public long SalesOrderID { get; set; } //ReadOnly [SalesOrder]
-        public DateTime? EstimatedArrivalDate { get; set; } //ReadOnly
-        public int? CostID { get; set; } //ReadOnly
-        public long ContractID { get; set; } //ReadOnly [Contract]
-        public long ProjectID { get; set; } //ReadOnly [Project]
-        public long TicketID { get; set; } //ReadOnly [Ticket]
+        #endregion //Fields
 
     } //end PurchaseOrderItem
 

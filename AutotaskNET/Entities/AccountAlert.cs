@@ -26,7 +26,9 @@ namespace AutotaskNET.Entities
         public AccountAlert() : base() { } //end AccountAlert()
         public AccountAlert(net.autotask.webservices.AccountAlert entity) : base(entity)
         {
-
+            this.AccountID = int.Parse(entity.AccountID.ToString());
+            this.AlertText = entity.AlertText == null ? default(string) : entity.AlertText.ToString();
+            this.AlertTypeID = int.Parse(entity.AlertTypeID.ToString());
         } //end AccountAlert(net.autotask.webservices.AccountAlert entity)
 
         #endregion //Constructors

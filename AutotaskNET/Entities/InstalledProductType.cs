@@ -25,7 +25,8 @@ namespace AutotaskNET.Entities
         public InstalledProductType() : base() { } //end InstalledProductType()
         public InstalledProductType(net.autotask.webservices.InstalledProductType entity) : base(entity)
         {
-
+            this.Active = bool.Parse(entity.Active.ToString());
+            this.Name = entity.Name == null ? default(string) : entity.Name.ToString();
         } //end InstalledProductType(net.autotask.webservices.InstalledProductType entity)
 
         #endregion //Constructors
@@ -34,8 +35,8 @@ namespace AutotaskNET.Entities
 
         #region Required Fields
 
-        public string Name { get; set; } //Required Length:100
-        public bool Active { get; set; } //Required
+        public string Name; //Required Length:100
+        public bool Active; //Required
 
         #endregion //Required Fields
 

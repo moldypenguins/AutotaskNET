@@ -26,7 +26,31 @@ namespace AutotaskNET.Entities
         public InvoiceTemplate() : base() { } //end InvoiceTemplate()
         public InvoiceTemplate(net.autotask.webservices.InvoiceTemplate entity) : base(entity)
         {
-
+            this.DateFormat = int.Parse(entity.DateFormat.ToString());
+            this.DisplayFixedPriceContractLabor = bool.Parse(entity.DisplayFixedPriceContractLabor.ToString());
+            this.DisplayRecurringServiceContractLabor = bool.Parse(entity.DisplayRecurringServiceContractLabor.ToString());
+            this.DisplaySeparateLineItemForEachTax = bool.Parse(entity.DisplaySeparateLineItemForEachTax.ToString());
+            this.DisplayTaxCategory = bool.Parse(entity.DisplayTaxCategory.ToString());
+            this.DisplayTaxCategorySuperscripts = bool.Parse(entity.DisplayZeroAmountRecurringServicesAndBundles.ToString());
+            this.DisplayZeroAmountRecurringServicesAndBundles = bool.Parse(entity.DisplayZeroAmountRecurringServicesAndBundles.ToString());
+            this.GroupBy = int.Parse(entity.GroupBy.ToString());
+            this.ItemizeItemsInEachGroup = int.Parse(entity.ItemizeItemsInEachGroup.ToString());
+            this.ItemizeServicesAndBundles = bool.Parse(entity.ItemizeServicesAndBundles.ToString());
+            this.Name = entity.Name == null ? default(string) : entity.Name.ToString();
+            this.NonBillableLaborLabel = entity.NonBillableLaborLabel == null ? default(string) : entity.NonBillableLaborLabel.ToString());
+            this.NumberFormat = int.Parse(entity.NumberFormat.ToString());
+            this.PageLayout = int.Parse(entity.PageLayout.ToString());
+            this.PageNumberFormat = int.Parse(entity.PageLayout.ToString());
+            this.PaymentTerms = int.Parse(entity.PaymentTerms.ToString());
+            this.ShowGridHeader = bool.Parse(entity.ShowGridHeader.ToString());
+            this.ShowVerticalGridLines = bool.Parse(entity.ShowVerticalGridLines.ToString());
+            this.SortBy = int.Parse(entity.SortBy.ToString());
+            this.TimeFormat = int.Parse(entity.TimeFormat.ToString());
+            this.CoveredByBlockRetainerContractLabel = entity.CoveredByBlockRetainerContractLabel == null ? default(string) : entity.CoveredByBlockRetainerContractLabel.ToString();
+            this.CoveredByRecurringServiceFixedPricePerTicketContractLabel = entity.CoveredByRecurringServiceFixedPricePerTicketContractLabel == null ? default(string) : entity.CoveredByRecurringServiceFixedPricePerTicketContractLabel.ToString();
+            this.CurrencyNegativeFormat = entity.CurrencyNegativeFormat == null ? default(string) : entity.CurrencyNegativeFormat.ToString();
+            this.CurrencyPositiveFormat = entity.CurrencyPositiveFormat == null ? default(string) : entity.CurrencyPositiveFormat.ToString();
+            this.RateCostExpression = entity.RateCostExpression == null ? default(string) : entity.RateCostExpression.ToString();
         } //end InvoiceTemplate(net.autotask.webservices.InvoiceTemplate entity)
 
         #endregion //Constructors
@@ -59,31 +83,31 @@ namespace AutotaskNET.Entities
 
         #endregion //Fields
 
-        public bool DisplayTaxCategory { get; set; } //ReadOnly Required
-        public bool DisplayTaxCategorySuperscripts { get; set; } //ReadOnly Required
-        public bool DisplaySeparateLineItemForEachTax { get; set; } //ReadOnly Required
-        public int GroupBy { get; set; } //ReadOnly Required PickList
-        public int ItemizeItemsInEachGroup { get; set; } //ReadOnly Required PickList
-        public int SortBy { get; set; } //ReadOnly Required PickList
-        public bool ItemizeServicesAndBundles { get; set; } //ReadOnly Required
-        public bool DisplayZeroAmountRecurringServicesAndBundles { get; set; } //ReadOnly Required
-        public bool DisplayRecurringServiceContractLabor { get; set; } //ReadOnly Required
-        public bool DisplayFixedPriceContractLabor { get; set; } //ReadOnly Required
-        public string RateCostExpression { get; set; } //ReadOnly Length:50
-        public string CoveredByRecurringServiceFixedPricePerTicketContractLabel { get; set; } //ReadOnly Length:50
-        public string CoveredByBlockRetainerContractLabel { get; set; } //ReadOnly Length:50
-        public string NonBillableLaborLabel { get; set; } //ReadOnly Length:50
-        public int PageLayout { get; set; } //ReadOnly Required PickList
-        public int PaymentTerms { get; set; } //ReadOnly Required [PaymentTerm]
-        public int PageNumberFormat { get; set; } //ReadOnly Required PickList
-        public int DateFormat { get; set; } //ReadOnly Required PickList
-        public int NumberFormat { get; set; } //ReadOnly Required PickList
-        public int TimeFormat { get; set; } //ReadOnly Required PickList
-        public string Name { get; set; } //ReadOnly Required Length:50
-        public bool ShowGridHeader { get; set; } //ReadOnly Required
-        public bool ShowVerticalGridLines { get; set; } //ReadOnly Required
-        public string CurrencyPositiveFormat { get; set; } //ReadOnly Required Length:10
-        public string CurrencyNegativeFormat { get; set; } //ReadOnly Required Length:10
+        public bool DisplayTaxCategory; //ReadOnly Required
+        public bool DisplayTaxCategorySuperscripts; //ReadOnly Required
+        public bool DisplaySeparateLineItemForEachTax; //ReadOnly Required
+        public int GroupBy; //ReadOnly Required PickList
+        public int ItemizeItemsInEachGroup; //ReadOnly Required PickList
+        public int SortBy; //ReadOnly Required PickList
+        public bool ItemizeServicesAndBundles; //ReadOnly Required
+        public bool DisplayZeroAmountRecurringServicesAndBundles; //ReadOnly Required
+        public bool DisplayRecurringServiceContractLabor; //ReadOnly Required
+        public bool DisplayFixedPriceContractLabor; //ReadOnly Required
+        public string RateCostExpression; //ReadOnly Length:50
+        public string CoveredByRecurringServiceFixedPricePerTicketContractLabel; //ReadOnly Length:50
+        public string CoveredByBlockRetainerContractLabel; //ReadOnly Length:50
+        public string NonBillableLaborLabel; //ReadOnly Length:50
+        public int PageLayout; //ReadOnly Required PickList
+        public int PaymentTerms; //ReadOnly Required [PaymentTerm]
+        public int PageNumberFormat; //ReadOnly Required PickList
+        public int DateFormat; //ReadOnly Required PickList
+        public int NumberFormat; //ReadOnly Required PickList
+        public int TimeFormat; //ReadOnly Required PickList
+        public string Name; //ReadOnly Required Length:50
+        public bool ShowGridHeader; //ReadOnly Required
+        public bool ShowVerticalGridLines; //ReadOnly Required
+        public string CurrencyPositiveFormat; //ReadOnly Required Length:10
+        public string CurrencyNegativeFormat; //ReadOnly Required Length:10
 
     } //end InvoiceTemplate
 

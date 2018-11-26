@@ -25,7 +25,14 @@ namespace AutotaskNET.Entities
         public Appointment() : base() { } //end Appointment()
         public Appointment(net.autotask.webservices.Appointment entity) : base(entity)
         {
-
+            this.CreateDateTime = entity.CreateDateTime == null ? default(DateTime?) : DateTime.Parse(entity.CreateDateTime.ToString());
+            this.CreatorResourceID = entity.CreatorResourceID == null ? default(int?) : int.Parse(entity.CreatorResourceID.ToString());
+            this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
+            this.EndDateTime = DateTime.Parse(entity.EndDateTime.ToString());
+            this.ResourceID = int.Parse(entity.ResourceID.ToString());
+            this.StartDateTime = DateTime.Parse(entity.StartDateTime.ToString());
+            this.Title = entity.Title == null ? default(string) : entity.Title.ToString();
+            this.UpdateDateTime = entity.UpdateDateTime == null ? default(DateTime?) : DateTime.Parse(entity.UpdateDateTime.ToString());
         } //end Appointment(net.autotask.webservices.Appointment entity)
 
         #endregion //Constructors
@@ -42,16 +49,16 @@ namespace AutotaskNET.Entities
 
         #region Required Fields
 
-        public int ResourceID { get; set; } //Required [Resource]
-        public string Title { get; set; } //Required Length:256
-        public DateTime StartDateTime { get; set; } //Required
-        public DateTime EndDateTime { get; set; } //Required
+        public int ResourceID; //Required [Resource]
+        public string Title; //Required Length:256
+        public DateTime StartDateTime; //Required
+        public DateTime EndDateTime; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public string Description { get; set; } //Length:8000
+        public string Description; //Length:8000
 
         #endregion //Optional Fields
 

@@ -23,7 +23,14 @@ namespace AutotaskNET.Entities
         public TicketChecklistItem() : base() { } //end TicketChecklistItem()
         public TicketChecklistItem(net.autotask.webservices.TicketChecklistItem entity) : base(entity)
         {
-
+            this.Completed = entity.Completed == null ? default(bool?) : bool.Parse(entity.Completed.ToString());
+            this.CompletedByResourceID = entity.CompletedByResourceID == null ? default(int?) : int.Parse(entity.CompletedByResourceID.ToString());
+            this.CompletedDateTime = entity.CompletedDateTime == null ? default(DateTime?) : DateTime.Parse(entity.CompletedDateTime.ToString());
+            //this.Important == null ? default(bool?) : bool.Parse(entity.Important.ToString());
+            this.ItemName = entity.ItemName == null ? default(string) : entity.ItemName.ToString();
+            this.KnowledgebaseArticleID = entity.KnowledgebaseArticleID == null ? default(int?) : int.Parse(entity.KnowledgebaseArticleID.ToString());
+            this.Position = entity.Position == null ? default(int?) : int.Parse(entity.Position.ToString());
+            this.TicketID = int.Parse(entity.TicketID.ToString());
         } //end Account(net.autotask.webservices.Account entity)
 
         #endregion //Constructors
@@ -56,14 +63,14 @@ namespace AutotaskNET.Entities
 
         #endregion //Fields
 
-        public bool? Completed { get; set; }
-        public int? CompletedByResourceID { get; set; } //ReadOnly [Resource]
-        public DateTime? CompletedDateTime { get; set; } //ReadOnly
-        public bool? Important { get; set; }
-        public string ItemName { get; set; } //Required Length:255
-        public int? KnowledgebaseArticleID { get; set; } //PickList
-        public int? Position { get; set; }
-        public int TicketID { get; set; } //ReadOnly Required [Ticket]
+        public bool? Completed;
+        public int? CompletedByResourceID; //ReadOnly [Resource]
+        public DateTime? CompletedDateTime; //ReadOnly
+        public bool? Important;
+        public string ItemName; //Required Length:255
+        public int? KnowledgebaseArticleID; //PickList
+        public int? Position;
+        public int TicketID; //ReadOnly Required [Ticket]
 
     } //end TicketChecklistItem
 

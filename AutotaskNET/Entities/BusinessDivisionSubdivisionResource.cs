@@ -23,7 +23,8 @@ namespace AutotaskNET.Entities
         public BusinessDivisionSubdivisionResource() : base() { } //end BusinessDivisionSubdivisionResource()
         public BusinessDivisionSubdivisionResource(net.autotask.webservices.BusinessDivisionSubdivisionResource entity) : base(entity)
         {
-
+            this.BusinessDivisionSubdivisionID = int.Parse(entity.BusinessDivisionSubdivisionID.ToString());
+            this.ResourceID = int.Parse(entity.ResourceID.ToString());
         } //end BusinessDivisionSubdivisionResource(net.autotask.webservices.BusinessDivisionSubdivisionResource entity)
 
         #endregion //Constructors
@@ -32,8 +33,8 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Required Fields
 
-        public int BusinessDivisionSubdivisionID { get; set; } //ReadOnly Required [BusinessDivisionSubdivision]
-        public int ResourceID { get; set; } //ReadOnly Required [Resource]
+        public int BusinessDivisionSubdivisionID; //ReadOnly Required [BusinessDivisionSubdivision]
+        public int ResourceID; //ReadOnly Required [Resource]
 
         #endregion //ReadOnly Required Fields
 

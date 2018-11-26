@@ -28,3 +28,12 @@ D:\GitHub\AutotaskNET\AutotaskTEST\obj\Debug\AutotaskTEST.csproj.CoreCompileInpu
 D:\GitHub\AutotaskNET\AutotaskTEST\obj\Debug\AutotaskTEST.csproj.CopyComplete
 D:\GitHub\AutotaskNET\AutotaskTEST\obj\Debug\AutotaskTEST.exe
 D:\GitHub\AutotaskNET\AutotaskTEST\obj\Debug\AutotaskTEST.pdb
+C:\Users\bo.li\Documents\GitHub\AutotaskNET\AutotaskTEST\bin\Debug\AutotaskTEST.exe.config
+C:\Users\bo.li\Documents\GitHub\AutotaskNET\AutotaskTEST\bin\Debug\AutotaskTEST.exe
+C:\Users\bo.li\Documents\GitHub\AutotaskNET\AutotaskTEST\bin\Debug\AutotaskTEST.pdb
+C:\Users\bo.li\Documents\GitHub\AutotaskNET\AutotaskTEST\bin\Debug\AutotaskNET.dll
+C:\Users\bo.li\Documents\GitHub\AutotaskNET\AutotaskTEST\bin\Debug\AutotaskNET.pdb
+C:\Users\bo.li\Documents\GitHub\AutotaskNET\AutotaskTEST\bin\Debug\AutotaskNET.dll.config
+C:\Users\bo.li\Documents\GitHub\AutotaskNET\AutotaskTEST\obj\Debug\AutotaskTEST.csprojResolveAssemblyReference.cache
+C:\Users\bo.li\Documents\GitHub\AutotaskNET\AutotaskTEST\obj\Debug\AutotaskTEST.exe
+C:\Users\bo.li\Documents\GitHub\AutotaskNET\AutotaskTEST\obj\Debug\AutotaskTEST.pdb

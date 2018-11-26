@@ -26,7 +26,10 @@ namespace AutotaskNET.Entities
         public InventoryLocation() : base() { } //end InventoryLocation()
         public InventoryLocation(net.autotask.webservices.InventoryLocation entity) : base(entity)
         {
-
+            this.Active = bool.Parse(entity.Active.ToString());
+            this.IsDefault = entity.IsDefault == null ? default(bool?) : bool.Parse(entity.IsDefault.ToString());
+            this.LocationName = entity.LocationName == null ? default(string) : entity.LocationName.ToString();
+            this.ResourceID = entity.ResourceID == null ? default(int?) : int.Parse(entity.ResourceID.ToString());
         } //end InventoryLocation(net.autotask.webservices.InventoryLocation entity)
 
         #endregion //Constructors
@@ -35,20 +38,20 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Fields
 
-        public int? ResourceID { get; set; } //ReadOnly [Resource]
+        public int? ResourceID; //ReadOnly [Resource]
 
         #endregion //ReadOnly Fields
 
         #region Required Fields
 
-        public string LocationName { get; set; } //Required Length:50
-        public bool Active { get; set; } //Required
+        public string LocationName; //Required Length:50
+        public bool Active; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public bool? IsDefault { get; set; }
+        public bool? IsDefault;
 
         #endregion //Optional Fields
 

@@ -25,7 +25,10 @@ namespace AutotaskNET.Entities
         public BillingItemApprovalLevel() : base() { } //end BillingItemApprovalLevel()
         public BillingItemApprovalLevel(net.autotask.webservices.BillingItemApprovalLevel entity) : base(entity)
         {
-
+            this.ApprovalDateTime = DateTime.Parse(entity.ApprovalDateTime.ToString());
+            this.ApprovalLevel = int.Parse(entity.ApprovalLevel.ToString());
+            this.ApprovalResourceID = int.Parse(entity.ApprovalResourceID.ToString());
+            this.TimeEntryID = int.Parse(entity.TimeEntryID.ToString());
         } //end BillingItemApprovalLevel(net.autotask.webservices.BillingItemApprovalLevel entity)
 
         #endregion //Constructors
@@ -34,10 +37,10 @@ namespace AutotaskNET.Entities
 
         #region Required Fields
 
-        public int TimeEntryID { get; set; } //Required [TimeEntry]
-        public int ApprovalResourceID { get; set; } //Required [Resource]
-        public DateTime ApprovalDateTime { get; set; } //Required
-        public int ApprovalLevel { get; set; } //Required
+        public int TimeEntryID; //Required [TimeEntry]
+        public int ApprovalResourceID; //Required [Resource]
+        public DateTime ApprovalDateTime; //Required
+        public int ApprovalLevel; //Required
 
         #endregion //Required Fields
 

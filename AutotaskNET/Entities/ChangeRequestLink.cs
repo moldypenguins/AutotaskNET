@@ -25,7 +25,8 @@ namespace AutotaskNET.Entities
         public ChangeRequestLink() : base() { } //end ChangeRequestLink()
         public ChangeRequestLink(net.autotask.webservices.ChangeRequestLink entity) : base(entity)
         {
-
+            this.ChangeRequestTicketID = int.Parse(entity.ChangeRequestTicketID.ToString());
+            this.ProblemOrIncidentTicketID = int.Parse(entity.ProblemOrIncidentTicketID.ToString());
         } //end ChangeRequestLink(net.autotask.webservices.ChangeRequestLink entity)
 
         #endregion //Constructors
@@ -34,8 +35,8 @@ namespace AutotaskNET.Entities
 
         #region Required Fields
 
-        public int ChangeRequestTicketID { get; set; } //Required [Ticket]
-        public int ProblemOrIncidentTicketID { get; set; } //Required [Ticket]
+        public int ChangeRequestTicketID; //Required [Ticket]
+        public int ProblemOrIncidentTicketID; //Required [Ticket]
 
         #endregion //Required Fields
 

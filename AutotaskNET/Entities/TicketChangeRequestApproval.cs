@@ -25,7 +25,12 @@ namespace AutotaskNET.Entities
         public TicketChangeRequestApproval() : base() { } //end TicketChangeRequestApproval()
         public TicketChangeRequestApproval(net.autotask.webservices.TicketChangeRequestApproval entity) : base(entity)
         {
-
+            this.ApproveRejectDateTime = entity.ApproveRejectDateTime == null ? default(DateTime?) : DateTime.Parse(entity.ApproveRejectDateTime.ToString());
+            this.ApproveRejectNote = entity.ApproveRejectNote == null ? default(string) : entity.ContactID.ToString();
+            this.ContactID = entity.ContactID == null ? default(int?) : int.Parse(entity.ContactID.ToString());
+            this.IsApproved = entity.IsApproved == null ? default(bool?) : bool.Parse(entity.IsApproved.ToString());
+            this.ResourceID = entity.ResourceID == null ? default(int?) : int.Parse(entity.ResourceID.ToString());
+            this.TicketID = int.Parse(entity.TicketID.ToString());
         } //end TicketChangeRequestApproval(net.autotask.webservices.TicketChangeRequestApproval entity)
 
         #endregion //Constructors
@@ -34,22 +39,22 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Fields
 
-        public DateTime? ApproveRejectDateTime { get; set; } //ReadOnly
+        public DateTime? ApproveRejectDateTime; //ReadOnly
 
         #endregion //ReadOnly Fields
 
         #region Required Fields
 
-        public int TicketID { get; set; } //Required [Ticket]
+        public int TicketID; //Required [Ticket]
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public int? ResourceID { get; set; } //[Resource]
-        public int? ContactID { get; set; } //[Contact]
-        public string ApproveRejectNote { get; set; } //Length:2000
-        public bool? IsApproved { get; set; }
+        public int? ResourceID; //[Resource]
+        public int? ContactID; //[Contact]
+        public string ApproveRejectNote; //Length:2000
+        public bool? IsApproved;
 
         #endregion //Optional Fields
 

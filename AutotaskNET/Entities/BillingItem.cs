@@ -25,7 +25,49 @@ namespace AutotaskNET.Entities
         public BillingItem() : base() { } //end BillingItem()
         public BillingItem(net.autotask.webservices.BillingItem entity) : base(entity)
         {
-
+            this.AccountID = entity.AccountID == null ? default(int?) : int.Parse(entity.AccountID.ToString());
+            this.AccountManagerWhenApprovedID = entity.AccountManagerWhenApprovedID == null ? default(int?) : int.Parse(entity.AccountManagerWhenApprovedID.ToString());
+            this.AllocationCodeID = entity.AllocationCodeID == null ? default(int?) : int.Parse(entity.AllocationCodeID.ToString());
+            this.ApprovedTime = entity.ApprovedTime == null ? default(DateTime?) : DateTime.Parse(entity.ApprovedTime.ToString());
+            this.BusinessDivisionSubdivisionID = entity.BusinessDivisionSubdivisionID == null ? default(int?) : int.Parse(entity.BusinessDivisionSubdivisionID.ToString());
+            this.ContractCostID = long.Parse(entity.ContractCostID.ToString());
+            this.ContractID = entity.ContractID == null ? default(int?) : int.Parse(entity.ContractID.ToString());
+            this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
+            this.ExpenseItemID = entity.ExpenseItemID == null ? default(int?) : int.Parse(entity.ExpenseItemID.ToString());
+            this.ExtendedPrice = double.Parse(entity.ExtendedPrice.ToString());
+            this.InstalledProductID = long.Parse(entity.InstalledProductID.ToString());
+            this.InternalCurrencyExtendedPrice = double.Parse(entity.InternalCurrencyExtendedPrice.ToString());
+            this.InternalCurrencyRate = double.Parse(entity.InternalCurrencyRate.ToString());
+            this.InternalCurrencyTaxDollars = double.Parse(entity.InternalCurrencyTaxDollars.ToString());
+            this.InternalCurrencyTotalAmount = double.Parse(entity.InternalCurrencyTotalAmount.ToString());
+            this.InvoiceID = entity.InvoiceID == null ? default(int?) : int.Parse(entity.InvoiceID.ToString());
+            this.ItemApproverID = entity.ItemApproverID == null ? default(int?) : int.Parse(entity.ItemApproverID.ToString());
+            this.ItemDate = entity.ItemDate == null ? default(DateTime?) : DateTime.Parse(entity.ItemDate.ToString());
+            this.ItemName = entity.ItemName == null ? default(string) : entity.ItemName.ToString();
+            this.LineItemFullDescription = entity.LineItemFullDescription == null ? default(string) : entity.LineItemFullDescription.ToString();
+            this.LineItemGroupDescription = entity.LineItemGroupDescription == null ? default(string) : entity.LineItemGroupDescription.ToString();
+            this.LineItemID = long.Parse(entity.LineItemID.ToString());
+            this.MilestoneID = long.Parse(entity.MilestoneID.ToString());
+            this.NonBillable = int.Parse(entity.NonBillable.ToString());
+            this.OurCost = double.Parse(entity.OurCost.ToString());
+            this.ProjectCostID = long.Parse(entity.ProjectCostID.ToString());
+            this.ProjectID = entity.ProjectID == null ? default(int?) : int.Parse(entity.ProjectID.ToString());
+            this.PurchaseOrderNumber = entity.PurchaseOrderNumber == null ? default(string) : entity.PurchaseOrderNumber.ToString();
+            this.Quantity = double.Parse(entity.Quantity.ToString());
+            this.Rate = double.Parse(entity.Rate.ToString());
+            this.RoleID = entity.RoleID == null ? default(int?) : int.Parse(entity.RoleID.ToString();
+            this.ServiceBundleID = long.Parse(entity.ServiceBundleID.ToString());
+            this.ServiceID = long.Parse(entity.ServiceID.ToString());
+            this.SubType = int.Parse(entity.SubType.ToString());
+            this.TaskID = entity.TaskID == null ? default(int?) : int.Parse(entity.TaskID.ToString());
+            this.TaxDollars = double.Parse(entity.TaxDollars.ToString());
+            this.TicketCostID = long.Parse(entity.TicketCostID.ToString());
+            this.TicketID = entity.TicketID == null ? default(int?) : int.Parse(entity.TicketID.ToString());
+            this.TimeEntryID = entity.TimeEntryID == null ? default(int?) : int.Parse(entity.TimeEntryID.ToString());
+            this.TotalAmount = double.Parse(entity.TotalAmount.ToString());
+            this.Type = int.Parse(entity.Type.ToString());
+            this.VendorID = long.Parse(entity.VendorID.ToString());
+            this.WebServiceDate = entity.WebServiceDate == null ? default(DateTime?) : DateTime.Parse(entity.WebServiceDate.ToString());
         } //end BillingItem(net.autotask.webservices.BillingItem entity)
 
         #endregion //Constructors
@@ -34,59 +76,59 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Fields
 
-        public string ItemName { get; set; } //ReadOnly Length:255
-        public string Description { get; set; } //ReadOnly Length:2000
-        public double Quantity { get; set; } //ReadOnly
-        public double Rate { get; set; } //ReadOnly
-        public double TotalAmount { get; set; } //ReadOnly
-        public double OurCost { get; set; } //ReadOnly
-        public DateTime? ItemDate { get; set; } //ReadOnly
-        public DateTime? ApprovedTime { get; set; } //ReadOnly
-        public int? InvoiceID { get; set; } //ReadOnly [Invoice]
-        public int? ItemApproverID { get; set; } //ReadOnly [Resource]
-        public int? AccountID { get; set; } //ReadOnly [Account]
-        public int? TicketID { get; set; } //ReadOnly [Ticket]
-        public int? TaskID { get; set; } //ReadOnly [Task]
-        public int? ProjectID { get; set; } //ReadOnly [Project]
-        public int? AllocationCodeID { get; set; } //ReadOnly [AllocationCode]
-        public int? RoleID { get; set; } //ReadOnly [Role]
-        public int? TimeEntryID { get; set; } //ReadOnly [TimeEntry]
-        public int? ContractID { get; set; } //ReadOnly [Contract]
-        public double TaxDollars { get; set; } //ReadOnly
-        public string PurchaseOrderNumber { get; set; } //ReadOnly Length:50
-        public double ExtendedPrice { get; set; } //ReadOnly
-        public int? ExpenseItemID { get; set; } //ReadOnly [ExpenseItem]
-        public long ContractCostID { get; set; } //ReadOnly [ContractCost]
-        public long ProjectCostID { get; set; } //ReadOnly [ProjectCost]
-        public long TicketCostID { get; set; } //ReadOnly [TicketCost]
-        public long LineItemID { get; set; } //ReadOnly
-        public long MilestoneID { get; set; } //ReadOnly [ContractMilestone]
-        public long ServiceID { get; set; } //ReadOnly [Service]
-        public long ServiceBundleID { get; set; } //ReadOnly [ServiceBundle]
-        public long VendorID { get; set; } //ReadOnly [Account]
-        public string LineItemFullDescription { get; set; } //ReadOnly Length:8000
-        public string LineItemGroupDescription { get; set; } //ReadOnly Length:8000
-        public long InstalledProductID { get; set; } //ReadOnly [InstalledProduct]
-        public double InternalCurrencyExtendedPrice { get; set; } //ReadOnly
-        public double InternalCurrencyRate { get; set; } //ReadOnly
-        public double InternalCurrencyTaxDollars { get; set; } //ReadOnly
-        public double InternalCurrencyTotalAmount { get; set; } //ReadOnly
-        public int? AccountManagerWhenApprovedID { get; set; } //ReadOnly [Resource]
-        public int? BusinessDivisionSubdivisionID { get; set; } //ReadOnly [BusinessDivisionSubdivision]
+        public string ItemName; //ReadOnly Length:255
+        public string Description; //ReadOnly Length:2000
+        public double Quantity; //ReadOnly
+        public double Rate; //ReadOnly
+        public double TotalAmount; //ReadOnly
+        public double OurCost; //ReadOnly
+        public DateTime? ItemDate; //ReadOnly
+        public DateTime? ApprovedTime; //ReadOnly
+        public int? InvoiceID; //ReadOnly [Invoice]
+        public int? ItemApproverID; //ReadOnly [Resource]
+        public int? AccountID; //ReadOnly [Account]
+        public int? TicketID; //ReadOnly [Ticket]
+        public int? TaskID; //ReadOnly [Task]
+        public int? ProjectID; //ReadOnly [Project]
+        public int? AllocationCodeID; //ReadOnly [AllocationCode]
+        public int? RoleID; //ReadOnly [Role]
+        public int? TimeEntryID; //ReadOnly [TimeEntry]
+        public int? ContractID; //ReadOnly [Contract]
+        public double TaxDollars; //ReadOnly
+        public string PurchaseOrderNumber; //ReadOnly Length:50
+        public double ExtendedPrice; //ReadOnly
+        public int? ExpenseItemID; //ReadOnly [ExpenseItem]
+        public long ContractCostID; //ReadOnly [ContractCost]
+        public long ProjectCostID; //ReadOnly [ProjectCost]
+        public long TicketCostID; //ReadOnly [TicketCost]
+        public long LineItemID; //ReadOnly
+        public long MilestoneID; //ReadOnly [ContractMilestone]
+        public long ServiceID; //ReadOnly [Service]
+        public long ServiceBundleID; //ReadOnly [ServiceBundle]
+        public long VendorID; //ReadOnly [Account]
+        public string LineItemFullDescription; //ReadOnly Length:8000
+        public string LineItemGroupDescription; //ReadOnly Length:8000
+        public long InstalledProductID; //ReadOnly [InstalledProduct]
+        public double InternalCurrencyExtendedPrice; //ReadOnly
+        public double InternalCurrencyRate; //ReadOnly
+        public double InternalCurrencyTaxDollars; //ReadOnly
+        public double InternalCurrencyTotalAmount; //ReadOnly
+        public int? AccountManagerWhenApprovedID; //ReadOnly [Resource]
+        public int? BusinessDivisionSubdivisionID; //ReadOnly [BusinessDivisionSubdivision]
 
         #endregion //ReadOnly Fields
 
         #region ReadOnly Required Fields
 
-        public int Type { get; set; } //ReadOnly Required PickList
-        public int SubType { get; set; } //ReadOnly Required PickList
-        public int NonBillable { get; set; } //ReadOnly Required
+        public int Type; //ReadOnly Required PickList
+        public int SubType; //ReadOnly Required PickList
+        public int NonBillable; //ReadOnly Required
 
         #endregion //ReadOnly Required Fields
 
         #region Optional Fields
 
-        public DateTime? WebServiceDate { get; set; }
+        public DateTime? WebServiceDate;
 
         #endregion //Optional Fields
 

@@ -29,20 +29,30 @@ namespace AutotaskNET.Entities
             this.CancelDateTime = entity.CancelDateTime == null ? default(DateTime?) : DateTime.Parse(entity.CancelDateTime.ToString());
             this.CreateDateTime = entity.CreateDateTime == null ? default(DateTime?) : DateTime.Parse(entity.CreateDateTime.ToString());
             this.CreatorResourceID = entity.CreatorResourceID == null ? default(int?) : int.Parse(entity.CreatorResourceID.ToString());
-            this.ExternalPONumber = entity.ExternalPONumber.ToString();
-            this.Fax = entity.Fax.ToString();
+            this.ExternalPONumber = entity.ExternalPONumber == null ? default(string) : entity.ExternalPONumber.ToString();
+            this.Fax = entity.Fax == null ? default(string) : entity.Freight.ToString();
             this.Freight = double.Parse(entity.Freight.ToString());
-            this.GeneralMemo = entity.GeneralMemo.ToString();
+            this.GeneralMemo = entity.GeneralMemo == null ? default(string) : entity.GeneralMemo.ToString();
             this.LatestEstimatedArrivalDate = entity.LatestEstimatedArrivalDate == null ? default(DateTime?) : DateTime.Parse(entity.LatestEstimatedArrivalDate.ToString());
             this.PaymentTerm = entity.PaymentTerm == null ? default(int?) : int.Parse(entity.PaymentTerm.ToString());
+            this.Phone = entity.Phone == null ? default(string) : entity.Phone.ToString();
+            this.PurchaseForAccountID = entity.PurchaseForAccountID == null ? default(int?) : int.Parse(entity.PurchaseForAccountID.ToString());
             this.ShippingDate = entity.ShippingDate == null ? default(DateTime?) : DateTime.Parse(entity.CancelDateTime.ToString());
-            this.ShippingType = entity.
-            this.ShipToAddress1 = entity.ShipToAddress1.ToString();
-            this.ShipToAddress2
-            this.ShipToCity
-            this.ShipToName
-            this.ShipToPostalCode
-            this.ShipToState
+            this.ShippingType = entity.ShippingType == null ? default(int?) : int.Parse(entity.ShippingType.ToString());
+            this.ShipToAddress1 = entity.ShipToAddress1 == null ? default(string) : entity.ShipToAddress1.ToString();
+            this.ShipToAddress2 = entity.ShipToAddress2 == null ? default(string) : entity.ShipToAddress2.ToString();
+            this.ShipToCity = entity.ShipToCity == null ? default(string) : entity.ShipToCity.ToString();
+            this.ShipToName = entity.ShipToName == null ? default(string) : entity.ShipToName.ToString();
+            this.ShipToPostalCode = entity.ShipToPostalCode == null ? default(string) : entity.ShipToPostalCode.ToString();
+            this.ShipToState = entity.ShipToState == null ? default(string) : entity.ShipToState.ToString();
+            this.ShowEachTaxInGroup = entity.ShowEachTaxInGroup == null ? default(bool?) : bool.Parse(entity.ShowEachTaxInGroup.ToString());
+            this.ShowTaxCategory = entity.ShowTaxCategory == null ? default(bool?) : bool.Parse(entity.ShowTaxCategory.ToString());
+            this.Status = int.Parse(entity.Status.ToString());
+            this.SubmitDateTime = entity.SubmitDateTime == null ? default(DateTime?) : DateTime.Parse(entity.SubmitDateTime.ToString());
+            this.TaxGroup = entity.TaxGroup == null ? default(int?) : int.Parse(entity.TaxGroup.ToString());
+            this.UseItemDescriptionsFrom = entity.UseItemDescriptionsFrom == null ? default(int?) : int.Parse(entity.UseItemDescriptionsFrom.ToString());
+            this.VendorID = int.Parse(entity.VendorID.ToString());
+            this.VendorInvoiceNumber = entity.VendorInvoiceNumber == null ? default(string) : entity.VendorInvoiceNumber.ToString();
         } //end PurchaseOrder(net.autotask.webservices.PurchaseOrder entity)
 
         #endregion //Constructors
@@ -73,35 +83,37 @@ namespace AutotaskNET.Entities
 
         #endregion //Optional Fields
 
-        #endregion //Fields
+        
 
-        public int VendorID { get; set; } //ReadOnly Required [Account]
-        public int Status { get; set; } //Required PickList
-        public int? CreatorResourceID { get; set; } //ReadOnly [Resource]
-        public DateTime? CreateDateTime { get; set; } //ReadOnly
-        public DateTime? SubmitDateTime { get; set; } //ReadOnly
-        public DateTime? CancelDateTime { get; set; } //ReadOnly
-        public string ShipToName { get; set; } //Required Length:100
-        public string ShipToAddress1 { get; set; } //Required Length:128
-        public string ShipToAddress2 { get; set; } //Length:128
-        public string ShipToCity { get; set; } //Required Length:30
-        public string ShipToState { get; set; } //Required Length:25
-        public string ShipToPostalCode { get; set; } //Required Length:10
-        public string GeneralMemo { get; set; } //Length:4000
-        public string Phone { get; set; } //Length:25
-        public string Fax { get; set; } //Length:25
-        public string VendorInvoiceNumber { get; set; } //Length:50
-        public string ExternalPONumber { get; set; } //Length:50
-        public int? PurchaseForAccountID { get; set; } //[Account]
-        public int? ShippingType { get; set; } //[ShippingType]
-        public DateTime? ShippingDate { get; set; }
-        public double Freight { get; set; }
-        public int? TaxGroup { get; set; } //PickList
-        public int? PaymentTerm { get; set; } //PickList
-        public bool? ShowTaxCategory { get; set; }
-        public bool? ShowEachTaxInGroup { get; set; }
-        public DateTime? LatestEstimatedArrivalDate { get; set; } //ReadOnly
-        public int? UseItemDescriptionsFrom { get; set; } //PickList
+        public int VendorID; //ReadOnly Required [Account]
+        public int Status; //Required PickList
+        public int? CreatorResourceID; //ReadOnly [Resource]
+        public DateTime? CreateDateTime; //ReadOnly
+        public DateTime? SubmitDateTime; //ReadOnly
+        public DateTime? CancelDateTime; //ReadOnly
+        public string ShipToName; //Required Length:100
+        public string ShipToAddress1; //Required Length:128
+        public string ShipToAddress2; //Length:128
+        public string ShipToCity; //Required Length:30
+        public string ShipToState; //Required Length:25
+        public string ShipToPostalCode; //Required Length:10
+        public string GeneralMemo; //Length:4000
+        public string Phone; //Length:25
+        public string Fax; //Length:25
+        public string VendorInvoiceNumber; //Length:50
+        public string ExternalPONumber; //Length:50
+        public int? PurchaseForAccountID; //[Account]
+        public int? ShippingType; //[ShippingType]
+        public DateTime? ShippingDate;
+        public double Freight;
+        public int? TaxGroup; //PickList
+        public int? PaymentTerm; //PickList
+        public bool? ShowTaxCategory;
+        public bool? ShowEachTaxInGroup;
+        public DateTime? LatestEstimatedArrivalDate; //ReadOnly
+        public int? UseItemDescriptionsFrom; //PickList
+
+        #endregion //Fields
 
     } //end PurchaseOrder
 

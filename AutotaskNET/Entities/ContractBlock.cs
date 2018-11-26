@@ -27,7 +27,18 @@ namespace AutotaskNET.Entities
         public ContractBlock() : base() { } //end ContractBlock()
         public ContractBlock(net.autotask.webservices.ContractBlock entity) : base(entity)
         {
-
+            this.ContractID = int.Parse(entity.ContractID.ToString());
+            this.DatePurchased = DateTime.Parse(entity.DatePurchased.ToString());
+            this.EndDate = DateTime.Parse(entity.EndDate.ToString());
+            this.HourlyRate = double.Parse(entity.HourlyRate.ToString());
+            this.Hours = double.Parse(entity.Hours.ToString());
+            this.StartDate = DateTime.Parse(entity.StartDate.ToString());
+            this.HoursApproved = double.Parse(entity.HoursApproved.ToString());
+            this.InvoiceNumber = entity.InvoiceNumber == null ? default(string) : entity.InvoiceNumber.ToString();
+            this.IsPaid = entity.IsPaid == null ? default(string) : entity.IsPaid.ToString();
+            this.PaymentNumber = entity.PaymentNumber == null ? default(string) : entity.PaymentNumber.ToString();
+            this.PaymentType = entity.PaymentType == null ? default(int?) : int.Parse(entity.PaymentType.ToString());
+            this.Status = entity.Status == null ? default(int?) : int.Parse(entity.UserDefinedFields.ToString());
         } //end ContractBlock(net.autotask.webservices.ContractBlock entity)
 
         #endregion //Constructors
@@ -36,28 +47,28 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Fields
 
-        public string IsPaid { get; set; } //ReadOnly PickList Length:10
-        public double HoursApproved { get; set; } //ReadOnly
+        public string IsPaid; //ReadOnly PickList Length:10
+        public double HoursApproved; //ReadOnly
 
         #endregion //ReadOnly Fields
 
         #region Required Fields
 
-        public int ContractID { get; set; } //Required [Contract]
-        public DateTime DatePurchased { get; set; } //Required
-        public DateTime StartDate { get; set; } //Required
-        public DateTime EndDate { get; set; } //Required
-        public double Hours { get; set; } //Required
-        public double HourlyRate { get; set; } //Required
+        public int ContractID; //Required [Contract]
+        public DateTime DatePurchased; //Required
+        public DateTime StartDate; //Required
+        public DateTime EndDate; //Required
+        public double Hours; //Required
+        public double HourlyRate; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public int? Status { get; set; } //PickList
-        public string InvoiceNumber { get; set; } //Length:50
-        public string PaymentNumber { get; set; } //Length:50
-        public int? PaymentType { get; set; } //PickList
+        public int? Status; //PickList
+        public string InvoiceNumber; //Length:50
+        public string PaymentNumber; //Length:50
+        public int? PaymentType; //PickList
 
         #endregion //Optional Fields
 

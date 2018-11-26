@@ -23,7 +23,12 @@ namespace AutotaskNET.Entities
         public SubscriptionPeriod() : base() { } //end SubscriptionPeriod()
         public SubscriptionPeriod(net.autotask.webservices.SubscriptionPeriod entity) : base(entity)
         {
-
+            this.PeriodCost = decimal.Parse(entity.PeriodCost.ToString());
+            this.PeriodDate = DateTime.Parse(entity.PeriodDate.ToString());
+            this.PeriodPrice = decimal.Parse(entity.PeriodPrice.ToString());
+            this.PostedDate = entity.PostedDate == null ? default(DateTime?) : DateTime.Parse(entity.PostedDate.ToString());
+            this.PurchaseOrderNumber = entity.PurchaseOrderNumber == null ? default(string) : entity.PurchaseOrderNumber.ToString();
+            this.SubscriptionID = int.Parse(entity.SubscriptionID.ToString());
         } //end SubscriptionPeriod(net.autotask.webservices.SubscriptionPeriod entity)
 
         #endregion //Constructors
@@ -54,14 +59,14 @@ namespace AutotaskNET.Entities
 
         #endregion //Optional Fields
 
-        #endregion //Fields
+        public DateTime PeriodDate; //Required
+        public DateTime? PostedDate;
+        public int SubscriptionID; //ReadOnly Required [Subscription]
+        public decimal PeriodPrice; //ReadOnly Required
+        public decimal PeriodCost; //ReadOnly Required
+        public string PurchaseOrderNumber; //ReadOnly Length:50
 
-        public DateTime PeriodDate { get; set; } //Required
-        public DateTime? PostedDate { get; set; }
-        public int SubscriptionID { get; set; } //ReadOnly Required [Subscription]
-        public decimal PeriodPrice { get; set; } //ReadOnly Required
-        public decimal PeriodCost { get; set; } //ReadOnly Required
-        public string PurchaseOrderNumber { get; set; } //ReadOnly Length:50
+        #endregion //Fields
 
     } //end SubscriptionPeriod
 

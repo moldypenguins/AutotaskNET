@@ -25,7 +25,8 @@ namespace AutotaskNET.Entities
         public InventoryItemSerialNumber() : base() { } //end InventoryItemSerialNumber()
         public InventoryItemSerialNumber(net.autotask.webservices.InventoryItemSerialNumber entity) : base(entity)
         {
-
+            this.InventoryItemID = long.Parse(entity.InventoryItemID.ToString());
+            this.SerialNumber = entity.SerialNumber == null ? default(string) : entity.SerialNumber.ToString();
         } //end InventoryItemSerialNumber(net.autotask.webservices.InventoryItemSerialNumber entity)
 
         #endregion //Constructors
@@ -34,13 +35,13 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Required Fields
 
-        public long InventoryItemID { get; set; } //ReadOnly Required [InventoryItem]
+        public long InventoryItemID; //ReadOnly Required [InventoryItem]
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public string SerialNumber { get; set; } //Required Length:100
+        public string SerialNumber; //Required Length:100
 
         #endregion //Required Fields
 

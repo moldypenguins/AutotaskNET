@@ -26,7 +26,10 @@ namespace AutotaskNET.Entities
         public PaymentTerm() : base() { } //end PaymentTerm()
         public PaymentTerm(net.autotask.webservices.PaymentTerm entity) : base(entity)
         {
-
+            this.Active = entity.Active == null ? default(bool?) : bool.Parse(entity.Active.ToString());
+            this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
+            this.Name = entity.Name == null ? default(string) : entity.Name.ToString();
+            this.PaymentDueInDays = entity.PaymentDueInDays == null ? default(int?) : int.Parse(entity.PaymentDueInDays.ToString());
         } //end PaymentTerm(net.autotask.webservices.PaymentTerm entity)
 
         #endregion //Constructors
@@ -35,15 +38,15 @@ namespace AutotaskNET.Entities
 
         #region Required Fields
 
-        public string Name { get; set; } //Required Length:100
+        public string Name; //Required Length:100
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public string Description { get; set; } //Length:2000
-        public bool? Active { get; set; }
-        public int? PaymentDueInDays { get; set; }
+        public string Description; //Length:2000
+        public bool? Active;
+        public int? PaymentDueInDays;
 
         #endregion //Optional Fields
 

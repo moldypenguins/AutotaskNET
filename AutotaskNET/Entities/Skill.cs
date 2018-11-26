@@ -26,7 +26,10 @@ namespace AutotaskNET.Entities
         public Skill() : base() { } //end Skill()
         public Skill(net.autotask.webservices.Skill entity) : base(entity)
         {
-
+            this.Active = bool.Parse(entity.Active.ToString());
+            this.CategoryID = long.Parse(entity.CategoryID.ToString());
+            this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
+            this.Name = entity.Name == null ? default(string) : entity.Name.ToString();
         } //end Skill(net.autotask.webservices.Skill entity)
 
         #endregion //Constructors
@@ -35,15 +38,15 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Fields
 
-        public string Description { get; set; } //ReadOnly Length:2000
+        public string Description; //ReadOnly Length:2000
 
         #endregion //ReadOnly Fields
 
         #region ReadOnly Required Fields
 
-        public string Name { get; set; } //ReadOnly Required Length:100
-        public long CategoryID { get; set; } //ReadOnly Required PickList
-        public bool Active { get; set; } //ReadOnly Required
+        public string Name; //ReadOnly Required Length:100
+        public long CategoryID; //ReadOnly Required PickList
+        public bool Active; //ReadOnly Required
 
         #endregion //ReadOnly Required Fields
 

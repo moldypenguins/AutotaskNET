@@ -26,7 +26,9 @@ namespace AutotaskNET.Entities
         public AdditionalInvoiceFieldValue() : base() { } //end AdditionalInvoiceFieldValue()
         public AdditionalInvoiceFieldValue(net.autotask.webservices.AdditionalInvoiceFieldValue entity) : base(entity)
         {
-
+            this.AdditionalInvoiceFieldID = long.Parse(entity.AdditionalInvoiceFieldID.ToString());
+            this.FieldValue = entity.FieldValue == null ? default(string) : entity.FieldValue.ToString();
+            this.InvoiceBatchID = long.Parse(entity.InvoiceBatchID.ToString());
         } //end AdditionalInvoiceFieldValue(net.autotask.webservices.AdditionalInvoiceFieldValue entity)
 
         #endregion //Constructors

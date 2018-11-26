@@ -27,7 +27,9 @@ namespace AutotaskNET.Entities
         public ContractFactor() : base() { } //end ContractFactor()
         public ContractFactor(net.autotask.webservices.ContractFactor entity) : base(entity)
         {
-
+            this.BlockHourFactor = double.Parse(entity.BlockHourFactor.ToString());
+            this.ContractID = int.Parse(entity.ContractID.ToString());
+            this.RoleID = int.Parse(entity.RoleID.ToString());
         } //end ContractFactor(net.autotask.webservices.ContractFactor entity)
 
         #endregion //Constructors
@@ -36,14 +38,14 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Required Fields
 
-        public int ContractID { get; set; } //ReadOnly Required [Contract]
+        public int ContractID; //ReadOnly Required [Contract]
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public int RoleID { get; set; } //Required [Role]
-        public double BlockHourFactor { get; set; } //Required
+        public int RoleID; //Required [Role]
+        public double BlockHourFactor; //Required
 
         #endregion //Required Fields
 

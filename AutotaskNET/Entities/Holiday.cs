@@ -23,7 +23,9 @@ namespace AutotaskNET.Entities
         public Holiday() : base() { } //end Holiday()
         public Holiday(net.autotask.webservices.Holiday entity) : base(entity)
         {
-
+            this.HolidayDate = DateTime.Parse(entity.HolidayDate.ToString());
+            this.HolidayName = entity.HolidayName == null ? default(string) : entity.HolidayName.ToString();
+            this.HolidaySetID = int.Parse(entity.HolidaySetID.ToString());
         } //end Holiday(net.autotask.webservices.Holiday entity)
 
         #endregion //Constructors
@@ -32,9 +34,9 @@ namespace AutotaskNET.Entities
 
         #region Required Fields
 
-        public string HolidayName { get; set; } //Required Length:100
-        public DateTime HolidayDate { get; set; } //Required
-        public int HolidaySetID { get; set; } //Required [HolidaySet]
+        public string HolidayName; //Required Length:100
+        public DateTime HolidayDate; //Required
+        public int HolidaySetID; //Required [HolidaySet]
 
         #endregion //Required Fields
 

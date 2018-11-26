@@ -23,7 +23,9 @@ namespace AutotaskNET.Entities
         public BusinessSubdivision() : base() { } //end BusinessSubdivision()
         public BusinessSubdivision(net.autotask.webservices.BusinessSubdivision entity) : base(entity)
         {
-
+            this.Active = entity.Active == null ? default(bool?) : bool.Parse(entity.Active.ToString());
+            this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
+            this.Name = entity.Name == null ? default(string) : entity.Name.ToString();
         } //end BusinessSubdivision(net.autotask.webservices.BusinessSubdivision entity)
 
         #endregion //Constructors
@@ -32,14 +34,14 @@ namespace AutotaskNET.Entities
 
         #region Required Fields
 
-        public string Name { get; set; } //Required Length:50
+        public string Name; //Required Length:50
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public string Description { get; set; } //Length:400
-        public bool? Active { get; set; }
+        public string Description; //Length:400
+        public bool? Active;
 
         #endregion //Optional Fields
 

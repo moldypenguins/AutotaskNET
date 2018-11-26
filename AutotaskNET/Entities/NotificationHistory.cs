@@ -25,7 +25,25 @@ namespace AutotaskNET.Entities
         public NotificationHistory() : base() { } //end NotificationHistory()
         public NotificationHistory(net.autotask.webservices.NotificationHistory entity) : base(entity)
         {
-
+            this.IsActive = bool.Parse(entity.IsActive.ToString());
+            this.IsDeleted = bool.Parse(entity.IsDeleted.ToString());
+            this.IsTemplateJob = bool.Parse(entity.IsTemplateJob.ToString());
+            this.AccountID = long.Parse(entity.AccountID.ToString());
+            this.EntityNumber = entity.EntityNumber == null ? default(string) : entity.EntityNumber.ToString();
+            this.EntityTitle = entity.EntityTitle == null ? default(string) : entity.EntityTitle.ToString();
+            this.InitiatingContactID = long.Parse(entity.InitiatingContactID.ToString());
+            this.InitiatingResourceID = long.Parse(entity.InitiatingResourceID.ToString());
+            this.NotificationHistoryTypeID = entity.NotificationHistoryTypeID == null ? default(int?) : int.Parse(entity.NotificationHistoryTypeID.ToString());
+            this.NotificationSentTime = entity.NotificationSentTime == null ? default(DateTime?) : DateTime.Parse(entity.NotificationSentTime.ToString());
+            this.OpportunityID = long.Parse(entity.OpportunityID.ToString());
+            this.ProjectID = long.Parse(entity.ProjectID.ToString());
+            this.QuoteID = long.Parse(entity.QuoteID.ToString());
+            this.RecipientDisplayName = entity.RecipientDisplayName == null ? default(string) : entity.RecipientDisplayName.ToString();
+            this.RecipientEmailAddress = entity.RecipientEmailAddress == null ? default(string) : entity.RecipientEmailAddress.ToString();
+            this.TaskID = long.Parse(entity.TaskID.ToString());
+            this.TemplateName = entity.TemplateName == null ? default(string) : entity.TemplateName.ToString();
+            this.TicketID = long.Parse(entity.TicketID.ToString());
+            this.TimeEntryID = long.Parse(entity.TimeEntryID.ToString());
         } //end NotificationHistory(net.autotask.webservices.NotificationHistory entity)
 
         #endregion //Constructors
@@ -58,25 +76,25 @@ namespace AutotaskNET.Entities
 
         #endregion //Fields
 
-        public DateTime? NotificationSentTime { get; set; } //ReadOnly
-        public string TemplateName { get; set; } //ReadOnly Length:100
-        public int? NotificationHistoryTypeID { get; set; } //ReadOnly PickList
-        public string EntityTitle { get; set; } //ReadOnly PickList Length:2000
-        public string EntityNumber { get; set; } //ReadOnly PickList Length:50
-        public bool IsDeleted { get; set; } //ReadOnly Required
-        public bool IsActive { get; set; } //ReadOnly Required
-        public bool IsTemplateJob { get; set; } //ReadOnly Required
-        public long InitiatingResourceID { get; set; } //ReadOnly [Resource]
-        public long InitiatingContactID { get; set; } //ReadOnly [Contact]
-        public string RecipientEmailAddress { get; set; } //ReadOnly Length:2000
-        public string RecipientDisplayName { get; set; } //ReadOnly Length:200
-        public long AccountID { get; set; } //ReadOnly [Account]
-        public long QuoteID { get; set; } //ReadOnly [Quote]
-        public long OpportunityID { get; set; } //ReadOnly [Opportunity]
-        public long ProjectID { get; set; } //ReadOnly [Project]
-        public long TaskID { get; set; } //ReadOnly [Task]
-        public long TicketID { get; set; } //ReadOnly [Ticket]
-        public long TimeEntryID { get; set; } //ReadOnly [TimeEntry]
+        public DateTime? NotificationSentTime; //ReadOnly
+        public string TemplateName; //ReadOnly Length:100
+        public int? NotificationHistoryTypeID; //ReadOnly PickList
+        public string EntityTitle; //ReadOnly PickList Length:2000
+        public string EntityNumber; //ReadOnly PickList Length:50
+        public bool IsDeleted; //ReadOnly Required
+        public bool IsActive; //ReadOnly Required
+        public bool IsTemplateJob; //ReadOnly Required
+        public long InitiatingResourceID; //ReadOnly [Resource]
+        public long InitiatingContactID; //ReadOnly [Contact]
+        public string RecipientEmailAddress; //ReadOnly Length:2000
+        public string RecipientDisplayName; //ReadOnly Length:200
+        public long AccountID; //ReadOnly [Account]
+        public long QuoteID; //ReadOnly [Quote]
+        public long OpportunityID; //ReadOnly [Opportunity]
+        public long ProjectID; //ReadOnly [Project]
+        public long TaskID; //ReadOnly [Task]
+        public long TicketID; //ReadOnly [Ticket]
+        public long TimeEntryID; //ReadOnly [TimeEntry]
 
     } //end NotificationHistory
 }

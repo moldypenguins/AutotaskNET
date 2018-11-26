@@ -29,7 +29,16 @@ namespace AutotaskNET.Entities
         public Currency() : base() { } //end Currency()
         public Currency(net.autotask.webservices.Currency entity) : base(entity)
         {
-
+            this.Active = bool.Parse(entity.Active.ToString());
+            this.CurrencyNegativeFormat = entity.CurrencyNegativeFormat == null ? default(string) : entity.CurrencyNegativeFormat.ToString();
+            this.CurrencyPositiveFormat = entity.CurrencyPositiveFormat == null ? default(string) : entity.CurrencyPositiveFormat.ToString();
+            this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
+            this.DisplaySymbol = int.Parse(entity.DisplaySymbol.ToString());
+            this.ExchangeRate = decimal.Parse(entity.ExchangeRate.ToString());
+            this.IsInternalCurrency = bool.Parse(entity.IsInternalCurrency.ToString());
+            this.Name = entity.Name == null ? default(string) : entity.Name.ToString();
+            this.LastModifiedDateTime = entity.LastModifiedDateTime == null ? default(DateTime?) : DateTime.Parse(entity.LastModifiedDateTime.ToString());
+            this.UpdateResourceId = entity.UpdateResourceId == null ? default(int?) : int.Parse(entity.UpdateResourceId.ToString());
         } //end Currency(net.autotask.webservices.Currency entity)
 
         #endregion //Constructors
@@ -38,31 +47,31 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Fields
 
-        public int? UpdateResourceId { get; set; } //ReadOnly [Resource]
+        public int? UpdateResourceId; //ReadOnly [Resource]
 
         #endregion //ReadOnly Fields
 
         #region ReadOnly Required Fields
 
-        public string Name { get; set; } //ReadOnly Required Length:3
-        public string Description { get; set; } //ReadOnly Required Length:100
-        public int DisplaySymbol { get; set; } //ReadOnly Required PickList
-        public bool IsInternalCurrency { get; set; } //ReadOnly Required
-        public bool Active { get; set; } //ReadOnly Required
-        public string CurrencyPositiveFormat { get; set; } //ReadOnly Required Length:10
-        public string CurrencyNegativeFormat { get; set; } //ReadOnly Required Length:10
+        public string Name; //ReadOnly Required Length:3
+        public string Description; //ReadOnly Required Length:100
+        public int DisplaySymbol; //ReadOnly Required PickList
+        public bool IsInternalCurrency; //ReadOnly Required
+        public bool Active; //ReadOnly Required
+        public string CurrencyPositiveFormat; //ReadOnly Required Length:10
+        public string CurrencyNegativeFormat; //ReadOnly Required Length:10
 
         #endregion //ReadOnly Required Fields
 
         #region Required Fields
 
-        public decimal ExchangeRate { get; set; } //Required
+        public decimal ExchangeRate; //Required
 
         #endregion //Required Fields
 
         #region Optional Fields
 
-        public DateTime? LastModifiedDateTime { get; set; }
+        public DateTime? LastModifiedDateTime;
 
         #endregion //Optional Fields
 
