@@ -18,8 +18,6 @@
 ### Bugs/Features/Contributing
 Please open an issue or pull request in GitHub.
 
-IRC Freenode [#AutotaskNET](https://webchat.freenode.net/?channels=asternet)
-
 
 ### Examples
 ##### Connect
@@ -61,7 +59,7 @@ List<PicklistValue> account_types = atAPI.GetPicklistValues(typeof(Account), "Ac
 int account_types_customer = account_types.Find(type => type.Label == "Customer").Value;
 
 List<Account> customer_accounts = atAPI.Query(typeof(Account), new List<QueryFilter> {
-    new QueryFilter() { FieldName = "AccountType", Operation = "Equals", Value = account_types_customer }
+    new Condition() { FieldName = "AccountType", Operation = "Equals", Value = account_types_customer }
 }).OfType<Account>().ToList();
 ```
 
@@ -70,7 +68,7 @@ List<Account> customer_accounts = atAPI.Query(typeof(Account), new List<QueryFil
 int activity_since = DateTime.Today; //search from the start of today
 
 List<Ticket> tickets_updated_today = atAPI.Query(typeof(Ticket), new List<QueryFilter> {
-    new QueryFilter() { FieldName = "LastActivityDate", Operation = "greaterthan", Value = activity_since }
+    new Condition() { FieldName = "LastActivityDate", Operation = "greaterthan", Value = activity_since }
 }).OfType<Ticket>().ToList();
 ```
 
@@ -79,8 +77,9 @@ List<Ticket> tickets_updated_today = atAPI.Query(typeof(Ticket), new List<QueryF
 int activity_since = DateTime.Today; //search from the start of today
 
 List<Ticket> tickets_updated_today = atAPI.Query(typeof(Ticket), new List<QueryFilter> {
-    new QueryFilter() { FieldName = "LastActivityDate", Operation = "greaterthan", Value = activity_since }
-    new QueryFilter() { FieldName = "Account", Operation = "equals", Value = customer_accounts.Find(account => account.AccountName == "Customer Name").id }
+    new ConditionGroup(ConditionGroupOperation.AND) {
+        new Condition() { FieldName = "LastActivityDate", Operation = "greaterthan", Value = activity_since }
+        new Condition() { FieldName = "Account", Operation = "equals", Value = customer_accounts.Find(account => account.AccountName == "Customer Name").id }
+	}
 }).OfType<Ticket>().ToList();
-
 
