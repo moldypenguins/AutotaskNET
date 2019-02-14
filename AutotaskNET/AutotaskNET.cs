@@ -12,14 +12,14 @@ namespace AutotaskNET
         /// The Autotask Web Service Object.
         /// </summary>
         private net.autotask.webservices.ATWS _atws;
-        
+
         /// <summary>
         /// Indicates whether the interface has been connected.
         /// </summary>
         /// <value>
         ///   <c>true</c> if the interface has been connected; otherwise, <c>false</c>.
         /// </value>
-        public bool IsConnected { get; internal set; } = false;
+        public bool HasAuthenticated { get; internal set; } = false;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ATWSInterface"/> class.
@@ -46,7 +46,7 @@ namespace AutotaskNET
                     { new Uri(this._atws.Url), "BASIC", new NetworkCredential(username, password) }
                 };
                 this._atws.Credentials = _cache;
-                this.IsConnected = true;
+                this.HasAuthenticated = true;
             }
             else
             {

@@ -9,10 +9,8 @@ namespace AutotaskTEST
 {
     class Program
     {
-        //private const string @USERNAME = "api.user@domain.com";
-        //private const string @PASSWORD = "P@ssw0rd";
-        private const string @USERNAME = "services@risolv.ca";
-        private const string @PASSWORD = "L9prFxVlPb51m28TPiW5";
+        private const string @USERNAME = "api.user@domain.com";
+        private const string @PASSWORD = "P@ssw0rd";
 
         static void Main(string[] args)
         {
@@ -29,7 +27,7 @@ namespace AutotaskTEST
                 Console.WriteLine();
 
 
-
+                /*
                 //UDF Information
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tGetting Entity Information...");
                 List<FieldInformation> udfInformation = atAPI.GetUDFInfo(typeof(Account));
@@ -39,12 +37,12 @@ namespace AutotaskTEST
                     Console.WriteLine($"\t\t - {udfInfo.Name} = Type: {udfInfo.Type}");
                 }
                 Console.WriteLine();
+                */
 
 
 
 
-
-
+                /*
                 //Account
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tGetting All Accounts...");
                 List<Account> accounts = atAPI.Query(typeof(Account), new QueryFilter() {
@@ -63,9 +61,9 @@ namespace AutotaskTEST
                 List<AccountLocation> account_locations = atAPI.Query(typeof(AccountLocation)).OfType<AccountLocation>().ToList();
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tAccount Locations: {account_locations.Count}");
                 Console.WriteLine();
+                */
 
 
-                
 
                 /*
                 //Entity Information
@@ -107,6 +105,21 @@ namespace AutotaskTEST
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tTickets Updated Today: {tickets_updated_today.Count}");
                 Console.WriteLine();
                 */
+
+
+
+                //Ticket
+                Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tGetting Ticket 29027...");
+                List<Ticket> tickets = atAPI.Query(typeof(Ticket), new QueryFilter() {
+                    new Condition("LastActivityDate", ConditionOperation.GreaterThan, DateTime.Today)
+                }).OfType<Ticket>().ToList();
+                Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tTicket Found: {tickets.Count}");
+                Console.WriteLine();
+
+
+
+
+
 
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tDone.");
                 Console.WriteLine();
