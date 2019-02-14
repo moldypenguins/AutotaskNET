@@ -83,7 +83,7 @@ namespace AutotaskNET.Entities
             this.ServiceLevelAgreementID = entity.ServiceLevelAgreementID == null ? default(int?) : int.Parse(entity.ServiceLevelAgreementID.ToString());
             //this.ServiceLevelAgreementPausedNextEventHours = double.Parse(entity.ServiceLevelAgreementPausedNextEventHours.ToString());
             this.Source = entity.Source == null ? default(int?) : int.Parse(entity.Source.ToString());
-            this.Status = int.Parse(entity.TicketCategory.ToString());
+            this.Status = int.Parse(entity.Status.ToString());
             this.SubIssueType = entity.SubIssueType == null ? default(int?) : int.Parse(entity.SubIssueType.ToString());
             this.TicketCategory = entity.TicketCategory == null ? default(int?) : int.Parse(entity.TicketCategory.ToString());
             this.TicketNumber = entity.TicketNumber.ToString();
@@ -154,7 +154,7 @@ namespace AutotaskNET.Entities
                 ServiceLevelAgreementID = this.ServiceLevelAgreementID,
                 //ServiceLevelAgreementPausedNextEventHours = this.ServiceLevelAgreementPausedNextEventHours,
                 Source = this.Source,
-                Status = this.TicketCategory,
+                Status = this.Status,
                 SubIssueType = this.SubIssueType,
                 TicketCategory = this.TicketCategory,
                 TicketNumber = this.TicketNumber,

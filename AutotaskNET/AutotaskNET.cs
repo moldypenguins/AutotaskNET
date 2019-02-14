@@ -394,7 +394,7 @@ namespace AutotaskNET
         public List<FieldInformation> GetUDFInfo(Type entity_type)
         {
             return this.GetUDFInfo((Entities.Entity)Activator.CreateInstance(entity_type));
-        } //end GetPicklistValues(Type entity_type, string field)
+        } //end GetUDFInfo(Type entity_type)
         /// <summary>
         /// Gets UDF information.
         /// Currently, the following Autotask entities can include UDFs: 
