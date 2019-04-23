@@ -27,6 +27,35 @@ namespace AutotaskNET.Entities
         public Contract() : base() { } //end Contract()
         public Contract(net.autotask.webservices.Contract entity) : base(entity)
         {
+            this.AccountID = int.Parse(entity.AccountID.ToString());
+            this.BillingPreference = entity.BillingPreference == null ? default(int?) : int.Parse(entity.BillingPreference.ToString());
+            this.BusinessDivisionSubdivisionID = entity.BusinessDivisionSubdivisionID == null ? default(int?) : int.Parse(entity.BusinessDivisionSubdivisionID.ToString());
+            this.Compliance = entity.Compliance == null ? default(bool?) : bool.Parse(entity.Compliance.ToString());
+            this.ContractName = entity.ContactID == null ? default(string) : entity.ContactID.ToString();
+            this.ContractType = int.Parse(entity.ContractType.ToString());
+            this.EndDate = DateTime.Parse(entity.EndDate.ToString());
+            this.StartDate = DateTime.Parse(entity.StartDate.ToString());
+            this.Status = int.Parse(entity.Status.ToString());
+            this.TimeReportingRequiresStartAndStopTimes = int.Parse(entity.TimeReportingRequiresStartAndStopTimes.ToString());
+            this.ContactID = entity.ContactID == null ? default(int?) : int.Parse(entity.ContactID.ToString());
+            this.ContactName = entity.ContactName == null ? default(string) : entity.ContactName.ToString();
+            this.ContractCategory = entity.ContractCategory == null ? default(int?) : int.Parse(entity.ContractCategory.ToString());
+            this.ContractNumber = entity.ContractName == null ? default(string) : entity.ContractName.ToString();
+            this.ContractPeriodType = entity.ContractPeriodType == null ? default(string) : entity.ContractPeriodType.ToString();
+            this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
+            this.EstimatedCost = double.Parse(entity.EstimatedCost.ToString());
+            this.EstimatedHours = double.Parse(entity.EstimatedHours.ToString());
+            this.EstimatedRevenue = double.Parse(entity.EstimatedRevenue.ToString());
+            this.ExclusionContractID = long.Parse(entity.ExclusionContractID.ToString());
+            this.InternalCurrencyOverageBillingRate = double.Parse(entity.InternalCurrencyOverageBillingRate.ToString());
+            this.InternalCurrencySetupFee = double.Parse(entity.InternalCurrencySetupFee.ToString());
+            this.IsDefaultContract = entity.IsDefaultContract == null ? default(bool?) : bool.Parse(entity.IsDefaultContract.ToString());
+            this.OpportunityID = entity.OpportunityID == null ? default(int?) : int.Parse(entity.OpportunityID.ToString());
+            this.OverageBillingRate = double.Parse(entity.OverageBillingRate.ToString());
+            this.PurchaseOrderNumber = entity.PurchaseOrderNumber == null ? default(string) : entity.PurchaseOrderNumber.ToString();
+            this.ServiceLevelAgreementID = entity.ServiceLevelAgreementID == null ? default(int?) : int.Parse(entity.ServiceLevelAgreementID.ToString());
+            this.SetupFee = double.Parse(entity.SetupFee.ToString());
+            this.SetupFeeAllocationCodeID = long.Parse(entity.SetupFeeAllocationCodeID.ToString());
 
         } //end Contract(net.autotask.webservices.Contract entity)
 
@@ -35,7 +64,36 @@ namespace AutotaskNET.Entities
             return new net.autotask.webservices.Contract()
             {
                 id = this.id,
-
+                AccountID = this.AccountID,
+                BillingPreference = this.BillingPreference,
+                BusinessDivisionSubdivisionID = this.BusinessDivisionSubdivisionID,
+                Compliance = this.Compliance,
+                ContactID = this.ContactID,
+                ContactName = this.ContactName,
+                ContractCategory = this.ContractCategory,
+                ContractName = this.ContractName,
+                ContractNumber = this.ContractNumber,
+                ContractPeriodType = this.ContractPeriodType,
+                ContractType = this.ContractType,
+                Description = this.Description,
+                EndDate = this.EndDate,
+                EstimatedCost = this.EstimatedCost,
+                EstimatedHours = this.EstimatedHours,
+                EstimatedRevenue = this.EstimatedRevenue,
+                ExclusionContractID = this.ExclusionContractID,
+                InternalCurrencyOverageBillingRate = this.InternalCurrencyOverageBillingRate,
+                InternalCurrencySetupFee = this.InternalCurrencySetupFee,
+                IsDefaultContract = this.IsDefaultContract,
+                OpportunityID = this.OpportunityID,
+                OverageBillingRate = this.OverageBillingRate,
+                PurchaseOrderNumber = this.PurchaseOrderNumber,
+                RenewedContractID = this.RenewedContractID,
+                ServiceLevelAgreementID = this.ServiceLevelAgreementID,
+                SetupFee = this.SetupFee,
+                SetupFeeAllocationCodeID = this.SetupFeeAllocationCodeID,
+                StartDate = this.StartDate,
+                Status = this.Status,
+                TimeReportingRequiresStartAndStopTimes = this.TimeReportingRequiresStartAndStopTimes
             };
 
         } //end ToATWS()
