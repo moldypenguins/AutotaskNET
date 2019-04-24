@@ -9,7 +9,7 @@ namespace AutotaskTEST
 {
     class Program
     {
-        private const string @USERNAME = "api.user@domain.com";
+        private const string @USERNAME = "apiuser@domain.com";
         private const string @PASSWORD = "P@ssw0rd";
 
         static void Main(string[] args)
@@ -25,9 +25,7 @@ namespace AutotaskTEST
                 
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tConnected.");
                 Console.WriteLine();
-
-
-                /*
+                
                 //UDF Information
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tGetting Entity Information...");
                 List<FieldInformation> udfInformation = atAPI.GetUDFInfo(typeof(Account));
@@ -37,12 +35,7 @@ namespace AutotaskTEST
                     Console.WriteLine($"\t\t - {udfInfo.Name} = Type: {udfInfo.Type}");
                 }
                 Console.WriteLine();
-                */
 
-
-
-
-                /*
                 //Account
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tGetting All Accounts...");
                 List<Account> accounts = atAPI.Query(typeof(Account), new QueryFilter() {
@@ -61,11 +54,9 @@ namespace AutotaskTEST
                 List<AccountLocation> account_locations = atAPI.Query(typeof(AccountLocation)).OfType<AccountLocation>().ToList();
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tAccount Locations: {account_locations.Count}");
                 Console.WriteLine();
-                */
-
-
-
-                /*
+                
+                
+                
                 //Entity Information
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tGetting Entity Information...");
                 List<EntityInformation> eInformation = atAPI.GetEntityInfo();
@@ -91,7 +82,7 @@ namespace AutotaskTEST
                 //Customer Accounts
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tGetting Customer Accounts...");
                 List<Account> customer_accounts = atAPI.Query(typeof(Account), new QueryFilter() {
-                    new Condition("AccountType", "Equals", account_types.Find(type => type.Label == "Customer").Value)
+                    new Condition("AccountType", ConditionOperation.Equals, account_types.Find(type => type.Label == "Customer").Value)
                 }).OfType<Account>().ToList();
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tCustomer Accounts: {customer_accounts.Count}");
                 Console.WriteLine();
@@ -99,24 +90,12 @@ namespace AutotaskTEST
                 
                 //Tickets Updated Today
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tGetting Tickets Updated Today...");
-                List<Ticket> tickets_updated_today = atAPI.Query(typeof(Ticket), new List<QueryFilter> {
-                    new QueryFilter() { FieldName = "LastActivityDate", Operation = "greaterthan", Value = DateTime.Today }
+                List<Ticket> tickets_updated_today = atAPI.Query(typeof(Ticket), new QueryFilter {
+                    new Condition("LastActivityDate", ConditionOperation.GreaterThan, DateTime.Today)
                 }).OfType<Ticket>().ToList();
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tTickets Updated Today: {tickets_updated_today.Count}");
                 Console.WriteLine();
-                */
-
-
-
-                //Ticket
-                Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tGetting Ticket 29027...");
-                List<Ticket> tickets = atAPI.Query(typeof(Ticket), new QueryFilter() {
-                    new Condition("LastActivityDate", ConditionOperation.GreaterThan, DateTime.Today)
-                }).OfType<Ticket>().ToList();
-                Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tTicket Found: {tickets.Count}");
-                Console.WriteLine();
-
-
+                
 
 
 

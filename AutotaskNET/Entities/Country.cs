@@ -24,6 +24,14 @@ namespace AutotaskNET.Entities
         public Country() : base() { } //end Country()
         public Country(net.autotask.webservices.Country entity) : base(entity)
         {
+            this.AddressFormatID = long.Parse(entity.AddressFormatID.ToString());
+            this.DisplayName = entity.DisplayName == null ? default(string) : entity.DisplayName.ToString();
+            this.Active = entity.Active == null ? default(bool?) : bool.Parse(entity.Active.ToString());
+            this.CountryCode = entity.CountryCode == null ? default(string) : entity.CountryCode.ToString();
+            this.InvoiceTemplateID = entity.InvoiceTemplateID == null ? default(int?) : int.Parse(entity.InvoiceTemplateID.ToString());
+            this.IsDefaultCountry = entity.IsDefaultCountry == null ? default(bool?) : bool.Parse(entity.IsDefaultCountry.ToString());
+            this.Name = entity.Name == null ? default(string) : entity.Name.ToString();
+            this.QuoteTemplateID = entity.QuoteTemplateID == null ? default(int?) : int.Parse(entity.QuoteTemplateID.ToString());
 
         } //end Country(net.autotask.webservices.Country entity)
 
@@ -32,7 +40,14 @@ namespace AutotaskNET.Entities
             return new net.autotask.webservices.Country()
             {
                 id = this.id,
-
+                Active = this.Active,
+                AddressFormatID = this.AddressFormatID,
+                CountryCode = this.CountryCode,
+                DisplayName = this.DisplayName,
+                InvoiceTemplateID = this.InvoiceTemplateID,
+                IsDefaultCountry = this.IsDefaultCountry,
+                Name = this.Name,
+                QuoteTemplateID = this.QuoteTemplateID
             };
 
         } //end ToATWS()

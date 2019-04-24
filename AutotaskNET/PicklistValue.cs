@@ -14,8 +14,8 @@ namespace AutotaskNET
             this.IsActive = bool.Parse(pick_list_value.IsActive.ToString());
             this.IsDefaultValue = bool.Parse(pick_list_value.IsDefaultValue.ToString());
             this.IsSystem = bool.Parse(pick_list_value.IsSystem.ToString());
-            this.Label = pick_list_value.Label.ToString();
-            this.ParentValue = pick_list_value.parentValue.ToString();
+            this.Label = pick_list_value.Label == null? default(string) : pick_list_value.Label.ToString();
+            this.ParentValue = pick_list_value.parentValue == null ? default(string) : pick_list_value.parentValue.ToString();
             this.SortOrder = int.Parse(pick_list_value.SortOrder.ToString());
 
         } //end PicklistValue()

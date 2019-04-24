@@ -29,8 +29,9 @@ namespace AutotaskNET.Entities
         {
             this.Active = bool.Parse(entity.Active.ToString());
             this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
-            this.HourlyFactor = decimal.Parse(entity.Active.ToString());
-            this.HourlyRate = decimal.Parse(entity.Active.ToString());
+            this.HourlyFactor = decimal.Parse(entity.HourlyFactor.ToString());
+            this.HourlyRate = decimal.Parse(entity.HourlyRate.ToString());
+            this.IsExcludedFromNewContracts = entity.IsExcludedFromNewContracts == null ? default(bool?) : bool.Parse(entity.IsExcludedFromNewContracts.ToString());
             this.Name = entity.Name == null ? default(string) : entity.Name.ToString();
             this.QuoteItemDefaultTaxCategoryId = entity.QuoteItemDefaultTaxCategoryId == null ? default(int?) : int.Parse(entity.QuoteItemDefaultTaxCategoryId.ToString());
             this.RoleType = entity.RoleType == null ? default(int?) : int.Parse(entity.RoleType.ToString());
@@ -43,7 +44,15 @@ namespace AutotaskNET.Entities
             return new net.autotask.webservices.Role()
             {
                 id = this.id,
-
+                Active = this.Active,
+                Description = this.Description,
+                HourlyFactor = this.HourlyFactor,
+                HourlyRate = this.HourlyRate,
+                IsExcludedFromNewContracts = this.IsExcludedFromNewContracts,
+                Name = this.Name,
+                QuoteItemDefaultTaxCategoryId = this.QuoteItemDefaultTaxCategoryId,
+                RoleType = this.RoleType,
+                SystemRole = this.SystemRole
             };
 
         } //end ToATWS()

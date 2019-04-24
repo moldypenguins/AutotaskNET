@@ -23,6 +23,11 @@ namespace AutotaskNET.Entities
         public ResourceRole() : base() { } //end ResourceRole()
         public ResourceRole(net.autotask.webservices.ResourceRole entity) : base(entity)
         {
+            this.Active = entity.Active == null ? default(bool?) : bool.Parse(entity.Active.ToString());
+            this.DepartmentID = entity.DepartmentID == null ? default(long?) : long.Parse(entity.DepartmentID.ToString());
+            this.QueueID = entity.QueueID == null ? default(long?) : long.Parse(entity.QueueID.ToString());
+            this.ResourceID = long.Parse(entity.ResourceID.ToString());
+            this.RoleID = long.Parse(entity.RoleID.ToString());
 
         } //end ResourceRole(net.autotask.webservices.ResourceRole entity)
 
@@ -31,7 +36,11 @@ namespace AutotaskNET.Entities
             return new net.autotask.webservices.ResourceRole()
             {
                 id = this.id,
-
+                Active = this.Active,
+                DepartmentID = this.DepartmentID,
+                QueueID = this.QueueID,
+                ResourceID = this.ResourceID,
+                RoleID = this.RoleID
             };
 
         } //end ToATWS()
@@ -42,8 +51,8 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Fields
 
-        public long DepartmentID; //ReadOnly [Department]
-        public long QueueID; //ReadOnly PickList
+        public long? DepartmentID; //ReadOnly [Department]
+        public long? QueueID; //ReadOnly PickList
         public bool? Active; //ReadOnly
 
         #endregion //ReadOnly Fields

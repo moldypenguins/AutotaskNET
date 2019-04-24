@@ -26,6 +26,44 @@ namespace AutotaskNET.Entities
         public Project() : base() { } //end Project()
         public Project(net.autotask.webservices.Project entity) : base(entity)
         {
+            this.AccountID = int.Parse(entity.AccountID.ToString());
+            this.EndDateTime = DateTime.Parse(entity.EndDateTime.ToString());
+            this.ProjectName = entity.ProjectName == null ? default(string) : entity.ProjectName.ToString();
+            this.StartDateTime = DateTime.Parse(entity.StartDateTime.ToString());
+            this.Type = int.Parse(entity.Type.ToString());
+            this.ActualBilledHours = entity.ActualBilledHours == null ? default(float?) : float.Parse(entity.ActualBilledHours.ToString());
+            this.ActualHours = entity.ActualHours == null ? default(float?) : float.Parse(entity.ActualHours.ToString());
+            this.BusinessDivisionSubdivisionID = entity.BusinessDivisionSubdivisionID == null ? default(int?) : int.Parse(entity.BusinessDivisionSubdivisionID.ToString());
+            this.ChangeOrdersBudget = entity.ChangeOrdersBudget == null ? default(float?) : float.Parse(entity.ChangeOrdersBudget.ToString());
+            this.ChangeOrdersRevenue = entity.ChangeOrdersRevenue == null ? default(float?) : float.Parse(entity.ChangeOrdersRevenue.ToString());
+            this.CompanyOwnerResourceID = entity.CompanyOwnerResourceID == null ? default(int?) : int.Parse(entity.CompanyOwnerResourceID.ToString());
+            this.CompletedDateTime = entity.CreateDateTime == null ? default(DateTime?) : DateTime.Parse(entity.CreateDateTime.ToString());
+            this.CompletedPercentage = entity.CompletedPercentage == null ? default(int?) : int.Parse(entity.CompletedPercentage.ToString());
+            this.ContractID = entity.ContractID == null ? default(int?) : int.Parse(entity.ContractID.ToString());
+            this.CreateDateTime = entity.CreateDateTime == null ? default(DateTime?) : DateTime.Parse(entity.CreateDateTime.ToString());
+            this.CreatorResourceID = entity.CreatorResourceID == null ? default(int?) : int.Parse(entity.CreatorResourceID.ToString());
+            this.Department = entity.Department == null ? default(int?) : int.Parse(entity.Department.ToString());
+            this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
+            this.Duration = entity.Duration == null ? default(int?) : int.Parse(entity.Duration.ToString());
+            this.EstimatedSalesCost = entity.EstimatedSalesCost == null ? default(float?) : float.Parse(entity.EstimatedSalesCost.ToString());
+            this.EstimatedTime = entity.EstimatedTime == null ? default(float?) : float.Parse(entity.EstimatedTime.ToString());
+            this.ExtPNumber = entity.ExtPNumber == null ? default(string) : entity.ExtPNumber.ToString();
+            this.ExtProjectType = entity.ExtProjectType == null ? default(int?) : int.Parse(entity.ExtProjectType.ToString());
+            this.LaborEstimatedCosts = entity.LaborEstimatedCosts == null ? default(float?) : float.Parse(entity.LaborEstimatedCosts.ToString());
+            this.LaborEstimatedMarginPercentage = entity.LaborEstimatedMarginPercentage == null ? default(float?) : float.Parse(entity.LaborEstimatedMarginPercentage.ToString());
+            this.LaborEstimatedRevenue = entity.LaborEstimatedRevenue == null ? default(float?) : float.Parse(entity.LaborEstimatedRevenue.ToString());
+            this.LineOfBusiness = entity.LineOfBusiness == null ? default(int?) : int.Parse(entity.LineOfBusiness.ToString());
+            this.OriginalEstimatedRevenue = entity.OriginalEstimatedRevenue == null ? default(float?) : float.Parse(entity.OriginalEstimatedRevenue.ToString());
+            this.ProjectCostEstimatedMarginPercentage = entity.ProjectCostEstimatedMarginPercentage == null ? default(float?) : float.Parse(entity.ProjectCostEstimatedMarginPercentage.ToString());
+            this.ProjectCostsBudget = entity.ProjectCostsBudget == null ? default(float?) : float.Parse(entity.ProjectCostsBudget.ToString());
+            this.ProjectCostsRevenue = entity.ProjectCostsRevenue == null ? default(float?) : float.Parse(entity.ProjectCostsRevenue.ToString());
+            this.ProjectLeadResourceID = entity.ProjectLeadResourceID == null ? default(int?) : int.Parse(entity.ProjectLeadResourceID.ToString());
+            this.ProjectNumber = entity.ProjectNumber == null ? default(string) : entity.ProjectNumber.ToString();
+            this.PurchaseOrderNumber = entity.PurchaseOrderNumber == null ? default(string) : entity.PurchaseOrderNumber.ToString();
+            this.SGDA = entity.SGDA == null ? default(float?) : float.Parse(entity.SGDA.ToString());
+            this.Status = int.Parse(entity.Status.ToString());
+            this.StatusDateTime = entity.StatusDateTime == null ? default(DateTime?) : DateTime.Parse(entity.StatusDateTime.ToString());
+            this.StatusDetail = entity.StatusDetail == null ? default(string) : entity.StatusDetail.ToString();
 
         } //end Project(net.autotask.webservices.Project entity)
 
@@ -49,13 +87,13 @@ namespace AutotaskNET.Entities
         public DateTime? CreateDateTime; //ReadOnly
         public int? CreatorResourceID; //ReadOnly [Resource]
         public int? Duration; //ReadOnly
-        public float ActualHours; //ReadOnly
-        public float ActualBilledHours; //ReadOnly
-        public float EstimatedTime; //ReadOnly
-        public float LaborEstimatedMarginPercentage; //ReadOnly
-        public float ProjectCostEstimatedMarginPercentage; //ReadOnly
-        public float ChangeOrdersRevenue; //ReadOnly
-        public float ChangeOrdersBudget; //ReadOnly
+        public float? ActualHours; //ReadOnly
+        public float? ActualBilledHours; //ReadOnly
+        public float? EstimatedTime; //ReadOnly
+        public float? LaborEstimatedMarginPercentage; //ReadOnly
+        public float? ProjectCostEstimatedMarginPercentage; //ReadOnly
+        public float? ChangeOrdersRevenue; //ReadOnly
+        public float? ChangeOrdersBudget; //ReadOnly
         public int? CompanyOwnerResourceID; //ReadOnly [Resource]
         public int? CompletedPercentage; //ReadOnly
         public int? LastActivityResourceID; //ReadOnly [Resource]
@@ -85,13 +123,13 @@ namespace AutotaskNET.Entities
         public int? ExtProjectType;
         public string ExtPNumber; //Length:50
         public string Description; //Length:2000
-        public float LaborEstimatedRevenue;
-        public float LaborEstimatedCosts;
-        public float ProjectCostsRevenue;
-        public float ProjectCostsBudget;
-        public float SGDA;
-        public float OriginalEstimatedRevenue;
-        public float EstimatedSalesCost;
+        public float? LaborEstimatedRevenue;
+        public float? LaborEstimatedCosts;
+        public float? ProjectCostsRevenue;
+        public float? ProjectCostsBudget;
+        public float? SGDA;
+        public float? OriginalEstimatedRevenue;
+        public float? EstimatedSalesCost;
         public int? ContractID; //[Contract]
         public int? ProjectLeadResourceID; //[Resource]
         public DateTime? CompletedDateTime;
