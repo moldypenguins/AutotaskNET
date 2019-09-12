@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AutotaskUpdater.Properties {
+namespace AutotaskNET.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -29,17 +29,6 @@ namespace AutotaskUpdater.Properties {
         public string Autotask_Net_Webservices_ATWS {
             get {
                 return ((string)(this["Autotask_Net_Webservices_ATWS"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=RSSQL01\\TIMETRACKING;Initial Catalog=Autotask;Integrated Security=Tru" +
-            "e")]
-        public string AutotaskConnectionString {
-            get {
-                return ((string)(this["AutotaskConnectionString"]));
             }
         }
     }
