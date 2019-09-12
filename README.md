@@ -1,6 +1,6 @@
 ![Autotask PSA](https://www.risolv.ca/images/AutotaskPSA.png)
 
-## AutotaskNET ![GitHub License](https://img.shields.io/github/license/risolv/AutotaskNET.svg?logo=GNU&logoColor=FFFFFF&style=flat) ![GitHub Release](https://img.shields.io/github/release/risolv/AutotaskNET.svg?logo=GitHub&logoColor=FFFFFF&style=flat) ![Travis Build Status](https://img.shields.io/travis/com/risolv/AutotaskNET.svg?logo=Travis&logoColor=FFFFFF&style=flat)
+## AutotaskNET ![GitHub License](https://img.shields.io/github/license/risolv/AutotaskNET.svg?logo=GNU&logoColor=FFFFFF&style=flat) ![GitHub Release](https://img.shields.io/github/release/risolv/AutotaskNET.svg?include_prereleases&logo=GitHub&logoColor=FFFFFF&style=flat) ![Travis Build Status](https://img.shields.io/travis/com/risolv/AutotaskNET.svg?logo=Travis&logoColor=FFFFFF&style=flat)
 *Autotask Web Services API .NET Interface*
 
 ![GitHub Last Commit](https://img.shields.io/github/last-commit/risolv/AutotaskNET.svg?logo=GitHub&logoColor=FFFFFF&style=flat)
