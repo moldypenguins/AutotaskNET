@@ -8,11 +8,11 @@
 ![GitHub Pull Requests](https://img.shields.io/github/issues-pr-raw/risolv/AutotaskNET.svg?logo=GitHub&logoColor=FFFFFF&style=flat)
 
 ![.NET Framework](https://img.shields.io/badge/.NET%20Framework-4.6.2-5C2D91.svg?logo=Windows&logoColor=FFFFFF&style=flat)
-![Autotask Web Services](https://img.shields.io/badge/Web%20Services%20API-1.5.14-E51937.svg?logo=Autotask&logoColor=FFFFFF&style=flat)
+![Autotask Web Services](https://img.shields.io/badge/Web%20Services%20API-1.6.2-E51937.svg?logo=Autotask&logoColor=FFFFFF&style=flat)
 
 
 ### Documentation
-[Autotask Web Services API Version 1.5 User Guide](https://www.autotask.net/help/Content/LinkedDOCUMENTS/WSAPI/T_WebServicesAPIv1_5.pdf)
+[Autotask Web Services API Version 1.6 User Guide](https://www.autotask.net/help/Content/LinkedDOCUMENTS/WSAPI/T_WebServicesAPIv1_6.pdf)
 
 
 ### Bugs/Features/Contributing

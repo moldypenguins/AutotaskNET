@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
-using System.Net;
 using System.Collections.Generic;
 
 namespace AutotaskNET
 {
     public class ATWSInterface
     {
-        public const string serviceURL = "https://webservices.autotask.net/ATServices/1.5/atws.asmx";
-
         /// <summary>
         /// The Autotask Web Service Object.
         /// </summary>
@@ -23,6 +20,25 @@ namespace AutotaskNET
         /// </value>
         public bool HasAuthenticated { get; internal set; } = false;
 
+
+        public int? ImpersonateAsResourceID
+        {
+            set
+            {
+                if (value.HasValue)
+                {
+                    this._atws.AutotaskIntegrationsValue.ImpersonateAsResourceID = value.Value;
+                    this._atws.AutotaskIntegrationsValue.ImpersonateAsResourceIDSpecified = true;
+                }
+                else
+                {
+                    this._atws.AutotaskIntegrationsValue.ImpersonateAsResourceID = 0;
+                    this._atws.AutotaskIntegrationsValue.ImpersonateAsResourceIDSpecified = false;
+                }
+            }
+        }
+
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ATWSInterface"/> class.
         /// </summary>
@@ -32,21 +48,20 @@ namespace AutotaskNET
         /// Connects using the specified username and password.
         /// </summary>
         /// <param name="username">The username.</param>
-        /// <param name="password">The password.</param>
+        /// <param name="trackingId">The tracking id.</param>
+        /// <param name="resourceId">The resource id.</param>
         /// <exception cref="AutotaskNETException">Error getting zone information.</exception>
-        public void Connect(string username, string password)
+        public void Connect(string username, string trackingId, int? resourceId = null)
         {
-            this._atws = new net.autotask.webservices.ATWS() { Url = ATWSInterface.serviceURL };
+            //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
+            this._atws = new net.autotask.webservices.ATWS() { Url = Properties.Settings.Default.Autotask_Net_Webservices_ATWS };
             net.autotask.webservices.ATWSZoneInfo zoneInfo = this._atws.getZoneInfo(username);
             if (zoneInfo.ErrorCode >= 0)
             {
                 this._atws = new net.autotask.webservices.ATWS() { Url = zoneInfo.URL };
-                CredentialCache _cache = new CredentialCache
-                {
-                    { new Uri(this._atws.Url), "BASIC", new NetworkCredential(username, password) }
-                };
-                this._atws.Credentials = _cache;
+                this._atws.AutotaskIntegrationsValue.IntegrationCode = trackingId;
+                this.ImpersonateAsResourceID = resourceId;
                 this.HasAuthenticated = true;
             }
             else
@@ -54,7 +69,6 @@ namespace AutotaskNET
                 throw new AutotaskNETException("Error getting zone information.");
             }
         }
-        
 
 
 
