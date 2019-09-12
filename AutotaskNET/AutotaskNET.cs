@@ -124,9 +124,12 @@ namespace AutotaskNET
                     query.Append("</query>");
                     query.Append("</queryxml>");
 
+
+                    //Console.WriteLine(query.ToString());
+
                     //submit query
                     net.autotask.webservices.ATWSResponse response = this._atws.query(query.ToString());
-
+                    
                     //parse response
                     if (response.ReturnCode > 0 && response.EntityResults.Length > 0)
                     {
@@ -216,7 +219,7 @@ namespace AutotaskNET
 
                 //create entity
                 net.autotask.webservices.ATWSResponse resp = this._atws.create(new net.autotask.webservices.Entity[] { typedEntity });
-                if (resp.Errors.Length > 0 && resp.EntityReturnInfoResults.Length > 0)
+                if (resp.Errors.Length > 0 && resp.EntityReturnInfoResults.Length <= 0)
                 {
                     throw new AutotaskNETException(string.Join("\r\n", resp.Errors.Select(r => r.Message)));
                 }
@@ -257,7 +260,7 @@ namespace AutotaskNET
 
                 //update entity
                 net.autotask.webservices.ATWSResponse resp = this._atws.update(new net.autotask.webservices.Entity[] { typedEntity });
-                if (resp.Errors.Length > 0 && resp.EntityReturnInfoResults.Length > 0)
+                if (resp.Errors.Length > 0 && resp.EntityReturnInfoResults.Length <= 0)
                 {
                     throw new AutotaskNETException(string.Join("\r\n", resp.Errors.Select(r => r.Message)));
                 }

@@ -27,8 +27,8 @@ namespace AutotaskTEST
                 
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tConnected.");
                 Console.WriteLine();
-                
 
+                
                 #region Accounts
                 
                 //Account Locations
@@ -146,7 +146,7 @@ namespace AutotaskTEST
 
                 #endregion //Contacts
 
-
+                
                 /*
 
                 //Entity Information
