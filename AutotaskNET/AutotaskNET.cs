@@ -8,8 +8,6 @@ namespace AutotaskNET
 {
     public class ATWSInterface
     {
-        public const string serviceURL = "https://webservices.autotask.net/ATServices/1.5/atws.asmx";
-
         /// <summary>
         /// The Autotask Web Service Object.
         /// </summary>
@@ -36,7 +34,7 @@ namespace AutotaskNET
         /// <exception cref="AutotaskNETException">Error getting zone information.</exception>
         public void Connect(string username, string password)
         {
-            this._atws = new net.autotask.webservices.ATWS() { Url = ATWSInterface.serviceURL };
+            this._atws = new net.autotask.webservices.ATWS() { Url = Properties.Settings.Default.Autotask_Net_Webservices_ATWS };
 
             net.autotask.webservices.ATWSZoneInfo zoneInfo = this._atws.getZoneInfo(username);
             if (zoneInfo.ErrorCode >= 0)
