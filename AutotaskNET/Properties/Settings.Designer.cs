@@ -22,5 +22,15 @@ namespace AutotaskNET.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://webservices.autotask.net/ATServices/1.6/atws.asmx")]
+        public string Autotask_Net_Webservices_ATWS {
+            get {
+                return ((string)(this["Autotask_Net_Webservices_ATWS"]));
+            }
+        }
     }
 }

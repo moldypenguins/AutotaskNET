@@ -10,9 +10,10 @@ namespace AutotaskTEST
     class Program
     {
         private const string @USERNAME = "api.user@domain.com";
-        private const string @PASSWORD = "P@ssw0rd";
+        private const string @TRACKINGID = "HV7Y7NC2NCB7647CNCCBC8744CN";
         private const int @ACCOUNTID = 0;
         private const string @PHONENUMBER = "123-555-1234";
+        private const string @IMPERSONATEUSER = "32423244";
 
         static void Main(string[] args)
         {
@@ -23,7 +24,7 @@ namespace AutotaskTEST
 
             try
             {
-                atAPI.Connect(@USERNAME, @PASSWORD);
+                atAPI.Connect(@USERNAME, @TRACKINGID);
                 
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tConnected.");
                 Console.WriteLine();

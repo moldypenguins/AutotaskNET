@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://autotask.net/ATWS/v1_5/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" targetNamespace="http://autotask.net/ATWS/v1_5/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://autotask.net/ATWS/v1_6/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" targetNamespace="http://autotask.net/ATWS/v1_6/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
-    <s:schema elementFormDefault="qualified" targetNamespace="http://autotask.net/ATWS/v1_5/">
+    <s:schema elementFormDefault="qualified" targetNamespace="http://autotask.net/ATWS/v1_6/">
       <s:element name="GetAttachment">
         <s:complexType>
           <s:sequence>
@@ -448,6 +448,7 @@
               <s:element minOccurs="0" maxOccurs="1" name="ContractID" />
               <s:element minOccurs="0" maxOccurs="1" name="ProjectID" />
               <s:element minOccurs="0" maxOccurs="1" name="TicketID" />
+              <s:element minOccurs="0" maxOccurs="1" name="InternalCurrencyUnitCost" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -483,6 +484,7 @@
               <s:element minOccurs="0" maxOccurs="1" name="ShowEachTaxInGroup" />
               <s:element minOccurs="0" maxOccurs="1" name="LatestEstimatedArrivalDate" />
               <s:element minOccurs="0" maxOccurs="1" name="UseItemDescriptionsFrom" />
+              <s:element minOccurs="0" maxOccurs="1" name="InternalCurrencyFreight" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -618,6 +620,8 @@
               <s:element minOccurs="0" maxOccurs="1" name="SemiannualCost" />
               <s:element minOccurs="0" maxOccurs="1" name="SemiannualRevenue" />
               <s:element minOccurs="0" maxOccurs="1" name="BusinessDivisionSubdivisionID" />
+              <s:element minOccurs="0" maxOccurs="1" name="OpportunityCategoryID" />
+              <s:element minOccurs="0" maxOccurs="1" name="LostDate" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -820,6 +824,9 @@
               <s:element minOccurs="0" maxOccurs="1" name="LastActivityDate" />
               <s:element minOccurs="0" maxOccurs="1" name="Title" />
               <s:element minOccurs="0" maxOccurs="1" name="Description" />
+              <s:element minOccurs="0" maxOccurs="1" name="ImpersonatorCreatorResourceID" />
+              <s:element minOccurs="0" maxOccurs="1" name="ImpersonatorUpdaterResourceID" />
+              <s:element minOccurs="0" maxOccurs="1" name="CreateDateTime" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -890,6 +897,8 @@
               <s:element minOccurs="0" maxOccurs="1" name="BillingApprovalDateTime" />
               <s:element minOccurs="0" maxOccurs="1" name="ContractServiceID" />
               <s:element minOccurs="0" maxOccurs="1" name="ContractServiceBundleID" />
+              <s:element minOccurs="0" maxOccurs="1" name="ImpersonatorCreatorResourceID" />
+              <s:element minOccurs="0" maxOccurs="1" name="ImpersonatorUpdaterResourceID" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -1008,6 +1017,7 @@
               <s:element minOccurs="0" maxOccurs="1" name="CompletedByType" />
               <s:element minOccurs="0" maxOccurs="1" name="LastActivityResourceID" />
               <s:element minOccurs="0" maxOccurs="1" name="LastActivityPersonType" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountPhysicalLocationID" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -1037,6 +1047,8 @@
               <s:element minOccurs="0" maxOccurs="1" name="CostAllocationCodeID" />
               <s:element minOccurs="0" maxOccurs="1" name="DoesNotRequireProcurement" />
               <s:element minOccurs="0" maxOccurs="1" name="InternalProductID" />
+              <s:element minOccurs="0" maxOccurs="1" name="BillingType" />
+              <s:element minOccurs="0" maxOccurs="1" name="PriceCostMethod" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -1262,6 +1274,10 @@
               <s:element minOccurs="0" maxOccurs="1" name="LastActivityPersonType" />
               <s:element minOccurs="0" maxOccurs="1" name="LastActivityResourceID" />
               <s:element minOccurs="0" maxOccurs="1" name="ServiceLevelAgreementPausedNextEventHours" />
+              <s:element minOccurs="0" maxOccurs="1" name="CurrentServiceThermometerRating" />
+              <s:element minOccurs="0" maxOccurs="1" name="PreviousServiceThermometerRating" />
+              <s:element minOccurs="0" maxOccurs="1" name="ServiceThermometerTemperature" />
+              <s:element minOccurs="0" maxOccurs="1" name="ApiVendorID" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -1311,6 +1327,7 @@
               <s:element minOccurs="0" maxOccurs="1" name="AccountPhysicalLocationID" />
               <s:element minOccurs="0" maxOccurs="1" name="SolicitationOptOut" />
               <s:element minOccurs="0" maxOccurs="1" name="SolicitationOptOutTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="ApiVendorID" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -1326,6 +1343,9 @@
               <s:element minOccurs="0" maxOccurs="1" name="Publish" />
               <s:element minOccurs="0" maxOccurs="1" name="TicketID" />
               <s:element minOccurs="0" maxOccurs="1" name="Title" />
+              <s:element minOccurs="0" maxOccurs="1" name="ImpersonatorCreatorResourceID" />
+              <s:element minOccurs="0" maxOccurs="1" name="ImpersonatorUpdaterResourceID" />
+              <s:element minOccurs="0" maxOccurs="1" name="CreateDateTime" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -1345,6 +1365,9 @@
               <s:element minOccurs="0" maxOccurs="1" name="Name" />
               <s:element minOccurs="0" maxOccurs="1" name="Note" />
               <s:element minOccurs="0" maxOccurs="1" name="LastModifiedDate" />
+              <s:element minOccurs="0" maxOccurs="1" name="ImpersonatorCreatorResourceID" />
+              <s:element minOccurs="0" maxOccurs="1" name="ImpersonatorUpdaterResourceID" />
+              <s:element minOccurs="0" maxOccurs="1" name="CreateDateTime" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -1439,6 +1462,8 @@
               <s:element minOccurs="0" maxOccurs="1" name="CurrencyID" />
               <s:element minOccurs="0" maxOccurs="1" name="BillToAccountPhysicalLocationID" />
               <s:element minOccurs="0" maxOccurs="1" name="SurveyAccountRating" />
+              <s:element minOccurs="0" maxOccurs="1" name="CreatedByResourceID" />
+              <s:element minOccurs="0" maxOccurs="1" name="ApiVendorID" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -1487,6 +1512,9 @@
               <s:element minOccurs="0" maxOccurs="1" name="InternalCurrencyOverageBillingRate" />
               <s:element minOccurs="0" maxOccurs="1" name="InternalCurrencySetupFee" />
               <s:element minOccurs="0" maxOccurs="1" name="BusinessDivisionSubdivisionID" />
+              <s:element minOccurs="0" maxOccurs="1" name="BillToAccountID" />
+              <s:element minOccurs="0" maxOccurs="1" name="BillToAccountContactID" />
+              <s:element minOccurs="0" maxOccurs="1" name="ContractExclusionSetID" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -1546,33 +1574,33 @@
               <s:element minOccurs="0" maxOccurs="1" name="ContractServiceBundleID" />
               <s:element minOccurs="0" maxOccurs="1" name="ServiceLevelAgreementID" />
               <s:element minOccurs="0" maxOccurs="1" name="AccountPhysicalLocationID" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceID" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceUID" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceAuditArchitectureID" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceAuditDescription" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceAuditDisplayAdaptorID" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceAuditDomainID" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceAuditExternalIPAddress" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceAuditHostname" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceAuditIPAddress" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceAuditMacAddress" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceAuditManufacturerID" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceAuditMemoryBytes" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceAuditModelID" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceAuditMotherboardID" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceAuditOperatingSystem" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceAuditProcessorID" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceAuditServicePackID" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceAuditStorageBytes" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceAuditDeviceTypeID" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceAuditSNMPLocation" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceAuditSNMPName" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceAuditSNMPContact" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceAuditMobileNetworkOperatorID" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceAuditMobileNumber" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceAuditMissingPatchCount" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMOpenAlertCount" />
-              <s:element minOccurs="0" maxOccurs="1" name="AEMDeviceAuditLastUser" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceID" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceUID" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditArchitectureID" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditDescription" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditDisplayAdaptorID" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditDomainID" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditExternalIPAddress" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditHostname" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditIPAddress" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditMacAddress" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditManufacturerID" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditMemoryBytes" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditModelID" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditMotherboardID" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditOperatingSystem" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditProcessorID" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditServicePackID" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditStorageBytes" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditDeviceTypeID" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditSNMPLocation" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditSNMPName" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditSNMPContact" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditMobileNetworkOperatorID" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditMobileNumber" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditMissingPatchCount" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMOpenAlertCount" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditLastUser" />
               <s:element minOccurs="0" maxOccurs="1" name="DattoSerialNumber" />
               <s:element minOccurs="0" maxOccurs="1" name="DattoInternalIP" />
               <s:element minOccurs="0" maxOccurs="1" name="DattoRemoteIP" />
@@ -1593,6 +1621,15 @@
               <s:element minOccurs="0" maxOccurs="1" name="DattoDrivesErrors" />
               <s:element minOccurs="0" maxOccurs="1" name="DattoNumberOfVolumes" />
               <s:element minOccurs="0" maxOccurs="1" name="DattoLastCheckInDateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditAntivirusStatusID" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditBackupStatusID" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditPatchStatusID" />
+              <s:element minOccurs="0" maxOccurs="1" name="RMMDeviceAuditSoftwareStatusID" />
+              <s:element minOccurs="0" maxOccurs="1" name="LastActivityPersonID" />
+              <s:element minOccurs="0" maxOccurs="1" name="LastActivityPersonType" />
+              <s:element minOccurs="0" maxOccurs="1" name="CreatedByPersonID" />
+              <s:element minOccurs="0" maxOccurs="1" name="ApiVendorID" />
+              <s:element minOccurs="0" maxOccurs="1" name="DeviceNetworkingID" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -1694,6 +1731,7 @@
               <s:element minOccurs="0" maxOccurs="1" name="InternalCost" />
               <s:element minOccurs="0" maxOccurs="1" name="HireDate" />
               <s:element minOccurs="0" maxOccurs="1" name="SurveyResourceRating" />
+              <s:element minOccurs="0" maxOccurs="1" name="LicenseType" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -1712,7 +1750,6 @@
               <s:element minOccurs="0" maxOccurs="1" name="TotalAmount" />
               <s:element minOccurs="0" maxOccurs="1" name="OurCost" />
               <s:element minOccurs="0" maxOccurs="1" name="ItemDate" />
-              <s:element minOccurs="0" maxOccurs="1" name="ApprovedTime" />
               <s:element minOccurs="0" maxOccurs="1" name="InvoiceID" />
               <s:element minOccurs="0" maxOccurs="1" name="ItemApproverID" />
               <s:element minOccurs="0" maxOccurs="1" name="AccountID" />
@@ -1745,6 +1782,8 @@
               <s:element minOccurs="0" maxOccurs="1" name="InternalCurrencyTaxDollars" />
               <s:element minOccurs="0" maxOccurs="1" name="InternalCurrencyTotalAmount" />
               <s:element minOccurs="0" maxOccurs="1" name="BusinessDivisionSubdivisionID" />
+              <s:element minOccurs="0" maxOccurs="1" name="PostedOnTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="PostedDate" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -1837,6 +1876,9 @@
               <s:element minOccurs="0" maxOccurs="1" name="Publish" />
               <s:element minOccurs="0" maxOccurs="1" name="TaskID" />
               <s:element minOccurs="0" maxOccurs="1" name="Title" />
+              <s:element minOccurs="0" maxOccurs="1" name="ImpersonatorCreatorResourceID" />
+              <s:element minOccurs="0" maxOccurs="1" name="ImpersonatorUpdaterResourceID" />
+              <s:element minOccurs="0" maxOccurs="1" name="CreateDateTime" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -1853,6 +1895,9 @@
               <s:element minOccurs="0" maxOccurs="1" name="ProjectID" />
               <s:element minOccurs="0" maxOccurs="1" name="Title" />
               <s:element minOccurs="0" maxOccurs="1" name="Announce" />
+              <s:element minOccurs="0" maxOccurs="1" name="ImpersonatorCreatorResourceID" />
+              <s:element minOccurs="0" maxOccurs="1" name="ImpersonatorUpdaterResourceID" />
+              <s:element minOccurs="0" maxOccurs="1" name="CreateDateTime" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -1899,6 +1944,7 @@
               <s:element minOccurs="0" maxOccurs="1" name="InternalCurrencyUnitPrice" />
               <s:element minOccurs="0" maxOccurs="1" name="BusinessDivisionSubdivisionID" />
               <s:element minOccurs="0" maxOccurs="1" name="ContractID" />
+              <s:element minOccurs="0" maxOccurs="1" name="Notes" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -1934,6 +1980,7 @@
               <s:element minOccurs="0" maxOccurs="1" name="BusinessDivisionSubdivisionID" />
               <s:element minOccurs="0" maxOccurs="1" name="ProjectID" />
               <s:element minOccurs="0" maxOccurs="1" name="EstimatedCost" />
+              <s:element minOccurs="0" maxOccurs="1" name="Notes" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -1992,6 +2039,7 @@
               <s:element minOccurs="0" maxOccurs="1" name="InternalCurrencyUnitPrice" />
               <s:element minOccurs="0" maxOccurs="1" name="BusinessDivisionSubdivisionID" />
               <s:element minOccurs="0" maxOccurs="1" name="TicketID" />
+              <s:element minOccurs="0" maxOccurs="1" name="Notes" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -2517,6 +2565,7 @@
               <s:element minOccurs="0" maxOccurs="1" name="Active" />
               <s:element minOccurs="0" maxOccurs="1" name="DisplayColorRGB" />
               <s:element minOccurs="0" maxOccurs="1" name="GlobalDefault" />
+              <s:element minOccurs="0" maxOccurs="1" name="ApiOnly" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -2613,6 +2662,185 @@
               <s:element minOccurs="0" maxOccurs="1" name="RoleID" />
               <s:element minOccurs="0" maxOccurs="1" name="Active" />
               <s:element minOccurs="0" maxOccurs="1" name="Default" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ContactGroup">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Entity">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Name" />
+              <s:element minOccurs="0" maxOccurs="1" name="Active" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ContactGroupContact">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Entity">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ContactGroupID" />
+              <s:element minOccurs="0" maxOccurs="1" name="ContactID" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="TicketHistory">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Entity">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="TicketID" />
+              <s:element minOccurs="0" maxOccurs="1" name="Action" />
+              <s:element minOccurs="0" maxOccurs="1" name="Detail" />
+              <s:element minOccurs="0" maxOccurs="1" name="ResourceID" />
+              <s:element minOccurs="0" maxOccurs="1" name="Date" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="TicketAdditionalInstalledProduct">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Entity">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="TicketID" />
+              <s:element minOccurs="0" maxOccurs="1" name="InstalledProductID" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ChecklistLibrary">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Entity">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Name" />
+              <s:element minOccurs="0" maxOccurs="1" name="Description" />
+              <s:element minOccurs="0" maxOccurs="1" name="EntityType" />
+              <s:element minOccurs="0" maxOccurs="1" name="Active" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ChecklistLibraryChecklistItem">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Entity">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ItemName" />
+              <s:element minOccurs="0" maxOccurs="1" name="Important" />
+              <s:element minOccurs="0" maxOccurs="1" name="KnowledgebaseArticleID" />
+              <s:element minOccurs="0" maxOccurs="1" name="Position" />
+              <s:element minOccurs="0" maxOccurs="1" name="ChecklistLibraryID" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="TicketChecklistLibrary">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Entity">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="TicketID" />
+              <s:element minOccurs="0" maxOccurs="1" name="ChecklistLibraryID" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ContractExclusionSet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Entity">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Name" />
+              <s:element minOccurs="0" maxOccurs="1" name="Description" />
+              <s:element minOccurs="0" maxOccurs="1" name="Active" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ContractExclusionSetExcludedWorkType">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Entity">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ContractExclusionSetID" />
+              <s:element minOccurs="0" maxOccurs="1" name="ExcludedWorkTypeID" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ContractExclusionSetExcludedRole">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Entity">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ContractExclusionSetID" />
+              <s:element minOccurs="0" maxOccurs="1" name="ExcludedRoleID" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ContractBillingRule">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Entity">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="InvoiceDescription" />
+              <s:element minOccurs="0" maxOccurs="1" name="ContractID" />
+              <s:element minOccurs="0" maxOccurs="1" name="ProductID" />
+              <s:element minOccurs="0" maxOccurs="1" name="Active" />
+              <s:element minOccurs="0" maxOccurs="1" name="StartDate" />
+              <s:element minOccurs="0" maxOccurs="1" name="EndDate" />
+              <s:element minOccurs="0" maxOccurs="1" name="DetermineUnits" />
+              <s:element minOccurs="0" maxOccurs="1" name="MinimumUnits" />
+              <s:element minOccurs="0" maxOccurs="1" name="MaximumUnits" />
+              <s:element minOccurs="0" maxOccurs="1" name="CreateChargesAsBillable" />
+              <s:element minOccurs="0" maxOccurs="1" name="IncludeItemsInChargeDescription" />
+              <s:element minOccurs="0" maxOccurs="1" name="EnableDailyProrating" />
+              <s:element minOccurs="0" maxOccurs="1" name="DailyProratedCost" />
+              <s:element minOccurs="0" maxOccurs="1" name="DailyProratedPrice" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ContactBillingProductAssociation">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Entity">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ContactID" />
+              <s:element minOccurs="0" maxOccurs="1" name="BillingProductID" />
+              <s:element minOccurs="0" maxOccurs="1" name="EffectiveDate" />
+              <s:element minOccurs="0" maxOccurs="1" name="ExpirationDate" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="InstalledProductBillingProductAssociation">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Entity">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="InstalledProductID" />
+              <s:element minOccurs="0" maxOccurs="1" name="BillingProductID" />
+              <s:element minOccurs="0" maxOccurs="1" name="EffectiveDate" />
+              <s:element minOccurs="0" maxOccurs="1" name="ExpirationDate" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ProductTier">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Entity">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ProductID" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpToUnitCount" />
+              <s:element minOccurs="0" maxOccurs="1" name="UnitCost" />
+              <s:element minOccurs="0" maxOccurs="1" name="UnitPrice" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="PriceListProductTier">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Entity">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ProductTierID" />
+              <s:element minOccurs="0" maxOccurs="1" name="CurrencyID" />
+              <s:element minOccurs="0" maxOccurs="1" name="UsesInternalCurrencyPrice" />
+              <s:element minOccurs="0" maxOccurs="1" name="UnitPrice" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -2740,6 +2968,7 @@
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="PartnerID" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="IntegrationCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImpersonateAsResourceID" type="s:int" />
         </s:sequence>
         <s:anyAttribute />
       </s:complexType>
@@ -2970,32 +3199,32 @@
   </wsdl:message>
   <wsdl:portType name="ATWSSoap">
     <wsdl:operation name="GetAttachment">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Attachment function, returns file attachment info for version 1.5</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Attachment function, returns file attachment info for version 1.6</wsdl:documentation>
       <wsdl:input message="tns:GetAttachmentSoapIn" />
       <wsdl:output message="tns:GetAttachmentSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="CreateAttachment">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create Attachment function for version 1.5</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create Attachment function for version 1.6</wsdl:documentation>
       <wsdl:input message="tns:CreateAttachmentSoapIn" />
       <wsdl:output message="tns:CreateAttachmentSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="DeleteAttachment">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete Attachment function for version 1.5</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete Attachment function for version 1.6</wsdl:documentation>
       <wsdl:input message="tns:DeleteAttachmentSoapIn" />
       <wsdl:output message="tns:DeleteAttachmentSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="getEntityInfo">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Default EntityInfo function, returns entity info for version 1.5</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Default EntityInfo function, returns entity info for version 1.6</wsdl:documentation>
       <wsdl:input name="GetEntityInfo" message="tns:GetEntityInfoSoapIn" />
       <wsdl:output name="GetEntityInfo" message="tns:GetEntityInfoSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetFieldInfo">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Default GetFieldInfo function, returns information for version 1.5</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Default GetFieldInfo function, returns information for version 1.6</wsdl:documentation>
       <wsdl:input message="tns:GetFieldInfoSoapIn" />
       <wsdl:output message="tns:GetFieldInfoSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="getUDFInfo">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Default GetUDFInfo function, returns information for version 1.5</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Default GetUDFInfo function, returns information for version 1.6</wsdl:documentation>
       <wsdl:input message="tns:getUDFInfoSoapIn" />
       <wsdl:output message="tns:getUDFInfoSoapOut" />
     </wsdl:operation>
@@ -3043,7 +3272,7 @@
   <wsdl:binding name="ATWSSoap" type="tns:ATWSSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetAttachment">
-      <soap:operation soapAction="http://autotask.net/ATWS/v1_5/GetAttachment" style="document" />
+      <soap:operation soapAction="http://autotask.net/ATWS/v1_6/GetAttachment" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:GetAttachmentAutotaskIntegrations" part="AutotaskIntegrations" use="literal" />
@@ -3053,7 +3282,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateAttachment">
-      <soap:operation soapAction="http://autotask.net/ATWS/v1_5/CreateAttachment" style="document" />
+      <soap:operation soapAction="http://autotask.net/ATWS/v1_6/CreateAttachment" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:CreateAttachmentAutotaskIntegrations" part="AutotaskIntegrations" use="literal" />
@@ -3063,7 +3292,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeleteAttachment">
-      <soap:operation soapAction="http://autotask.net/ATWS/v1_5/DeleteAttachment" style="document" />
+      <soap:operation soapAction="http://autotask.net/ATWS/v1_6/DeleteAttachment" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:DeleteAttachmentAutotaskIntegrations" part="AutotaskIntegrations" use="literal" />
@@ -3073,7 +3302,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getEntityInfo">
-      <soap:operation soapAction="http://autotask.net/ATWS/v1_5/GetEntityInfo" style="document" />
+      <soap:operation soapAction="http://autotask.net/ATWS/v1_6/GetEntityInfo" style="document" />
       <wsdl:input name="GetEntityInfo">
         <soap:body use="literal" />
         <soap:header message="tns:GetEntityInfoAutotaskIntegrations" part="AutotaskIntegrations" use="literal" />
@@ -3083,7 +3312,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetFieldInfo">
-      <soap:operation soapAction="http://autotask.net/ATWS/v1_5/GetFieldInfo" style="document" />
+      <soap:operation soapAction="http://autotask.net/ATWS/v1_6/GetFieldInfo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:GetFieldInfoAutotaskIntegrations" part="AutotaskIntegrations" use="literal" />
@@ -3093,7 +3322,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getUDFInfo">
-      <soap:operation soapAction="http://autotask.net/ATWS/v1_5/getUDFInfo" style="document" />
+      <soap:operation soapAction="http://autotask.net/ATWS/v1_6/getUDFInfo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:getUDFInfoAutotaskIntegrations" part="AutotaskIntegrations" use="literal" />
@@ -3103,7 +3332,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="query">
-      <soap:operation soapAction="http://autotask.net/ATWS/v1_5/query" style="document" />
+      <soap:operation soapAction="http://autotask.net/ATWS/v1_6/query" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:queryAutotaskIntegrations" part="AutotaskIntegrations" use="literal" />
@@ -3113,7 +3342,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="create">
-      <soap:operation soapAction="http://autotask.net/ATWS/v1_5/create" style="document" />
+      <soap:operation soapAction="http://autotask.net/ATWS/v1_6/create" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:createAutotaskIntegrations" part="AutotaskIntegrations" use="literal" />
@@ -3123,7 +3352,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="update">
-      <soap:operation soapAction="http://autotask.net/ATWS/v1_5/update" style="document" />
+      <soap:operation soapAction="http://autotask.net/ATWS/v1_6/update" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:updateAutotaskIntegrations" part="AutotaskIntegrations" use="literal" />
@@ -3133,7 +3362,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="delete">
-      <soap:operation soapAction="http://autotask.net/ATWS/v1_5/delete" style="document" />
+      <soap:operation soapAction="http://autotask.net/ATWS/v1_6/delete" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:deleteAutotaskIntegrations" part="AutotaskIntegrations" use="literal" />
@@ -3143,7 +3372,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getZoneInfo">
-      <soap:operation soapAction="http://autotask.net/ATWS/v1_5/getZoneInfo" style="document" />
+      <soap:operation soapAction="http://autotask.net/ATWS/v1_6/getZoneInfo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3152,7 +3381,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getThresholdAndUsageInfo">
-      <soap:operation soapAction="http://autotask.net/ATWS/v1_5/getThresholdAndUsageInfo" style="document" />
+      <soap:operation soapAction="http://autotask.net/ATWS/v1_6/getThresholdAndUsageInfo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:getThresholdAndUsageInfoAutotaskIntegrations" part="AutotaskIntegrations" use="literal" />
@@ -3162,7 +3391,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetWsdlVersion">
-      <soap:operation soapAction="http://autotask.net/ATWS/v1_5/GetWsdlVersion" style="document" />
+      <soap:operation soapAction="http://autotask.net/ATWS/v1_6/GetWsdlVersion" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:GetWsdlVersionAutotaskIntegrations" part="AutotaskIntegrations" use="literal" />
@@ -3172,7 +3401,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetInvoiceMarkup">
-      <soap:operation soapAction="http://autotask.net/ATWS/v1_5/GetInvoiceMarkup" style="document" />
+      <soap:operation soapAction="http://autotask.net/ATWS/v1_6/GetInvoiceMarkup" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:GetInvoiceMarkupAutotaskIntegrations" part="AutotaskIntegrations" use="literal" />
@@ -3183,9 +3412,9 @@
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="ATWS">
-    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Autotask Web Services Version 1.5</wsdl:documentation>
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Autotask Web Services Version 1.6</wsdl:documentation>
     <wsdl:port name="ATWSSoap" binding="tns:ATWSSoap">
-      <soap:address location="https://webservices.autotask.net/ATServices/1.5/atws.asmx" />
+      <soap:address location="https://webservices.autotask.net/ATServices/1.6/atws.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
