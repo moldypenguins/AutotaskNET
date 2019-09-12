@@ -27,15 +27,15 @@ namespace AutotaskNET.Entities
 
         } //end ClientPortalUser(net.autotask.webservices.ClientPortalUser entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.ClientPortalUser(ClientPortalUser clientportaluser)
         {
             return new net.autotask.webservices.ClientPortalUser()
             {
-                id = this.id,
+                id = clientportaluser.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.ClientPortalUser(ClientPortalUser clientportaluser)
 
         #endregion //Constructors
 

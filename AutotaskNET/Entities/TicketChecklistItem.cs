@@ -26,15 +26,15 @@ namespace AutotaskNET.Entities
 
         } //end Account(net.autotask.webservices.Account entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.TicketChecklistItem(TicketChecklistItem ticketchecklistitem)
         {
             return new net.autotask.webservices.TicketChecklistItem()
             {
-                id = this.id,
+                id = ticketchecklistitem.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.TicketChecklistItem(TicketChecklistItem ticketchecklistitem)
 
         #endregion //Constructors
 

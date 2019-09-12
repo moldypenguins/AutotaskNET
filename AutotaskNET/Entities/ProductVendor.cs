@@ -30,15 +30,15 @@ namespace AutotaskNET.Entities
 
         } //end ProductVendor(net.autotask.webservices.ProductVendor entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.ProductVendor(ProductVendor productvendor)
         {
             return new net.autotask.webservices.ProductVendor()
             {
-                id = this.id,
+                id = productvendor.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.ProductVendor(ProductVendor productvendor)
 
         #endregion //Constructors
 

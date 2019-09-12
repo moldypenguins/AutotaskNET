@@ -28,15 +28,15 @@ namespace AutotaskNET.Entities
 
         } //end ServiceCallTicket(net.autotask.webservices.ServiceCallTicket entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.ServiceCallTicket(ServiceCallTicket servicecallticket)
         {
             return new net.autotask.webservices.ServiceCallTicket()
             {
-                id = this.id,
+                id = servicecallticket.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.ServiceCallTicket(ServiceCallTicket servicecallticket)
 
         #endregion //Constructors
 

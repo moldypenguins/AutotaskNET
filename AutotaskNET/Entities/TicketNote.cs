@@ -35,15 +35,21 @@ namespace AutotaskNET.Entities
 
         } //end TicketNote(net.autotask.webservices.TicketNote entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.TicketNote(TicketNote ticketnote)
         {
             return new net.autotask.webservices.TicketNote()
             {
-                id = this.id,
-
+                id = ticketnote.id,
+                CreatorResourceID = ticketnote.CreatorResourceID,
+                Description = ticketnote.Description,
+                LastActivityDate = ticketnote.LastActivityDate,
+                NoteType = ticketnote.NoteType,
+                Publish = ticketnote.Publish,
+                TicketID = ticketnote.TicketID,
+                Title = ticketnote.Title
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.TicketNote(TicketNote ticketnote)
 
         #endregion //Constructors
 

@@ -31,15 +31,15 @@ namespace AutotaskNET.Entities
 
         } //end WorkTypeModifier(net.autotask.webservices.WorkTypeModifier entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.WorkTypeModifier(WorkTypeModifier worktypemodifier)
         {
             return new net.autotask.webservices.WorkTypeModifier()
             {
-                id = this.id,
+                id = worktypemodifier.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.WorkTypeModifier(WorkTypeModifier worktypemodifier)
 
         #endregion //Constructors
 

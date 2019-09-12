@@ -31,27 +31,27 @@ namespace AutotaskNET.Entities
             this.ActivityDescription = entity.ActivityDescription == null ? default(string) : entity.ActivityDescription.ToString();
             this.AssignedToResourceID = long.Parse(entity.AssignedToResourceID.ToString());
             this.CompletedDate = entity.CompletedDate == null ? default(DateTime?) : DateTime.Parse(entity.CompletedDate.ToString());
-            this.ContactID = long.Parse(entity.ContactID.ToString());
-            this.ContractID = long.Parse(entity.ContractID.ToString());
+            this.ContactID = entity.ContactID == null ? default(long?) : long.Parse(entity.ContactID.ToString());
+            this.ContractID = entity.ContractID == null ? default(long?) : long.Parse(entity.ContractID.ToString());
             this.CreateDateTime = entity.CreateDateTime == null ? default(DateTime?) : DateTime.Parse(entity.CreateDateTime.ToString());
-            this.CreatorResourceID = long.Parse(entity.CreatorResourceID.ToString());
+            this.CreatorResourceID = entity.CreatorResourceID == null ? default(long?) : long.Parse(entity.CreatorResourceID.ToString());
             this.EndDateTime = DateTime.Parse(entity.EndDateTime.ToString());
             this.LastModifiedDate = entity.LastModifiedDate == null ? default(DateTime?) : DateTime.Parse(entity.LastModifiedDate.ToString());
-            this.OpportunityID = long.Parse(entity.OpportunityID.ToString());
+            this.OpportunityID = entity.OpportunityID == null ? default(long?) : long.Parse(entity.OpportunityID.ToString());
             this.StartDateTime = DateTime.Parse(entity.StartDateTime.ToString()); ;
-            this.TicketID = long.Parse(entity.TicketID.ToString());
+            this.TicketID = entity.TicketID == null ? default(long?) : long.Parse(entity.TicketID.ToString());
 
         } //end AccountToDo(net.autotask.webservices.AccountToDo entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.AccountToDo(AccountToDo accounttodo)
         {
             return new net.autotask.webservices.AccountToDo()
             {
-                id = this.id,
+                id = accounttodo.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.AccountToDo(AccountToDo accounttodo)
 
         #endregion //Constructors
 
@@ -60,7 +60,7 @@ namespace AutotaskNET.Entities
         #region ReadOnly Fields
 
         public DateTime? CreateDateTime; //ReadOnly
-        public long CreatorResourceID; //ReadOnly [Resource]
+        public long? CreatorResourceID; //ReadOnly [Resource]
         public DateTime? LastModifiedDate; //ReadOnly
 
         #endregion //ReadOnly Fields
@@ -77,10 +77,10 @@ namespace AutotaskNET.Entities
 
         #region Optional Fields
 
-        public long ContactID; //[Contact]
-        public long OpportunityID; //[Opportunity]
-        public long TicketID; //[Ticket]
-        public long ContractID; //[Contract]
+        public long? ContactID; //[Contact]
+        public long? OpportunityID; //[Opportunity]
+        public long? TicketID; //[Ticket]
+        public long? ContractID; //[Contract]
         public string ActivityDescription; //Length:32000
         public DateTime? CompletedDate;
 

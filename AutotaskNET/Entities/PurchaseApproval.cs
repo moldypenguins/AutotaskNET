@@ -30,15 +30,15 @@ namespace AutotaskNET.Entities
 
         } //end Account(net.autotask.webservices.Account entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.PurchaseApproval(PurchaseApproval purchaseapproval)
         {
             return new net.autotask.webservices.PurchaseApproval()
             {
-                id = this.id,
+                id = purchaseapproval.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.PurchaseApproval(PurchaseApproval purchaseapproval)
 
         #endregion //Constructors
 

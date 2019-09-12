@@ -27,15 +27,15 @@ namespace AutotaskNET.Entities
 
         } //end BusinessLocation(net.autotask.webservices.BusinessLocation entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.BusinessLocation(BusinessLocation businesslocation)
         {
             return new net.autotask.webservices.BusinessLocation()
             {
-                id = this.id,
+                id = businesslocation.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.BusinessLocation(BusinessLocation businesslocation)
 
         #endregion //Constructors
 

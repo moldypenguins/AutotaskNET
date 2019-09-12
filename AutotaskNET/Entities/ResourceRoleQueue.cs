@@ -26,15 +26,15 @@ namespace AutotaskNET.Entities
 
         } //end ResourceRoleQueue(net.autotask.webservices.ResourceRoleQueue entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.ResourceRoleQueue(ResourceRoleQueue resourcerolequeue)
         {
             return new net.autotask.webservices.ResourceRoleQueue()
             {
-                id = this.id,
+                id = resourcerolequeue.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.ResourceRoleQueue(ResourceRoleQueue resourcerolequeue)
 
         #endregion //Constructors
 

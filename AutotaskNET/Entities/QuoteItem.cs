@@ -26,15 +26,15 @@ namespace AutotaskNET.Entities
 
         } //end QuoteItem(net.autotask.webservices.QuoteItem entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.QuoteItem(QuoteItem quoteitem)
         {
             return new net.autotask.webservices.QuoteItem()
             {
-                id = this.id,
+                id = quoteitem.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.QuoteItem(QuoteItem quoteitem)
 
         #endregion //Constructors
 

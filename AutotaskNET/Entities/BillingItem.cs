@@ -28,15 +28,15 @@ namespace AutotaskNET.Entities
 
         } //end BillingItem(net.autotask.webservices.BillingItem entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.BillingItem(BillingItem billingitem)
         {
             return new net.autotask.webservices.BillingItem()
             {
-                id = this.id,
+                id = billingitem.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.BillingItem(BillingItem billingitem)
 
         #endregion //Constructors
 

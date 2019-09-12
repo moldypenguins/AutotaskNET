@@ -31,15 +31,15 @@ namespace AutotaskNET.Entities
 
         #endregion //Constructors
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.InvoiceTemplate(InvoiceTemplate invoicetemplate)
         {
             return new net.autotask.webservices.InvoiceTemplate()
             {
-                id = this.id,
+                id = invoicetemplate.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.InvoiceTemplate(InvoiceTemplate invoicetemplate)
 
         #region Fields
 

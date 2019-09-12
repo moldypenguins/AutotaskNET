@@ -28,15 +28,15 @@ namespace AutotaskNET.Entities
 
         } //end Account(net.autotask.webservices.Account entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.ContractMilestone(ContractMilestone contractmilestone)
         {
             return new net.autotask.webservices.ContractMilestone()
             {
-                id = this.id,
+                id = contractmilestone.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.ContractMilestone(ContractMilestone contractmilestone)
 
         #endregion //Constructors
 

@@ -32,15 +32,15 @@ namespace AutotaskNET.Entities
 
         } //end ActionType(net.autotask.webservices.ActionType entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.ActionType(ActionType actiontype)
         {
             return new net.autotask.webservices.ActionType()
             {
-                id = this.id,
+                id = actiontype.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.ActionType(ActionType actiontype)
 
         #endregion //Constructors
 

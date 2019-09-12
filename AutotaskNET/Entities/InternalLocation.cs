@@ -29,15 +29,15 @@ namespace AutotaskNET.Entities
 
         } //end InternalLocation(net.autotask.webservices.InternalLocation entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.InternalLocation(InternalLocation internallocation)
         {
             return new net.autotask.webservices.InternalLocation()
             {
-                id = this.id,
+                id = internallocation.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.InternalLocation(InternalLocation internallocation)
 
         #endregion //Constructors
 

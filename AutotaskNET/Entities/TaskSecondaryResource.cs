@@ -31,15 +31,15 @@ namespace AutotaskNET.Entities
 
         } //end TaskSecondaryResource(net.autotask.webservices.TaskSecondaryResource entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.TaskSecondaryResource(TaskSecondaryResource tasksecondaryresource)
         {
             return new net.autotask.webservices.TaskSecondaryResource()
             {
-                id = this.id,
+                id = tasksecondaryresource.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.TaskSecondaryResource(TaskSecondaryResource tasksecondaryresource)
 
         #endregion //Constructors
 

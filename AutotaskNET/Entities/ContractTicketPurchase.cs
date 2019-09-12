@@ -28,15 +28,15 @@ namespace AutotaskNET.Entities
 
         } //end ContractTicketPurchase(net.autotask.webservices.ContractTicketPurchase entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.ContractTicketPurchase(ContractTicketPurchase contractticketpurchase)
         {
             return new net.autotask.webservices.ContractTicketPurchase()
             {
-                id = this.id,
+                id = contractticketpurchase.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.ContractTicketPurchase(ContractTicketPurchase contractticketpurchase)
 
         #endregion //Constructors
 

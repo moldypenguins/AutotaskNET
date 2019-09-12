@@ -26,15 +26,15 @@ namespace AutotaskNET.Entities
 
         } //end Holiday(net.autotask.webservices.Holiday entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.Holiday(Holiday holiday)
         {
             return new net.autotask.webservices.Holiday()
             {
-                id = this.id,
+                id = holiday.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.Holiday(Holiday holiday)
 
         #endregion //Constructors
 

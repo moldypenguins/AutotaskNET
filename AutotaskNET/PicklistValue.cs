@@ -10,7 +10,7 @@ namespace AutotaskNET
         public PicklistValue() { } //end PicklistValue()
         public PicklistValue(net.autotask.webservices.PickListValue pick_list_value)
         {
-            this.Value = int.Parse(pick_list_value.Value.ToString());
+            this.Value = pick_list_value.Value == null ? default(string) : pick_list_value.Value.ToString();
             this.IsActive = bool.Parse(pick_list_value.IsActive.ToString());
             this.IsDefaultValue = bool.Parse(pick_list_value.IsDefaultValue.ToString());
             this.IsSystem = bool.Parse(pick_list_value.IsSystem.ToString());
@@ -22,7 +22,7 @@ namespace AutotaskNET
 
         #region Fields
 
-        public int Value;
+        public string Value;
         public bool IsActive;
         public bool IsDefaultValue;
         public bool IsSystem;

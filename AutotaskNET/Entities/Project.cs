@@ -67,15 +67,15 @@ namespace AutotaskNET.Entities
 
         } //end Project(net.autotask.webservices.Project entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.Project(Project project)
         {
             return new net.autotask.webservices.Project()
             {
-                id = this.id,
+                id = project.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.Project(Project project)
 
         #endregion //Constructors
 

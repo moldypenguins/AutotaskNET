@@ -32,15 +32,15 @@ namespace AutotaskNET.Entities
 
         } //end TicketSecondaryResource(net.autotask.webservices.TicketSecondaryResource entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.TicketSecondaryResource(TicketSecondaryResource ticketsecondaryresource)
         {
             return new net.autotask.webservices.TicketSecondaryResource()
             {
-                id = this.id,
+                id = ticketsecondaryresource.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.TicketSecondaryResource(TicketSecondaryResource ticketsecondaryresource)
 
         #endregion //Constructors
 

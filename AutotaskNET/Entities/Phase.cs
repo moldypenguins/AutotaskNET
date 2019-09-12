@@ -28,15 +28,15 @@ namespace AutotaskNET.Entities
 
         } //end Phase(net.autotask.webservices.Phase entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.Phase(Phase phase)
         {
             return new net.autotask.webservices.Phase()
             {
-                id = this.id,
+                id = phase.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.Phase(Phase phase)
 
         #endregion //Constructors
 

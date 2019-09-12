@@ -39,23 +39,23 @@ namespace AutotaskNET.Entities
 
         } //end Role(net.autotask.webservices.Role entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.Role(Role role)
         {
             return new net.autotask.webservices.Role()
             {
-                id = this.id,
-                Active = this.Active,
-                Description = this.Description,
-                HourlyFactor = this.HourlyFactor,
-                HourlyRate = this.HourlyRate,
-                IsExcludedFromNewContracts = this.IsExcludedFromNewContracts,
-                Name = this.Name,
-                QuoteItemDefaultTaxCategoryId = this.QuoteItemDefaultTaxCategoryId,
-                RoleType = this.RoleType,
-                SystemRole = this.SystemRole
+                id = role.id,
+                Active = role.Active,
+                Description = role.Description,
+                HourlyFactor = role.HourlyFactor,
+                HourlyRate = role.HourlyRate,
+                IsExcludedFromNewContracts = role.IsExcludedFromNewContracts,
+                Name = role.Name,
+                QuoteItemDefaultTaxCategoryId = role.QuoteItemDefaultTaxCategoryId,
+                RoleType = role.RoleType,
+                SystemRole = role.SystemRole
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.Role(Role role)
 
         #endregion //Constructors
 

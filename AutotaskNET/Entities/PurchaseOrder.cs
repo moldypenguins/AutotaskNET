@@ -55,15 +55,15 @@ namespace AutotaskNET.Entities
             this.VendorInvoiceNumber = entity.VendorInvoiceNumber == null ? default(string) : entity.VendorInvoiceNumber.ToString();
         } //end PurchaseOrder(net.autotask.webservices.PurchaseOrder entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.PurchaseOrder(PurchaseOrder purchaseorder)
         {
             return new net.autotask.webservices.PurchaseOrder()
             {
-                id = this.id,
+                id = purchaseorder.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.PurchaseOrder(PurchaseOrder purchaseorder)
 
         #endregion //Constructors
 

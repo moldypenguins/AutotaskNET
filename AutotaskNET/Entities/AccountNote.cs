@@ -27,15 +27,15 @@ namespace AutotaskNET.Entities
 
         } //end AccountNote(net.autotask.webservices.AccountNote entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.AccountNote(AccountNote accountnote)
         {
             return new net.autotask.webservices.AccountNote()
             {
-                id = this.id,
+                id = accountnote.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.AccountNote(AccountNote accountnote)
 
         #endregion //Constructors
 

@@ -29,15 +29,15 @@ namespace AutotaskNET.Entities
 
         } //end Skill(net.autotask.webservices.Skill entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.Skill(Skill skill)
         {
             return new net.autotask.webservices.Skill()
             {
-                id = this.id,
+                id = skill.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.Skill(Skill skill)
 
         #endregion //Constructors
 

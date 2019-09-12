@@ -60,15 +60,15 @@ namespace AutotaskNET.Entities
 
         } //end Resource(net.autotask.webservices.Resource entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.Resource(Resource resource)
         {
             return new net.autotask.webservices.Resource()
             {
-                id = this.id,
+                id = resource.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.Resource(Resource resource)
 
         #endregion //Constructors
 

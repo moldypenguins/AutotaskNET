@@ -29,16 +29,16 @@ namespace AutotaskNET.Entities
 
         } //end TaxRegion(net.autotask.webservices.TaxRegion entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.TaxRegion(TaxRegion taxregion)
         {
             return new net.autotask.webservices.TaxRegion()
             {
-                id = this.id,
-                Active = this.Active,
-                Name = this.Name
+                id = taxregion.id,
+                Active = taxregion.Active,
+                Name = taxregion.Name
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.TaxRegion(TaxRegion taxregion)
 
         #endregion //Constructors
 

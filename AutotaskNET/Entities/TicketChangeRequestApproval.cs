@@ -28,15 +28,15 @@ namespace AutotaskNET.Entities
 
         } //end TicketChangeRequestApproval(net.autotask.webservices.TicketChangeRequestApproval entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.TicketChangeRequestApproval(TicketChangeRequestApproval ticketchangerequestapproval)
         {
             return new net.autotask.webservices.TicketChangeRequestApproval()
             {
-                id = this.id,
+                id = ticketchangerequestapproval.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.TicketChangeRequestApproval(TicketChangeRequestApproval ticketchangerequestapproval)
 
         #endregion //Constructors
 

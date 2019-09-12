@@ -32,15 +32,15 @@ namespace AutotaskNET.Entities
 
         } //end Currency(net.autotask.webservices.Currency entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.Currency(Currency currency)
         {
             return new net.autotask.webservices.Currency()
             {
-                id = this.id,
+                id = currency.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.Currency(Currency currency)
 
         #endregion //Constructors
 

@@ -35,22 +35,22 @@ namespace AutotaskNET.Entities
 
         } //end Country(net.autotask.webservices.Country entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.Country(Country country)
         {
             return new net.autotask.webservices.Country()
             {
-                id = this.id,
-                Active = this.Active,
-                AddressFormatID = this.AddressFormatID,
-                CountryCode = this.CountryCode,
-                DisplayName = this.DisplayName,
-                InvoiceTemplateID = this.InvoiceTemplateID,
-                IsDefaultCountry = this.IsDefaultCountry,
-                Name = this.Name,
-                QuoteTemplateID = this.QuoteTemplateID
+                id = country.id,
+                Active = country.Active,
+                AddressFormatID = country.AddressFormatID,
+                CountryCode = country.CountryCode,
+                DisplayName = country.DisplayName,
+                InvoiceTemplateID = country.InvoiceTemplateID,
+                IsDefaultCountry = country.IsDefaultCountry,
+                Name = country.Name,
+                QuoteTemplateID = country.QuoteTemplateID
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.Country(Country country)
 
         #endregion //Constructors
 

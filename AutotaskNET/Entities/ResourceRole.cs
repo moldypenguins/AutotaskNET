@@ -31,19 +31,19 @@ namespace AutotaskNET.Entities
 
         } //end ResourceRole(net.autotask.webservices.ResourceRole entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.ResourceRole(ResourceRole resourcerole)
         {
             return new net.autotask.webservices.ResourceRole()
             {
-                id = this.id,
-                Active = this.Active,
-                DepartmentID = this.DepartmentID,
-                QueueID = this.QueueID,
-                ResourceID = this.ResourceID,
-                RoleID = this.RoleID
+                id = resourcerole.id,
+                Active = resourcerole.Active,
+                DepartmentID = resourcerole.DepartmentID,
+                QueueID = resourcerole.QueueID,
+                ResourceID = resourcerole.ResourceID,
+                RoleID = resourcerole.RoleID
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.ResourceRole(ResourceRole resourcerole)
 
         #endregion //Constructors
 

@@ -63,7 +63,7 @@ namespace AutotaskNET.net.autotask.webservices {
         
         /// <remarks/>
         public ATWS() {
-            this.Url = global::AutotaskNET.Properties.Settings.Default.Autotask_Net_Webservices_ATWS;
+            this.Url = ATWSInterface.serviceURL;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

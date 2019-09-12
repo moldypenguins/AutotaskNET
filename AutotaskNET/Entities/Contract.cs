@@ -60,44 +60,44 @@ namespace AutotaskNET.Entities
 
         } //end Contract(net.autotask.webservices.Contract entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.Contract(Contract contract)
         {
             return new net.autotask.webservices.Contract()
             {
-                id = this.id,
-                AccountID = this.AccountID,
-                BillingPreference = this.BillingPreference,
-                BusinessDivisionSubdivisionID = this.BusinessDivisionSubdivisionID,
-                Compliance = this.Compliance,
-                ContactID = this.ContactID,
-                ContactName = this.ContactName,
-                ContractCategory = this.ContractCategory,
-                ContractName = this.ContractName,
-                ContractNumber = this.ContractNumber,
-                ContractPeriodType = this.ContractPeriodType,
-                ContractType = this.ContractType,
-                Description = this.Description,
-                EndDate = this.EndDate,
-                EstimatedCost = this.EstimatedCost,
-                EstimatedHours = this.EstimatedHours,
-                EstimatedRevenue = this.EstimatedRevenue,
-                ExclusionContractID = this.ExclusionContractID,
-                InternalCurrencyOverageBillingRate = this.InternalCurrencyOverageBillingRate,
-                InternalCurrencySetupFee = this.InternalCurrencySetupFee,
-                IsDefaultContract = this.IsDefaultContract,
-                OpportunityID = this.OpportunityID,
-                OverageBillingRate = this.OverageBillingRate,
-                PurchaseOrderNumber = this.PurchaseOrderNumber,
-                RenewedContractID = this.RenewedContractID,
-                ServiceLevelAgreementID = this.ServiceLevelAgreementID,
-                SetupFee = this.SetupFee,
-                SetupFeeAllocationCodeID = this.SetupFeeAllocationCodeID,
-                StartDate = this.StartDate,
-                Status = this.Status,
-                TimeReportingRequiresStartAndStopTimes = this.TimeReportingRequiresStartAndStopTimes
+                id = contract.id,
+                AccountID = contract.AccountID,
+                BillingPreference = contract.BillingPreference,
+                BusinessDivisionSubdivisionID = contract.BusinessDivisionSubdivisionID,
+                Compliance = contract.Compliance,
+                ContactID = contract.ContactID,
+                ContactName = contract.ContactName,
+                ContractCategory = contract.ContractCategory,
+                ContractName = contract.ContractName,
+                ContractNumber = contract.ContractNumber,
+                ContractPeriodType = contract.ContractPeriodType,
+                ContractType = contract.ContractType,
+                Description = contract.Description,
+                EndDate = contract.EndDate,
+                EstimatedCost = contract.EstimatedCost,
+                EstimatedHours = contract.EstimatedHours,
+                EstimatedRevenue = contract.EstimatedRevenue,
+                ExclusionContractID = contract.ExclusionContractID,
+                InternalCurrencyOverageBillingRate = contract.InternalCurrencyOverageBillingRate,
+                InternalCurrencySetupFee = contract.InternalCurrencySetupFee,
+                IsDefaultContract = contract.IsDefaultContract,
+                OpportunityID = contract.OpportunityID,
+                OverageBillingRate = contract.OverageBillingRate,
+                PurchaseOrderNumber = contract.PurchaseOrderNumber,
+                RenewedContractID = contract.RenewedContractID,
+                ServiceLevelAgreementID = contract.ServiceLevelAgreementID,
+                SetupFee = contract.SetupFee,
+                SetupFeeAllocationCodeID = contract.SetupFeeAllocationCodeID,
+                StartDate = contract.StartDate,
+                Status = contract.Status,
+                TimeReportingRequiresStartAndStopTimes = contract.TimeReportingRequiresStartAndStopTimes
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.Contract(Contract contract)
 
         #endregion //Constructors
 

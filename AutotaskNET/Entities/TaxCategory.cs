@@ -27,15 +27,15 @@ namespace AutotaskNET.Entities
 
         } //end TaxCategory(net.autotask.webservices.TaxCategory entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.TaxCategory(TaxCategory taxcategory)
         {
             return new net.autotask.webservices.TaxCategory()
             {
-                id = this.id,
+                id = taxcategory.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.TaxCategory(TaxCategory taxcategory)
 
         #endregion //Constructors
 

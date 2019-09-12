@@ -29,15 +29,15 @@ namespace AutotaskNET.Entities
 
         } //end PaymentTerm(net.autotask.webservices.PaymentTerm entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.PaymentTerm(PaymentTerm paymentterm)
         {
             return new net.autotask.webservices.PaymentTerm()
             {
-                id = this.id,
+                id = paymentterm.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.PaymentTerm(PaymentTerm paymentterm)
 
         #endregion //Constructors
 

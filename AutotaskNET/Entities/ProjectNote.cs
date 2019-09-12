@@ -35,22 +35,22 @@ namespace AutotaskNET.Entities
 
         } //end ProjectNote(net.autotask.webservices.ProjectNote entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.ProjectNote(ProjectNote projectnote)
         {
             return new net.autotask.webservices.ProjectNote()
             {
-                id = this.id,
-                Announce = this.Announce,
-                CreatorResourceID = this.CreatorResourceID,
-                Description = this.Description,
-                LastActivityDate = this.LastActivityDate,
-                NoteType = this.NoteType,
-                ProjectID = this.ProjectID,
-                Publish = this.Publish,
-                Title = this.Title
+                id = projectnote.id,
+                Announce = projectnote.Announce,
+                CreatorResourceID = projectnote.CreatorResourceID,
+                Description = projectnote.Description,
+                LastActivityDate = projectnote.LastActivityDate,
+                NoteType = projectnote.NoteType,
+                ProjectID = projectnote.ProjectID,
+                Publish = projectnote.Publish,
+                Title = projectnote.Title
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.ProjectNote(ProjectNote projectnote)
 
         #endregion //Constructors
 

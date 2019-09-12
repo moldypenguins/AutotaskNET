@@ -28,15 +28,15 @@ namespace AutotaskNET.Entities
 
         } //end ContractExclusionRole(net.autotask.webservices.ContractExclusionRole entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.ContractExclusionRole(ContractExclusionRole contractexclusionrole)
         {
             return new net.autotask.webservices.ContractExclusionRole()
             {
-                id = this.id,
+                id = contractexclusionrole.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.ContractExclusionRole(ContractExclusionRole contractexclusionrole)
 
         #endregion //Constructors
 
