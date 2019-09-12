@@ -232,7 +232,7 @@ namespace AutotaskNET
 
                 //create entity
                 net.autotask.webservices.ATWSResponse resp = this._atws.create(new net.autotask.webservices.Entity[] { typedEntity });
-                if (resp.Errors.Length > 0 && resp.EntityReturnInfoResults.Length > 0)
+                if (resp.Errors.Length > 0 && resp.EntityReturnInfoResults.Length <= 0)
                 {
                     throw new AutotaskNETException(string.Join("\r\n", resp.Errors.Select(r => r.Message)));
                 }
@@ -273,7 +273,7 @@ namespace AutotaskNET
 
                 //update entity
                 net.autotask.webservices.ATWSResponse resp = this._atws.update(new net.autotask.webservices.Entity[] { typedEntity });
-                if (resp.Errors.Length > 0 && resp.EntityReturnInfoResults.Length > 0)
+                if (resp.Errors.Length > 0 && resp.EntityReturnInfoResults.Length <= 0)
                 {
                     throw new AutotaskNETException(string.Join("\r\n", resp.Errors.Select(r => r.Message)));
                 }
