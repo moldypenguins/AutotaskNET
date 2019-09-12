@@ -28,15 +28,15 @@ namespace AutotaskNET.Entities
 
         } //end AccountLocation(net.autotask.webservices.AccountLocation entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.AccountLocation(AccountLocation accountlocation)
         {
             return new net.autotask.webservices.AccountLocation()
             {
-                id = this.id,
+                id = accountlocation.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.AccountLocation(AccountLocation accountlocation)
 
         #endregion //Constructors
 

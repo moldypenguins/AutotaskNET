@@ -28,15 +28,15 @@ namespace AutotaskNET.Entities
 
         } //end Appointment(net.autotask.webservices.Appointment entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.Appointment(Appointment appointment)
         {
             return new net.autotask.webservices.Appointment()
             {
-                id = this.id,
+                id = appointment.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.Appointment(Appointment appointment)
 
         #endregion //Constructors
 

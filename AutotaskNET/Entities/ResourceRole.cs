@@ -23,18 +23,27 @@ namespace AutotaskNET.Entities
         public ResourceRole() : base() { } //end ResourceRole()
         public ResourceRole(net.autotask.webservices.ResourceRole entity) : base(entity)
         {
+            this.Active = entity.Active == null ? default(bool?) : bool.Parse(entity.Active.ToString());
+            this.DepartmentID = entity.DepartmentID == null ? default(long?) : long.Parse(entity.DepartmentID.ToString());
+            this.QueueID = entity.QueueID == null ? default(long?) : long.Parse(entity.QueueID.ToString());
+            this.ResourceID = long.Parse(entity.ResourceID.ToString());
+            this.RoleID = long.Parse(entity.RoleID.ToString());
 
         } //end ResourceRole(net.autotask.webservices.ResourceRole entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.ResourceRole(ResourceRole resourcerole)
         {
             return new net.autotask.webservices.ResourceRole()
             {
-                id = this.id,
-
+                id = resourcerole.id,
+                Active = resourcerole.Active,
+                DepartmentID = resourcerole.DepartmentID,
+                QueueID = resourcerole.QueueID,
+                ResourceID = resourcerole.ResourceID,
+                RoleID = resourcerole.RoleID
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.ResourceRole(ResourceRole resourcerole)
 
         #endregion //Constructors
 
@@ -42,8 +51,8 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Fields
 
-        public long DepartmentID; //ReadOnly [Department]
-        public long QueueID; //ReadOnly PickList
+        public long? DepartmentID; //ReadOnly [Department]
+        public long? QueueID; //ReadOnly PickList
         public bool? Active; //ReadOnly
 
         #endregion //ReadOnly Fields

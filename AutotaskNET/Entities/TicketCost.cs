@@ -29,15 +29,15 @@ namespace AutotaskNET.Entities
 
         } //end TicketCost(net.autotask.webservices.TicketCost entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.TicketCost(TicketCost ticketcost)
         {
             return new net.autotask.webservices.TicketCost()
             {
-                id = this.id,
+                id = ticketcost.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.TicketCost(TicketCost ticketcost)
 
         #endregion //Constructors
 

@@ -26,15 +26,15 @@ namespace AutotaskNET.Entities
 
         } //end ServiceLevelAgreementResults(net.autotask.webservices.ServiceLevelAgreementResults entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.ServiceLevelAgreementResults(ServiceLevelAgreementResults servicelevelagreementresults)
         {
             return new net.autotask.webservices.ServiceLevelAgreementResults()
             {
-                id = this.id,
+                id = servicelevelagreementresults.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.ServiceLevelAgreementResults(ServiceLevelAgreementResults servicelevelagreementresults)
 
         #endregion //Constructors
 

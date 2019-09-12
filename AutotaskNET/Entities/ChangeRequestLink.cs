@@ -28,15 +28,15 @@ namespace AutotaskNET.Entities
 
         } //end ChangeRequestLink(net.autotask.webservices.ChangeRequestLink entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.ChangeRequestLink(ChangeRequestLink changerequestlink)
         {
             return new net.autotask.webservices.ChangeRequestLink()
             {
-                id = this.id,
+                id = changerequestlink.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.ChangeRequestLink(ChangeRequestLink changerequestlink)
 
         #endregion //Constructors
 

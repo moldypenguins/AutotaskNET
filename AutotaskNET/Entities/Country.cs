@@ -24,18 +24,33 @@ namespace AutotaskNET.Entities
         public Country() : base() { } //end Country()
         public Country(net.autotask.webservices.Country entity) : base(entity)
         {
+            this.AddressFormatID = long.Parse(entity.AddressFormatID.ToString());
+            this.DisplayName = entity.DisplayName == null ? default(string) : entity.DisplayName.ToString();
+            this.Active = entity.Active == null ? default(bool?) : bool.Parse(entity.Active.ToString());
+            this.CountryCode = entity.CountryCode == null ? default(string) : entity.CountryCode.ToString();
+            this.InvoiceTemplateID = entity.InvoiceTemplateID == null ? default(int?) : int.Parse(entity.InvoiceTemplateID.ToString());
+            this.IsDefaultCountry = entity.IsDefaultCountry == null ? default(bool?) : bool.Parse(entity.IsDefaultCountry.ToString());
+            this.Name = entity.Name == null ? default(string) : entity.Name.ToString();
+            this.QuoteTemplateID = entity.QuoteTemplateID == null ? default(int?) : int.Parse(entity.QuoteTemplateID.ToString());
 
         } //end Country(net.autotask.webservices.Country entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.Country(Country country)
         {
             return new net.autotask.webservices.Country()
             {
-                id = this.id,
-
+                id = country.id,
+                Active = country.Active,
+                AddressFormatID = country.AddressFormatID,
+                CountryCode = country.CountryCode,
+                DisplayName = country.DisplayName,
+                InvoiceTemplateID = country.InvoiceTemplateID,
+                IsDefaultCountry = country.IsDefaultCountry,
+                Name = country.Name,
+                QuoteTemplateID = country.QuoteTemplateID
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.Country(Country country)
 
         #endregion //Constructors
 

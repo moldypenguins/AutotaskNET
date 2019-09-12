@@ -28,15 +28,15 @@ namespace AutotaskNET.Entities
 
         } //end InventoryItemSerialNumber(net.autotask.webservices.InventoryItemSerialNumber entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.InventoryItemSerialNumber(InventoryItemSerialNumber inventoryitemserialnumber)
         {
             return new net.autotask.webservices.InventoryItemSerialNumber()
             {
-                id = this.id,
+                id = inventoryitemserialnumber.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.InventoryItemSerialNumber(InventoryItemSerialNumber inventoryitemserialnumber)
 
         #endregion //Constructors
 

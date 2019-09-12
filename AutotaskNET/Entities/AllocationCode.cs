@@ -28,15 +28,15 @@ namespace AutotaskNET.Entities
 
         } //end AllocationCode(net.autotask.webservices.AllocationCode entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.AllocationCode(AllocationCode allocationcode)
         {
             return new net.autotask.webservices.AllocationCode()
             {
-                id = this.id,
+                id = allocationcode.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.AllocationCode(AllocationCode allocationcode)
 
         #endregion //Constructors
 

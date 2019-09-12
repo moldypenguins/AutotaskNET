@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AutotaskNET.Entities
 {
@@ -29,9 +31,9 @@ namespace AutotaskNET.Entities
             this.AccountID = int.Parse(entity.AccountID.ToString());
             this.AccountPhysicalLocationID = entity.AccountPhysicalLocationID == null ? default(int?) : int.Parse(entity.AccountPhysicalLocationID.ToString());
             this.AEMAlertID = entity.AEMAlertID == null ? default(string) : entity.AEMAlertID.ToString();
-            this.AllocationCodeID = entity.AllocationCodeID == null ? default(int?) : int.Parse(entity.AllocationCodeID.ToString());
-            this.AssignedResourceID = entity.AssignedResourceID == null ? default(int?) : int.Parse(entity.AssignedResourceID.ToString());
-            this.AssignedResourceRoleID = entity.AssignedResourceRoleID == null ? default(int?) : int.Parse(entity.AssignedResourceRoleID.ToString());
+            this.AllocationCodeID = entity.AllocationCodeID == null ? default(long?) : long.Parse(entity.AllocationCodeID.ToString());
+            this.AssignedResourceID = entity.AssignedResourceID == null ? default(long?) : long.Parse(entity.AssignedResourceID.ToString());
+            this.AssignedResourceRoleID = entity.AssignedResourceRoleID == null ? default(long?) : long.Parse(entity.AssignedResourceRoleID.ToString());
             this.BusinessDivisionSubdivisionID = entity.BusinessDivisionSubdivisionID == null ? default(int?) : int.Parse(entity.BusinessDivisionSubdivisionID.ToString());
             this.ChangeApprovalBoard = entity.ChangeApprovalBoard == null ? default(int?) : int.Parse(entity.ChangeApprovalBoard.ToString());
             this.ChangeApprovalStatus = entity.ChangeApprovalStatus == null ? default(int?) : int.Parse(entity.ChangeApprovalStatus.ToString());
@@ -43,8 +45,8 @@ namespace AutotaskNET.Entities
             this.ChangeInfoField5 = entity.ChangeInfoField5 == null ? default(string) : entity.ChangeInfoField5.ToString();
             this.CompletedByResourceID = entity.CompletedByResourceID == null ? default(int?) : int.Parse(entity.CompletedByResourceID.ToString());
             this.CompletedDate = entity.CompletedDate == null ? default(DateTime?) : DateTime.Parse(entity.CompletedDate.ToString());
-            this.ContactID = entity.ContactID == null ? default(int?) : int.Parse(entity.ContactID.ToString());
-            this.ContractID = entity.ContractID == null ? default(int?) : int.Parse(entity.ContractID.ToString());
+            this.ContactID = entity.ContactID == null ? default(long?) : long.Parse(entity.ContactID.ToString());
+            this.ContractID = entity.ContractID == null ? default(long?) : long.Parse(entity.ContractID.ToString());
             this.ContractServiceBundleID = entity.ContractServiceBundleID == null ? default(long?) : long.Parse(entity.ContractServiceBundleID.ToString());
             this.ContractServiceID = entity.ContractServiceID == null ? default(long?) : long.Parse(entity.ContractServiceID.ToString());
             this.CreateDate = entity.CreateDate == null ? default(DateTime?) : DateTime.Parse(entity.CreateDate.ToString());
@@ -83,85 +85,89 @@ namespace AutotaskNET.Entities
             this.ServiceLevelAgreementID = entity.ServiceLevelAgreementID == null ? default(int?) : int.Parse(entity.ServiceLevelAgreementID.ToString());
             //this.ServiceLevelAgreementPausedNextEventHours = double.Parse(entity.ServiceLevelAgreementPausedNextEventHours.ToString());
             this.Source = entity.Source == null ? default(int?) : int.Parse(entity.Source.ToString());
-            this.Status = int.Parse(entity.TicketCategory.ToString());
+            this.Status = int.Parse(entity.Status.ToString());
             this.SubIssueType = entity.SubIssueType == null ? default(int?) : int.Parse(entity.SubIssueType.ToString());
             this.TicketCategory = entity.TicketCategory == null ? default(int?) : int.Parse(entity.TicketCategory.ToString());
             this.TicketNumber = entity.TicketNumber.ToString();
             this.TicketType = entity.TicketType == null ? default(int?) : int.Parse(entity.TicketType.ToString());
             this.Title = entity.Title.ToString();
+            this.UserDefinedFields = entity.UserDefinedFields?.Select(udf => new UserDefinedField { Name = udf.Name, Value = udf.Value }).ToList();
 
         } //end Ticket(net.autotask.webservices.Ticket entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+
+        public static implicit operator net.autotask.webservices.Ticket(Ticket ticket)
         {
             return new net.autotask.webservices.Ticket()
             {
-                id = this.id,
-                AccountID = this.AccountID,
-                AccountPhysicalLocationID = this.AccountPhysicalLocationID,
-                AEMAlertID = this.AEMAlertID,
-                AllocationCodeID = this.AllocationCodeID,
-                AssignedResourceID = this.AssignedResourceID,
-                AssignedResourceRoleID = this.AssignedResourceRoleID,
-                BusinessDivisionSubdivisionID = this.BusinessDivisionSubdivisionID,
-                ChangeApprovalBoard = this.ChangeApprovalBoard,
-                ChangeApprovalStatus = this.ChangeApprovalStatus,
-                ChangeApprovalType = this.ChangeApprovalType,
-                ChangeInfoField1 = this.ChangeInfoField1,
-                ChangeInfoField2 = this.ChangeInfoField2,
-                ChangeInfoField3 = this.ChangeInfoField3,
-                ChangeInfoField4 = this.ChangeInfoField4,
-                ChangeInfoField5 = this.ChangeInfoField5,
-                CompletedByResourceID = this.CompletedByResourceID,
-                CompletedDate = this.CompletedDate,
-                ContactID = this.ContactID,
-                ContractID = this.ContractID,
-                ContractServiceBundleID = this.ContractServiceBundleID,
-                ContractServiceID = this.ContractServiceID,
-                CreateDate = this.CreateDate,
-                CreatorResourceID = this.CreatorResourceID,
-                CreatorType = this.CreatorType,
-                Description = this.Description,
-                DueDateTime = this.DueDateTime,
-                EstimatedHours = this.EstimatedHours,
-                ExternalID = this.ExternalID,
-                FirstResponseAssignedResourceID = this.FirstResponseAssignedResourceID,
-                FirstResponseDateTime = this.FirstResponseDateTime,
-                FirstResponseDueDateTime = this.FirstResponseDueDateTime,
-                FirstResponseInitiatingResourceID = this.FirstResponseInitiatingResourceID,
-                HoursToBeScheduled = this.HoursToBeScheduled,
-                InstalledProductID = this.InstalledProductID,
-                IssueType = this.IssueType,
-                LastActivityDate = this.LastActivityDate,
-                LastActivityPersonType = this.LastActivityPersonType,
-                LastActivityResourceID = this.LastActivityResourceID,
-                LastCustomerNotificationDateTime = this.LastCustomerNotificationDateTime,
-                LastCustomerVisibleActivityDateTime = this.LastCustomerVisibleActivityDateTime,
-                MonitorID = this.MonitorID,
-                MonitorTypeID = this.MonitorTypeID,
-                OpportunityId = this.OpportunityId,
-                Priority = this.Priority,
-                ProblemTicketId = this.ProblemTicketId,
-                ProjectID = this.ProjectID,
-                PurchaseOrderNumber = this.PurchaseOrderNumber,
-                QueueID = this.QueueID,
-                Resolution = this.Resolution,
-                ResolutionPlanDateTime = this.ResolutionPlanDateTime,
-                ResolutionPlanDueDateTime = this.ResolutionPlanDueDateTime,
-                ResolvedDateTime = this.ResolvedDateTime,
-                ResolvedDueDateTime = this.ResolvedDueDateTime,
-                ServiceLevelAgreementHasBeenMet = this.ServiceLevelAgreementHasBeenMet,
-                ServiceLevelAgreementID = this.ServiceLevelAgreementID,
-                //ServiceLevelAgreementPausedNextEventHours = this.ServiceLevelAgreementPausedNextEventHours,
-                Source = this.Source,
-                Status = this.TicketCategory,
-                SubIssueType = this.SubIssueType,
-                TicketCategory = this.TicketCategory,
-                TicketNumber = this.TicketNumber,
-                TicketType = this.TicketType,
-                Title = this.Title
+                id = ticket.id,
+                AccountID = ticket.AccountID,
+                AccountPhysicalLocationID = ticket.AccountPhysicalLocationID,
+                AEMAlertID = ticket.AEMAlertID,
+                AllocationCodeID = ticket.AllocationCodeID,
+                AssignedResourceID = ticket.AssignedResourceID,
+                AssignedResourceRoleID = ticket.AssignedResourceRoleID,
+                BusinessDivisionSubdivisionID = ticket.BusinessDivisionSubdivisionID,
+                ChangeApprovalBoard = ticket.ChangeApprovalBoard,
+                ChangeApprovalStatus = ticket.ChangeApprovalStatus,
+                ChangeApprovalType = ticket.ChangeApprovalType,
+                ChangeInfoField1 = ticket.ChangeInfoField1,
+                ChangeInfoField2 = ticket.ChangeInfoField2,
+                ChangeInfoField3 = ticket.ChangeInfoField3,
+                ChangeInfoField4 = ticket.ChangeInfoField4,
+                ChangeInfoField5 = ticket.ChangeInfoField5,
+                CompletedByResourceID = ticket.CompletedByResourceID,
+                CompletedDate = ticket.CompletedDate,
+                ContactID = ticket.ContactID,
+                ContractID = ticket.ContractID,
+                ContractServiceBundleID = ticket.ContractServiceBundleID,
+                ContractServiceID = ticket.ContractServiceID,
+                CreateDate = ticket.CreateDate,
+                CreatorResourceID = ticket.CreatorResourceID,
+                CreatorType = ticket.CreatorType,
+                Description = ticket.Description,
+                DueDateTime = ticket.DueDateTime,
+                EstimatedHours = ticket.EstimatedHours,
+                ExternalID = ticket.ExternalID,
+                FirstResponseAssignedResourceID = ticket.FirstResponseAssignedResourceID,
+                FirstResponseDateTime = ticket.FirstResponseDateTime,
+                FirstResponseDueDateTime = ticket.FirstResponseDueDateTime,
+                FirstResponseInitiatingResourceID = ticket.FirstResponseInitiatingResourceID,
+                HoursToBeScheduled = ticket.HoursToBeScheduled,
+                InstalledProductID = ticket.InstalledProductID,
+                IssueType = ticket.IssueType,
+                LastActivityDate = ticket.LastActivityDate,
+                LastActivityPersonType = ticket.LastActivityPersonType,
+                LastActivityResourceID = ticket.LastActivityResourceID,
+                LastCustomerNotificationDateTime = ticket.LastCustomerNotificationDateTime,
+                LastCustomerVisibleActivityDateTime = ticket.LastCustomerVisibleActivityDateTime,
+                MonitorID = ticket.MonitorID,
+                MonitorTypeID = ticket.MonitorTypeID,
+                OpportunityId = ticket.OpportunityId,
+                Priority = ticket.Priority,
+                ProblemTicketId = ticket.ProblemTicketId,
+                ProjectID = ticket.ProjectID,
+                PurchaseOrderNumber = ticket.PurchaseOrderNumber,
+                QueueID = ticket.QueueID,
+                Resolution = ticket.Resolution,
+                ResolutionPlanDateTime = ticket.ResolutionPlanDateTime,
+                ResolutionPlanDueDateTime = ticket.ResolutionPlanDueDateTime,
+                ResolvedDateTime = ticket.ResolvedDateTime,
+                ResolvedDueDateTime = ticket.ResolvedDueDateTime,
+                ServiceLevelAgreementHasBeenMet = ticket.ServiceLevelAgreementHasBeenMet,
+                ServiceLevelAgreementID = ticket.ServiceLevelAgreementID,
+                //ServiceLevelAgreementPausedNextEventHours = ticket.ServiceLevelAgreementPausedNextEventHours,
+                Source = ticket.Source,
+                Status = ticket.Status,
+                SubIssueType = ticket.SubIssueType,
+                TicketCategory = ticket.TicketCategory,
+                TicketNumber = ticket.TicketNumber,
+                TicketType = ticket.TicketType,
+                Title = ticket.Title,
+                UserDefinedFields = Array.ConvertAll(ticket.UserDefinedFields.ToArray(), new Converter<UserDefinedField, net.autotask.webservices.UserDefinedField>(UserDefinedField.ToATWS))
             };
-        } //end ToATWS()
+
+        } //end implicit operator net.autotask.webservices.Ticket(Ticket ticket)
 
         #endregion //Constructors
 
@@ -207,11 +213,11 @@ namespace AutotaskNET.Entities
 
         #region Optional Fields
 
-        public int? AllocationCodeID; //[AllocationCode]
-        public int? AssignedResourceID; //[Resource]
-        public int? AssignedResourceRoleID; //[Role]
-        public int? ContactID; //[Contact]
-        public int? ContractID; //[Contract]
+        public long? AllocationCodeID; //[AllocationCode]
+        public long? AssignedResourceID; //[Resource]
+        public long? AssignedResourceRoleID; //[Role]
+        public long? ContactID; //[Contact]
+        public long? ContractID; //[Contract]
         public string Description; //Length:8000
         public double? EstimatedHours;
         public string ExternalID; //Length:50

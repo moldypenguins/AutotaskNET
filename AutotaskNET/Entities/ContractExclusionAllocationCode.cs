@@ -28,15 +28,15 @@ namespace AutotaskNET.Entities
 
         } //end ContractExclusionAllocationCode(net.autotask.webservices.ContractExclusionAllocationCode entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.ContractExclusionAllocationCode(ContractExclusionAllocationCode contractexclusionallocationcode)
         {
             return new net.autotask.webservices.ContractExclusionAllocationCode()
             {
-                id = this.id,
+                id = contractexclusionallocationcode.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.ContractExclusionAllocationCode(ContractExclusionAllocationCode contractexclusionallocationcode)
 
         #endregion //Constructors
 

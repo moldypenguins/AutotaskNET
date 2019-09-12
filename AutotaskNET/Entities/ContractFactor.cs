@@ -30,15 +30,15 @@ namespace AutotaskNET.Entities
 
         } //end ContractFactor(net.autotask.webservices.ContractFactor entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.ContractFactor(ContractFactor contractfactor)
         {
             return new net.autotask.webservices.ContractFactor()
             {
-                id = this.id,
+                id = contractfactor.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.ContractFactor(ContractFactor contractfactor)
 
         #endregion //Constructors
 

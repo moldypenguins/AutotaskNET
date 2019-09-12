@@ -29,16 +29,16 @@ namespace AutotaskNET.Entities
 
         } //end AccountAlert(net.autotask.webservices.AccountAlert entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.AccountAlert(AccountAlert accountalert)
         {
             return new net.autotask.webservices.AccountAlert()
             {
-                id = this.id,
-                AccountID = this.AccountID,
+                id = accountalert.id,
+                AccountID = accountalert.AccountID,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.AccountAlert(AccountAlert accountalert)
 
         #endregion //Constructors
 

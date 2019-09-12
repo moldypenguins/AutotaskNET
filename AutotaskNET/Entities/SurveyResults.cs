@@ -26,15 +26,15 @@ namespace AutotaskNET.Entities
 
         } //end SurveyResults(net.autotask.webservices.SurveyResults entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.SurveyResults(SurveyResults surveyresults)
         {
             return new net.autotask.webservices.SurveyResults()
             {
-                id = this.id,
+                id = surveyresults.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.SurveyResults(SurveyResults surveyresults)
 
         #endregion //Constructors
 

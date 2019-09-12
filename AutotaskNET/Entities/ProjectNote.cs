@@ -24,18 +24,33 @@ namespace AutotaskNET.Entities
         public ProjectNote() : base() { } //end ProjectNote()
         public ProjectNote(net.autotask.webservices.ProjectNote entity) : base(entity)
         {
+            this.Announce = bool.Parse(entity.Announce.ToString());
+            this.CreatorResourceID = entity.CreatorResourceID == null ? default(int?) : int.Parse(entity.CreatorResourceID.ToString());
+            this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
+            this.LastActivityDate = entity.LastActivityDate == null ? default(DateTime?) : DateTime.Parse(entity.LastActivityDate.ToString());
+            this.NoteType = int.Parse(entity.NoteType.ToString());
+            this.ProjectID = int.Parse(entity.ProjectID.ToString());
+            this.Publish = int.Parse(entity.Publish.ToString());
+            this.Title = entity.Title == null ? default(string) : entity.Title.ToString();
 
         } //end ProjectNote(net.autotask.webservices.ProjectNote entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.ProjectNote(ProjectNote projectnote)
         {
             return new net.autotask.webservices.ProjectNote()
             {
-                id = this.id,
-
+                id = projectnote.id,
+                Announce = projectnote.Announce,
+                CreatorResourceID = projectnote.CreatorResourceID,
+                Description = projectnote.Description,
+                LastActivityDate = projectnote.LastActivityDate,
+                NoteType = projectnote.NoteType,
+                ProjectID = projectnote.ProjectID,
+                Publish = projectnote.Publish,
+                Title = projectnote.Title
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.ProjectNote(ProjectNote projectnote)
 
         #endregion //Constructors
 

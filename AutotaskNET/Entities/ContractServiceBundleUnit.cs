@@ -26,15 +26,15 @@ namespace AutotaskNET.Entities
 
         } //end ContractServiceBundleUnit(net.autotask.webservices.ContractServiceBundleUnit entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.ContractServiceBundleUnit(ContractServiceBundleUnit contractservicebundleunit)
         {
             return new net.autotask.webservices.ContractServiceBundleUnit()
             {
-                id = this.id,
+                id = contractservicebundleunit.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.ContractServiceBundleUnit(ContractServiceBundleUnit contractservicebundleunit)
 
         #endregion //Constructors
 

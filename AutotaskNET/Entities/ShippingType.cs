@@ -28,15 +28,15 @@ namespace AutotaskNET.Entities
 
         } //end ShippingType(net.autotask.webservices.ShippingType entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.ShippingType(ShippingType shippingtype)
         {
             return new net.autotask.webservices.ShippingType()
             {
-                id = this.id,
+                id = shippingtype.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.ShippingType(ShippingType shippingtype)
 
         #endregion //Constructors
 

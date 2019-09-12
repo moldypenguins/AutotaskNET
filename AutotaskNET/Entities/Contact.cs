@@ -68,15 +68,15 @@ namespace AutotaskNET.Entities
 
         } //end Contact(net.autotask.webservices.Contact entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.Contact(Contact contact)
         {
             return new net.autotask.webservices.Contact()
             {
-                id = this.id,
+                id = contact.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.Contact(Contact contact)
 
         #endregion //Constructors
 

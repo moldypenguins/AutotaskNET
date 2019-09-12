@@ -26,15 +26,15 @@ namespace AutotaskNET.Entities
 
         } //end TaskPredecessor(net.autotask.webservices.TaskPredecessor entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.TaskPredecessor(TaskPredecessor taskpredecessor)
         {
             return new net.autotask.webservices.TaskPredecessor()
             {
-                id = this.id,
+                id = taskpredecessor.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.TaskPredecessor(TaskPredecessor taskpredecessor)
 
         #endregion //Constructors
 

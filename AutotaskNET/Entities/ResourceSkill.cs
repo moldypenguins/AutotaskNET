@@ -28,15 +28,15 @@ namespace AutotaskNET.Entities
 
         } //end ResourceSkill(net.autotask.webservices.ResourceSkill entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.ResourceSkill(ResourceSkill resourceskill)
         {
             return new net.autotask.webservices.ResourceSkill()
             {
-                id = this.id,
+                id = resourceskill.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.ResourceSkill(ResourceSkill resourceskill)
 
         #endregion //Constructors
 

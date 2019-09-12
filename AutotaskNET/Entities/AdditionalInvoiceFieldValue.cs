@@ -29,15 +29,15 @@ namespace AutotaskNET.Entities
 
         } //end AdditionalInvoiceFieldValue(net.autotask.webservices.AdditionalInvoiceFieldValue entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.AdditionalInvoiceFieldValue(AdditionalInvoiceFieldValue additionalinvoicefieldvalue)
         {
             return new net.autotask.webservices.AdditionalInvoiceFieldValue()
             {
-                id = this.id,
+                id = additionalinvoicefieldvalue.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.AdditionalInvoiceFieldValue(AdditionalInvoiceFieldValue additionalinvoicefieldvalue)
 
         #endregion //Constructors
 

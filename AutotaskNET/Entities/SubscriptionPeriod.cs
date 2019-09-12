@@ -26,15 +26,15 @@ namespace AutotaskNET.Entities
 
         } //end SubscriptionPeriod(net.autotask.webservices.SubscriptionPeriod entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.SubscriptionPeriod(SubscriptionPeriod subscriptionperiod)
         {
             return new net.autotask.webservices.SubscriptionPeriod()
             {
-                id = this.id,
+                id = subscriptionperiod.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.SubscriptionPeriod(SubscriptionPeriod subscriptionperiod)
 
         #endregion //Constructors
 

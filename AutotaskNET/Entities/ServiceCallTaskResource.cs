@@ -28,15 +28,15 @@ namespace AutotaskNET.Entities
 
         } //end ServiceCallTaskResource(net.autotask.webservices.ServiceCallTaskResource entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.ServiceCallTaskResource(ServiceCallTaskResource servicecalltaskresource)
         {
             return new net.autotask.webservices.ServiceCallTaskResource()
             {
-                id = this.id,
+                id = servicecalltaskresource.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.ServiceCallTaskResource(ServiceCallTaskResource servicecalltaskresource)
 
         #endregion //Constructors
 

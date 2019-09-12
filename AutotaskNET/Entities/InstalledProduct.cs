@@ -28,15 +28,15 @@ namespace AutotaskNET.Entities
 
         } //end InstalledProduct(net.autotask.webservices.InstalledProduct entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.InstalledProduct(InstalledProduct installedproduct)
         {
             return new net.autotask.webservices.InstalledProduct()
             {
-                id = this.id,
+                id = installedproduct.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.InstalledProduct(InstalledProduct installedproduct)
 
         #endregion //Constructors
 

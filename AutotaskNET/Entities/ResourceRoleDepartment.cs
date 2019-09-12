@@ -26,15 +26,15 @@ namespace AutotaskNET.Entities
 
         } //end ResourceRoleDepartment(net.autotask.webservices.ResourceRoleDepartment entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.ResourceRoleDepartment(ResourceRoleDepartment resourceroledepartment)
         {
             return new net.autotask.webservices.ResourceRoleDepartment()
             {
-                id = this.id,
+                id = resourceroledepartment.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.ResourceRoleDepartment(ResourceRoleDepartment resourceroledepartment)
 
         #endregion //Constructors
 

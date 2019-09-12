@@ -28,11 +28,11 @@ namespace AutotaskNET.Entities
 
         } //end BillingItemApprovalLevel(net.autotask.webservices.BillingItemApprovalLevel entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.BillingItemApprovalLevel(BillingItemApprovalLevel billingitemapprovallevel)
         {
             return new net.autotask.webservices.BillingItemApprovalLevel()
             {
-                id = this.id,
+                id = billingitemapprovallevel.id,
 
             };
 

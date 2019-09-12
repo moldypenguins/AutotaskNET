@@ -29,15 +29,15 @@ namespace AutotaskNET.Entities
 
         } //end InventoryLocation(net.autotask.webservices.InventoryLocation entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.InventoryLocation(InventoryLocation inventorylocation)
         {
             return new net.autotask.webservices.InventoryLocation()
             {
-                id = this.id,
+                id = inventorylocation.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.InventoryLocation(InventoryLocation inventorylocation)
 
         #endregion //Constructors
 

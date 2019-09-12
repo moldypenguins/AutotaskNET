@@ -32,15 +32,15 @@ namespace AutotaskNET.Entities
 
         } //end Opportunity(net.autotask.webservices.Opportunity entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.Opportunity(Opportunity opportunity)
         {
             return new net.autotask.webservices.Opportunity()
             {
-                id = this.id,
+                id = opportunity.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.Opportunity(Opportunity opportunity)
 
         #endregion //Constructors
 

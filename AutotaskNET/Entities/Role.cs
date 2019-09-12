@@ -29,8 +29,9 @@ namespace AutotaskNET.Entities
         {
             this.Active = bool.Parse(entity.Active.ToString());
             this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
-            this.HourlyFactor = decimal.Parse(entity.Active.ToString());
-            this.HourlyRate = decimal.Parse(entity.Active.ToString());
+            this.HourlyFactor = decimal.Parse(entity.HourlyFactor.ToString());
+            this.HourlyRate = decimal.Parse(entity.HourlyRate.ToString());
+            this.IsExcludedFromNewContracts = entity.IsExcludedFromNewContracts == null ? default(bool?) : bool.Parse(entity.IsExcludedFromNewContracts.ToString());
             this.Name = entity.Name == null ? default(string) : entity.Name.ToString();
             this.QuoteItemDefaultTaxCategoryId = entity.QuoteItemDefaultTaxCategoryId == null ? default(int?) : int.Parse(entity.QuoteItemDefaultTaxCategoryId.ToString());
             this.RoleType = entity.RoleType == null ? default(int?) : int.Parse(entity.RoleType.ToString());
@@ -38,15 +39,23 @@ namespace AutotaskNET.Entities
 
         } //end Role(net.autotask.webservices.Role entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.Role(Role role)
         {
             return new net.autotask.webservices.Role()
             {
-                id = this.id,
-
+                id = role.id,
+                Active = role.Active,
+                Description = role.Description,
+                HourlyFactor = role.HourlyFactor,
+                HourlyRate = role.HourlyRate,
+                IsExcludedFromNewContracts = role.IsExcludedFromNewContracts,
+                Name = role.Name,
+                QuoteItemDefaultTaxCategoryId = role.QuoteItemDefaultTaxCategoryId,
+                RoleType = role.RoleType,
+                SystemRole = role.SystemRole
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.Role(Role role)
 
         #endregion //Constructors
 

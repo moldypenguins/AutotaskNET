@@ -29,15 +29,15 @@ namespace AutotaskNET.Entities
 
         } //end ExpenseItem(net.autotask.webservices.ExpenseItem entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.ExpenseItem(ExpenseItem expenseitem)
         {
             return new net.autotask.webservices.ExpenseItem()
             {
-                id = this.id,
+                id = expenseitem.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.ExpenseItem(ExpenseItem expenseitem)
 
         #endregion //Constructors
 

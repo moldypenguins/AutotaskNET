@@ -30,8 +30,8 @@ namespace AutotaskNET.Entities
             this.BillingApprovalLevelMostRecent = entity.BillingApprovalLevelMostRecent == null ? default(int?) : int.Parse(entity.BillingApprovalLevelMostRecent.ToString());
             this.BillingApprovalResourceID = entity.BillingApprovalResourceID == null ? default(int?) : int.Parse(entity.BillingApprovalResourceID.ToString());
             this.ContractID = entity.ContractID == null ? default(int?) : int.Parse(entity.ContractID.ToString());
-            this.ContractServiceBundleID = long.Parse(entity.ContractServiceBundleID.ToString());
-            this.ContractServiceID = long.Parse(entity.ContractServiceID.ToString());
+            //this.ContractServiceBundleID = long.Parse(entity.ContractServiceBundleID.ToString());
+            //this.ContractServiceID = long.Parse(entity.ContractServiceID.ToString());
             this.CreateDateTime = entity.CreateDateTime == null ? default(DateTime?) : DateTime.Parse(entity.CreateDateTime.ToString());
             this.CreatorUserID = entity.CreatorUserID == null ? default(int?) : int.Parse(entity.CreatorUserID.ToString());
             this.DateWorked = DateTime.Parse(entity.DateWorked.ToString());
@@ -55,15 +55,41 @@ namespace AutotaskNET.Entities
 
         } //end TimeEntry(net.autotask.webservices.TimeEntry entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.TimeEntry(TimeEntry timeentry)
         {
             return new net.autotask.webservices.TimeEntry()
             {
-                id = this.id,
-
+                id = timeentry.id,
+                AllocationCodeID = timeentry.AllocationCodeID,
+                BillingApprovalDateTime = timeentry.BillingApprovalDateTime,
+                BillingApprovalLevelMostRecent = timeentry.BillingApprovalLevelMostRecent,
+                BillingApprovalResourceID = timeentry.BillingApprovalResourceID,
+                ContractID = timeentry.ContractID,
+                //ContractServiceBundleID = timeentry.ContractServiceBundleID,
+                //ContractServiceID = timeentry.ContractServiceID,
+                CreateDateTime = timeentry.CreateDateTime,
+                CreatorUserID = timeentry.CreatorUserID,
+                DateWorked = timeentry.DateWorked,
+                EndDateTime = timeentry.EndDateTime,
+                HoursToBill = timeentry.HoursToBill,
+                HoursWorked = timeentry.HoursWorked,
+                InternalAllocationCodeID = timeentry.InternalAllocationCodeID,
+                InternalNotes = timeentry.InternalNotes,
+                LastModifiedDateTime = timeentry.LastModifiedDateTime,
+                LastModifiedUserID = timeentry.LastModifiedUserID,
+                NonBillable = timeentry.NonBillable,
+                OffsetHours = timeentry.OffsetHours,
+                ResourceID = timeentry.ResourceID,
+                RoleID = timeentry.RoleID,
+                ShowOnInvoice = timeentry.ShowOnInvoice,
+                StartDateTime = timeentry.StartDateTime,
+                SummaryNotes = timeentry.SummaryNotes,
+                TaskID = timeentry.TaskID,
+                TicketID = timeentry.TicketID,
+                Type = timeentry.Type
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.TimeEntry(TimeEntry timeentry)
 
         #endregion //Constructors
 

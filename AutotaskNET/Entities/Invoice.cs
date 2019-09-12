@@ -28,17 +28,17 @@ namespace AutotaskNET.Entities
 
         } //end Invoice(net.autotask.webservices.Invoice entity)
 
-        #endregion //Constructors
-
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.Invoice(Invoice invoice)
         {
             return new net.autotask.webservices.Invoice()
             {
-                id = this.id,
+                id = invoice.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.Invoice(Invoice invoice)
+
+        #endregion //Constructors
 
         #region Fields
 

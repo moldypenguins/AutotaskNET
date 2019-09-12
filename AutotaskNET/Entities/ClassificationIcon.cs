@@ -27,15 +27,15 @@ namespace AutotaskNET.Entities
 
         } //end ClassificationIcon(net.autotask.webservices.ClassificationIcon entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.ClassificationIcon(ClassificationIcon classificationicon)
         {
             return new net.autotask.webservices.ClassificationIcon()
             {
-                id = this.id,
+                id = classificationicon.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.ClassificationIcon(ClassificationIcon classificationicon)
 
         #endregion //Constructors
 

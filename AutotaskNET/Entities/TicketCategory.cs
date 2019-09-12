@@ -26,15 +26,15 @@ namespace AutotaskNET.Entities
 
         } //end TicketCategory(net.autotask.webservices.TicketCategory entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.TicketCategory(TicketCategory ticketcategory)
         {
             return new net.autotask.webservices.TicketCategory()
             {
-                id = this.id,
+                id = ticketcategory.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.TicketCategory(TicketCategory ticketcategory)
 
         #endregion //Constructors
 

@@ -26,15 +26,15 @@ namespace AutotaskNET.Entities
 
         } //end BusinessSubdivision(net.autotask.webservices.BusinessSubdivision entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.BusinessSubdivision(BusinessSubdivision businesssubdivision)
         {
             return new net.autotask.webservices.BusinessSubdivision()
             {
-                id = this.id,
+                id = businesssubdivision.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.BusinessSubdivision(BusinessSubdivision businesssubdivision)
 
         #endregion //Constructors
 

@@ -28,15 +28,15 @@ namespace AutotaskNET.Entities
 
         } //end InstalledProductTypeUdfAssociation(net.autotask.webservices.InstalledProductTypeUdfAssociation entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.InstalledProductTypeUdfAssociation(InstalledProductTypeUdfAssociation installedproducttypeudfassociation)
         {
             return new net.autotask.webservices.InstalledProductTypeUdfAssociation()
             {
-                id = this.id,
+                id = installedproducttypeudfassociation.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.InstalledProductTypeUdfAssociation(InstalledProductTypeUdfAssociation installedproducttypeudfassociation)
 
         #endregion //Constructors
 

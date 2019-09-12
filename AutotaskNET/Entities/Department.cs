@@ -32,15 +32,15 @@ namespace AutotaskNET.Entities
 
         } //end Department(net.autotask.webservices.Department entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.Department(Department department)
         {
             return new net.autotask.webservices.Department()
             {
-                id = this.id,
+                id = department.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.Department(Department department)
 
         #endregion //Constructors
 

@@ -28,14 +28,15 @@ namespace AutotaskNET.Entities
 
         } //end AttachmentInfo(net.autotask.webservices.AttachmentInfo entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.AttachmentInfo(AttachmentInfo attachmentinfo)
         {
             return new net.autotask.webservices.AttachmentInfo()
             {
-                id = this.id,
+                id = attachmentinfo.id,
 
             };
-        } //end ToATWS()
+
+        } //end implicit operator net.autotask.webservices.AttachmentInfo(AttachmentInfo attachmentinfo)
 
         #endregion //Constructors
 

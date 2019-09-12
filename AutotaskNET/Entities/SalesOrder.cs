@@ -26,15 +26,15 @@ namespace AutotaskNET.Entities
 
         } //end SalesOrder(net.autotask.webservices.SalesOrder entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.SalesOrder(SalesOrder salesorder)
         {
             return new net.autotask.webservices.SalesOrder()
             {
-                id = this.id,
+                id = salesorder.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.SalesOrder(SalesOrder salesorder)
 
         #endregion //Constructors
 

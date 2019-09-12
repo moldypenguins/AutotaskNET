@@ -27,18 +27,77 @@ namespace AutotaskNET.Entities
         public Contract() : base() { } //end Contract()
         public Contract(net.autotask.webservices.Contract entity) : base(entity)
         {
+            this.AccountID = int.Parse(entity.AccountID.ToString());
+            this.BillingPreference = entity.BillingPreference == null ? default(int?) : int.Parse(entity.BillingPreference.ToString());
+            this.BusinessDivisionSubdivisionID = entity.BusinessDivisionSubdivisionID == null ? default(int?) : int.Parse(entity.BusinessDivisionSubdivisionID.ToString());
+            this.Compliance = entity.Compliance == null ? default(bool?) : bool.Parse(entity.Compliance.ToString());
+            this.ContractName = entity.ContractName == null ? default(string) : entity.ContractName.ToString();
+            this.ContractType = int.Parse(entity.ContractType.ToString());
+            this.EndDate = DateTime.Parse(entity.EndDate.ToString());
+            this.StartDate = DateTime.Parse(entity.StartDate.ToString());
+            this.Status = int.Parse(entity.Status.ToString());
+            this.TimeReportingRequiresStartAndStopTimes = int.Parse(entity.TimeReportingRequiresStartAndStopTimes.ToString());
+            this.ContactID = entity.ContactID == null ? default(int?) : int.Parse(entity.ContactID.ToString());
+            this.ContactName = entity.ContactName == null ? default(string) : entity.ContactName.ToString();
+            this.ContractCategory = entity.ContractCategory == null ? default(int?) : int.Parse(entity.ContractCategory.ToString());
+            this.ContractNumber = entity.ContractNumber == null ? default(string) : entity.ContractNumber.ToString();
+            this.ContractPeriodType = entity.ContractPeriodType == null ? default(string) : entity.ContractPeriodType.ToString();
+            this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
+            this.EstimatedCost = entity.EstimatedCost == null ? default(double?) : double.Parse(entity.EstimatedCost.ToString());
+            this.EstimatedHours = entity.EstimatedHours == null ? default(double?) : double.Parse(entity.EstimatedHours.ToString());
+            this.EstimatedRevenue = entity.EstimatedRevenue == null ? default(double?) : double.Parse(entity.EstimatedRevenue.ToString());
+            this.ExclusionContractID = entity.ExclusionContractID == null ? default(long?) : long.Parse(entity.ExclusionContractID.ToString());
+            this.InternalCurrencyOverageBillingRate = entity.InternalCurrencyOverageBillingRate == null ? default(double?) : double.Parse(entity.InternalCurrencyOverageBillingRate.ToString());
+            this.InternalCurrencySetupFee = entity.InternalCurrencySetupFee == null ? default(double?) : double.Parse(entity.InternalCurrencySetupFee.ToString());
+            this.IsDefaultContract = entity.IsDefaultContract == null ? default(bool?) : bool.Parse(entity.IsDefaultContract.ToString());
+            this.OpportunityID = entity.OpportunityID == null ? default(int?) : int.Parse(entity.OpportunityID.ToString());
+            this.OverageBillingRate = entity.OverageBillingRate == null ? default(double?) : double.Parse(entity.OverageBillingRate.ToString());
+            this.PurchaseOrderNumber = entity.PurchaseOrderNumber == null ? default(string) : entity.PurchaseOrderNumber.ToString();
+            this.RenewedContractID = entity.RenewedContractID == null ? default(long?) : long.Parse(entity.RenewedContractID.ToString());
+            this.ServiceLevelAgreementID = entity.ServiceLevelAgreementID == null ? default(int?) : int.Parse(entity.ServiceLevelAgreementID.ToString());
+            this.SetupFee = entity.SetupFee == null ? default(double?) : double.Parse(entity.SetupFee.ToString());
+            this.SetupFeeAllocationCodeID = entity.SetupFeeAllocationCodeID == null ? default(long?) : long.Parse(entity.SetupFeeAllocationCodeID.ToString());
 
         } //end Contract(net.autotask.webservices.Contract entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.Contract(Contract contract)
         {
             return new net.autotask.webservices.Contract()
             {
-                id = this.id,
-
+                id = contract.id,
+                AccountID = contract.AccountID,
+                BillingPreference = contract.BillingPreference,
+                BusinessDivisionSubdivisionID = contract.BusinessDivisionSubdivisionID,
+                Compliance = contract.Compliance,
+                ContactID = contract.ContactID,
+                ContactName = contract.ContactName,
+                ContractCategory = contract.ContractCategory,
+                ContractName = contract.ContractName,
+                ContractNumber = contract.ContractNumber,
+                ContractPeriodType = contract.ContractPeriodType,
+                ContractType = contract.ContractType,
+                Description = contract.Description,
+                EndDate = contract.EndDate,
+                EstimatedCost = contract.EstimatedCost,
+                EstimatedHours = contract.EstimatedHours,
+                EstimatedRevenue = contract.EstimatedRevenue,
+                ExclusionContractID = contract.ExclusionContractID,
+                InternalCurrencyOverageBillingRate = contract.InternalCurrencyOverageBillingRate,
+                InternalCurrencySetupFee = contract.InternalCurrencySetupFee,
+                IsDefaultContract = contract.IsDefaultContract,
+                OpportunityID = contract.OpportunityID,
+                OverageBillingRate = contract.OverageBillingRate,
+                PurchaseOrderNumber = contract.PurchaseOrderNumber,
+                RenewedContractID = contract.RenewedContractID,
+                ServiceLevelAgreementID = contract.ServiceLevelAgreementID,
+                SetupFee = contract.SetupFee,
+                SetupFeeAllocationCodeID = contract.SetupFeeAllocationCodeID,
+                StartDate = contract.StartDate,
+                Status = contract.Status,
+                TimeReportingRequiresStartAndStopTimes = contract.TimeReportingRequiresStartAndStopTimes
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.Contract(Contract contract)
 
         #endregion //Constructors
 
@@ -47,9 +106,9 @@ namespace AutotaskNET.Entities
         #region ReadOnly Fields
 
         public string ContractPeriodType; //ReadOnly PickList Length:1
-        public long ExclusionContractID; //ReadOnly [Contract]
-        public double InternalCurrencyOverageBillingRate; //ReadOnly
-        public double InternalCurrencySetupFee; //ReadOnly
+        public long? ExclusionContractID; //ReadOnly [Contract]
+        public double? InternalCurrencyOverageBillingRate; //ReadOnly
+        public double? InternalCurrencySetupFee; //ReadOnly
 
         #endregion //ReadOnly Fields
 
@@ -79,16 +138,16 @@ namespace AutotaskNET.Entities
         public string ContractNumber; //Length:50
         public bool? IsDefaultContract;
         public string Description; //Length:2000
-        public double EstimatedCost;
-        public double EstimatedHours;
-        public double EstimatedRevenue;
-        public double OverageBillingRate;
+        public double? EstimatedCost;
+        public double? EstimatedHours;
+        public double? EstimatedRevenue;
+        public double? OverageBillingRate;
         public int? ServiceLevelAgreementID; //PickList
-        public double SetupFee;
+        public double? SetupFee;
         public string PurchaseOrderNumber; //Length:50
         public int? OpportunityID; //[Opportunity]
-        public long RenewedContractID;
-        public long SetupFeeAllocationCodeID;
+        public long? RenewedContractID;
+        public long? SetupFeeAllocationCodeID;
         public int? ContactID; //[Contact]
         public int? BusinessDivisionSubdivisionID; //[BusinessDivisionSubdivision]
 

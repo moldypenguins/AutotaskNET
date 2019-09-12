@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace AutotaskNET.Entities
 {
@@ -26,9 +27,15 @@ namespace AutotaskNET.Entities
 
         } //end Entity(net.autotask.webservices.Entity entity)
 
-        public abstract net.autotask.webservices.Entity ToATWS(); //end ToATWS()
-
         #endregion //Constructors
+
+        /*
+        public static implicit operator net.autotask.webservices.Entity(Entity entity)
+        {
+            return entity;
+
+        } //end implicit operator net.autotask.webservices.Entity(Entity entity)
+        */
 
         #region Fields
 
@@ -38,8 +45,17 @@ namespace AutotaskNET.Entities
 
         #endregion //Required ReadOnly Fields
 
+
+        #region Optional Fields
+
+        public List<UserDefinedField> UserDefinedFields;
+
+        #endregion //Optional Fields
+
         #endregion //Fields
-        
+
+
+
     } //end Entity
 
 }

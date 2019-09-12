@@ -28,15 +28,15 @@ namespace AutotaskNET.Entities
 
         } //end PriceListService(net.autotask.webservices.PriceListService entity)
 
-        public override net.autotask.webservices.Entity ToATWS()
+        public static implicit operator net.autotask.webservices.PriceListService(PriceListService pricelistservice)
         {
             return new net.autotask.webservices.PriceListService()
             {
-                id = this.id,
+                id = pricelistservice.id,
 
             };
 
-        } //end ToATWS()
+        } //end implicit operator net.autotask.webservices.PriceListService(PriceListService pricelistservice)
 
         #endregion //Constructors
 
