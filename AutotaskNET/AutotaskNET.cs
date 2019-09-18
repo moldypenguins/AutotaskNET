@@ -8,8 +8,6 @@ namespace AutotaskNET
 {
     public class ATWSInterface
     {
-        public const string serviceURL = "https://webservices.autotask.net/ATServices/1.5/atws.asmx";
-
         /// <summary>
         /// The Autotask Web Service Object.
         /// </summary>
@@ -36,7 +34,7 @@ namespace AutotaskNET
         /// <exception cref="AutotaskNETException">Error getting zone information.</exception>
         public void Connect(string username, string password)
         {
-            this._atws = new net.autotask.webservices.ATWS() { Url = ATWSInterface.serviceURL };
+            this._atws = new net.autotask.webservices.ATWS() { Url = Properties.Settings.Default.Autotask_Net_Webservices_ATWS };
 
             net.autotask.webservices.ATWSZoneInfo zoneInfo = this._atws.getZoneInfo(username);
             if (zoneInfo.ErrorCode >= 0)
@@ -126,9 +124,12 @@ namespace AutotaskNET
                     query.Append("</query>");
                     query.Append("</queryxml>");
 
+
+                    //Console.WriteLine(query.ToString());
+
                     //submit query
                     net.autotask.webservices.ATWSResponse response = this._atws.query(query.ToString());
-
+                    
                     //parse response
                     if (response.ReturnCode > 0 && response.EntityResults.Length > 0)
                     {
@@ -218,7 +219,7 @@ namespace AutotaskNET
 
                 //create entity
                 net.autotask.webservices.ATWSResponse resp = this._atws.create(new net.autotask.webservices.Entity[] { typedEntity });
-                if (resp.Errors.Length > 0 && resp.EntityReturnInfoResults.Length > 0)
+                if (resp.Errors.Length > 0 && resp.EntityReturnInfoResults.Length <= 0)
                 {
                     throw new AutotaskNETException(string.Join("\r\n", resp.Errors.Select(r => r.Message)));
                 }
@@ -259,7 +260,7 @@ namespace AutotaskNET
 
                 //update entity
                 net.autotask.webservices.ATWSResponse resp = this._atws.update(new net.autotask.webservices.Entity[] { typedEntity });
-                if (resp.Errors.Length > 0 && resp.EntityReturnInfoResults.Length > 0)
+                if (resp.Errors.Length > 0 && resp.EntityReturnInfoResults.Length <= 0)
                 {
                     throw new AutotaskNETException(string.Join("\r\n", resp.Errors.Select(r => r.Message)));
                 }
