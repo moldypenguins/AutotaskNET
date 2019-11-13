@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace AutotaskNET.Entities
 {
@@ -23,6 +24,36 @@ namespace AutotaskNET.Entities
         public Service() : base() { } //end Service()
         public Service(net.autotask.webservices.Service entity) : base(entity)
         {
+            this.Name = entity.Name?.ToString();
+            this.Description = entity.Description?.ToString();
+            this.InvoiceDescription = entity.InvoiceDescription.ToString();
+            this.IsActive = entity.IsActive == null ? default(bool?) : bool.Parse(entity.IsActive.ToString());
+            this.UnitCost = entity.UnitCost == null ? default(double) : double.Parse(entity.UnitCost.ToString());
+            this.UnitPrice = entity.UnitPrice == null ? default(double) : double.Parse(entity.UnitPrice.ToString());
+            this.CreateDate = entity.CreateDate == null
+                ? default(DateTime?)
+                : DateTime.Parse(entity.CreateDate.ToString());
+            this.AllocationCodeID = entity.AllocationCodeID == null ? default(int) : int.Parse(entity.AllocationCodeID.ToString());
+            this.LastModifiedDate = entity.LastModifiedDate == null
+                ? default(DateTime)
+                : DateTime.Parse(entity.LastModifiedDate.ToString());
+            this.CreatorResourceID = entity.CreatorResourceID == null
+                ? default(int?)
+                : int.Parse(entity.CreatorResourceID.ToString());
+            this.MarkupRate = entity.MarkupRate == null ? default(double) : double.Parse(entity.MarkupRate.ToString());
+            this.PeriodType = entity.PeriodType?.ToString();
+            this.ServiceLevelAgreementID = entity.ServiceLevelAgreementID == null
+                ? default(long)
+                : long.Parse(entity.ServiceLevelAgreementID.ToString());
+            this.UpdateResourceID = entity.UpdateResourceID == null
+                ? default(int?)
+                : int.Parse(entity.UpdateResourceID.ToString());
+            this.VendorAccountID = entity.VendorAccountID == null
+                ? default(int?)
+                : int.Parse(entity.VendorAccountID.ToString());
+
+            this.UserDefinedFields = entity.UserDefinedFields?.Select(udf => new UserDefinedField { Name = udf.Name, Value = udf.Value }).ToList();
+
 
         } //end Account(net.autotask.webservices.Account entity)
 
@@ -31,7 +62,22 @@ namespace AutotaskNET.Entities
             return new net.autotask.webservices.Service()
             {
                 id = service.id,
-
+                IsActive = service.IsActive,
+                MarkupRate = service.MarkupRate,
+                VendorAccountID = service.VendorAccountID,
+                UnitCost = service.UnitCost,
+                UpdateResourceID = service.UpdateResourceID,
+                UnitPrice = service.UnitPrice,
+                CreateDate = service.CreateDate,
+                ServiceLevelAgreementID = service.ServiceLevelAgreementID,
+                LastModifiedDate = service.LastModifiedDate,
+                CreatorResourceID = service.CreatorResourceID,
+                Description = service.Description,
+                Name = service.Name,
+                InvoiceDescription = service.InvoiceDescription,
+                PeriodType = service.PeriodType,
+                AllocationCodeID = service.AllocationCodeID,
+                UserDefinedFields = Array.ConvertAll(service.UserDefinedFields.ToArray(), UserDefinedField.ToATWS)
             };
 
         } //end implicit operator net.autotask.webservices.Service(Service service)

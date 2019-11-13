@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Linq;
 
 namespace AutotaskNET.Entities
 {
@@ -29,7 +29,20 @@ namespace AutotaskNET.Entities
         public ContractService() : base() { } //end ContractService()
         public ContractService(net.autotask.webservices.ContractService entity) : base(entity)
         {
-
+            this.id = entity.id;
+            this.AdjustedPrice = entity.AdjustedPrice == null
+                ? default(double)
+                : double.Parse(entity.AdjustedPrice.ToString());
+            this.ContractID = int.Parse(entity.ContractID.ToString());
+            this.InternalCurrencyAdjustedPrice = double.Parse(entity.InternalCurrencyAdjustedPrice.ToString());
+            this.InternalCurrencyUnitPrice = double.Parse(entity.InternalCurrencyUnitPrice.ToString());
+            this.InternalDescription = entity.InternalDescription?.ToString();
+            this.QuoteItemID = entity.QuoteItemID == null ? default(long) : long.Parse(entity.QuoteItemID.ToString());
+            this.ServiceID = int.Parse(entity.ServiceID.ToString());
+            this.UnitCost = double.Parse(entity.UnitCost.ToString());
+            this.UnitPrice = double.Parse(entity.UnitPrice.ToString());
+            this.InvoiceDescription = entity.InvoiceDescription?.ToString();
+            this.UserDefinedFields = entity.UserDefinedFields?.Select(udf => new UserDefinedField { Name = udf.Name, Value = udf.Value }).ToList();
         } //end ContractService(net.autotask.webservices.ContractService entity)
 
         public static implicit operator net.autotask.webservices.ContractService(ContractService contractservice)
@@ -37,7 +50,16 @@ namespace AutotaskNET.Entities
             return new net.autotask.webservices.ContractService()
             {
                 id = contractservice.id,
-
+                InvoiceDescription = contractservice.InvoiceDescription,
+                UnitCost = contractservice.UnitCost,
+                UnitPrice = contractservice.UnitPrice,
+                AdjustedPrice = contractservice.AdjustedPrice,
+                ContractID = contractservice.ContractID,
+                InternalCurrencyAdjustedPrice = contractservice.InternalCurrencyAdjustedPrice,
+                InternalCurrencyUnitPrice = contractservice.InternalCurrencyUnitPrice,
+                InternalDescription = contractservice.InternalDescription,
+                QuoteItemID = contractservice.QuoteItemID,
+                ServiceID = contractservice.ServiceID,
             };
 
         } //end implicit operator net.autotask.webservices.ContractService(ContractService contractservice)
