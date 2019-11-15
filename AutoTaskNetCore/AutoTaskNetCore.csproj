@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <Authors>Risolv &amp; Taylor Hall</Authors>
+    <PackageProjectUrl>https://github.com/taylorghall/AutotaskNetCore</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/taylorghall/AutotaskNetCore</RepositoryUrl>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
