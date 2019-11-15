@@ -6,6 +6,7 @@
     <PackageProjectUrl>https://github.com/taylorghall/AutotaskNetCore</PackageProjectUrl>
     <RepositoryUrl>https://github.com/taylorghall/AutotaskNetCore</RepositoryUrl>
     <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
