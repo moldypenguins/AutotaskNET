@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Http.Headers;
 
 namespace AutotaskNET.Entities
 {
@@ -11,7 +12,7 @@ namespace AutotaskNET.Entities
     /// If the Inventory module is enabled, users with the correct permission can manage Products through Inventory > Manage Products.
     /// </summary>
     /// <seealso cref="AutotaskNET.Entities.Entity"/>
-    class Product : Entity
+    public class Product : Entity
     {
         #region Properties
 
@@ -28,7 +29,10 @@ namespace AutotaskNET.Entities
         public Product() : base() { } //end Product()
         public Product(net.autotask.webservices.Product entity) : base(entity)
         {
-
+            id = entity.id;
+            Name = entity.Name?.ToString();
+            Description = entity.Description?.ToString();
+            SKU = entity.SKU?.ToString();
         } //end Product(net.autotask.webservices.Product entity)
 
         public static implicit operator net.autotask.webservices.Product(Product product)
@@ -36,7 +40,6 @@ namespace AutotaskNET.Entities
             return new net.autotask.webservices.Product()
             {
                 id = product.id,
-
             };
 
         } //end implicit operator net.autotask.webservices.Product(Product product)

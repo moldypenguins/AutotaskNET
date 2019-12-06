@@ -37,7 +37,7 @@ namespace AutotaskNET.Entities
             HourlyCost = entity.HourlyCost == null ? default(double) : double.Parse(entity.HourlyCost.ToString());
             InstallDate = entity.InstallDate == null ? default(DateTime) : DateTime.Parse(entity.InstallDate.ToString());
             MonthlyCost = entity.MonthlyCost == null ? default(double) : double.Parse(entity.MonthlyCost.ToString());
-            this.Notes = entity.Notes == null ? default(string) : entity.MonthlyCost.ToString();
+            Notes = entity.Notes?.ToString();
             NumberOfUsers = entity.NumberOfUsers == null ? default(double) : double.Parse(entity.NumberOfUsers.ToString());
             PerUseCost = entity.PerUseCost == null ? default(double) : double.Parse(entity.PerUseCost.ToString());
             ProductID = entity.ProductID == null ? default(int) : int.Parse(entity.ProductID.ToString());
@@ -116,6 +116,28 @@ namespace AutotaskNET.Entities
             return new net.autotask.webservices.InstalledProduct()
             {
                 id = installedproduct.id,
+                ContractID = installedproduct.ContractID,
+                MonthlyCost = installedproduct.MonthlyCost,
+                Active = installedproduct.Active,
+                DailyCost = installedproduct.DailyCost,
+                HourlyCost = installedproduct.HourlyCost,
+                InstallDate = installedproduct.InstallDate,
+                Notes = installedproduct.Notes,
+                NumberOfUsers = installedproduct.NumberOfUsers,
+                PerUseCost = installedproduct.PerUseCost,
+                ProductID = installedproduct.ProductID,
+                ReferenceNumber = installedproduct.ReferenceNumber,
+                ReferenceTitle = installedproduct.ReferenceTitle,
+                SerialNumber = installedproduct.SerialNumber,
+                SetupFee = installedproduct.SetupFee,
+                WarrantyExpirationDate = installedproduct.WarrantyExpirationDate,
+                ServiceID = installedproduct.ServiceID,
+                ServiceBundleID = installedproduct.ServiceBundleID,
+                Type = installedproduct.Type,
+                Location = installedproduct.Location,
+                ContactID = installedproduct.ContactID,
+                VendorID = installedproduct.VendorID,
+
             };
 
         } //end implicit operator net.autotask.webservices.InstalledProduct(InstalledProduct installedproduct)

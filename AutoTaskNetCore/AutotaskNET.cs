@@ -246,19 +246,22 @@ namespace AutotaskNET
                 dynamic typedEntity = Convert.ChangeType(entity, entity.GetType());
 
                 //create entity
-                net.autotask.webservices.ATWSResponse resp = this._atws.createAsync(
-                    new createRequest(new AutotaskIntegrations(), 
-                        new net.autotask.webservices.Entity[] { typedEntity })).Result.createResult;
-                if (resp.Errors.Length > 0 && resp.EntityReturnInfoResults.Length <= 0)
+                var resp = this._atws.createAsync(
+                    new createRequest
+                    {
+                        Entities = new net.autotask.webservices.Entity[] {typedEntity}
+                    }).Result.createResult;
+
+                 if (resp.Errors.Length > 0 && resp.EntityReturnInfoResults.Length <= 0)
                 {
                     throw new AutotaskNETException(string.Join("\r\n", resp.Errors.Select(r => r.Message)));
                 }
                 else
                 {
-                    createdEntity = this.Query(entity.GetType(), new QueryFilter()
-                    {
-                        new QueryField("id", QueryFieldOperation.Equals, resp.EntityReturnInfoResults[0].EntityId)
-                    }).FirstOrDefault();
+                    //createdEntity = this.Query(entity.GetType(), new QueryFilter()
+                    //{
+                    //    new QueryField("id", QueryFieldOperation.Equals, resp.EntityReturnInfoResults[0].EntityId)
+                    //}).FirstOrDefault();
                 }
             }
             return createdEntity;
