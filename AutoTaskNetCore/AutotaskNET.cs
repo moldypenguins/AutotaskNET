@@ -25,6 +25,8 @@ namespace AutotaskNET
         List<FieldInformation> GetUDFInfo(Type entity_type);
         List<FieldInformation> GetUDFInfo(Entities.Entity entity);
         Task<List<EntityInformation>> GetEntityInfo();
+        bool HasAuthenticated { get; }
+
 
     }
     public class ATWSInterface : IATWSInterface
@@ -125,7 +127,7 @@ namespace AutotaskNET
 
                     #region QueryFilters
 
-                    
+
                     //use id to pull more than 500 records if id is not already a filter
                     if (filters == null || !QueryFilter.ContainsCondition(new QueryCondition(filters), "id"))
                     {

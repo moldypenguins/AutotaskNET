@@ -36,20 +36,20 @@ namespace AutotaskNET
         /// Words:<br />
         /// An, And, Co, Company, Corp, Corporation, Inc, Incorporated, Llc, Llp, Ltd, Of, The
         /// </summary>
-        internal new string Operation { get; private set; }
+        public new string Operation { get; private set; }
 
         /// <summary>
         /// Gets or sets the name of the field to filter.
         /// </summary>
-        internal string FieldName { get; private set; }
+        public string FieldName { get; private set; }
         /// <summary>
         /// Gets or sets the field value to filter on.
         /// </summary>
-        internal object Value { get; private set; }
+        public object Value { get; private set; }
         /// <summary>
         /// Gets or sets whether this field is a UDF
         /// </summary>
-        internal bool IsUDF { get; private set; }
+        public bool IsUDF { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QueryField"/> class.

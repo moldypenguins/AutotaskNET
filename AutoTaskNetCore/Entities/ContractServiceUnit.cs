@@ -23,7 +23,17 @@ namespace AutotaskNET.Entities
         public ContractServiceUnit() : base() { } //end ContractServiceUnit()
         public ContractServiceUnit(net.autotask.webservices.ContractServiceUnit entity) : base(entity)
         {
-
+            this.ContractID = int.Parse(entity.ContractID.ToString());
+            this.EndDate = entity.EndDate == null ? default(DateTime) : DateTime.Parse(entity.EndDate.ToString());
+            this.ServiceID = int.Parse(entity.ServiceID.ToString());
+            this.StartDate = entity.StartDate == null ? default(DateTime) : DateTime.Parse(entity.StartDate.ToString());
+            this.Units = int.Parse(entity.Units.ToString());
+            this.ApproveAndPostDate = entity.ApproveAndPostDate == null ? default(DateTime?) : DateTime.Parse(entity.ApproveAndPostDate.ToString());
+            this.ContractServiceID = entity.ContractServiceID == null ? default(int?) : int.Parse(entity.ContractServiceID.ToString());
+            this.Cost = float.Parse(entity.Cost.ToString());
+            this.InternalCurrencyPrice = float.Parse(entity.InternalCurrencyPrice.ToString());
+            this.Price = float.Parse(entity.Price.ToString());
+            this.VendorAccountID = entity.BusinessDivisionSubdivisionID == null ? default(int?) : int.Parse(entity.BusinessDivisionSubdivisionID.ToString());
         } //end ContractServiceUnit(net.autotask.webservices.ContractServiceUnit entity)
 
         public static implicit operator net.autotask.webservices.ContractServiceUnit(ContractServiceUnit contractserviceunit)

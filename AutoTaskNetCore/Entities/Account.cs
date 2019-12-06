@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace AutotaskNET.Entities
 {
@@ -76,6 +77,8 @@ namespace AutotaskNET.Entities
             this.TaxRegionID = entity.TaxRegionID == null ? default(int?) : int.Parse(entity.TaxRegionID.ToString());
             this.TerritoryID = entity.TerritoryID == null ? default(int?) : int.Parse(entity.TerritoryID.ToString());
             this.WebAddress = entity.WebAddress == null ? default(string) : entity.WebAddress.ToString();
+            this.UserDefinedFields = entity.UserDefinedFields?.Select(udf => new UserDefinedField { Name = udf.Name, Value = udf.Value }).ToList();
+
 
         } //end Account(net.autotask.webservices.Account entity)
 
@@ -135,7 +138,8 @@ namespace AutotaskNET.Entities
                 TaxID = account.TaxID,
                 TaxRegionID = account.TaxRegionID,
                 TerritoryID = account.TerritoryID,
-                WebAddress = account.WebAddress
+                WebAddress = account.WebAddress,
+                UserDefinedFields = Array.ConvertAll(account.UserDefinedFields.ToArray(), new Converter<UserDefinedField, net.autotask.webservices.UserDefinedField>(UserDefinedField.ToATWS))
             };
 
         } //end implicit operator net.autotask.webservices.Account(Account account)
