@@ -35,7 +35,6 @@ D:\Source\GitHub\AutotaskNET\AutotaskTEST\bin\Debug\AutotaskNET.dll
 D:\Source\GitHub\AutotaskNET\AutotaskTEST\bin\Debug\AutotaskNET.pdb
 D:\Source\GitHub\AutotaskNET\AutotaskTEST\bin\Debug\AutotaskNET.dll.config
 D:\Source\GitHub\AutotaskNET\AutotaskTEST\obj\Debug\AutotaskTEST.csprojAssemblyReference.cache
-D:\Source\GitHub\AutotaskNET\AutotaskTEST\obj\Debug\AutotaskTEST.csproj.CoreCompileInputs.cache
 D:\Source\GitHub\AutotaskNET\AutotaskTEST\obj\Debug\AutotaskTEST.csproj.CopyComplete
 D:\Source\GitHub\AutotaskNET\AutotaskTEST\obj\Debug\AutotaskTEST.exe
 D:\Source\GitHub\AutotaskNET\AutotaskTEST\obj\Debug\AutotaskTEST.pdb

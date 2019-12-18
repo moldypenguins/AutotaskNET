@@ -146,10 +146,9 @@ namespace AutotaskTEST
                 Console.WriteLine();
 
                 #endregion //Contacts
-                
+
 
                 /*
-
                 //Entity Information
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tGetting Entity Information...");
                 List<EntityInformation> eInformation = atAPI.GetEntityInfo();
@@ -169,8 +168,8 @@ namespace AutotaskTEST
                     Console.WriteLine($"\t\t - {udfInfo.Name} = Type: {udfInfo.Type}");
                 }
                 Console.WriteLine();
-
                 */
+
 
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tDone.");
                 Console.WriteLine();
