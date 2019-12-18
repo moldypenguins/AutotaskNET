@@ -26,6 +26,17 @@ namespace AutotaskNET.Entities
         public InternalLocation() : base() { } //end InternalLocation()
         public InternalLocation(net.autotask.webservices.InternalLocation entity) : base(entity)
         {
+            this.Name = entity.Name == null ? default(string) : entity.Name.ToString();
+            this.AdditionalAddressInfo = entity.AdditionalAddressInfo == null ? default(string) : entity.AdditionalAddressInfo.ToString();
+            this.Address1 = entity.Address1 == null ? default(string) : entity.Address1.ToString();
+            this.Address2 = entity.Address2 == null ? default(string) : entity.Address2.ToString();
+            this.City = entity.City == null ? default(string) : entity.City.ToString();
+            this.Country = entity.Country == null ? default(string) : entity.Country.ToString();
+            this.HolidaySetId = long.Parse(entity.HolidaySetId.ToString());
+            this.IsDefault = entity.IsDefault == null ? default(bool?) : bool.Parse(entity.IsDefault.ToString());
+            this.PostalCode = entity.PostalCode == null ? default(string) : entity.PostalCode.ToString();
+            this.State = entity.State == null ? default(string) : entity.State.ToString();
+            this.TimeZone = entity.TimeZone == null ? default(string) : entity.TimeZone.ToString();
 
         } //end InternalLocation(net.autotask.webservices.InternalLocation entity)
 
@@ -34,7 +45,17 @@ namespace AutotaskNET.Entities
             return new net.autotask.webservices.InternalLocation()
             {
                 id = internallocation.id,
-
+                Name = internallocation.Name == null ? default(string) : internallocation.Name.ToString(),
+                AdditionalAddressInfo = internallocation.AdditionalAddressInfo == null ? default(string) : internallocation.AdditionalAddressInfo.ToString(),
+                Address1 = internallocation.Address1 == null ? default(string) : internallocation.Address1.ToString(),
+                Address2 = internallocation.Address2 == null ? default(string) : internallocation.Address2.ToString(),
+                City = internallocation.City == null ? default(string) : internallocation.City.ToString(),
+                Country = internallocation.Country == null ? default(string) : internallocation.Country.ToString(),
+                HolidaySetId = long.Parse(internallocation.HolidaySetId.ToString()),
+                IsDefault = internallocation.IsDefault == null ? default(bool?) : bool.Parse(internallocation.IsDefault.ToString()),
+                PostalCode = internallocation.PostalCode == null ? default(string) : internallocation.PostalCode.ToString(),
+                State = internallocation.State == null ? default(string) : internallocation.State.ToString(),
+                TimeZone = internallocation.TimeZone == null ? default(string) : internallocation.TimeZone.ToString()
             };
 
         } //end implicit operator net.autotask.webservices.InternalLocation(InternalLocation internallocation)

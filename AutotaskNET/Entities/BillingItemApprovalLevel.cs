@@ -25,7 +25,10 @@ namespace AutotaskNET.Entities
         public BillingItemApprovalLevel() : base() { } //end BillingItemApprovalLevel()
         public BillingItemApprovalLevel(net.autotask.webservices.BillingItemApprovalLevel entity) : base(entity)
         {
-
+            this.ApprovalDateTime = DateTime.Parse(entity.ApprovalDateTime.ToString());
+            this.ApprovalLevel = int.Parse(entity.ApprovalLevel.ToString());
+            this.ApprovalResourceID = int.Parse(entity.ApprovalResourceID.ToString());
+            this.TimeEntryID = int.Parse(entity.TimeEntryID.ToString());
         } //end BillingItemApprovalLevel(net.autotask.webservices.BillingItemApprovalLevel entity)
 
         public static implicit operator net.autotask.webservices.BillingItemApprovalLevel(BillingItemApprovalLevel billingitemapprovallevel)
@@ -33,7 +36,10 @@ namespace AutotaskNET.Entities
             return new net.autotask.webservices.BillingItemApprovalLevel()
             {
                 id = billingitemapprovallevel.id,
-
+                ApprovalDateTime = billingitemapprovallevel.ApprovalDateTime,
+                ApprovalLevel = billingitemapprovallevel.ApprovalLevel,
+                ApprovalResourceID = billingitemapprovallevel.ApprovalResourceID,
+                TimeEntryID = billingitemapprovallevel.TimeEntryID
             };
 
         } //end ToATWS()

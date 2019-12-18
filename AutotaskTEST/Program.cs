@@ -9,10 +9,11 @@ namespace AutotaskTEST
 {
     class Program
     {
-        private const string @USERNAME = "api.user@domain.com";
+        private const string @USERNAME = "api_user@domain.com";
         private const string @PASSWORD = "P@ssw0rd";
         private const int @ACCOUNTID = 0;
         private const string @PHONENUMBER = "123-555-1234";
+
 
         static void Main(string[] args)
         {
@@ -30,13 +31,13 @@ namespace AutotaskTEST
 
                 
                 #region Accounts
-                
+
                 //Account Locations
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tGetting Account Locations...");
                 List<AccountLocation> account_locations = atAPI.Query(typeof(AccountLocation)).OfType<AccountLocation>().ToList();
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tAccount Locations: {account_locations.Count}");
                 Console.WriteLine();
-
+                
                 //Account Types
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tGetting Account Types...");
                 List<PicklistValue> account_types = atAPI.GetPicklistValues(typeof(Account), "AccountType");
@@ -65,10 +66,10 @@ namespace AutotaskTEST
                 }).OfType<Account>().ToList();
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tAccounts Found: {accounts.Count}");
                 Console.WriteLine();
-
-                #endregion //Accounts
                 
+                #endregion //Accounts
 
+                
                 #region Tickets
 
                 //Ticket Statuses
@@ -146,9 +147,8 @@ namespace AutotaskTEST
 
                 #endregion //Contacts
 
-                
-                /*
 
+                /*
                 //Entity Information
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tGetting Entity Information...");
                 List<EntityInformation> eInformation = atAPI.GetEntityInfo();
@@ -168,8 +168,8 @@ namespace AutotaskTEST
                     Console.WriteLine($"\t\t - {udfInfo.Name} = Type: {udfInfo.Type}");
                 }
                 Console.WriteLine();
-
                 */
+
 
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}\tDone.");
                 Console.WriteLine();

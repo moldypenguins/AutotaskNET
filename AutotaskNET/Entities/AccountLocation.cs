@@ -33,7 +33,8 @@ namespace AutotaskNET.Entities
             return new net.autotask.webservices.AccountLocation()
             {
                 id = accountlocation.id,
-
+                AccountID = int.Parse(accountlocation.AccountID.ToString()),
+                LocationName = accountlocation.LocationName == null ? default(string) : accountlocation.LocationName.ToString()
             };
 
         } //end implicit operator net.autotask.webservices.AccountLocation(AccountLocation accountlocation)
