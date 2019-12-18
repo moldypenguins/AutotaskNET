@@ -28,7 +28,7 @@ namespace AutotaskNET.Entities
             this.AccountID = entity.AccountID == null ? default(int?) : int.Parse(entity.AccountID.ToString());
             this.AccountManagerWhenApprovedID = entity.AccountManagerWhenApprovedID == null ? default(int?) : int.Parse(entity.AccountManagerWhenApprovedID.ToString());
             this.AllocationCodeID = entity.AllocationCodeID == null ? default(int?) : int.Parse(entity.AllocationCodeID.ToString());
-            this.ApprovedTime = entity.ApprovedTime == null ? default(DateTime?) : DateTime.Parse(entity.ApprovedTime.ToString());
+            //this.ApprovedTime = entity.ApprovedTime == null ? default(DateTime?) : DateTime.Parse(entity.ApprovedTime.ToString());
             this.BusinessDivisionSubdivisionID = entity.BusinessDivisionSubdivisionID == null ? default(int?) : int.Parse(entity.BusinessDivisionSubdivisionID.ToString());
             this.ContractCostID = entity.ContractCostID == null ? default(long?) : long.Parse(entity.ContractCostID.ToString());
             this.ContractID = entity.ContractID == null ? default(int?) : int.Parse(entity.ContractID.ToString());
@@ -79,7 +79,7 @@ namespace AutotaskNET.Entities
                 AccountID = billingitem.AccountID == null ? default(int?) : int.Parse(billingitem.AccountID.ToString()),
                 AccountManagerWhenApprovedID = billingitem.AccountManagerWhenApprovedID == null ? default(int?) : int.Parse(billingitem.AccountManagerWhenApprovedID.ToString()),
                 AllocationCodeID = billingitem.AllocationCodeID == null ? default(int?) : int.Parse(billingitem.AllocationCodeID.ToString()),
-                ApprovedTime = billingitem.ApprovedTime == null ? default(DateTime?) : DateTime.Parse(billingitem.ApprovedTime.ToString()),
+                //ApprovedTime = billingitem.ApprovedTime == null ? default(DateTime?) : DateTime.Parse(billingitem.ApprovedTime.ToString()),
                 BusinessDivisionSubdivisionID = billingitem.BusinessDivisionSubdivisionID == null ? default(int?) : int.Parse(billingitem.BusinessDivisionSubdivisionID.ToString()),
                 ContractCostID = billingitem.ContractCostID == null ? default(long?) : long.Parse(billingitem.ContractCostID.ToString()),
                 ContractID = billingitem.ContractID == null ? default(int?) : int.Parse(billingitem.ContractID.ToString()),
@@ -137,7 +137,7 @@ namespace AutotaskNET.Entities
         public double? TotalAmount; //ReadOnly
         public double? OurCost; //ReadOnly
         public DateTime? ItemDate; //ReadOnly
-        public DateTime? ApprovedTime; //ReadOnly
+        //public DateTime? ApprovedTime; //ReadOnly
         public int? InvoiceID; //ReadOnly [Invoice]
         public int? ItemApproverID; //ReadOnly [Resource]
         public int? AccountID; //ReadOnly [Account]
