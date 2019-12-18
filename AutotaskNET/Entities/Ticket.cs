@@ -164,7 +164,7 @@ namespace AutotaskNET.Entities
                 TicketNumber = ticket.TicketNumber,
                 TicketType = ticket.TicketType,
                 Title = ticket.Title,
-                UserDefinedFields = Array.ConvertAll(ticket.UserDefinedFields.ToArray(), new Converter<UserDefinedField, net.autotask.webservices.UserDefinedField>(UserDefinedField.ToATWS))
+                UserDefinedFields = ticket.UserDefinedFields == null ? null : Array.ConvertAll(ticket.UserDefinedFields.ToArray(), new Converter<UserDefinedField, net.autotask.webservices.UserDefinedField>(UserDefinedField.ToATWS))
             };
 
         } //end implicit operator net.autotask.webservices.Ticket(Ticket ticket)

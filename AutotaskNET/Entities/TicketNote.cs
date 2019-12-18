@@ -25,12 +25,12 @@ namespace AutotaskNET.Entities
         public TicketNote() : base() { } //end TicketNote()
         public TicketNote(net.autotask.webservices.TicketNote entity) : base(entity)
         {
-            this.CreatorResourceID = entity.CreatorResourceID == null ? default(int?) : int.Parse(entity.CreatorResourceID.ToString());
+            this.CreatorResourceID = entity.CreatorResourceID == null ? default(long?) : long.Parse(entity.CreatorResourceID.ToString());
             this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
             this.LastActivityDate = entity.LastActivityDate == null ? default(DateTime?) : DateTime.Parse(entity.LastActivityDate.ToString());
             this.NoteType = int.Parse(entity.NoteType.ToString());
             this.Publish = int.Parse(entity.Publish.ToString());
-            this.TicketID = int.Parse(entity.TicketID.ToString());
+            this.TicketID = long.Parse(entity.TicketID.ToString());
             this.Title = entity.Title == null ? default(string) : entity.Title.ToString();
 
         } //end TicketNote(net.autotask.webservices.TicketNote entity)
@@ -56,9 +56,8 @@ namespace AutotaskNET.Entities
         #region Fields
 
         #region ReadOnly Fields
-
-
-        public int? CreatorResourceID; //ReadOnly [Resource]
+        
+        public long? CreatorResourceID; //ReadOnly [Resource]
         public DateTime? LastActivityDate; //ReadOnly
 
         #endregion //ReadOnly Fields
@@ -68,7 +67,7 @@ namespace AutotaskNET.Entities
         public string Description; //Required Length:32000
         public int NoteType; //Required PickList
         public int Publish; //Required PickList
-        public int TicketID; //Required [Ticket]
+        public long TicketID; //Required [Ticket]
         public string Title; //Required Length:250
 
         #endregion //Required Fields
