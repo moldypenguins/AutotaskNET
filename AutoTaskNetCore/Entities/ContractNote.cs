@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Linq;
+using System.Net.Http.Headers;
+using System.Security.Cryptography;
 
 namespace AutotaskNET.Entities
 {
@@ -24,6 +27,13 @@ namespace AutotaskNET.Entities
         public ContractNote() : base() { } //end ContractNote()
         public ContractNote(net.autotask.webservices.ContractNote entity) : base(entity)
         {
+            id = entity.id;
+            ContractID = entity.ContractID?.ToString();
+            Description = entity.Description?.ToString();
+            CreatorResourceID = entity.CreatorResourceID == null ? (int?) null : int.Parse(entity.CreatorResourceID.ToString());
+            LastActivityDate = entity.LastActivityDate == null ? (DateTime?)null : DateTime.Parse(entity.LastActivityDate.ToString());
+            Title = entity.Title?.ToString();
+            UserDefinedFields = entity.UserDefinedFields?.Select(udf => new UserDefinedField { Name = udf.Name, Value = udf.Value }).ToList();
 
         } //end ContractNote(net.autotask.webservices.ContractNote entity)
 
@@ -32,7 +42,12 @@ namespace AutotaskNET.Entities
             return new net.autotask.webservices.ContractNote()
             {
                 id = contractnote.id,
-
+                ContractID = contractnote.id,
+                Description = contractnote.Description,
+                CreatorResourceID = contractnote.CreatorResourceID,
+                LastActivityDate = contractnote.LastActivityDate,
+                Title = contractnote.Title,
+                UserDefinedFields = Array.ConvertAll(contractnote.UserDefinedFields.ToArray(), new Converter<UserDefinedField, net.autotask.webservices.UserDefinedField>(UserDefinedField.ToATWS))
             };
 
         } //end implicit operator net.autotask.webservices.ContractNote(ContractNote contractnote)

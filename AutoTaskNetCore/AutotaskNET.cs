@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
-using System.Net;
 using System.Collections.Generic;
-using System.ServiceModel;
 using System.Threading.Tasks;
 using net.autotask.webservices;
 using Entity = AutotaskNET.Entities.Entity;
-using Task = System.Threading.Tasks.Task;
 
 namespace AutotaskNET
 {

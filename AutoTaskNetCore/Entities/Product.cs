@@ -33,6 +33,7 @@ namespace AutotaskNET.Entities
             Name = entity.Name?.ToString();
             Description = entity.Description?.ToString();
             SKU = entity.SKU?.ToString();
+            ProductCategory = entity.ProductCategory == null ? default(int?) : int.Parse(entity.ProductCategory.ToString());
         } //end Product(net.autotask.webservices.Product entity)
 
         public static implicit operator net.autotask.webservices.Product(Product product)
