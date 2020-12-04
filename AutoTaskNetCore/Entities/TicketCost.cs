@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Http.Headers;
 
 namespace AutotaskNET.Entities
 {
@@ -26,7 +27,11 @@ namespace AutotaskNET.Entities
         public TicketCost() : base() { } //end TicketCost()
         public TicketCost(net.autotask.webservices.TicketCost entity) : base(entity)
         {
-
+            //entity.AccountName == null ? default(string) : entity.AccountName.ToString();
+            ProductID = entity.ProductID == null ? default : long.Parse(entity.ProductID.ToString());
+            Billed = entity.Billed == null ? default : bool.Parse(entity.Billed.ToString());
+            InternalPurchaseOrderNumber = entity.InternalPurchaseOrderNumber?.ToString();
+            id = entity.id;
         } //end TicketCost(net.autotask.webservices.TicketCost entity)
 
         public static implicit operator net.autotask.webservices.TicketCost(TicketCost ticketcost)
@@ -34,6 +39,9 @@ namespace AutotaskNET.Entities
             return new net.autotask.webservices.TicketCost()
             {
                 id = ticketcost.id,
+                Billed = ticketcost.Billed,
+                ProductID = ticketcost.ProductID,
+                InternalPurchaseOrderNumber = ticketcost.InternalPurchaseOrderNumber
 
             };
 

@@ -25,7 +25,8 @@ namespace AutotaskNET.Entities
         public BillingItem() : base() { } //end BillingItem()
         public BillingItem(net.autotask.webservices.BillingItem entity) : base(entity)
         {
-
+            id = entity.id;
+            InvoiceID = entity.InvoiceID == null ? default : int.Parse(entity.InvoiceID.ToString());
         } //end BillingItem(net.autotask.webservices.BillingItem entity)
 
         public static implicit operator net.autotask.webservices.BillingItem(BillingItem billingitem)
@@ -33,7 +34,7 @@ namespace AutotaskNET.Entities
             return new net.autotask.webservices.BillingItem()
             {
                 id = billingitem.id,
-
+                InvoiceID = billingitem.InvoiceID
             };
 
         } //end implicit operator net.autotask.webservices.BillingItem(BillingItem billingitem)

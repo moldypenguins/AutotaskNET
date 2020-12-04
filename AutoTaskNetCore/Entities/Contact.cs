@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace AutotaskNET.Entities
 {
@@ -65,6 +66,7 @@ namespace AutotaskNET.Entities
             this.Title = entity.Title == null ? default(string) : entity.Title.ToString();
             this.TwitterUrl = entity.TwitterUrl == null ? default(string) : entity.TwitterUrl.ToString();
             this.ZipCode = entity.ZipCode == null ? default(string) : entity.ZipCode.ToString();
+            UserDefinedFields = entity.UserDefinedFields?.Select(udf => new UserDefinedField { Name = udf.Name, Value = udf.Value }).ToList();
 
         } //end Contact(net.autotask.webservices.Contact entity)
 
@@ -114,8 +116,9 @@ namespace AutotaskNET.Entities
                 Title = contact.Title,
                 TwitterUrl = contact.TwitterUrl,
                 ZipCode = contact.ZipCode,
+                UserDefinedFields = contact.UserDefinedFields == null ? default : Array.ConvertAll(contact.UserDefinedFields?.ToArray(), UserDefinedField.ToATWS)
 
-        };
+            };
 
         } //end implicit operator net.autotask.webservices.Contact(Contact contact)
 

@@ -25,6 +25,25 @@ namespace AutotaskNET.Entities
         public AccountPhysicalLocation() : base() { } //end AccountPhysicalLocation()
         public AccountPhysicalLocation(net.autotask.webservices.AccountPhysicalLocation entity) : base(entity)
         {
+            Name = entity.Name.ToString();
+            AccountID = entity.AccountID == null ? default : int.Parse(entity.AccountID.ToString());
+            Address1 = entity.Address1.ToString();
+            Address2 = entity.Address2.ToString();
+            City = entity.City.ToString();
+            Active = entity.Active == null ? default : bool.Parse(entity.Active.ToString());
+            AlternatePhone2 = entity.AlternatePhone2.ToString();
+            AlternatePhone1 = entity.AlternatePhone1.ToString();
+            State = entity.State.ToString();
+            PostalCode = entity.PostalCode.ToString();
+            RoundtripDistance = entity.RoundtripDistance == null
+                ? default
+                : decimal.Parse(entity.RoundtripDistance.ToString());
+            Primary = entity.Primary == null ? default : bool.Parse(entity.Primary.ToString());
+            Fax = entity.Fax.ToString();
+            CountryID = entity.CountryID == null ? default : int.Parse(entity.CountryID.ToString());
+            Description = entity.Description.ToString();
+            Phone = entity.Phone.ToString();
+            id = entity.id;
 
         } //end AccountPhysicalLocation(net.autotask.webservices.AccountPhysicalLocation entity)
 
@@ -33,7 +52,23 @@ namespace AutotaskNET.Entities
             return new net.autotask.webservices.AccountPhysicalLocation()
             {
                 id = accountphysicallocation.id,
-
+                Name = accountphysicallocation.Name,
+                AccountID = accountphysicallocation.AccountID,
+                Active = accountphysicallocation.Active,
+                Address1 = accountphysicallocation.Address1,
+                Address2 = accountphysicallocation.Address2,
+                AlternatePhone1 = accountphysicallocation.AlternatePhone1,
+                AlternatePhone2 = accountphysicallocation.AlternatePhone2,
+                City = accountphysicallocation.City,
+                CountryID = accountphysicallocation.CountryID,
+                Description = accountphysicallocation.Description,
+                Fax = accountphysicallocation.Fax,
+                Phone = accountphysicallocation.Phone,
+                PostalCode = accountphysicallocation.PostalCode,
+                RoundtripDistance = accountphysicallocation.RoundtripDistance,
+                Primary = accountphysicallocation.Primary,
+                State = accountphysicallocation.State,
+                UserDefinedFields = accountphysicallocation.UserDefinedFields == null ? default : Array.ConvertAll(accountphysicallocation.UserDefinedFields.ToArray(), UserDefinedField.ToATWS)
             };
 
         } //end implicit operator net.autotask.webservices.AccountPhysicalLocation(AccountPhysicalLocation accountphysicallocation)

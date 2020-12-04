@@ -139,7 +139,7 @@ namespace AutotaskNET.Entities
                 TaxRegionID = account.TaxRegionID,
                 TerritoryID = account.TerritoryID,
                 WebAddress = account.WebAddress,
-                UserDefinedFields = Array.ConvertAll(account.UserDefinedFields.ToArray(), new Converter<UserDefinedField, net.autotask.webservices.UserDefinedField>(UserDefinedField.ToATWS))
+                UserDefinedFields = account.UserDefinedFields==null ? default : Array.ConvertAll(account.UserDefinedFields?.ToArray(), UserDefinedField.ToATWS)
             };
 
         } //end implicit operator net.autotask.webservices.Account(Account account)

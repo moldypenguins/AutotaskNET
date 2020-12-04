@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace AutotaskNET.Entities
 {
@@ -24,17 +25,68 @@ namespace AutotaskNET.Entities
         public AccountNote() : base() { } //end AccountNote()
         public AccountNote(net.autotask.webservices.AccountNote entity) : base(entity)
         {
+            var thisType = GetType();
+            var fields = GetType().GetFields();
+            var entityReflection = entity.GetType();
+
+            foreach (var i in fields)
+            {
+                try
+                {
+                    if (i.Name == "UserDefinedFields")
+                    {
+                        // treat differently:
+                        UserDefinedFields = entity.UserDefinedFields?.Select(udf => new UserDefinedField { Name = udf.Name, Value = udf.Value }).ToList();
+                        continue;
+                    }
+
+                    var value = entityReflection.GetProperty(i.Name)?.GetValue(entity);
+                    thisType.GetField(i.Name).SetValue(this, value);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+            }
+
 
         } //end AccountNote(net.autotask.webservices.AccountNote entity)
 
-        public static implicit operator net.autotask.webservices.AccountNote(AccountNote accountnote)
+        public static implicit operator net.autotask.webservices.AccountNote(AccountNote entity)
         {
-            return new net.autotask.webservices.AccountNote()
+            var newEntity = new net.autotask.webservices.AccountNote();
+            var entityReflection = newEntity.GetType();
+            var thisType = entity.GetType();
+            var fields = entity.GetType().GetFields();
+
+            foreach (var i in entityReflection.GetProperties())
             {
-                id = accountnote.id,
+                try
+                {
+                    if (i.Name == "UserDefinedFields")
+                    {
+                        newEntity.UserDefinedFields = entity.UserDefinedFields == null
+                            ? default
+                            : Array.ConvertAll(entity.UserDefinedFields?.ToArray(), UserDefinedField.ToATWS);
+                        continue;
+                    }
 
-            };
+                    if (i.Name == "Fields")
+                        continue;
 
+                    var value = thisType.GetField(i.Name).GetValue(entity);
+                    entityReflection.GetProperty(i.Name)?.SetValue(newEntity, value);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(i.Name);
+                    Console.WriteLine(e);
+                    throw;
+                }
+            }
+
+            return newEntity;
         } //end implicit operator net.autotask.webservices.AccountNote(AccountNote accountnote)
 
         #endregion //Constructors

@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Text;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using net.autotask.webservices;
 using Entity = AutotaskNET.Entities.Entity;
@@ -12,8 +13,8 @@ namespace AutotaskNET
     public interface IATWSInterface
     {
         void Connect(string username, string password);
-        List<Entity> Query(Type entity_type, QueryFilter filters = null);
-        List<Entity> Query(Entities.Entity entity, QueryFilter filters = null);
+        IEnumerable<Entity> Query(Type entity_type, QueryFilter filters = null);
+        IEnumerable<Entity> Query(Entities.Entity entity, QueryFilter filters = null);
         Entities.Entity Create(Entities.Entity entity);
         Entity Update(Entities.Entity entity);
         bool Delete(Entities.Entity entity);
@@ -23,6 +24,8 @@ namespace AutotaskNET
         List<FieldInformation> GetUDFInfo(Entities.Entity entity);
         Task<List<EntityInformation>> GetEntityInfo();
         bool HasAuthenticated { get; }
+
+        getThresholdAndUsageInfoResponse GetThreshold();
 
 
     }
@@ -40,6 +43,12 @@ namespace AutotaskNET
         ///   <c>true</c> if the interface has been connected; otherwise, <c>false</c>.
         /// </value>
         public bool HasAuthenticated { get; internal set; } = false;
+
+        public getThresholdAndUsageInfoResponse GetThreshold()
+        {
+            var result = _atws.getThresholdAndUsageInfoAsync(new getThresholdAndUsageInfoRequest()).Result;
+            return result;
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ATWSInterface"/> class.
@@ -87,7 +96,7 @@ namespace AutotaskNET
         /// <param name="entity_type">type of entity to query</param>
         /// <param name="filters">query filters</param>
         /// <returns></returns>
-        public List<Entity> Query(Type entity_type, QueryFilter filters = null)
+        public IEnumerable<Entity> Query(Type entity_type, QueryFilter filters = null)
         {
             return this.Query((Entities.Entity)Activator.CreateInstance(entity_type), filters);
         } //end Query(Type entity_type, List<QueryFilter> filters = null)
@@ -98,9 +107,9 @@ namespace AutotaskNET
         /// <param name="entity">instance of entity to query</param>
         /// <param name="filters">query filters</param>
         /// <returns></returns>
-        public List<Entity> Query(Entities.Entity entity, QueryFilter filters = null)
+        public IEnumerable<Entity> Query(Entities.Entity entity, QueryFilter filters = null)
         {
-            List<Entities.Entity> entities = null;
+            //List<Entities.Entity> entities = null;
             
             if (!entity.CanQuery)
             {
@@ -109,7 +118,7 @@ namespace AutotaskNET
             else
             {
                 //query entity
-                entities = new List<Entities.Entity>();
+                //entities = new List<Entities.Entity>();
                 bool query_done = false;
                 long current_id = 0;
                 while (!query_done)
@@ -164,11 +173,14 @@ namespace AutotaskNET
                             temp_entities.Add((Entities.Entity)Activator.CreateInstance(entity.GetType(), atws_entity));
                         }
                         current_id = temp_entities.First(e => e.id == temp_entities.Max(m => m.id)).id;
-                        entities.AddRange(temp_entities);
+                        foreach (var i in temp_entities)
+                            yield return i;
+                        //entities.AddRange(temp_entities);
                         temp_entities = null;
 
                         //###########################################################################
-                        if ((filters != null && QueryFilter.ContainsCondition(new QueryCondition(filters), "id")) || response.EntityResults.Length < 500) { query_done = true; }
+                        if ((filters != null && QueryFilter.ContainsCondition(
+                            new QueryCondition(filters), "id")) || response.EntityResults.Length < 500) { query_done = true; }
 
                     }
                     else
@@ -178,7 +190,7 @@ namespace AutotaskNET
                     }
                 }
             }
-            return entities;
+            //return entities;
 
         } //end Query(Entities.Entity entity, List<QueryFilter> filters = null)
 
@@ -255,10 +267,10 @@ namespace AutotaskNET
                 }
                 else
                 {
-                    //createdEntity = this.Query(entity.GetType(), new QueryFilter()
-                    //{
-                    //    new QueryField("id", QueryFieldOperation.Equals, resp.EntityReturnInfoResults[0].EntityId)
-                    //}).FirstOrDefault();
+                    createdEntity = this.Query(entity.GetType(), new QueryFilter()
+                    {
+                        new QueryField("id", QueryFieldOperation.Equals, resp.EntityReturnInfoResults[0].EntityId)
+                    }).FirstOrDefault();
                 }
             }
             return createdEntity;
