@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace AutotaskNET.Entities
 {
@@ -27,75 +28,67 @@ namespace AutotaskNET.Entities
         public Contract() : base() { } //end Contract()
         public Contract(net.autotask.webservices.Contract entity) : base(entity)
         {
-            this.AccountID = int.Parse(entity.AccountID.ToString());
-            this.BillingPreference = entity.BillingPreference == null ? default(int?) : int.Parse(entity.BillingPreference.ToString());
-            this.BusinessDivisionSubdivisionID = entity.BusinessDivisionSubdivisionID == null ? default(int?) : int.Parse(entity.BusinessDivisionSubdivisionID.ToString());
-            this.Compliance = entity.Compliance == null ? default(bool?) : bool.Parse(entity.Compliance.ToString());
-            this.ContractName = entity.ContractName == null ? default(string) : entity.ContractName.ToString();
-            this.ContractType = int.Parse(entity.ContractType.ToString());
-            this.EndDate = DateTime.Parse(entity.EndDate.ToString());
-            this.StartDate = DateTime.Parse(entity.StartDate.ToString());
-            this.Status = int.Parse(entity.Status.ToString());
-            this.TimeReportingRequiresStartAndStopTimes = int.Parse(entity.TimeReportingRequiresStartAndStopTimes.ToString());
-            this.ContactID = entity.ContactID == null ? default(int?) : int.Parse(entity.ContactID.ToString());
-            this.ContactName = entity.ContactName == null ? default(string) : entity.ContactName.ToString();
-            this.ContractCategory = entity.ContractCategory == null ? default(int?) : int.Parse(entity.ContractCategory.ToString());
-            this.ContractNumber = entity.ContractNumber == null ? default(string) : entity.ContractNumber.ToString();
-            this.ContractPeriodType = entity.ContractPeriodType == null ? default(string) : entity.ContractPeriodType.ToString();
-            this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
-            this.EstimatedCost = entity.EstimatedCost == null ? default(double?) : double.Parse(entity.EstimatedCost.ToString());
-            this.EstimatedHours = entity.EstimatedHours == null ? default(double?) : double.Parse(entity.EstimatedHours.ToString());
-            this.EstimatedRevenue = entity.EstimatedRevenue == null ? default(double?) : double.Parse(entity.EstimatedRevenue.ToString());
-            this.ExclusionContractID = entity.ExclusionContractID == null ? default(long?) : long.Parse(entity.ExclusionContractID.ToString());
-            this.InternalCurrencyOverageBillingRate = entity.InternalCurrencyOverageBillingRate == null ? default(double?) : double.Parse(entity.InternalCurrencyOverageBillingRate.ToString());
-            this.InternalCurrencySetupFee = entity.InternalCurrencySetupFee == null ? default(double?) : double.Parse(entity.InternalCurrencySetupFee.ToString());
-            this.IsDefaultContract = entity.IsDefaultContract == null ? default(bool?) : bool.Parse(entity.IsDefaultContract.ToString());
-            this.OpportunityID = entity.OpportunityID == null ? default(int?) : int.Parse(entity.OpportunityID.ToString());
-            this.OverageBillingRate = entity.OverageBillingRate == null ? default(double?) : double.Parse(entity.OverageBillingRate.ToString());
-            this.PurchaseOrderNumber = entity.PurchaseOrderNumber == null ? default(string) : entity.PurchaseOrderNumber.ToString();
-            this.RenewedContractID = entity.RenewedContractID == null ? default(long?) : long.Parse(entity.RenewedContractID.ToString());
-            this.ServiceLevelAgreementID = entity.ServiceLevelAgreementID == null ? default(int?) : int.Parse(entity.ServiceLevelAgreementID.ToString());
-            this.SetupFee = entity.SetupFee == null ? default(double?) : double.Parse(entity.SetupFee.ToString());
-            this.SetupFeeAllocationCodeID = entity.SetupFeeAllocationCodeID == null ? default(long?) : long.Parse(entity.SetupFeeAllocationCodeID.ToString());
+            var thisType = GetType();
+            var fields = GetType().GetFields();
+            var entityReflection = entity.GetType();
+
+            foreach (var i in fields)
+            {
+                try
+                {
+                    if (i.Name == "UserDefinedFields")
+                    {
+                        // treat differently:
+                        UserDefinedFields = entity.UserDefinedFields?.Select(udf => new UserDefinedField { Name = udf.Name, Value = udf.Value }).ToList();
+                        continue;
+                    }
+
+                    var value = entityReflection.GetProperty(i.Name)?.GetValue(entity);
+                    thisType.GetField(i.Name).SetValue(this, value);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+            }
 
         } //end Contract(net.autotask.webservices.Contract entity)
 
-        public static implicit operator net.autotask.webservices.Contract(Contract contract)
+        public static implicit operator net.autotask.webservices.Contract(Contract entity)
         {
-            return new net.autotask.webservices.Contract()
+            var newEntity = new net.autotask.webservices.Contract();
+            var entityReflection = newEntity.GetType();
+            var thisType = entity.GetType();
+            var fields = entity.GetType().GetFields();
+
+            foreach (var i in entityReflection.GetProperties())
             {
-                id = contract.id,
-                AccountID = contract.AccountID,
-                BillingPreference = contract.BillingPreference,
-                BusinessDivisionSubdivisionID = contract.BusinessDivisionSubdivisionID,
-                Compliance = contract.Compliance,
-                ContactID = contract.ContactID,
-                ContactName = contract.ContactName,
-                ContractCategory = contract.ContractCategory,
-                ContractName = contract.ContractName,
-                ContractNumber = contract.ContractNumber,
-                ContractPeriodType = contract.ContractPeriodType,
-                ContractType = contract.ContractType,
-                Description = contract.Description,
-                EndDate = contract.EndDate,
-                EstimatedCost = contract.EstimatedCost,
-                EstimatedHours = contract.EstimatedHours,
-                EstimatedRevenue = contract.EstimatedRevenue,
-                ExclusionContractID = contract.ExclusionContractID,
-                InternalCurrencyOverageBillingRate = contract.InternalCurrencyOverageBillingRate,
-                InternalCurrencySetupFee = contract.InternalCurrencySetupFee,
-                IsDefaultContract = contract.IsDefaultContract,
-                OpportunityID = contract.OpportunityID,
-                OverageBillingRate = contract.OverageBillingRate,
-                PurchaseOrderNumber = contract.PurchaseOrderNumber,
-                RenewedContractID = contract.RenewedContractID,
-                ServiceLevelAgreementID = contract.ServiceLevelAgreementID,
-                SetupFee = contract.SetupFee,
-                SetupFeeAllocationCodeID = contract.SetupFeeAllocationCodeID,
-                StartDate = contract.StartDate,
-                Status = contract.Status,
-                TimeReportingRequiresStartAndStopTimes = contract.TimeReportingRequiresStartAndStopTimes
-            };
+                try
+                {
+                    if (i.Name == "UserDefinedFields")
+                    {
+                        newEntity.UserDefinedFields = entity.UserDefinedFields == null
+                            ? default
+                            : Array.ConvertAll(entity.UserDefinedFields?.ToArray(), UserDefinedField.ToATWS);
+                        continue;
+                    }
+
+                    if (i.Name == "Fields")
+                        continue;
+
+                    var value = thisType.GetField(i.Name).GetValue(entity);
+                    entityReflection.GetProperty(i.Name)?.SetValue(newEntity, value);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(i.Name);
+                    Console.WriteLine(e);
+                    throw;
+                }
+            }
+
+            return newEntity;
 
         } //end implicit operator net.autotask.webservices.Contract(Contract contract)
 

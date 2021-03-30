@@ -21223,7 +21223,6 @@ namespace net.autotask.webservices
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
     public partial class Opportunity : Entity
     {
-        
         private object accountIDField;
         
         private object advancedField1Field;

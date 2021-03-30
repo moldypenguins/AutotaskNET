@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 namespace AutotaskNET.Entities
 {
@@ -29,38 +30,66 @@ namespace AutotaskNET.Entities
         public ContractService() : base() { } //end ContractService()
         public ContractService(net.autotask.webservices.ContractService entity) : base(entity)
         {
-            this.id = entity.id;
-            this.AdjustedPrice = entity.AdjustedPrice == null
-                ? default(double)
-                : double.Parse(entity.AdjustedPrice.ToString());
-            this.ContractID = int.Parse(entity.ContractID.ToString());
-            this.InternalCurrencyAdjustedPrice = double.Parse(entity.InternalCurrencyAdjustedPrice.ToString());
-            this.InternalCurrencyUnitPrice = double.Parse(entity.InternalCurrencyUnitPrice.ToString());
-            this.InternalDescription = entity.InternalDescription?.ToString();
-            this.QuoteItemID = entity.QuoteItemID == null ? default(long) : long.Parse(entity.QuoteItemID.ToString());
-            this.ServiceID = int.Parse(entity.ServiceID.ToString());
-            this.UnitCost = double.Parse(entity.UnitCost.ToString());
-            this.UnitPrice = double.Parse(entity.UnitPrice.ToString());
-            this.InvoiceDescription = entity.InvoiceDescription?.ToString();
-            this.UserDefinedFields = entity.UserDefinedFields?.Select(udf => new UserDefinedField { Name = udf.Name, Value = udf.Value }).ToList();
+            var thisType = GetType();
+            var fields = GetType().GetFields();
+            var entityReflection = entity.GetType();
+
+            foreach (var i in fields)
+            {
+                try
+                {
+                    if (i.Name == "UserDefinedFields")
+                    {
+                        // treat differently:
+                        UserDefinedFields = entity.UserDefinedFields?.Select(udf => new UserDefinedField { Name = udf.Name, Value = udf.Value }).ToList();
+                        continue;
+                    }
+
+                    var value = entityReflection.GetProperty(i.Name)?.GetValue(entity);
+                    thisType.GetField(i.Name).SetValue(this, value);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+            }
         } //end ContractService(net.autotask.webservices.ContractService entity)
 
-        public static implicit operator net.autotask.webservices.ContractService(ContractService contractservice)
+        public static implicit operator net.autotask.webservices.ContractService(ContractService entity)
         {
-            return new net.autotask.webservices.ContractService()
+            var newEntity = new net.autotask.webservices.ContractService();
+            var entityReflection = newEntity.GetType();
+            var thisType = entity.GetType();
+            var fields = entity.GetType().GetFields();
+
+            foreach (var i in entityReflection.GetProperties())
             {
-                id = contractservice.id,
-                InvoiceDescription = contractservice.InvoiceDescription,
-                UnitCost = contractservice.UnitCost,
-                UnitPrice = contractservice.UnitPrice,
-                AdjustedPrice = contractservice.AdjustedPrice,
-                ContractID = contractservice.ContractID,
-                InternalCurrencyAdjustedPrice = contractservice.InternalCurrencyAdjustedPrice,
-                InternalCurrencyUnitPrice = contractservice.InternalCurrencyUnitPrice,
-                InternalDescription = contractservice.InternalDescription,
-                QuoteItemID = contractservice.QuoteItemID,
-                ServiceID = contractservice.ServiceID,
-            };
+                try
+                {
+                    if (i.Name == "UserDefinedFields")
+                    {
+                        newEntity.UserDefinedFields = entity.UserDefinedFields == null
+                            ? default
+                            : Array.ConvertAll(entity.UserDefinedFields?.ToArray(), UserDefinedField.ToATWS);
+                        continue;
+                    }
+
+                    if (i.Name == "Fields")
+                        continue;
+
+                    var value = thisType.GetField(i.Name).GetValue(entity);
+                    entityReflection.GetProperty(i.Name)?.SetValue(newEntity, value);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(i.Name);
+                    Console.WriteLine(e);
+                    throw;
+                }
+            }
+
+            return newEntity;
 
         } //end implicit operator net.autotask.webservices.ContractService(ContractService contractservice)
 

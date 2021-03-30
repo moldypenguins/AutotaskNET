@@ -5,12 +5,12 @@
     <Authors>Risolv &amp; Taylor Hall</Authors>
     <PackageProjectUrl>https://github.com/taylorghall/AutotaskNetCore</PackageProjectUrl>
     <RepositoryUrl>https://github.com/taylorghall/AutotaskNetCore</RepositoryUrl>
-    <AssemblyVersion>1.0.0.3</AssemblyVersion>
-    <FileVersion>1.0.0.3</FileVersion>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Autotask Client built for .Net Core 2.1 and up</Description>
     <PackageTags>Autotask API, Autotask</PackageTags>
-    <Version>1.0.3</Version>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
