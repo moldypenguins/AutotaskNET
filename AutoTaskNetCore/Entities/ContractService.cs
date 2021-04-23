@@ -99,10 +99,10 @@ namespace AutotaskNET.Entities
 
         #region ReadOnly Fields
 
-        public double UnitPrice; //ReadOnly
+        public decimal UnitPrice; //ReadOnly
         public long QuoteItemID; //ReadOnly [QuoteItem]
-        public double InternalCurrencyUnitPrice; //ReadOnly
-        public double InternalCurrencyAdjustedPrice; //ReadOnly
+        public decimal InternalCurrencyUnitPrice; //ReadOnly
+        public decimal InternalCurrencyAdjustedPrice; //ReadOnly
 
         #endregion //ReadOnly Fields
 
@@ -115,10 +115,10 @@ namespace AutotaskNET.Entities
 
         #region Optional Fields
 
-        public double AdjustedPrice;
+        public decimal AdjustedPrice;
         public string InvoiceDescription; //Length:1000
         public string InternalDescription; //Length:100
-        public double UnitCost;
+        public decimal UnitCost;
 
         #endregion //Optional Fields
 

@@ -34,6 +34,7 @@ namespace AutotaskNET.Entities
 
             foreach (var i in fields)
             {
+                //Console.WriteLine($"Converting: {i.Name} -- {i.FieldType} -- {i.MemberType}");
                 try
                 {
                     if (i.Name == "UserDefinedFields")
@@ -100,8 +101,8 @@ namespace AutotaskNET.Entities
 
         public string ContractPeriodType; //ReadOnly PickList Length:1
         public long? ExclusionContractID; //ReadOnly [Contract]
-        public double? InternalCurrencyOverageBillingRate; //ReadOnly
-        public double? InternalCurrencySetupFee; //ReadOnly
+        public decimal? InternalCurrencyOverageBillingRate; //ReadOnly
+        public decimal? InternalCurrencySetupFee; //ReadOnly
 
         #endregion //ReadOnly Fields
 
@@ -131,12 +132,12 @@ namespace AutotaskNET.Entities
         public string ContractNumber; //Length:50
         public bool? IsDefaultContract;
         public string Description; //Length:2000
-        public double? EstimatedCost;
-        public double? EstimatedHours;
-        public double? EstimatedRevenue;
-        public double? OverageBillingRate;
+        public decimal? EstimatedCost;
+        public decimal? EstimatedHours;
+        public decimal? EstimatedRevenue;
+        public decimal? OverageBillingRate;
         public int? ServiceLevelAgreementID; //PickList
-        public double? SetupFee;
+        public decimal? SetupFee;
         public string PurchaseOrderNumber; //Length:50
         public int? OpportunityID; //[Opportunity]
         public long? RenewedContractID;

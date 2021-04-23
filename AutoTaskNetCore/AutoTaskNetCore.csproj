@@ -1,16 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <Authors>Risolv &amp; Taylor Hall</Authors>
+    <Authors>Resolv &amp; Taylor Hall</Authors>
     <PackageProjectUrl>https://github.com/taylorghall/AutotaskNetCore</PackageProjectUrl>
     <RepositoryUrl>https://github.com/taylorghall/AutotaskNetCore</RepositoryUrl>
-    <AssemblyVersion>1.0.1.0</AssemblyVersion>
-    <FileVersion>1.0.1.0</FileVersion>
+    <AssemblyVersion>1.0.1.2</AssemblyVersion>
+    <FileVersion>1.0.1.2</FileVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Description>Autotask Client built for .Net Core 2.1 and up</Description>
+    <Description>Autotask NetCore Client built for .Net Core 2.1 and up</Description>
     <PackageTags>Autotask API, Autotask</PackageTags>
-    <Version>1.1.0</Version>
+    <Version>1.1.2</Version>
+    <Company>Datably, Inc</Company>
   </PropertyGroup>
 
   <ItemGroup>
