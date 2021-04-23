@@ -1,1 +1,0 @@
-dotnet nuget push bin/Release/AutoTaskNetCore.1.1.0.nupkg -k oy2czriueovt7i5arzoaavipuwexqhvudmtui5s4cm2r5m -s https://api.nuget.org/v3/index.json
