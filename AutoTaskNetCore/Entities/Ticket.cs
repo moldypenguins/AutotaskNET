@@ -28,144 +28,70 @@ namespace AutotaskNET.Entities
         public Ticket() : base() { } //end Ticket()
         public Ticket(net.autotask.webservices.Ticket entity) : base(entity)
         {
-            this.AccountID = int.Parse(entity.AccountID.ToString());
-            this.AccountPhysicalLocationID = entity.AccountPhysicalLocationID == null ? default(int?) : int.Parse(entity.AccountPhysicalLocationID.ToString());
-            this.AEMAlertID = entity.AEMAlertID == null ? default(string) : entity.AEMAlertID.ToString();
-            this.AllocationCodeID = entity.AllocationCodeID == null ? default(long?) : long.Parse(entity.AllocationCodeID.ToString());
-            this.AssignedResourceID = entity.AssignedResourceID == null ? default(long?) : long.Parse(entity.AssignedResourceID.ToString());
-            this.AssignedResourceRoleID = entity.AssignedResourceRoleID == null ? default(long?) : long.Parse(entity.AssignedResourceRoleID.ToString());
-            this.BusinessDivisionSubdivisionID = entity.BusinessDivisionSubdivisionID == null ? default(int?) : int.Parse(entity.BusinessDivisionSubdivisionID.ToString());
-            this.ChangeApprovalBoard = entity.ChangeApprovalBoard == null ? default(int?) : int.Parse(entity.ChangeApprovalBoard.ToString());
-            this.ChangeApprovalStatus = entity.ChangeApprovalStatus == null ? default(int?) : int.Parse(entity.ChangeApprovalStatus.ToString());
-            this.ChangeApprovalType = entity.ChangeApprovalType == null ? default(int?) : int.Parse(entity.ChangeApprovalType.ToString());
-            this.ChangeInfoField1 = entity.ChangeInfoField1 == null ? default(string) : entity.ChangeInfoField1.ToString();
-            this.ChangeInfoField2 = entity.ChangeInfoField2 == null ? default(string) : entity.ChangeInfoField2.ToString();
-            this.ChangeInfoField3 = entity.ChangeInfoField3 == null ? default(string) : entity.ChangeInfoField3.ToString();
-            this.ChangeInfoField4 = entity.ChangeInfoField4 == null ? default(string) : entity.ChangeInfoField4.ToString();
-            this.ChangeInfoField5 = entity.ChangeInfoField5 == null ? default(string) : entity.ChangeInfoField5.ToString();
-            this.CompletedByResourceID = entity.CompletedByResourceID == null ? default(int?) : int.Parse(entity.CompletedByResourceID.ToString());
-            this.CompletedDate = entity.CompletedDate == null ? default(DateTime?) : DateTime.Parse(entity.CompletedDate.ToString());
-            this.ContactID = entity.ContactID == null ? default(long?) : long.Parse(entity.ContactID.ToString());
-            this.ContractID = entity.ContractID == null ? default(long?) : long.Parse(entity.ContractID.ToString());
-            this.ContractServiceBundleID = entity.ContractServiceBundleID == null ? default(long?) : long.Parse(entity.ContractServiceBundleID.ToString());
-            this.ContractServiceID = entity.ContractServiceID == null ? default(long?) : long.Parse(entity.ContractServiceID.ToString());
-            this.CreateDate = entity.CreateDate == null ? default(DateTime?) : DateTime.Parse(entity.CreateDate.ToString());
-            this.CreatorResourceID = entity.CreatorResourceID == null ? default(int?) : int.Parse(entity.CreatorResourceID.ToString());
-            this.CreatorType = entity.CreatorType == null ? default(int?) : int.Parse(entity.CreatorType.ToString());
-            this.Description = entity.Description == null ? default(string) : entity.Description.ToString();
-            this.DueDateTime = DateTime.Parse(entity.DueDateTime.ToString());
-            this.EstimatedHours = entity.EstimatedHours == null ? default(double?) : double.Parse(entity.EstimatedHours.ToString());
-            this.ExternalID = entity.ExternalID == null ? default(string) : entity.ExternalID.ToString();
-            this.FirstResponseAssignedResourceID = entity.FirstResponseAssignedResourceID == null ? default(int?) : int.Parse(entity.FirstResponseAssignedResourceID.ToString());
-            this.FirstResponseDateTime = entity.FirstResponseDateTime == null ? default(DateTime?) : DateTime.Parse(entity.FirstResponseDateTime.ToString());
-            this.FirstResponseDueDateTime = entity.FirstResponseDueDateTime == null ? default(DateTime?) : DateTime.Parse(entity.FirstResponseDueDateTime.ToString());
-            this.FirstResponseInitiatingResourceID = entity.FirstResponseInitiatingResourceID == null ? default(int?) : int.Parse(entity.FirstResponseInitiatingResourceID.ToString());
-            this.HoursToBeScheduled = entity.HoursToBeScheduled == null ? default(double?) : double.Parse(entity.HoursToBeScheduled.ToString());
-            this.InstalledProductID = entity.InstalledProductID == null ? default(int?) : int.Parse(entity.InstalledProductID.ToString());
-            this.IssueType = entity.IssueType == null ? default(int?) : int.Parse(entity.IssueType.ToString());
-            this.LastActivityDate = entity.LastActivityDate == null ? default(DateTime?) : DateTime.Parse(entity.LastActivityDate.ToString());
-            this.LastActivityPersonType = entity.LastActivityPersonType == null ? default(int?) : int.Parse(entity.LastActivityPersonType.ToString());
-            this.LastActivityResourceID = entity.LastActivityResourceID == null ? default(int?) : int.Parse(entity.LastActivityResourceID.ToString());
-            this.LastCustomerNotificationDateTime = entity.LastCustomerNotificationDateTime == null ? default(DateTime?) : DateTime.Parse(entity.LastCustomerNotificationDateTime.ToString());
-            this.LastCustomerVisibleActivityDateTime = entity.LastCustomerVisibleActivityDateTime == null ? default(DateTime?) : DateTime.Parse(entity.LastCustomerVisibleActivityDateTime.ToString());
-            this.MonitorID = entity.MonitorID == null ? default(int?) : int.Parse(entity.MonitorID.ToString());
-            this.MonitorTypeID = entity.MonitorTypeID == null ? default(int?) : int.Parse(entity.MonitorTypeID.ToString());
-            this.OpportunityId = entity.OpportunityId == null ? default(int?) : int.Parse(entity.OpportunityId.ToString());
-            this.Priority = int.Parse(entity.Priority.ToString());
-            this.ProblemTicketId = entity.ProblemTicketId == null ? default(int?) : int.Parse(entity.ProblemTicketId.ToString());
-            this.ProjectID = entity.ProjectID == null ? default(int?) : int.Parse(entity.ProjectID.ToString());
-            this.PurchaseOrderNumber = entity.PurchaseOrderNumber == null ? default(string) : entity.PurchaseOrderNumber.ToString();
-            this.QueueID = entity.QueueID == null ? default(int?) : int.Parse(entity.QueueID.ToString());
-            this.Resolution = entity.Resolution == null ? default(string) : entity.Resolution.ToString();
-            this.ResolutionPlanDateTime = entity.ResolutionPlanDateTime == null ? default(DateTime?) : DateTime.Parse(entity.ResolutionPlanDateTime.ToString());
-            this.ResolutionPlanDueDateTime = entity.ResolutionPlanDueDateTime == null ? default(DateTime?) : DateTime.Parse(entity.ResolutionPlanDueDateTime.ToString());
-            this.ResolvedDateTime = entity.ResolvedDateTime == null ? default(DateTime?) : DateTime.Parse(entity.ResolvedDateTime.ToString());
-            this.ResolvedDueDateTime = entity.ResolvedDueDateTime == null ? default(DateTime?) : DateTime.Parse(entity.ResolvedDueDateTime.ToString());
-            this.ServiceLevelAgreementHasBeenMet = entity.ServiceLevelAgreementHasBeenMet == null ? default(bool?) : bool.Parse(entity.ServiceLevelAgreementHasBeenMet.ToString());
-            this.ServiceLevelAgreementID = entity.ServiceLevelAgreementID == null ? default(int?) : int.Parse(entity.ServiceLevelAgreementID.ToString());
-            //this.ServiceLevelAgreementPausedNextEventHours = double.Parse(entity.ServiceLevelAgreementPausedNextEventHours.ToString());
-            this.Source = entity.Source == null ? default(int?) : int.Parse(entity.Source.ToString());
-            this.Status = int.Parse(entity.Status.ToString());
-            this.SubIssueType = entity.SubIssueType == null ? default(int?) : int.Parse(entity.SubIssueType.ToString());
-            this.TicketCategory = entity.TicketCategory == null ? default(int?) : int.Parse(entity.TicketCategory.ToString());
-            this.TicketNumber = entity.TicketNumber.ToString();
-            this.TicketType = entity.TicketType == null ? default(int?) : int.Parse(entity.TicketType.ToString());
-            this.Title = entity.Title.ToString();
-            this.UserDefinedFields = entity.UserDefinedFields?.Select(udf => new UserDefinedField { Name = udf.Name, Value = udf.Value }).ToList();
+            var thisType = GetType();
+            var fields = GetType().GetFields();
+            var entityReflection = entity.GetType();
+
+            foreach (var i in fields)
+            {
+                //Console.WriteLine($"Converting: {i.Name} -- {i.FieldType} -- {i.MemberType}");
+                try
+                {
+                    if (i.Name == "UserDefinedFields")
+                    {
+                        // treat differently:
+                        UserDefinedFields = entity.UserDefinedFields?.Select(udf => new UserDefinedField { Name = udf.Name, Value = udf.Value }).ToList();
+                        continue;
+                    }
+
+                    var value = entityReflection.GetProperty(i.Name)?.GetValue(entity);
+                    thisType.GetField(i.Name).SetValue(this, value);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+            }
 
         } //end Ticket(net.autotask.webservices.Ticket entity)
 
 
-        public static implicit operator net.autotask.webservices.Ticket(Ticket ticket)
+        public static implicit operator net.autotask.webservices.Ticket(Ticket entity)
         {
-            return new net.autotask.webservices.Ticket()
+            var newEntity = new net.autotask.webservices.Ticket();
+            var entityReflection = newEntity.GetType();
+            var thisType = entity.GetType();
+            var fields = entity.GetType().GetFields();
+
+            foreach (var i in entityReflection.GetProperties())
             {
-                id = ticket.id,
-                AccountID = ticket.AccountID,
-                AccountPhysicalLocationID = ticket.AccountPhysicalLocationID,
-                AEMAlertID = ticket.AEMAlertID,
-                AllocationCodeID = ticket.AllocationCodeID,
-                AssignedResourceID = ticket.AssignedResourceID,
-                AssignedResourceRoleID = ticket.AssignedResourceRoleID,
-                BusinessDivisionSubdivisionID = ticket.BusinessDivisionSubdivisionID,
-                ChangeApprovalBoard = ticket.ChangeApprovalBoard,
-                ChangeApprovalStatus = ticket.ChangeApprovalStatus,
-                ChangeApprovalType = ticket.ChangeApprovalType,
-                ChangeInfoField1 = ticket.ChangeInfoField1,
-                ChangeInfoField2 = ticket.ChangeInfoField2,
-                ChangeInfoField3 = ticket.ChangeInfoField3,
-                ChangeInfoField4 = ticket.ChangeInfoField4,
-                ChangeInfoField5 = ticket.ChangeInfoField5,
-                CompletedByResourceID = ticket.CompletedByResourceID,
-                CompletedDate = ticket.CompletedDate,
-                ContactID = ticket.ContactID,
-                ContractID = ticket.ContractID,
-                ContractServiceBundleID = ticket.ContractServiceBundleID,
-                ContractServiceID = ticket.ContractServiceID,
-                CreateDate = ticket.CreateDate,
-                CreatorResourceID = ticket.CreatorResourceID,
-                CreatorType = ticket.CreatorType,
-                Description = ticket.Description,
-                DueDateTime = ticket.DueDateTime,
-                EstimatedHours = ticket.EstimatedHours,
-                ExternalID = ticket.ExternalID,
-                FirstResponseAssignedResourceID = ticket.FirstResponseAssignedResourceID,
-                FirstResponseDateTime = ticket.FirstResponseDateTime,
-                FirstResponseDueDateTime = ticket.FirstResponseDueDateTime,
-                FirstResponseInitiatingResourceID = ticket.FirstResponseInitiatingResourceID,
-                HoursToBeScheduled = ticket.HoursToBeScheduled,
-                InstalledProductID = ticket.InstalledProductID,
-                IssueType = ticket.IssueType,
-                LastActivityDate = ticket.LastActivityDate,
-                LastActivityPersonType = ticket.LastActivityPersonType,
-                LastActivityResourceID = ticket.LastActivityResourceID,
-                LastCustomerNotificationDateTime = ticket.LastCustomerNotificationDateTime,
-                LastCustomerVisibleActivityDateTime = ticket.LastCustomerVisibleActivityDateTime,
-                MonitorID = ticket.MonitorID,
-                MonitorTypeID = ticket.MonitorTypeID,
-                OpportunityId = ticket.OpportunityId,
-                Priority = ticket.Priority,
-                ProblemTicketId = ticket.ProblemTicketId,
-                ProjectID = ticket.ProjectID,
-                PurchaseOrderNumber = ticket.PurchaseOrderNumber,
-                QueueID = ticket.QueueID,
-                Resolution = ticket.Resolution,
-                ResolutionPlanDateTime = ticket.ResolutionPlanDateTime,
-                ResolutionPlanDueDateTime = ticket.ResolutionPlanDueDateTime,
-                ResolvedDateTime = ticket.ResolvedDateTime,
-                ResolvedDueDateTime = ticket.ResolvedDueDateTime,
-                ServiceLevelAgreementHasBeenMet = ticket.ServiceLevelAgreementHasBeenMet,
-                ServiceLevelAgreementID = ticket.ServiceLevelAgreementID,
-                //ServiceLevelAgreementPausedNextEventHours = ticket.ServiceLevelAgreementPausedNextEventHours,
-                Source = ticket.Source,
-                Status = ticket.Status,
-                SubIssueType = ticket.SubIssueType,
-                TicketCategory = ticket.TicketCategory,
-                TicketNumber = ticket.TicketNumber,
-                TicketType = ticket.TicketType,
-                Title = ticket.Title,
-                UserDefinedFields = Array.ConvertAll(ticket.UserDefinedFields.ToArray(), new Converter<UserDefinedField, net.autotask.webservices.UserDefinedField>(UserDefinedField.ToATWS))
-            };
+                try
+                {
+                    if (i.Name == "UserDefinedFields")
+                    {
+                        newEntity.UserDefinedFields = entity.UserDefinedFields == null
+                            ? default
+                            : Array.ConvertAll(entity.UserDefinedFields?.ToArray(), UserDefinedField.ToATWS);
+                        continue;
+                    }
+
+                    if (i.Name == "Fields")
+                        continue;
+
+                    var value = thisType.GetField(i.Name).GetValue(entity);
+                    entityReflection.GetProperty(i.Name)?.SetValue(newEntity, value);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(i.Name);
+                    Console.WriteLine(e);
+                    throw;
+                }
+            }
+
+            return newEntity;
+
 
         } //end implicit operator net.autotask.webservices.Ticket(Ticket ticket)
 
