@@ -140,10 +140,10 @@ namespace AutotaskNET.Entities
         #region Optional Fields
 
         public long? AllocationCodeID; //[AllocationCode]
-        public long? AssignedResourceID; //[Resource]
-        public long? AssignedResourceRoleID; //[Role]
-        public long? ContactID; //[Contact]
-        public long? ContractID; //[Contract]
+        public int? AssignedResourceID; //[Resource]
+        public int? AssignedResourceRoleID; //[Role]
+        public int? ContactID; //[Contact]
+        public int? ContractID; //[Contract]
         public string Description; //Length:8000
         public double? EstimatedHours;
         public string ExternalID; //Length:50
