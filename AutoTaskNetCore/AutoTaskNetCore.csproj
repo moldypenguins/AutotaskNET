@@ -5,8 +5,8 @@
     <Authors>Resolv &amp; Taylor Hall</Authors>
     <PackageProjectUrl>https://github.com/taylorghall/AutotaskNetCore</PackageProjectUrl>
     <RepositoryUrl>https://github.com/taylorghall/AutotaskNetCore</RepositoryUrl>
-    <AssemblyVersion>1.0.1.5</AssemblyVersion>
-    <FileVersion>1.0.1.5</FileVersion>
+    <AssemblyVersion>1.0.1.6</AssemblyVersion>
+    <FileVersion>1.0.1.6</FileVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Autotask NetCore Client built for .Net Core 2.1 and up</Description>
     <PackageTags>Autotask API, Autotask</PackageTags>
