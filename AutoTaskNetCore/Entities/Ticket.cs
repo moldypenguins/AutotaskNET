@@ -123,7 +123,7 @@ namespace AutotaskNET.Entities
         public int? CompletedByResourceID; //ReadOnly [Resource]
         public int? LastActivityPersonType; //ReadOnly PickList
         public int? LastActivityResourceID; //ReadOnly [Resource]
-        public double ServiceLevelAgreementPausedNextEventHours; //ReadOnly
+        public decimal ServiceLevelAgreementPausedNextEventHours; //ReadOnly
 
         #endregion //ReadOnly Fields
 
