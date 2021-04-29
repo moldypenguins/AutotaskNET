@@ -116,7 +116,7 @@ namespace AutotaskNET.Entities
         public DateTime? LastCustomerNotificationDateTime; //ReadOnly
         public DateTime? LastCustomerVisibleActivityDateTime; //ReadOnly
         public string AEMAlertID; //ReadOnly Length:50
-        public double? HoursToBeScheduled; //ReadOnly
+        public decimal? HoursToBeScheduled; //ReadOnly
         public int? FirstResponseInitiatingResourceID; //ReadOnly
         public int? FirstResponseAssignedResourceID; //ReadOnly
         public int? CreatorType; //ReadOnly PickList
@@ -139,13 +139,13 @@ namespace AutotaskNET.Entities
 
         #region Optional Fields
 
-        public long? AllocationCodeID; //[AllocationCode]
+        public int? AllocationCodeID; //[AllocationCode]
         public int? AssignedResourceID; //[Resource]
         public int? AssignedResourceRoleID; //[Role]
         public int? ContactID; //[Contact]
         public int? ContractID; //[Contract]
         public string Description; //Length:8000
-        public double? EstimatedHours;
+        public decimal? EstimatedHours;
         public string ExternalID; //Length:50
         public int? InstalledProductID; //[InstalledProduct]
         public int? IssueType; //PickList
