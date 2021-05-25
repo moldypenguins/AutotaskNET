@@ -140,8 +140,8 @@ namespace AutotaskNET.Entities
         public decimal? SetupFee;
         public string PurchaseOrderNumber; //Length:50
         public int? OpportunityID; //[Opportunity]
-        public long? RenewedContractID;
-        public long? SetupFeeAllocationCodeID;
+        public int? RenewedContractID;
+        public int? SetupFeeAllocationCodeID;
         public int? ContactID; //[Contact]
         public int? BusinessDivisionSubdivisionID; //[BusinessDivisionSubdivision]
 
