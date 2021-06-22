@@ -510,6 +510,37 @@ namespace AutotaskNET
 
         #endregion //Get Information
 
+        /// <summary>
+        /// Gets UDF information.
+        /// Gets attachment by attachment Id 
+        /// </summary>
+        /// <param name="attachmentId">The attachmentId.</param>
+        /// <returns attachment></returns>
+        public Attachment GetAttachment(long attachmentId)
+        {
+            
+            Attachment attachment = this._atws.GetAttachmentAsync(
+                new GetAttachmentRequest(new AutotaskIntegrations(), attachmentId)).Result.GetAttachmentResult;
+
+            return attachment;
+
+        } //end GetAttachment
+
+        /// <summary>
+        /// Gets UDF information.
+        /// Creates an attachment and links it to a parent. 
+        /// </summary>
+        /// <param name="newAttachment">The attachment.</param>
+        /// <returns attachmentId></returns>
+        public long CreateAttachment(Attachment newAttachment)
+        {
+
+            long attachmentId = this._atws.CreateAttachmentAsync(
+                new CreateAttachmentRequest(new AutotaskIntegrations(), newAttachment)).Result.CreateAttachmentResult;
+
+            return attachmentId;
+
+        } //end CreateAttachment
 
     } //end ATWSInterface
 
