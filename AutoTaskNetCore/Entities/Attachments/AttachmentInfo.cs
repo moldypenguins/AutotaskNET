@@ -32,7 +32,7 @@ namespace AutotaskNET.Entities
 
             foreach (var i in fields)
             {
-                Console.WriteLine($"Converting: {i.Name} -- {i.FieldType} -- {i.MemberType}");
+                //Console.WriteLine($"Converting: {i.Name} -- {i.FieldType} -- {i.MemberType}");
                 try
                 {
                     if (i.Name == "UserDefinedFields")
