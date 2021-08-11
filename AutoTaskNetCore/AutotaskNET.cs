@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Text;
 using System.Collections.Generic;
@@ -511,11 +511,32 @@ namespace AutotaskNET
 
         #endregion //Get Information
 
-        public GetAttachmentResponse GetAttachmentById(long attachmentId)
+        /// <returns attachment></returns>
+        public Attachment GetAttachment(long attachmentId)
         {
-            var resultingImage = this._atws.GetAttachmentAsync(new GetAttachmentRequest(null, attachmentId)).Result;
-            return resultingImage;
-        }
+            
+            Attachment attachment = this._atws.GetAttachmentAsync(
+                new GetAttachmentRequest(new AutotaskIntegrations(), attachmentId)).Result.GetAttachmentResult;
+
+            return attachment;
+
+        } //end GetAttachment
+
+        /// <summary>
+        /// Gets UDF information.
+        /// Creates an attachment and links it to a parent. 
+        /// </summary>
+        /// <param name="newAttachment">The attachment.</param>
+        /// <returns attachmentId></returns>
+        public long CreateAttachment(Attachment newAttachment)
+        {
+
+            long attachmentId = this._atws.CreateAttachmentAsync(
+                new CreateAttachmentRequest(new AutotaskIntegrations(), newAttachment)).Result.CreateAttachmentResult;
+
+            return attachmentId;
+
+        } //end CreateAttachment
 
     } //end ATWSInterface
 

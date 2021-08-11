@@ -97,12 +97,12 @@ namespace AutotaskNET.Entities
         #region ReadOnly Fields
 
         public long ParentID; //ReadOnly
-        public DateTime? AttachDate; //ReadOnly
+        public DateTime AttachDate; //ReadOnly
         public decimal FileSize; //ReadOnly
-        public long AttachedByContactID; //ReadOnly [Contact]
+        public long? AttachedByContactID; //ReadOnly [Contact]
         public long AttachedByResourceID; //ReadOnly [Resource]
         public string ContentType; //ReadOnly Length:100
-        public long OpportunityID; //ReadOnly [Opportunity]
+        public long? OpportunityID; //ReadOnly [Opportunity]
 
         #endregion //ReadOnly Fields
 
