@@ -507,9 +507,15 @@ namespace AutotaskNET
             return UDFs;
 
         } //end getUDFInfo
+        
 
         #endregion //Get Information
 
+        public GetAttachmentResponse GetAttachmentById(long attachmentId)
+        {
+            var resultingImage = this._atws.GetAttachmentAsync(new GetAttachmentRequest(null, attachmentId)).Result;
+            return resultingImage;
+        }
 
     } //end ATWSInterface
 
