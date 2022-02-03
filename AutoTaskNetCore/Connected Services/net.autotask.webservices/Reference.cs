@@ -16,63 +16,63 @@ namespace net.autotask.webservices
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://autotask.net/ATWS/v1_5/", ConfigurationName="net.autotask.webservices.ATWS")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://autotask.net/ATWS/v1_6/", ConfigurationName="net.autotask.webservices.ATWS")]
     public interface ATWSSoap
     {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/GetAttachment", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/GetAttachment", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<net.autotask.webservices.GetAttachmentResponse> GetAttachmentAsync(net.autotask.webservices.GetAttachmentRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/CreateAttachment", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/CreateAttachment", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<net.autotask.webservices.CreateAttachmentResponse> CreateAttachmentAsync(net.autotask.webservices.CreateAttachmentRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/DeleteAttachment", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/DeleteAttachment", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<net.autotask.webservices.DeleteAttachmentResponse> DeleteAttachmentAsync(net.autotask.webservices.DeleteAttachmentRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/GetEntityInfo", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/GetEntityInfo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<net.autotask.webservices.GetEntityInfo1> getEntityInfoAsync(net.autotask.webservices.GetEntityInfo request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/GetFieldInfo", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/GetFieldInfo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<net.autotask.webservices.GetFieldInfoResponse> GetFieldInfoAsync(net.autotask.webservices.GetFieldInfoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/getUDFInfo", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/getUDFInfo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<net.autotask.webservices.getUDFInfoResponse> getUDFInfoAsync(net.autotask.webservices.getUDFInfoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/query", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/query", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<net.autotask.webservices.queryResponse> queryAsync(net.autotask.webservices.queryRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/create", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/create", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<net.autotask.webservices.createResponse> createAsync(net.autotask.webservices.createRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/update", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/update", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<net.autotask.webservices.updateResponse> updateAsync(net.autotask.webservices.updateRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/delete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/delete", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<net.autotask.webservices.deleteResponse> deleteAsync(net.autotask.webservices.deleteRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/getZoneInfo", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/getZoneInfo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<net.autotask.webservices.ATWSZoneInfo> getZoneInfoAsync(string UserName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/getThresholdAndUsageInfo", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/getThresholdAndUsageInfo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<net.autotask.webservices.getThresholdAndUsageInfoResponse> getThresholdAndUsageInfoAsync(net.autotask.webservices.getThresholdAndUsageInfoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/GetWsdlVersion", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/GetWsdlVersion", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<net.autotask.webservices.GetWsdlVersionResponse> GetWsdlVersionAsync(net.autotask.webservices.GetWsdlVersionRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/GetInvoiceMarkup", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/GetInvoiceMarkup", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<net.autotask.webservices.GetInvoiceMarkupResponse> GetInvoiceMarkupAsync(net.autotask.webservices.GetInvoiceMarkupRequest request);
     }
@@ -80,7 +80,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class AutotaskIntegrations
     {
         
@@ -120,7 +120,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ATWSZoneInfo
     {
         
@@ -208,7 +208,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class EntityDuplicateStatus
     {
         
@@ -264,7 +264,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class EntityReturnInfo
     {
         
@@ -335,7 +335,7 @@ namespace net.autotask.webservices
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public enum EntityReturnInfoDatabaseAction
     {
         
@@ -352,7 +352,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ATWSError
     {
         
@@ -376,7 +376,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ATWSResponse
     {
         
@@ -588,7 +588,7 @@ namespace net.autotask.webservices
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AttachmentInfo))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public abstract partial class Entity
     {
         
@@ -644,7 +644,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Field
     {
         
@@ -876,7 +876,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class PickListValue
     {
         
@@ -1028,7 +1028,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class UserDefinedField
     {
         
@@ -1068,7 +1068,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ResourceServiceDeskRole : Entity
     {
         
@@ -1140,7 +1140,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class SurveyResults : Entity
     {
         
@@ -1308,7 +1308,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Survey : Entity
     {
         
@@ -1364,7 +1364,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class PurchaseApproval : Entity
     {
         
@@ -1420,7 +1420,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ServiceLevelAgreementResults : Entity
     {
         
@@ -1620,7 +1620,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TicketCategoryFieldDefaults : Entity
     {
         
@@ -1884,7 +1884,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TicketCategory : Entity
     {
         
@@ -1972,7 +1972,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TicketChecklistItem : Entity
     {
         
@@ -2108,7 +2108,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class AccountPhysicalLocation : Entity
     {
         
@@ -2372,7 +2372,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class BusinessDivisionSubdivisionResource : Entity
     {
         
@@ -2412,7 +2412,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class BusinessDivisionSubdivision : Entity
     {
         
@@ -2468,7 +2468,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class BusinessSubdivision : Entity
     {
         
@@ -2524,7 +2524,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class BusinessDivision : Entity
     {
         
@@ -2580,7 +2580,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class BusinessLocation : Entity
     {
         
@@ -3292,7 +3292,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Holiday : Entity
     {
         
@@ -3348,7 +3348,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class HolidaySet : Entity
     {
         
@@ -3388,7 +3388,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ResourceRoleQueue : Entity
     {
         
@@ -3476,7 +3476,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ResourceRoleDepartment : Entity
     {
         
@@ -3580,7 +3580,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class PriceListWorkTypeModifier : Entity
     {
         
@@ -3668,7 +3668,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class PriceListServiceBundle : Entity
     {
         
@@ -3740,7 +3740,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class PriceListRole : Entity
     {
         
@@ -3812,7 +3812,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class PriceListMaterialCode : Entity
     {
         
@@ -3884,7 +3884,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class PriceListProduct : Entity
     {
         
@@ -3956,7 +3956,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class PriceListService : Entity
     {
         
@@ -4028,7 +4028,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Currency : Entity
     {
         
@@ -4196,7 +4196,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class WorkTypeModifier : Entity
     {
         
@@ -4236,7 +4236,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class NotificationHistory : Entity
     {
         
@@ -4548,7 +4548,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class AccountAlert : Entity
     {
         
@@ -4604,7 +4604,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ServiceBundleService : Entity
     {
         
@@ -4644,7 +4644,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ResourceRole : Entity
     {
         
@@ -4732,7 +4732,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TicketSecondaryResource : Entity
     {
         
@@ -4788,7 +4788,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TicketAdditionalContact : Entity
     {
         
@@ -4828,7 +4828,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TaskSecondaryResource : Entity
     {
         
@@ -4884,7 +4884,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TaskPredecessor : Entity
     {
         
@@ -4940,7 +4940,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Department : Entity
     {
         
@@ -5012,7 +5012,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class PaymentTerm : Entity
     {
         
@@ -5084,7 +5084,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class InvoiceTemplate : Entity
     {
         
@@ -5492,7 +5492,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class AdditionalInvoiceFieldValue : Entity
     {
         
@@ -5548,7 +5548,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class UserDefinedFieldListItem : Entity
     {
         
@@ -5620,7 +5620,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class UserDefinedFieldDefinition : Entity
     {
         
@@ -5900,7 +5900,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class InternalLocation : Entity
     {
         
@@ -6084,7 +6084,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TicketCost : Entity
     {
         
@@ -6508,7 +6508,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TicketChangeRequestApproval : Entity
     {
         
@@ -6612,7 +6612,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ChangeRequestLink : Entity
     {
         
@@ -6652,7 +6652,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ProjectCost : Entity
     {
         
@@ -7092,7 +7092,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractCost : Entity
     {
         
@@ -7516,7 +7516,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class BillingItemApprovalLevel : Entity
     {
         
@@ -7588,7 +7588,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ProjectNote : Entity
     {
         
@@ -7724,7 +7724,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TaskNote : Entity
     {
         
@@ -7844,7 +7844,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ExpenseItem : Entity
     {
         
@@ -8284,7 +8284,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ExpenseReport : Entity
     {
         
@@ -8580,7 +8580,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ClientPortalUser : Entity
     {
         
@@ -8716,7 +8716,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class BillingItem : Entity
     {
         
@@ -9444,7 +9444,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Resource : Entity
     {
         
@@ -10012,7 +10012,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class SubscriptionPeriod : Entity
     {
         
@@ -10116,7 +10116,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Subscription : Entity
     {
         
@@ -10364,7 +10364,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class InstalledProductTypeUdfAssociation : Entity
     {
         
@@ -10436,7 +10436,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class InstalledProductType : Entity
     {
         
@@ -10476,7 +10476,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class InstalledProduct : Entity
     {
         
@@ -11796,7 +11796,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractExclusionRole : Entity
     {
         
@@ -11836,7 +11836,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractExclusionAllocationCode : Entity
     {
         
@@ -11876,7 +11876,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Contract : Entity
     {
         
@@ -12364,7 +12364,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class AccountTeam : Entity
     {
         
@@ -12404,7 +12404,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Account : Entity
     {
         
@@ -13244,7 +13244,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ActionType : Entity
     {
         
@@ -13316,7 +13316,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class AccountToDo : Entity
     {
         
@@ -13548,7 +13548,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class AccountNote : Entity
     {
         
@@ -13732,7 +13732,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TicketNote : Entity
     {
         
@@ -13852,7 +13852,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Contact : Entity
     {
         
@@ -14516,7 +14516,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Ticket : Entity
     {
         
@@ -15532,7 +15532,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class AllocationCode : Entity
     {
         
@@ -15780,7 +15780,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Invoice : Entity
     {
         
@@ -16140,7 +16140,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Role : Entity
     {
         
@@ -16292,7 +16292,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Phase : Entity
     {
         
@@ -16508,7 +16508,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Project : Entity
     {
         
@@ -17172,7 +17172,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ProductVendor : Entity
     {
         
@@ -17276,7 +17276,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Product : Entity
     {
         
@@ -17620,7 +17620,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Task : Entity
     {
         
@@ -18140,7 +18140,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ServiceCallTicketResource : Entity
     {
         
@@ -18180,7 +18180,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ServiceCallTaskResource : Entity
     {
         
@@ -18220,7 +18220,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ServiceCall : Entity
     {
         
@@ -18452,7 +18452,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ServiceCallTicket : Entity
     {
         
@@ -18492,7 +18492,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ServiceCallTask : Entity
     {
         
@@ -18532,7 +18532,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Appointment : Entity
     {
         
@@ -18668,7 +18668,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TimeEntry : Entity
     {
         
@@ -19108,7 +19108,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractService : Entity
     {
         
@@ -19276,7 +19276,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractServiceBundle : Entity
     {
         
@@ -19428,7 +19428,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractNote : Entity
     {
         
@@ -19516,7 +19516,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractMilestone : Entity
     {
         
@@ -19716,7 +19716,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractRoleCost : Entity
     {
         
@@ -19788,7 +19788,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractRate : Entity
     {
         
@@ -19860,7 +19860,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractFactor : Entity
     {
         
@@ -19916,7 +19916,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractTicketPurchase : Entity
     {
         
@@ -20116,7 +20116,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractBlock : Entity
     {
         
@@ -20316,7 +20316,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractRetainer : Entity
     {
         
@@ -20548,7 +20548,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractServiceBundleAdjustment : Entity
     {
         
@@ -20684,7 +20684,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractServiceAdjustment : Entity
     {
         
@@ -20836,7 +20836,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractServiceUnit : Entity
     {
         
@@ -21036,7 +21036,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractServiceBundleUnit : Entity
     {
         
@@ -21220,7 +21220,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Opportunity : Entity
     {
         private object accountIDField;
@@ -22091,7 +22091,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class InventoryLocation : Entity
     {
         
@@ -22163,7 +22163,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class InventoryItem : Entity
     {
         
@@ -22347,7 +22347,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class InventoryItemSerialNumber : Entity
     {
         
@@ -22387,7 +22387,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class InventoryTransfer : Entity
     {
         
@@ -22539,7 +22539,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class PurchaseOrderReceive : Entity
     {
         
@@ -22659,7 +22659,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class PurchaseOrder : Entity
     {
         
@@ -23115,7 +23115,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class PurchaseOrderItem : Entity
     {
         
@@ -23331,7 +23331,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class QuoteItem : Entity
     {
         
@@ -23787,7 +23787,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Country : Entity
     {
         
@@ -23923,7 +23923,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class SalesOrder : Entity
     {
         
@@ -24331,7 +24331,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class QuoteTemplate : Entity
     {
         
@@ -24659,7 +24659,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Quote : Entity
     {
         
@@ -25163,7 +25163,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Skill : Entity
     {
         
@@ -25235,7 +25235,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ShippingType : Entity
     {
         
@@ -25307,7 +25307,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ServiceBundle : Entity
     {
         
@@ -25571,7 +25571,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Service : Entity
     {
         
@@ -25819,7 +25819,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ResourceSkill : Entity
     {
         
@@ -25891,7 +25891,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class AccountLocation : Entity
     {
         
@@ -25931,7 +25931,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TaxRegion : Entity
     {
         
@@ -25971,7 +25971,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TaxCategory : Entity
     {
         
@@ -26027,7 +26027,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Tax : Entity
     {
         
@@ -26115,7 +26115,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ClassificationIcon : Entity
     {
         
@@ -26203,7 +26203,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class QuoteLocation : Entity
     {
         
@@ -26291,7 +26291,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class AttachmentInfo : Entity
     {
         
@@ -26491,7 +26491,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class EntityInfo
     {
         
@@ -26595,7 +26595,7 @@ namespace net.autotask.webservices
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Attachment
     {
         
@@ -26635,14 +26635,14 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAttachment", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAttachment", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class GetAttachmentRequest
     {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public net.autotask.webservices.AutotaskIntegrations AutotaskIntegrations;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public long attachmentId;
         
         public GetAttachmentRequest()
@@ -26659,11 +26659,11 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAttachmentResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAttachmentResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class GetAttachmentResponse
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public net.autotask.webservices.Attachment GetAttachmentResult;
         
         public GetAttachmentResponse()
@@ -26679,14 +26679,14 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateAttachment", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateAttachment", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class CreateAttachmentRequest
     {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public net.autotask.webservices.AutotaskIntegrations AutotaskIntegrations;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public net.autotask.webservices.Attachment attachment;
         
         public CreateAttachmentRequest()
@@ -26703,11 +26703,11 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateAttachmentResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateAttachmentResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class CreateAttachmentResponse
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public long CreateAttachmentResult;
         
         public CreateAttachmentResponse()
@@ -26723,14 +26723,14 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="DeleteAttachment", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="DeleteAttachment", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class DeleteAttachmentRequest
     {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public net.autotask.webservices.AutotaskIntegrations AutotaskIntegrations;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public long attachmentId;
         
         public DeleteAttachmentRequest()
@@ -26747,11 +26747,11 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="DeleteAttachmentResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="DeleteAttachmentResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class DeleteAttachmentResponse
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public string DeleteAttachmentResult;
         
         public DeleteAttachmentResponse()
@@ -26767,11 +26767,11 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetEntityInfo", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetEntityInfo", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class GetEntityInfo
     {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public net.autotask.webservices.AutotaskIntegrations AutotaskIntegrations;
         
         public GetEntityInfo()
@@ -26787,11 +26787,11 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetEntityInfoResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetEntityInfoResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class GetEntityInfo1
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public net.autotask.webservices.EntityInfo[] GetEntityInfoResult;
         
         public GetEntityInfo1()
@@ -26807,14 +26807,14 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetFieldInfo", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetFieldInfo", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class GetFieldInfoRequest
     {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public net.autotask.webservices.AutotaskIntegrations AutotaskIntegrations;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public string psObjectType;
         
         public GetFieldInfoRequest()
@@ -26831,11 +26831,11 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetFieldInfoResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetFieldInfoResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class GetFieldInfoResponse
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public net.autotask.webservices.Field[] GetFieldInfoResult;
         
         public GetFieldInfoResponse()
@@ -26851,14 +26851,14 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getUDFInfo", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getUDFInfo", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class getUDFInfoRequest
     {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public net.autotask.webservices.AutotaskIntegrations AutotaskIntegrations;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public string psTable;
         
         public getUDFInfoRequest()
@@ -26875,11 +26875,11 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getUDFInfoResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getUDFInfoResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class getUDFInfoResponse
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public net.autotask.webservices.Field[] getUDFInfoResult;
         
         public getUDFInfoResponse()
@@ -26895,14 +26895,14 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="query", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="query", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class queryRequest
     {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public net.autotask.webservices.AutotaskIntegrations AutotaskIntegrations;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public string sXML;
         
         public queryRequest()
@@ -26919,11 +26919,11 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="queryResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="queryResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class queryResponse
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public net.autotask.webservices.ATWSResponse queryResult;
         
         public queryResponse()
@@ -26939,14 +26939,14 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="create", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="create", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class createRequest
     {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public net.autotask.webservices.AutotaskIntegrations AutotaskIntegrations;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public net.autotask.webservices.Entity[] Entities;
         
         public createRequest()
@@ -26963,11 +26963,11 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="createResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="createResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class createResponse
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public net.autotask.webservices.ATWSResponse createResult;
         
         public createResponse()
@@ -26983,14 +26983,14 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="update", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="update", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class updateRequest
     {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public net.autotask.webservices.AutotaskIntegrations AutotaskIntegrations;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public net.autotask.webservices.Entity[] Entities;
         
         public updateRequest()
@@ -27007,11 +27007,11 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="updateResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="updateResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class updateResponse
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public net.autotask.webservices.ATWSResponse updateResult;
         
         public updateResponse()
@@ -27027,14 +27027,14 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="delete", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="delete", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class deleteRequest
     {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public net.autotask.webservices.AutotaskIntegrations AutotaskIntegrations;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public net.autotask.webservices.Entity[] Entities;
         
         public deleteRequest()
@@ -27051,11 +27051,11 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="deleteResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="deleteResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class deleteResponse
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public net.autotask.webservices.ATWSResponse deleteResult;
         
         public deleteResponse()
@@ -27071,11 +27071,11 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getThresholdAndUsageInfo", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getThresholdAndUsageInfo", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class getThresholdAndUsageInfoRequest
     {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public net.autotask.webservices.AutotaskIntegrations AutotaskIntegrations;
         
         public getThresholdAndUsageInfoRequest()
@@ -27091,11 +27091,11 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getThresholdAndUsageInfoResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getThresholdAndUsageInfoResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class getThresholdAndUsageInfoResponse
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public net.autotask.webservices.ATWSResponse getThresholdAndUsageInfoResult;
         
         public getThresholdAndUsageInfoResponse()
@@ -27111,11 +27111,11 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetWsdlVersion", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetWsdlVersion", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class GetWsdlVersionRequest
     {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public net.autotask.webservices.AutotaskIntegrations AutotaskIntegrations;
         
         public GetWsdlVersionRequest()
@@ -27131,11 +27131,11 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetWsdlVersionResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetWsdlVersionResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class GetWsdlVersionResponse
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public string GetWsdlVersionResult;
         
         public GetWsdlVersionResponse()
@@ -27151,17 +27151,17 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetInvoiceMarkup", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetInvoiceMarkup", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class GetInvoiceMarkupRequest
     {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public net.autotask.webservices.AutotaskIntegrations AutotaskIntegrations;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public int InvoiceId;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=1)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=1)]
         public string Format;
         
         public GetInvoiceMarkupRequest()
@@ -27179,11 +27179,11 @@ namespace net.autotask.webservices
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetInvoiceMarkupResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetInvoiceMarkupResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class GetInvoiceMarkupResponse
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public string GetInvoiceMarkupResult;
         
         public GetInvoiceMarkupResponse()
