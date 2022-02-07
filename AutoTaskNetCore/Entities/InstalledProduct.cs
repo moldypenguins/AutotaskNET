@@ -27,118 +27,68 @@ namespace AutotaskNET.Entities
         public InstalledProduct() : base() { } //end InstalledProduct()
         public InstalledProduct(net.autotask.webservices.InstalledProduct entity) : base(entity)
         {
-            id = entity.id;
-            ContractID = entity.ContractID == null ? default(int?) : int.Parse(entity.ContractID.ToString());
-            ContactID = entity.ContactID == null ? default(int?) : int.Parse(entity.ContactID.ToString());
-            CreateDate = entity.CreateDate == null ? default(DateTime?) : DateTime.Parse(entity.CreateDate.ToString());
-            AccountID = entity.AccountID == null ? default(int) : int.Parse(entity.AccountID.ToString());
-            Active = entity.Active != null && bool.Parse(entity.Active.ToString());
-            DailyCost = entity.DailyCost == null ? default(double) : double.Parse(entity.DailyCost.ToString());
-            HourlyCost = entity.HourlyCost == null ? default(double) : double.Parse(entity.HourlyCost.ToString());
-            InstallDate = entity.InstallDate == null ? default(DateTime) : DateTime.Parse(entity.InstallDate.ToString());
-            MonthlyCost = entity.MonthlyCost == null ? default(double) : double.Parse(entity.MonthlyCost.ToString());
-            Notes = entity.Notes?.ToString();
-            NumberOfUsers = entity.NumberOfUsers == null ? default(double) : double.Parse(entity.NumberOfUsers.ToString());
-            PerUseCost = entity.PerUseCost == null ? default(double) : double.Parse(entity.PerUseCost.ToString());
-            ProductID = entity.ProductID == null ? default(int) : int.Parse(entity.ProductID.ToString());
-            ReferenceNumber = entity.ReferenceNumber?.ToString();
-            ReferenceTitle = entity.ReferenceTitle?.ToString();
-            SerialNumber = entity.SerialNumber?.ToString();
-            SetupFee = entity.SetupFee == null ? default(double) : double.Parse(entity.SetupFee.ToString());
-            WarrantyExpirationDate = entity.WarrantyExpirationDate == null ? default(DateTime?) : DateTime.Parse(entity.WarrantyExpirationDate.ToString());
-            ServiceID = entity.ServiceID == null ? default(int?) : int.Parse(entity.ServiceID.ToString());
-            ServiceBundleID = entity.ServiceBundleID == null ? default(int?) : int.Parse(entity.ServiceBundleID.ToString());
-            Type = entity.Type == null ? default(int?) : int.Parse(entity.Type.ToString());
-            VendorID = entity.VendorID == null ? default(int?) : int.Parse(entity.VendorID.ToString());
-            InstalledByID = entity.InstalledByID == null ? default(int?) : int.Parse(entity.InstalledByID.ToString());
-            ParentInstalledProductID = entity.ParentInstalledProductID == null ? default(int?) : int.Parse(entity.ParentInstalledProductID.ToString());
-            InstalledByContactID = entity.InstalledByContactID == null ? default(int?) : int.Parse(entity.InstalledByContactID.ToString());
-            ContractServiceID = entity.ContractServiceID == null ? default(int?) : int.Parse(entity.ContractServiceID.ToString());
-            ContractServiceBundleID = entity.ContractServiceBundleID == null ? default(int?) : int.Parse(entity.ContractServiceBundleID.ToString());
-            ServiceLevelAgreementID = entity.ServiceLevelAgreementID == null ? default(int?) : int.Parse(entity.ServiceLevelAgreementID.ToString());
-            AccountPhysicalLocationID = entity.AccountPhysicalLocationID == null ? default(int?) : int.Parse(entity.AccountPhysicalLocationID.ToString());
-            AEMDeviceAuditArchitectureID = entity.AEMDeviceAuditArchitectureID == null ? default(int?) : int.Parse(entity.AEMDeviceAuditArchitectureID.ToString());
-            AEMDeviceAuditDisplayAdaptorID = entity.AEMDeviceAuditDisplayAdaptorID == null ? default(int?) : int.Parse(entity.AEMDeviceAuditDisplayAdaptorID.ToString());
-            AEMDeviceAuditDomainID = entity.AEMDeviceAuditDomainID == null ? default(int?) : int.Parse(entity.AEMDeviceAuditDomainID.ToString());
-            AEMDeviceAuditManufacturerID = entity.AEMDeviceAuditManufacturerID == null ? default(int?) : int.Parse(entity.AEMDeviceAuditManufacturerID.ToString());
-            AEMDeviceAuditModelID = entity.AEMDeviceAuditModelID == null ? default(int?) : int.Parse(entity.AEMDeviceAuditModelID.ToString());
-            AEMDeviceAuditMotherboardID = entity.AEMDeviceAuditMotherboardID == null ? default(int?) : int.Parse(entity.AEMDeviceAuditMotherboardID.ToString());
-            Location = entity.Location?.ToString();
-            AEMDeviceUID = entity.AEMDeviceUID?.ToString();
-            AEMDeviceAuditExternalIPAddress = entity.AEMDeviceAuditExternalIPAddress?.ToString();
-            AEMDeviceAuditHostname = entity.AEMDeviceAuditHostname?.ToString();
-            AEMDeviceAuditMacAddress = entity.AEMDeviceAuditMacAddress?.ToString();
-            AEMDeviceAuditIPAddress = entity.AEMDeviceAuditIPAddress?.ToString();
-            AEMDeviceAuditOperatingSystem = entity.AEMDeviceAuditOperatingSystem?.ToString();
-            AEMDeviceAuditSNMPLocation = entity.AEMDeviceAuditSNMPLocation?.ToString();
-            AEMDeviceAuditSNMPName = entity.AEMDeviceAuditSNMPName?.ToString();
-            AEMDeviceAuditSNMPContact = entity.AEMDeviceAuditSNMPContact?.ToString();
-            AEMDeviceAuditMobileNumber = entity.AEMDeviceAuditMobileNumber?.ToString();
-            AEMDeviceAuditDescription = entity.AEMDeviceAuditDescription?.ToString();
-            AEMDeviceAuditLastUser = entity.AEMDeviceAuditLastUser?.ToString();
-            DattoSerialNumber = entity.DattoSerialNumber?.ToString();
-            DattoInternalIP = entity.DattoInternalIP?.ToString();
-            DattoRemoteIP = entity.DattoRemoteIP?.ToString();
-            DattoHostname = entity.DattoHostname?.ToString();
-            DattoOSVersionID = entity.DattoOSVersionID == null ? default(int?) : int.Parse(entity.DattoOSVersionID.ToString());
-            DattoZFSVersionID = entity.DattoZFSVersionID == null ? default(int?) : int.Parse(entity.DattoZFSVersionID.ToString());
-            DattoKernelVersionID = entity.DattoKernelVersionID == null ? default(int?) : int.Parse(entity.DattoKernelVersionID.ToString());
-            DattoNICSpeedKilobitsPerSecond = entity.DattoNICSpeedKilobitsPerSecond == null ? default(int?) : int.Parse(entity.DattoNICSpeedKilobitsPerSecond.ToString());
-            DattoDeviceMemoryMegabytes = entity.DattoDeviceMemoryMegabytes == null ? default(int?) : int.Parse(entity.DattoDeviceMemoryMegabytes.ToString());
-            DattoUptimeSeconds = entity.DattoUptimeSeconds == null ? default(int?) : int.Parse(entity.DattoUptimeSeconds.ToString());
-            DattoNumberOfAgents = entity.DattoNumberOfAgents == null ? default(int?) : int.Parse(entity.DattoNumberOfAgents.ToString());
-            DattoNumberOfDrives = entity.DattoNumberOfDrives == null ? default(int?) : int.Parse(entity.DattoNumberOfDrives.ToString());
-            DattoDrivesErrors = entity.DattoDrivesErrors == null ? default(bool?) : bool.Parse(entity.DattoDrivesErrors.ToString());
-            AEMDeviceID = entity.AEMDeviceID == null ? default(long) : long.Parse(entity.AEMDeviceID.ToString());
-            AEMDeviceAuditMemoryBytes = entity.AEMDeviceAuditMemoryBytes == null ? default(long) : long.Parse(entity.AEMDeviceAuditMemoryBytes.ToString());
-            AEMDeviceAuditStorageBytes = entity.AEMDeviceAuditStorageBytes == null ? default(long) : long.Parse(entity.AEMDeviceAuditStorageBytes.ToString());
-            DattoProtectedKilobytes = entity.DattoProtectedKilobytes == null ? default(long) : long.Parse(entity.DattoProtectedKilobytes.ToString());
-            DattoUsedKilobytes = entity.DattoUsedKilobytes == null ? default(long) : long.Parse(entity.DattoUsedKilobytes.ToString());
-            DattoOffsiteUsedBytes = entity.DattoOffsiteUsedBytes == null ? default(long) : long.Parse(entity.DattoOffsiteUsedBytes.ToString());
-            DattoAvailableKilobytes = entity.DattoAvailableKilobytes == null ? default(long) : long.Parse(entity.DattoAvailableKilobytes.ToString());
-            AEMDeviceAuditProcessorID = entity.AEMDeviceAuditProcessorID == null ? default(int?) : int.Parse(entity.AEMDeviceAuditProcessorID.ToString());
-            AEMDeviceAuditServicePackID = entity.AEMDeviceAuditServicePackID == null ? default(int?) : int.Parse(entity.AEMDeviceAuditServicePackID.ToString());
-            AEMDeviceAuditDeviceTypeID = entity.AEMDeviceAuditDeviceTypeID == null ? default(int?) : int.Parse(entity.AEMDeviceAuditDeviceTypeID.ToString());
-            AEMDeviceAuditMobileNetworkOperatorID = entity.AEMDeviceAuditMobileNetworkOperatorID == null ? default(int?) : int.Parse(entity.AEMDeviceAuditMobileNetworkOperatorID.ToString());
-            AEMOpenAlertCount = entity.AEMOpenAlertCount == null ? default(int?) : int.Parse(entity.AEMOpenAlertCount.ToString());
-            AEMDeviceAuditMissingPatchCount = entity.AEMDeviceAuditMissingPatchCount == null ? default(int?) : int.Parse(entity.AEMDeviceAuditMissingPatchCount.ToString());
-            DattoNumberOfVolumes = entity.DattoNumberOfVolumes == null ? default(int?) : int.Parse(entity.DattoNumberOfVolumes.ToString());
-            DattoLastCheckInDateTime = entity.DattoLastCheckInDateTime == null ? default(DateTime?) : DateTime.Parse(entity.DattoLastCheckInDateTime.ToString());
-            DattoPercentageUsed = entity.DattoPercentageUsed == null ? default(double) : double.Parse(entity.DattoPercentageUsed.ToString());
-            LastModifiedTime = entity.LastModifiedTime == null ? default(DateTime?) : DateTime.Parse(entity.LastModifiedTime.ToString());
-            UserDefinedFields = entity.UserDefinedFields?.Select(udf => new UserDefinedField { Name = udf.Name, Value = udf.Value }).ToList();
+            var thisType = GetType();
+            var fields = GetType().GetFields();
+            var entityReflection = entity.GetType();
 
+            foreach (var i in fields)
+            {
+                //Console.WriteLine($"Converting: {i.Name} -- {i.FieldType} -- {i.MemberType}");
+                try
+                {
+                    if (i.Name == "UserDefinedFields")
+                    {
+                        // treat differently:
+                        UserDefinedFields = entity.UserDefinedFields?.Select(udf => new UserDefinedField { Name = udf.Name, Value = udf.Value }).ToList();
+                        continue;
+                    }
+
+                    var value = entityReflection.GetProperty(i.Name)?.GetValue(entity);
+                    thisType.GetField(i.Name).SetValue(this, value);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+            }
 
         } //end InstalledProduct(net.autotask.webservices.InstalledProduct entity)
 
-        public static implicit operator net.autotask.webservices.InstalledProduct(InstalledProduct installedproduct)
+        public static implicit operator net.autotask.webservices.InstalledProduct(InstalledProduct entity)
         {
-            return new net.autotask.webservices.InstalledProduct()
-            {
-                id = installedproduct.id,
-                ContractID = installedproduct.ContractID,
-                MonthlyCost = installedproduct.MonthlyCost,
-                Active = installedproduct.Active,
-                DailyCost = installedproduct.DailyCost,
-                HourlyCost = installedproduct.HourlyCost,
-                InstallDate = installedproduct.InstallDate,
-                Notes = installedproduct.Notes,
-                NumberOfUsers = installedproduct.NumberOfUsers,
-                PerUseCost = installedproduct.PerUseCost,
-                ProductID = installedproduct.ProductID,
-                ReferenceNumber = installedproduct.ReferenceNumber,
-                ReferenceTitle = installedproduct.ReferenceTitle,
-                SerialNumber = installedproduct.SerialNumber,
-                SetupFee = installedproduct.SetupFee,
-                WarrantyExpirationDate = installedproduct.WarrantyExpirationDate,
-                ServiceID = installedproduct.ServiceID,
-                ServiceBundleID = installedproduct.ServiceBundleID,
-                Type = installedproduct.Type,
-                Location = installedproduct.Location,
-                ContactID = installedproduct.ContactID,
-                VendorID = installedproduct.VendorID,
+            var newEntity = new net.autotask.webservices.InstalledProduct();
+            var entityReflection = newEntity.GetType();
+            var thisType = entity.GetType();
+            var fields = entity.GetType().GetFields();
 
-            };
+            foreach (var i in entityReflection.GetProperties())
+            {
+                try
+                {
+                    if (i.Name == "UserDefinedFields")
+                    {
+                        newEntity.UserDefinedFields = entity.UserDefinedFields == null
+                            ? default
+                            : Array.ConvertAll(entity.UserDefinedFields?.ToArray(), UserDefinedField.ToATWS);
+                        continue;
+                    }
+
+                    if (i.Name == "Fields")
+                        continue;
+
+                    var value = thisType.GetField(i.Name).GetValue(entity);
+                    entityReflection.GetProperty(i.Name)?.SetValue(newEntity, value);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(i.Name);
+                    Console.WriteLine(e);
+                    throw;
+                }
+            }
+
+            return newEntity;
 
         } //end implicit operator net.autotask.webservices.InstalledProduct(InstalledProduct installedproduct)
 

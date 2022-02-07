@@ -2,9 +2,13 @@ using System;
 using System.Linq;
 using System.Text;
 using System.Collections.Generic;
+using System.ServiceModel;
+using System.ServiceModel.Channels;
 using System.Threading.Tasks;
 using net.autotask.webservices;
 using Entity = AutotaskNET.Entities.Entity;
+using Task = System.Threading.Tasks.Task;
+using TicketHistory = AutotaskNET.Entities.TicketHistory;
 
 namespace AutotaskNET
 {
@@ -25,10 +29,6 @@ namespace AutotaskNET
         bool HasAuthenticated { get; }
 
         getThresholdAndUsageInfoResponse GetThreshold();
-        
-        
-
-
     }
     public class ATWSInterface : IATWSInterface
     {
@@ -37,7 +37,22 @@ namespace AutotaskNET
         /// </summary>
         private net.autotask.webservices.ATWSSoap _atws;
         
-        public string IntegrationCode { get; set; }
+        public string UserName { get; }
+        public string Password { get; }
+        public string IntegrationsCode { get; }
+
+        private AutotaskIntegrations Integrations => new AutotaskIntegrations()
+        {
+            IntegrationCode = IntegrationsCode
+        };
+
+
+        public ATWSInterface(string userName, string password, string integrationCode)
+        {
+            UserName = userName;
+            Password = password;
+            IntegrationsCode = integrationCode;
+        }
 
         /// <summary>
         /// Indicates whether the interface has been connected.
@@ -45,7 +60,7 @@ namespace AutotaskNET
         /// <value>
         ///   <c>true</c> if the interface has been connected; otherwise, <c>false</c>.
         /// </value>
-        public bool HasAuthenticated { get; internal set; } = false;
+        public bool HasAuthenticated { get; private set; } = false;
 
         public getThresholdAndUsageInfoResponse GetThreshold()
         {
@@ -54,69 +69,49 @@ namespace AutotaskNET
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ATWSInterface"/> class.
-        /// </summary>
-        public ATWSInterface() { } //end ATWSInterface
-
-        /// <summary>
         /// Connects using the specified username and password.
         /// </summary>
         /// <param name="username">The username.</param>
         /// <param name="password">The password.</param>
         /// <exception cref="AutotaskNETException">Error getting zone information.</exception>
+        [Obsolete]
         public void Connect(string username, string password)
         {
-            this._atws = new net.autotask.webservices.ATWSClient(
-                "https://webservices.autotask.net/ATServices/1.6/atws.asmx",
-                TimeSpan.FromSeconds(30),
-                username,
-                password);
-
-            net.autotask.webservices.ATWSZoneInfo zoneInfo = this._atws.getZoneInfoAsync(username).Result;
-            if (zoneInfo.ErrorCode >= 0)
-            {
-                this._atws = new net.autotask.webservices.ATWSClient(
-                    zoneInfo.URL,
-                    TimeSpan.FromSeconds(30),
-                    username,
-                    password);
-                this.HasAuthenticated = true;
-            }
-            else
-            {
-                throw new AutotaskNETException("Error getting zone information.");
-            }
+            throw new InvalidOperationException("This method is deprecated.  You must use the integrationCode.");
         }
         
-        
-        public void Connect(string username, string password, string integrationCode)
+        public void Connect()
         {
-            IntegrationCode = integrationCode;
-            
-            this._atws = new net.autotask.webservices.ATWSClient(
-                "https://webservices.autotask.net/ATServices/1.6/atws.asmx",
-                TimeSpan.FromSeconds(30),
-                username,
-                password);
 
-            net.autotask.webservices.ATWSZoneInfo zoneInfo = this._atws.getZoneInfoAsync(username).Result;
-            if (zoneInfo.ErrorCode >= 0)
+            _atws = new ATWSSoapClient()
             {
-                this._atws = new net.autotask.webservices.ATWSClient(
-                    zoneInfo.URL,
-                    TimeSpan.FromSeconds(30),
-                    username,
-                    password);
-                this.HasAuthenticated = true;
-            }
-            else
+                ClientCredentials = { UserName = { UserName = UserName, Password = Password } },
+            };
+            
+            ATWSSoapClient client = new ATWSSoapClient();
+            var zoneInfoResponse = client.getZoneInfoAsync(UserName).Result;
+            BasicHttpBinding basicHttpBinding = new BasicHttpBinding
             {
-                throw new AutotaskNETException("Error getting zone information.");
-            }
+                Security =
+                {
+                    Mode = BasicHttpSecurityMode.Transport,
+                    Transport =
+                    {
+                        ClientCredentialType = HttpClientCredentialType.Basic
+                    }
+                },
+                MaxReceivedMessageSize = (long) int.MaxValue
+            };
+            EndpointAddress remoteAddress = new EndpointAddress(zoneInfoResponse.URL);
+            Task.WaitAll(client.CloseAsync());
+            client = new ATWSSoapClient((Binding) basicHttpBinding, remoteAddress);
+            client.ClientCredentials.UserName.UserName = UserName;
+            client.ClientCredentials.UserName.Password = Password;
+
+            _atws = client;
+            HasAuthenticated = true;
         }
         
-
-
 
         #region Query
 
@@ -165,7 +160,8 @@ namespace AutotaskNET
 
 
                     //use id to pull more than 500 records if id is not already a filter
-                    if (filters == null || !QueryFilter.ContainsCondition(new QueryCondition(filters), "id"))
+                    if ((filters == null || !QueryFilter.ContainsCondition(new QueryCondition(filters), "id"))
+                        && entity.GetType()!=typeof(TicketHistory))
                     {
                         query.Append($"<field>Id<expression op=\"greaterthan\">{current_id}</expression></field>");
                     }
@@ -191,11 +187,12 @@ namespace AutotaskNET
 
                     //submit query
                     ATWSResponse response = this._atws.queryAsync(new queryRequest(
-                        new AutotaskIntegrations()
-                        {
-                            IntegrationCode = IntegrationCode
-                        },
-                        query.ToString())).Result.queryResult;
+                        Integrations, query.ToString())).Result.queryResult;
+
+                    if (response.Errors.Any())
+                    {
+                        throw new AutotaskNETException(response.Errors.FirstOrDefault().Message);
+                    }
                     
                     //parse response
                     if (response.ReturnCode > 0 && response.EntityResults.Length > 0)
@@ -289,9 +286,7 @@ namespace AutotaskNET
 
                 //create entity
                 var resp = this._atws.createAsync(
-                    new createRequest(new AutotaskIntegrations(){ 
-                        IntegrationCode = IntegrationCode
-                    }, new net.autotask.webservices.Entity[] {typedEntity})).Result.createResult;
+                    new createRequest(Integrations, new net.autotask.webservices.Entity[] {typedEntity})).Result.createResult;
 
                  if (resp.Errors.Length > 0 && resp.EntityReturnInfoResults.Length <= 0)
                 {
@@ -337,10 +332,7 @@ namespace AutotaskNET
 
                 //update entity
                 net.autotask.webservices.ATWSResponse resp = this._atws.updateAsync(
-                    new updateRequest(new AutotaskIntegrations(){ 
-                        IntegrationCode = IntegrationCode
-                    
-                    },new net.autotask.webservices.Entity[] {typedEntity})).Result.updateResult;
+                    new updateRequest(Integrations,new net.autotask.webservices.Entity[] {typedEntity})).Result.updateResult;
                 
                 if (resp.Errors.Length > 0 && resp.EntityReturnInfoResults.Length <= 0)
                 {
@@ -379,11 +371,7 @@ namespace AutotaskNET
 
                 //delete entity
                 net.autotask.webservices.ATWSResponse resp = _atws.deleteAsync(
-                    new deleteRequest(new AutotaskIntegrations(){ 
-                            IntegrationCode = IntegrationCode
-                    
-                        },
-                        new net.autotask.webservices.Entity[] {typedEntity})).Result.deleteResult;
+                    new deleteRequest(Integrations, new net.autotask.webservices.Entity[] {typedEntity})).Result.deleteResult;
                 if (resp.Errors.Length > 0)
                 {
                     throw new AutotaskNETException(string.Join("\r\n", resp.Errors.Select(r => r.Message)));
@@ -412,10 +400,7 @@ namespace AutotaskNET
             List<EntityInformation> entityInfo = new List<EntityInformation>();
 
             List<net.autotask.webservices.EntityInfo> eInfo = this._atws.
-                getEntityInfoAsync(new GetEntityInfo(new AutotaskIntegrations(){ 
-                    IntegrationCode = IntegrationCode
-                    
-                })).Result
+                getEntityInfoAsync(new GetEntityInfo(Integrations)).Result
                 .GetEntityInfoResult.ToList();
             foreach(net.autotask.webservices.EntityInfo ent in eInfo)
             {
@@ -448,12 +433,7 @@ namespace AutotaskNET
             List<FieldInformation> fieldInfo = new List<FieldInformation>();
 
             List<net.autotask.webservices.Field> eInfo = this._atws.GetFieldInfoAsync(
-                new GetFieldInfoRequest(
-                    new AutotaskIntegrations(){ 
-                        IntegrationCode = IntegrationCode
-                    
-                    }, 
-                    entity.GetType().Name)).Result.GetFieldInfoResult.ToList();
+                new GetFieldInfoRequest(Integrations, entity.GetType().Name)).Result.GetFieldInfoResult.ToList();
             foreach (net.autotask.webservices.Field fld in eInfo)
             {
                 fieldInfo.Add(new FieldInformation(fld));
@@ -485,12 +465,7 @@ namespace AutotaskNET
         {
             List<PicklistValue> listValues = new List<PicklistValue>();
             net.autotask.webservices.Field fieldInfo = this._atws.GetFieldInfoAsync(
-                new GetFieldInfoRequest(
-                    new AutotaskIntegrations(){ 
-                        IntegrationCode = IntegrationCode
-                    
-                    },
-                    entity.GetType().Name)).Result.GetFieldInfoResult.ToList().SingleOrDefault(f => f.Name == field);
+                new GetFieldInfoRequest(Integrations, entity.GetType().Name)).Result.GetFieldInfoResult.ToList().SingleOrDefault(f => f.Name == field);
             if (fieldInfo != null)
             {
                 foreach (net.autotask.webservices.PickListValue plv in fieldInfo.PicklistValues)
@@ -541,10 +516,7 @@ namespace AutotaskNET
         {
             List<FieldInformation> UDFs = new List<FieldInformation>();
             List<net.autotask.webservices.Field> fields = this._atws.getUDFInfoAsync(
-                new getUDFInfoRequest(new AutotaskIntegrations(){ 
-                        IntegrationCode = IntegrationCode
-                    }, 
-                entity.GetType().Name)).Result.getUDFInfoResult.ToList();
+                new getUDFInfoRequest(Integrations, entity.GetType().Name)).Result.getUDFInfoResult.ToList();
             if (fields != null && fields.Count > 0)
             {
                 foreach (net.autotask.webservices.Field field in fields)
@@ -564,10 +536,7 @@ namespace AutotaskNET
         {
             
             Attachment attachment = this._atws.GetAttachmentAsync(
-                new GetAttachmentRequest(new AutotaskIntegrations(){ 
-                    IntegrationCode = IntegrationCode
-                    
-                }, attachmentId)).Result.GetAttachmentResult;
+                new GetAttachmentRequest(Integrations, attachmentId)).Result.GetAttachmentResult;
 
             return attachment;
 
@@ -583,10 +552,7 @@ namespace AutotaskNET
         {
 
             long attachmentId = this._atws.CreateAttachmentAsync(
-                new CreateAttachmentRequest(new AutotaskIntegrations(){ 
-                    IntegrationCode = IntegrationCode
-                    
-                }, newAttachment)).Result.CreateAttachmentResult;
+                new CreateAttachmentRequest(Integrations, newAttachment)).Result.CreateAttachmentResult;
 
             return attachmentId;
 
