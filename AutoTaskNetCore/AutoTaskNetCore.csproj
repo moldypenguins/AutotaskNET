@@ -25,4 +25,8 @@
     <WCFMetadata Include="Connected Services" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="App.config" />
+  </ItemGroup>
+
 </Project>
